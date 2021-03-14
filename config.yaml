@@ -1,5 +1,5 @@
 baseURL: https://edleeman.co.uk
-languageCode: en-us
+languageCode: en-gb
 title: "Ed Leeman - #100DaysToOffload"
 theme: mini
 
@@ -25,7 +25,7 @@ markup:
 social:
   # e.g.
   #github: your-github-link
-  #twitter: your-github-link
+  twitter: https://twitter.com/selfhostingblog
   #stackoverflow: your-github-link
   # facebook: your-facebook-link
 
@@ -35,9 +35,9 @@ params:
   # Site Author
   author: Ed Leeman
   # Author biography
-  bio: Software Engineer
+  bio: Software Engineer | Privacy Advocate | Blogger
   # Site Description, used in HTML meat
-  description: 100DaysToOffload
+  description: "I want to get better at writing blog posts on my main blog (theselfhostingblog.com). I figured I would take part in #100DaysToOffload to help with this."
   enableRSS: true
   # To enable comments, you may need to set `disqusShortname`
   enableComments: true
