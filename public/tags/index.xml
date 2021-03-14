@@ -6,28 +6,9 @@
     <description>Recent content in Tags on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>markdown</title>
-      <link>https://edleeman.co.uk/tags/markdown/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>text</title>
-      <link>https://edleeman.co.uk/tags/text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/tags/text/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
