@@ -6,10 +6,21 @@
     <description>Recent content on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Mar 2021 10:55:26 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Day #1 - Something New</title>
+      <link>https://edleeman.co.uk/posts/day-#1-something-new/</link>
+      <pubDate>Thu, 18 Mar 2021 10:55:26 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-#1-something-new/</guid>
+      <description>Hello Hello, this is my first post in the #100DaysToOffload  challenge. The brainchild of Kev Quirk .
+I intend to use this space as a chance to improve my writing skills over at The Self-Hosting Blog .
+I often find that I struggle to put my thoughts onto paper, and when re-reading what I have written, I feel like it was written by a 5 year old. I would like to improve how I come across on the internet and become a trusted source of knowledge to anyone who wants to know what I have to say.</description>
+    </item>
     
   </channel>
 </rss>

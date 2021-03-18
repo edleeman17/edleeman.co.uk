@@ -5,19 +5,21 @@
     <link>https://edleeman.co.uk/posts/</link>
     <description>Recent content in Posts on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 18 Mar 2021 10:55:26 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Placeholder Text</title>
-      <link>https://edleeman.co.uk/posts/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Day #1 - Something New</title>
+      <link>https://edleeman.co.uk/posts/day-#1-something-new/</link>
+      <pubDate>Thu, 18 Mar 2021 10:55:26 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+      <guid>https://edleeman.co.uk/posts/day-#1-something-new/</guid>
+      <description>Hello Hello, this is my first post in the #100DaysToOffload  challenge. The brainchild of Kev Quirk .
+I intend to use this space as a chance to improve my writing skills over at The Self-Hosting Blog .
+I often find that I struggle to put my thoughts onto paper, and when re-reading what I have written, I feel like it was written by a 5 year old. I would like to improve how I come across on the internet and become a trusted source of knowledge to anyone who wants to know what I have to say.</description>
     </item>
     
   </channel>
