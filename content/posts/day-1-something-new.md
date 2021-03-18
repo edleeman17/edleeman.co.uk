@@ -1,5 +1,5 @@
 ---
-title: "Day #1 - Something New"
+title: "Day 1 - Something New"
 date: 2021-03-18T10:55:26Z
 draft: false
 ---
