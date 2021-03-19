@@ -1,5 +1,5 @@
 ---
-title: "Day 2- Monitisation"
+title: "Day 2- Monetisation"
 date: 2021-03-19T13:00:28Z
 draft: false
 ---
@@ -10,7 +10,7 @@ Recently, I have been pushing the blog onto something else. To create more of a 
 
 I also set up a [weekly newsletter](https://theselfhostingblog.com/subscribe/) with the weeks' roundup of interesting self-hosting articles that I have come across. We have around 50 members who recieve our newsletter at time of writing this! Which is pretty good!
 
-Now for my complex, should I monitise the site? Obviously there are costs involved with the domain name and hosting. But I really don't want to have to put ads on the site. It doesn't sit well with me ethically. We've switched over to using Plausible.io so that we're not tracking our users so personally. We've added Commento as our comments engine of choice. Having adverts on our site just doesn't make sense.
+Now for my complex, should I monetise the site? Obviously there are costs involved with the domain name and hosting. But I really don't want to have to put ads on the site. It doesn't sit well with me ethically. We've switched over to using Plausible.io so that we're not tracking our users so personally. We've added Commento as our comments engine of choice. Having adverts on our site just doesn't make sense.
 
 I'd really appreciate some thoughts from the community. I'm quite happy to pay for the hosting myself, but how comfortable do you (my readers) feel about having adverts on the site?
 
