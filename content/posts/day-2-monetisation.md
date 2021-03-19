@@ -1,5 +1,5 @@
 ---
-title: "Day 2- Monetisation"
+title: "Day 2 - Monetisation"
 date: 2021-03-19T13:00:28Z
 draft: false
 ---
