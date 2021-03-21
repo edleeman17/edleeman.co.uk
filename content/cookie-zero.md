@@ -20,3 +20,5 @@ Get added to our hall of fame below!
 
 - [https://thecrow.uk/](https://thecrow.uk/)
 - [https://joelchrono12.ml/](https://joelchrono12.ml/)
+- [https://reaper.im](https://reaper.im)
+- [https://tillwhen.barelyhuman.dev](https://tillwhen.barelyhuman.dev)
