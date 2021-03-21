@@ -1,7 +1,7 @@
 baseURL: https://edleeman.co.uk
 languageCode: en-gb
 title: "Ed Leeman - #100DaysToOffload"
-theme: mini
+theme: hugo-theme-mini
 
 # for exampleSite only, you may need to delete the line: `themesDir: ../../` 
 themesDir: themes/

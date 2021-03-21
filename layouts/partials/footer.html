@@ -1,0 +1,21 @@
+<footer id="footer">
+    {{ if .Site.Social }}
+        {{ partial "social.html" . }}
+    {{ end }}
+
+    <p class="copyright">
+    {{ with .Site.Params.copyright }}
+        {{ . | markdownify }}
+    {{ else }}
+       © Copyright 
+       {{ now.Format "2006"}} 
+       <span class="split">
+        {{ partial "svgs/heart.svg" (dict "fill" "#bbbbbb" "width" 15 "height" 15 ) }}
+       </span>
+       {{ .Site.Params.Author }}
+    {{ end }}
+    </p>
+    <p class="powerby">
+    This site is hosted on a small <a href="https://amzn.to/3qvyjj2">Raspberry Pi 4</a> in my loft. If you wanna build a website, why not use Digital Ocean? <a href="https://m.do.co/c/d2a3afe52625">This link</a> will give you $100 to play around with. Both of those are affiliate links, but I do genuinley recommend them! <br />If you're really feeling generous, why not <a href="https://www.buymeacoffee.com/selfhostingblog">buy me a coffee?</a> It'll all be spent on hosting fees for <a href="https://theselfhostingblog.com">The Self-Hosting Blog</a>
+    </p>
+</footer>

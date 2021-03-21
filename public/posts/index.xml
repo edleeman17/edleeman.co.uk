@@ -6,13 +6,33 @@
     <description>Recent content in Posts on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 19 Mar 2021 13:00:28 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Mar 2021 00:03:14 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Day 2- Monetisation</title>
+      <title>Day 4 - No Ads</title>
+      <link>https://edleeman.co.uk/posts/day-4-no-ads/</link>
+      <pubDate>Sun, 21 Mar 2021 00:03:14 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-4-no-ads/</guid>
+      <description>GoNads I decided not to put ads on the site. They make the site look poo and it doesn&amp;rsquo;t sit with me ethically. I did however make 30p which ia just about enough to buy myself a Freddo. Ads suck, in general, and as a source of income. They&amp;rsquo;re spammy, obtrusive and distract the readers from the content that you&amp;rsquo;ve worked so hard to produce.
+So, I have made the executive decision not the run ads on The Self-Hosting Blog .</description>
+    </item>
+    
+    <item>
+      <title>Day 3 - Unifi Dream Machine</title>
+      <link>https://edleeman.co.uk/posts/day-3-unifi-dream-machine/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:11 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-3-unifi-dream-machine/</guid>
+      <description>The Dream Machine The other day, I purchased the Ubiquiti Unifi Dream Machine . A company well known by the guys over at /r/homelab  and /r/homenetworking . Ubiquiti have made a name for themselves in the enterprise world, but over the last few years, more and more homelabbers have taken it upon themselves to set up enterprise grade hardware at home.
+Why did I buy The Dream Machine So for me personally, I wanted it just for fun.</description>
+    </item>
+    
+    <item>
+      <title>Day 2 - Monetisation</title>
       <link>https://edleeman.co.uk/posts/day-2-monetisation/</link>
       <pubDate>Fri, 19 Mar 2021 13:00:28 +0000</pubDate>
       
