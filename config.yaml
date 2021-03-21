@@ -59,6 +59,8 @@ params:
 
   # Extra links in navigation
   links:
+          - name: 'Cookie Zero'
+            path: /cookie-zero
     # e.g.
     # - name: Project
     #   path: /project
