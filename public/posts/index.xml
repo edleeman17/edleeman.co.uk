@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 21 Mar 2021 19:19:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Mar 2021 20:09:49 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Day 7 - Blog Automation</title>
+      <link>https://edleeman.co.uk/posts/day-7-blog-automation/</link>
+      <pubDate>Tue, 23 Mar 2021 20:09:49 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-7-blog-automation/</guid>
+      <description>I have recently discovered that a lot of my posts over at The Self-Hosting Blog  follow the same passage.
+ Introduction about the Software Provisioning your server Installing prerequisite requirements Installing the thing Configuring Nginx Port forwarding Certbot Recap  The only thing that really changes is step 4, maybe step 3 depending on whether Docker is required or not.
+Why aren&amp;rsquo;t I automating this.
+I think I know why, the content will be shite.</description>
+    </item>
+    
+    <item>
+      <title>Day 6 - Virtual Computing</title>
+      <link>https://edleeman.co.uk/posts/day-6-virtual-computing/</link>
+      <pubDate>Mon, 22 Mar 2021 19:21:07 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-6-virtual-computing/</guid>
+      <description>A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. He has spoken about it over on his blog . There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It&amp;rsquo;s a really interesting read, I&amp;rsquo;d highly recommend checking it out.
+He&amp;rsquo;s using Proxmox, which I have some experience with, but not to the extent of what he has managed to achieve with it.</description>
+    </item>
     
     <item>
       <title>Day 5 - Freelance Writing</title>
