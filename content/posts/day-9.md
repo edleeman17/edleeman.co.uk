@@ -1,7 +1,7 @@
 ---
 title: "Day 9 - Dabbling with Bash, public repository alerting"
 date: 2021-03-25T14:04:59Z
-draft: true
+draft: false
 ---
 
 I have been playing around with Bash over the last 24 hours, which has had its highs and lows.
