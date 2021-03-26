@@ -6,11 +6,13 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 <meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="So, today The Self-Hosting Blog  got approved for monitisation via NitroPay . Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn&rsquo;t have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through.">
+<meta name="description" content="Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.
+Luckily, the container was still running, even if it wasn&rsquo;t we probably could have spun up an old containers using something from docker ps -a.
+As the container was still running, we exec&rsquo;d into it with docker exec -it &lt;container_id&gt; bash and we&rsquo;re able to run the env command which revealed the password that was set in the docker-compose file.">
 <meta name="generator" content="Hugo 0.68.3" />
 
 
-  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -74,6 +76,24 @@ p, pre{
 
     
     
+    
+        
+        
+        <section class="item">
+          <div>
+            <h1 class="title"><a href='/posts/day-10-deleted-docker-compose/'>Day 10 - Deleted docker-compose</a></h1>   
+            <div class="date">Mar 26, 2021</div>
+          </div>
+        </section>
+    
+        
+        
+        <section class="item">
+          <div>
+            <h1 class="title"><a href='/posts/day-9-dabbling-with-bash-public-repository-alerting/'>Day 9 - Dabbling with Bash, public repository alerting</a></h1>   
+            <div class="date">Mar 25, 2021</div>
+          </div>
+        </section>
     
         
         
@@ -144,15 +164,6 @@ p, pre{
           <div>
             <h1 class="title"><a href='/posts/day-2-monetisation/'>Day 2 - Monetisation</a></h1>   
             <div class="date">Mar 19, 2021</div>
-          </div>
-        </section>
-    
-        
-        
-        <section class="item">
-          <div>
-            <h1 class="title"><a href='/posts/day-1-something-new/'>Day 1 - Something New</a></h1>   
-            <div class="date">Mar 18, 2021</div>
           </div>
         </section>
     

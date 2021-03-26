@@ -3,12 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://edleeman.co.uk/posts/day-8-our-first-sponsorship/</loc>
-    <lastmod>2021-03-24T15:19:44+00:00</lastmod>
+    <loc>https://edleeman.co.uk/posts/day-10-deleted-docker-compose/</loc>
+    <lastmod>2021-03-26T21:49:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://edleeman.co.uk/posts/</loc>
+    <lastmod>2021-03-26T21:49:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edleeman.co.uk/posts/day-9-dabbling-with-bash-public-repository-alerting/</loc>
+    <lastmod>2021-03-25T14:04:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://edleeman.co.uk/posts/day-8-our-first-sponsorship/</loc>
     <lastmod>2021-03-24T15:19:44+00:00</lastmod>
   </url>
   

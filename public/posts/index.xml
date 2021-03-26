@@ -6,10 +6,31 @@
     <description>Recent content in Posts on Ed Leeman - #100DaysToOffload</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 24 Mar 2021 15:19:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Mar 2021 21:49:09 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Day 10 - Deleted docker-compose</title>
+      <link>https://edleeman.co.uk/posts/day-10-deleted-docker-compose/</link>
+      <pubDate>Fri, 26 Mar 2021 21:49:09 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-10-deleted-docker-compose/</guid>
+      <description>Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.
+Luckily, the container was still running, even if it wasn&amp;rsquo;t we probably could have spun up an old containers using something from docker ps -a.
+As the container was still running, we exec&amp;rsquo;d into it with docker exec -it &amp;lt;container_id&amp;gt; bash and we&amp;rsquo;re able to run the env command which revealed the password that was set in the docker-compose file.</description>
+    </item>
+    
+    <item>
+      <title>Day 9 - Dabbling with Bash, public repository alerting</title>
+      <link>https://edleeman.co.uk/posts/day-9-dabbling-with-bash-public-repository-alerting/</link>
+      <pubDate>Thu, 25 Mar 2021 14:04:59 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/day-9-dabbling-with-bash-public-repository-alerting/</guid>
+      <description>I have been playing around with Bash over the last 24 hours, which has had its highs and lows.
+I still don&amp;rsquo;t understand when to echo a variable into another variable and when to do a direct assignment. But it&amp;rsquo;s early days for me. I&amp;rsquo;m looking to take a more architectural approach to my day job, which means spending even more time in the Linux environment. I&amp;rsquo;d like to automate a lot of my repetitive tasks, reason 1 being that I save some time, reason 2 being that I will definitely forget to do the task.</description>
+    </item>
     
     <item>
       <title>Day 8 - Our first sponsorship</title>
