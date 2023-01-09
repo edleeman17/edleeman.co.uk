@@ -1,0 +1,62 @@
+<div id="main">
+    <section id="me">
+        <div class="image">
+            <img src="/images/ed.png" />
+        </div>
+        <div class="name">
+            <h1>Ed Leeman</h1>
+            <p>Software Engineer</p>
+            <p>Privacy Advocate</p>
+            <p id="now_playing"></p>
+        </div>
+    </section>
+    <section id="about">
+        <span class="green">➜</span>
+        <span class="cyan">~</span>
+        <span class="type"></span>
+        <span class="blink"></span>
+    </section>
+    <div class="divider"></div>
+    <section id="notes">
+        <h2>## notes</h2>
+        {{- partial "post-list.html" . -}}
+        <div class="archive">View all notes in the <a href ="{{ .Site.BaseURL }}/archive">archive</a></div>
+    </section>
+</div>
+
+<script>
+    var str = `Software Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate
+and solver of problems that I make for myself. Currently wasting my time on home-network
+privacy and security.`;
+
+
+var spans = '<span>' + str.split('').join('</span><span>') + '</span>';
+
+$(spans).hide().appendTo('.type').each(function (i) {
+    $(this).delay(25 * i).css({display: 'inline', opacity: 0}).animate({opacity: 1}, 100);
+}).promise().done(function (){
+    $('.blink').show();
+});
+
+const api_key = '35d69c5ad21f4fc86e2d4269b9c949bd';
+const url_base = 'https://ws.audioscrobbler.com/2.0/?'
+const username = 'ed1727';
+const user = '&user='+username
+const key = '&api_key='+api_key
+
+$(document).ready(function()  {
+  const base_url = url_base+'method=user.getrecenttracks&user='+username+'&api_key='+api_key+'&limit=1&format=json';
+  $.getJSON(base_url, function(data){
+    if(jQuery.type(data.recenttracks.track) === 'array') {
+      var nowPlaying = data.recenttracks.track[0];
+      var listening_text = 'Currently listening to... ';
+    }
+    else {
+      var nowPlaying = data.recenttracks.track;
+      var listening_text = 'Last listened to...  ';
+    }
+    var currentTrack = nowPlaying['name'] + ' by ' + nowPlaying['artist']['#text'];
+    $('#now_playing').html("<a href="+nowPlaying['url']+">" + listening_text + currentTrack + " <i class='fas fa-compact-disc fa-spin'></i>" + "</a>");
+  });
+});
+</script>

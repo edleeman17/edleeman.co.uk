@@ -1,0 +1,29 @@
+{{- partial "header.html" . -}}
+
+<div class="main">
+    <h1>Archive</h2>
+
+    {{ with .Site.GetPage "section" "posts" }}
+    {{ range .Data.Pages.GroupByDate "2006" }}
+
+    <section>
+        <h2>{{ .Key }}</h2>
+        <div class="preview">
+            <ul>
+                {{ range .Pages }}
+                {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+                <article class="feed post">
+                    <span class="post-date">{{ .Date.Format $dataFormat }}</span>
+                    <span class="link"><a href="{{ .Permalink  }}">{{ .Title }}</a></span>
+                    <span class="reading-time">
+                        {{ .ReadingTime }} min read
+                    </span>
+                </article>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
+    {{ end }}
+    {{ end }}
+</div>
+{{- partial "footer.html" . -}}

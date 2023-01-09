@@ -1,116 +1,365 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Ed Leeman - #100DaysToOffload</title>
+    <title>Posts on Ed Leeman</title>
     <link>https://edleeman.co.uk/posts/</link>
-    <description>Recent content in Posts on Ed Leeman - #100DaysToOffload</description>
+    <description>Recent content in Posts on Ed Leeman</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 26 Mar 2021 21:49:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Nov 2022 12:29:19 +0000</lastBuildDate>
     
 	<atom:link href="https://edleeman.co.uk/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Day 10 - Deleted docker-compose</title>
-      <link>https://edleeman.co.uk/posts/day-10-deleted-docker-compose/</link>
+      <title>Creating really simple API Authentication in .NET</title>
+      <link>https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/</link>
+      <pubDate>Wed, 09 Nov 2022 12:29:19 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/</guid>
+      <description>Creating &amp;lsquo;really simple&amp;rsquo; API key authentication in .NET Sometimes you&amp;rsquo;re going to run into a situation where you need to add some level of authentication to your .NET API.
+If you&amp;rsquo;re like me, the whole .NET authentication and authorization is pretty complicated. Especially when in a language like JavaScript, it&amp;rsquo;s pretty simple to add middleware to a request and check to see whether a header is present in the request.</description>
+    </item>
+    
+    <item>
+      <title>Preventing Email Floods</title>
+      <link>https://edleeman.co.uk/posts/preventing-email-floods/</link>
+      <pubDate>Tue, 03 Aug 2021 14:46:16 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/preventing-email-floods/</guid>
+      <description>How to prevent being flooded with emails I&amp;rsquo;ve just moved companies and I am already being flooded with emails. Some are important, some not so much.
+I could just put my PC into Do Not Disturb mode, but what if I miss something directed at me personally.
+This is where email rules come in, all major email providers can do this.
+But have you considered this rule?
+If the email is directly intended for me i.</description>
+    </item>
+    
+    <item>
+      <title>Self Hosting Your Own Matrix Server on a Raspberry Pi</title>
+      <link>https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</link>
+      <pubDate>Fri, 02 Jul 2021 19:39:30 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</guid>
+      <description>What is Matrix? &amp;ldquo;Matrix is an open source project that publishes the Matrix open standard for secure, decentralised, real-time communication, and its Apache licensed reference implementations. Maintained by the non-profit Matrix.org Foundation, we aim to create an open platform which is as independent, vibrant and evolving as the Web itself&amp;hellip; but for communication. As of June 2019, Matrix is out of beta, and the protocol is fully suitable for production usage.</description>
+    </item>
+    
+    <item>
+      <title>Disable JavaScript to view this site?</title>
+      <link>https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/</link>
+      <pubDate>Mon, 29 Mar 2021 15:58:50 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/</guid>
+      <description>I have fallen down a bit of a rabbit hole. Said rabbit hole is around disabling JavaScript to view certain websites. All as part of a privacy movement originally started by GNU.
+My first experience of this movement was HeydonWorks. Which just proves that you don&amp;rsquo;t need JavaScript to have a beautiful website.
+I had a look at how The Self-Hosting Blog performs. And well, not too great.
+This website however&amp;hellip; No change.</description>
+    </item>
+    
+    <item>
+      <title>Deleted docker-compose</title>
+      <link>https://edleeman.co.uk/posts/deleted-docker-compose/</link>
       <pubDate>Fri, 26 Mar 2021 21:49:09 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-10-deleted-docker-compose/</guid>
+      <guid>https://edleeman.co.uk/posts/deleted-docker-compose/</guid>
       <description>Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.
 Luckily, the container was still running, even if it wasn&amp;rsquo;t we probably could have spun up an old containers using something from docker ps -a.
 As the container was still running, we exec&amp;rsquo;d into it with docker exec -it &amp;lt;container_id&amp;gt; bash and we&amp;rsquo;re able to run the env command which revealed the password that was set in the docker-compose file.</description>
     </item>
     
     <item>
-      <title>Day 9 - Dabbling with Bash, public repository alerting</title>
-      <link>https://edleeman.co.uk/posts/day-9-dabbling-with-bash-public-repository-alerting/</link>
+      <title>Dabbling with Bash, public repository alerting</title>
+      <link>https://edleeman.co.uk/posts/public-repository-alerts/</link>
       <pubDate>Thu, 25 Mar 2021 14:04:59 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-9-dabbling-with-bash-public-repository-alerting/</guid>
+      <guid>https://edleeman.co.uk/posts/public-repository-alerts/</guid>
       <description>I have been playing around with Bash over the last 24 hours, which has had its highs and lows.
 I still don&amp;rsquo;t understand when to echo a variable into another variable and when to do a direct assignment. But it&amp;rsquo;s early days for me. I&amp;rsquo;m looking to take a more architectural approach to my day job, which means spending even more time in the Linux environment. I&amp;rsquo;d like to automate a lot of my repetitive tasks, reason 1 being that I save some time, reason 2 being that I will definitely forget to do the task.</description>
     </item>
     
     <item>
-      <title>Day 8 - Our first sponsorship</title>
-      <link>https://edleeman.co.uk/posts/day-8-our-first-sponsorship/</link>
+      <title>Our first sponsorship</title>
+      <link>https://edleeman.co.uk/posts/sponsorship/</link>
       <pubDate>Wed, 24 Mar 2021 15:19:44 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-8-our-first-sponsorship/</guid>
-      <description>We got our first sponsorship on The Self-Hosting Blog , albeit, my parter! But it was a nice surprise and I didn&amp;rsquo;t ask for it! Even though it shouldn&amp;rsquo;t officially count, something inside me is feeling motivated, almost like it was all worth it, you know?
-With the blog, we&amp;rsquo;re going to have a guest blogger. He&amp;rsquo;s Piete, over at https://www.pietersartain.com  who is doing some really cool stuff with Ansible at the moment.</description>
+      <guid>https://edleeman.co.uk/posts/sponsorship/</guid>
+      <description>We got our first sponsorship on The Self-Hosting Blog, albeit, my parter! But it was a nice surprise and I didn&amp;rsquo;t ask for it! Even though it shouldn&amp;rsquo;t officially count, something inside me is feeling motivated, almost like it was all worth it, you know?
+With the blog, we&amp;rsquo;re going to have a guest blogger. He&amp;rsquo;s Piete, over at https://www.pietersartain.com who is doing some really cool stuff with Ansible at the moment.</description>
     </item>
     
     <item>
-      <title>Day 7 - Blog Automation</title>
-      <link>https://edleeman.co.uk/posts/day-7-blog-automation/</link>
+      <title>Blog Automation</title>
+      <link>https://edleeman.co.uk/posts/blog-automation/</link>
       <pubDate>Tue, 23 Mar 2021 20:09:49 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-7-blog-automation/</guid>
-      <description>I have recently discovered that a lot of my posts over at The Self-Hosting Blog  follow the same passage.
+      <guid>https://edleeman.co.uk/posts/blog-automation/</guid>
+      <description>I have recently discovered that a lot of my posts over at The Self-Hosting Blog follow the same passage.
  Introduction about the Software Provisioning your server Installing prerequisite requirements Installing the thing Configuring Nginx Port forwarding Certbot Recap  The only thing that really changes is step 4, maybe step 3 depending on whether Docker is required or not.
 Why aren&amp;rsquo;t I automating this.
 I think I know why, the content will be shite.</description>
     </item>
     
     <item>
-      <title>Day 6 - Virtual Computing</title>
-      <link>https://edleeman.co.uk/posts/day-6-virtual-computing/</link>
+      <title>Self-hosting Papercups.io - Open-source live customer chat with Slack integration!</title>
+      <link>https://edleeman.co.uk/posts/self-hosting-papercups-io-open-source-live-customer-chat/</link>
+      <pubDate>Tue, 23 Mar 2021 15:45:17 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/self-hosting-papercups-io-open-source-live-customer-chat/</guid>
+      <description>Papercups.io Papercups is an opensource self-hosted chat window that you can add to your site to interact with your visitors instantly. Papercups gives you the ability to reply directly from Slack or using their built-in messenger.
+Papercups gives you the freedom to customise your chat windows to fit your branding, show whether you have representatives online to help your customers. A feature-rich dashboard with all the analytics data you&amp;rsquo;ll need. Papercups even has screen sharing built-in, for when it&amp;rsquo;s just easier to show something that isn&amp;rsquo;t working.</description>
+    </item>
+    
+    <item>
+      <title>Virtual Computing</title>
+      <link>https://edleeman.co.uk/posts/virtual-computing/</link>
       <pubDate>Mon, 22 Mar 2021 19:21:07 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-6-virtual-computing/</guid>
-      <description>A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. He has spoken about it over on his blog . There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It&amp;rsquo;s a really interesting read, I&amp;rsquo;d highly recommend checking it out.
+      <guid>https://edleeman.co.uk/posts/virtual-computing/</guid>
+      <description>A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. He has spoken about it over on his blog. There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It&amp;rsquo;s a really interesting read, I&amp;rsquo;d highly recommend checking it out.
 He&amp;rsquo;s using Proxmox, which I have some experience with, but not to the extent of what he has managed to achieve with it.</description>
     </item>
     
     <item>
-      <title>Day 5 - Freelance Writing</title>
-      <link>https://edleeman.co.uk/posts/day-5-freelance-writing/</link>
+      <title>Freelance Writing</title>
+      <link>https://edleeman.co.uk/posts/freelance-writing/</link>
       <pubDate>Sun, 21 Mar 2021 19:19:43 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-5-freelance-writing/</guid>
+      <guid>https://edleeman.co.uk/posts/freelance-writing/</guid>
       <description>I’m starting to enjoy writing these blog posts. I mean, I enjoy writing, I just haven’t been very good at it. I often struggle with trying to think of an idea to write about, but I’m five days in now and haven’t run out of ideas yet! I think I’m finding my flow now. I have already met so many interesting people as a result of #100DaysToOffLoad. The guys over at Fosstodon.</description>
     </item>
     
     <item>
-      <title>Day 4 - No Ads</title>
-      <link>https://edleeman.co.uk/posts/day-4-no-ads/</link>
+      <title>No Ads</title>
+      <link>https://edleeman.co.uk/posts/no-ads/</link>
       <pubDate>Sun, 21 Mar 2021 00:03:14 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-4-no-ads/</guid>
+      <guid>https://edleeman.co.uk/posts/no-ads/</guid>
       <description>GoNads I decided not to put ads on the site. They make the site look poo and it doesn&amp;rsquo;t sit with me ethically. I did however make 30p which ia just about enough to buy myself a Freddo. Ads suck, in general, and as a source of income. They&amp;rsquo;re spammy, obtrusive and distract the readers from the content that you&amp;rsquo;ve worked so hard to produce.
-So, I have made the executive decision not the run ads on The Self-Hosting Blog .</description>
+So, I have made the executive decision not the run ads on The Self-Hosting Blog.</description>
     </item>
     
     <item>
-      <title>Day 3 - Unifi Dream Machine</title>
-      <link>https://edleeman.co.uk/posts/day-3-unifi-dream-machine/</link>
+      <title>Setting up Focalboard - A self-hosted alternative to Trello and Notion</title>
+      <link>https://edleeman.co.uk/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</link>
+      <pubDate>Sat, 20 Mar 2021 18:18:29 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</guid>
+      <description>Focalboard Focalboard is a self-hosted open-source alternative to tools such as Notion or Trello which you can run on your own instance. Focalboard helps with tracking and organising your own work, as well as across a team.
+Focalboard is currently in early-access beta, so this post may change over time. We&amp;rsquo;ll try out best to update our tutorial as the project becomes more mature.
+You can read more on Focalboard on their site https://www.</description>
+    </item>
+    
+    <item>
+      <title>Unifi Dream Machine</title>
+      <link>https://edleeman.co.uk/posts/unifi-dream-machine/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:11 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-3-unifi-dream-machine/</guid>
-      <description>The Dream Machine The other day, I purchased the Ubiquiti Unifi Dream Machine . A company well known by the guys over at /r/homelab  and /r/homenetworking . Ubiquiti have made a name for themselves in the enterprise world, but over the last few years, more and more homelabbers have taken it upon themselves to set up enterprise grade hardware at home.
+      <guid>https://edleeman.co.uk/posts/unifi-dream-machine/</guid>
+      <description>The Dream Machine The other day, I purchased the Ubiquiti Unifi Dream Machine. A company well known by the guys over at /r/homelab and /r/homenetworking. Ubiquiti have made a name for themselves in the enterprise world, but over the last few years, more and more homelabbers have taken it upon themselves to set up enterprise grade hardware at home.
 Why did I buy The Dream Machine So for me personally, I wanted it just for fun.</description>
     </item>
     
     <item>
-      <title>Day 2 - Monetisation</title>
-      <link>https://edleeman.co.uk/posts/day-2-monetisation/</link>
+      <title>Monetisation</title>
+      <link>https://edleeman.co.uk/posts/monetisation/</link>
       <pubDate>Fri, 19 Mar 2021 13:00:28 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-2-monetisation/</guid>
-      <description>So, today The Self-Hosting Blog  got approved for monitisation via NitroPay . Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn&amp;rsquo;t have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through.</description>
+      <guid>https://edleeman.co.uk/posts/monetisation/</guid>
+      <description>So, today The Self-Hosting Blog got approved for monitisation via NitroPay. Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn&amp;rsquo;t have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through.</description>
     </item>
     
     <item>
-      <title>Day 1 - Something New</title>
-      <link>https://edleeman.co.uk/posts/day-1-something-new/</link>
-      <pubDate>Thu, 18 Mar 2021 10:55:26 +0000</pubDate>
+      <title>Host your static blog for free with the Digital Ocean App Platform</title>
+      <link>https://edleeman.co.uk/posts/host-your-blog-for-free-with-digital-ocean-apps/</link>
+      <pubDate>Mon, 15 Mar 2021 15:57:01 +0000</pubDate>
       
-      <guid>https://edleeman.co.uk/posts/day-1-something-new/</guid>
-      <description>Hello Hello, this is my first post in the #100DaysToOffload  challenge. The brainchild of Kev Quirk .
-I intend to use this space as a chance to improve my writing skills over at The Self-Hosting Blog .
-I often find that I struggle to put my thoughts onto paper, and when re-reading what I have written, I feel like it was written by a 5 year old. I would like to improve how I come across on the internet and become a trusted source of knowledge to anyone who wants to know what I have to say.</description>
+      <guid>https://edleeman.co.uk/posts/host-your-blog-for-free-with-digital-ocean-apps/</guid>
+      <description>Digital Ocean What is Digital Ocean&amp;rsquo;s App Platform? Digital Ocean has introduced a new product called App Platform which allows developers to quickly and easily build, deploy and scale apps. Digital Ocean will manage the solution for you, which means that the infrastructure, HTTPS, CDN and DNS routing is all done for you. This is awesome as it makes deploying apps simple.
+With Digital Ocean&amp;rsquo;s App Platform, there is also the offer to host 3 static sites for free using their Starter pricing structure.</description>
+    </item>
+    
+    <item>
+      <title>Completely Self-Hosting Plausible.io. A privacy-friendly alternative to Google Analytics</title>
+      <link>https://edleeman.co.uk/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</link>
+      <pubDate>Tue, 09 Mar 2021 13:17:39 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</guid>
+      <description>What is Plausible? Plausible is a lightweight, ethical, open-source and privacy-friendly Google Analytics alternative.
+Google Analytics Google Analytics collects more data than the average site owner needs to analyse their business, meaning that there is a lot of data being sent to the site owner that is unnecessary and will never be used. Plausible focuses only on the important web analytics data required for a business to get what it needs.</description>
+    </item>
+    
+    <item>
+      <title>We don&#39;t care who you are</title>
+      <link>https://edleeman.co.uk/posts/building-a-more-privacy-friendly-blog/</link>
+      <pubDate>Wed, 03 Mar 2021 21:23:25 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/building-a-more-privacy-friendly-blog/</guid>
+      <description>At The Self-Hosting Blog, we are huge advocates for online privacy. We believe that you should never have to compromise your own privacy, just to use the internet.
+Today, in an age where giving up your personal details to randomers on the web is way too common, we want to make a change and give you back your rights.
+This is why we&amp;rsquo;ve decided that we can make better choices with this blog.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Portainer. Docker Container management made easy</title>
+      <link>https://edleeman.co.uk/posts/setting-up-portainer-container-management-made-easy/</link>
+      <pubDate>Mon, 01 Mar 2021 08:30:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/setting-up-portainer-container-management-made-easy/</guid>
+      <description>What is Portainer? Portainer is a lightweight management UI that allows you to easily manage your Docker host or Kubernetes Clusters. Portainer is as simple to deploy as it is to use.
+It allows anyone to deploy and manage containers without the need to write code.
+Portainer can be used to set up and manage an environment, deploy applications, monitor application performance, and spot problems easily. Portainer showing Docker container logs Portainer, as a whole, is a self-hostable, open-source, container management system.</description>
+    </item>
+    
+    <item>
+      <title>Why should you should spend the time, effort (and money) on self-hosting?</title>
+      <link>https://edleeman.co.uk/posts/take-back-control-of-your-data/</link>
+      <pubDate>Wed, 17 Feb 2021 17:00:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/take-back-control-of-your-data/</guid>
+      <description>Self-hosting. Why? What&amp;rsquo;s the point? Everything you could use is already available online. Why should you spend the time and effort (and money) on self-hosting projects?
+ A question that I have asked myself many times.
+ Why should I spend the time setting up my own servers, complicating already seamless services, re-inventing the wheel?
+I can just use Dropbox to host my files. Maybe Google Photos to automatically save all my pictures instantly when I capture them.</description>
+    </item>
+    
+    <item>
+      <title>How to self-host PiHole, an internet advertising black hole</title>
+      <link>https://edleeman.co.uk/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</link>
+      <pubDate>Tue, 09 Feb 2021 12:00:37 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</guid>
+      <description>This article will cover setting up your own self-hosted PiHole instance. Allowing you to run an internal DNS and block internet advertisements from reaching your machine.
+What is PiHole? PiHole offers Network-wide protection for internet advertisements. PiHole saves you from needing to install an Ad-blocker on each device that you own. PiHole even blocks in-app advertisements, so no longer, are your free-to-play games interrupted by those annoying adverts.
+PiHole can also improve your network performance, as advertisements are no longer being downloaded, every time you load up a new website.</description>
+    </item>
+    
+    <item>
+      <title>10 of the BEST Self-hosting Subreddits To Follow (In 2021)</title>
+      <link>https://edleeman.co.uk/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</link>
+      <pubDate>Sun, 07 Feb 2021 21:31:34 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</guid>
+      <description>Introduction Reddit is a wonderful place. It&amp;rsquo;s full of like-minded people who share common interests. Rarely, a Subreddit does not exist.
+I&amp;rsquo;ve been using Reddit for many years now, and I have curated a list of Subreddits that I believe cover all the countless issues I have encountered during my journey of self-hosting.
+My personal curated list of self-hosting related Subreddits. Here is what I believe is the best self-hosting Subreddits to join in 2021.</description>
+    </item>
+    
+    <item>
+      <title>Archiving ProtonMail Emails on a headless Ubuntu instance</title>
+      <link>https://edleeman.co.uk/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</link>
+      <pubDate>Mon, 16 Nov 2020 11:17:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</guid>
+      <description>Introduction I wanted to be able to store all of my ProtonMail emails locally for archival purposes, with the intention of running a local content search whenever I needed something retrieving.
+I&amp;rsquo;m going to talk through my steps. There&amp;rsquo;s plenty of tutorials out there for email services such as; Gmail, Hotmail etc. But not much around ProtonMail, especially using a headless instance.
+ProtonMail bridge ProtonMail Bridge is an open-source piece of software built by the Proton Team to create a dummy IMAP server locally, with a sole purpose of decrypting your emails locally to enable you to use a desktop email client such as ThunderBird.</description>
+    </item>
+    
+    <item>
+      <title>Schiit Modi 2 - Fixing Windows not recognizing USB device</title>
+      <link>https://edleeman.co.uk/posts/schiit-modi-2-fixing-windows-not-recognised/</link>
+      <pubDate>Sun, 27 Sep 2020 16:31:02 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/schiit-modi-2-fixing-windows-not-recognised/</guid>
+      <description>Sorry for the off-topic post, but this has been bugging me for months Having recently purchased a Schiit Modi 2 from eBay, just to try out before commiting to something a little more expensive (and reliable).
+The Modi 2 has some real issues with Windows 10, I belive the Modi 3 solves all of these issues.
+There&amp;rsquo;s an error message when plugging the Modi into Windows which is something like &amp;ldquo;USB device not recognized, the last USB device you connected to this computer malfunctioned, and Windows does not recognize it.</description>
+    </item>
+    
+    <item>
+      <title>Self-hosting a Wireguard VPN, the easy way</title>
+      <link>https://edleeman.co.uk/posts/self-hosting-a-wireguard-vpn-the-easy-way/</link>
+      <pubDate>Sun, 13 Sep 2020 19:49:07 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/self-hosting-a-wireguard-vpn-the-easy-way/</guid>
+      <description>Introduction We&amp;rsquo;re going to cover setting up a Wireguard VPN on your home server or cloud service. For secure remote access to your internal network, or a cheap, secure connection to a cloud service for some increased privacy when browsing online. VPN&amp;rsquo;s don&amp;rsquo;t make you anonymous, there&amp;rsquo;s a lot of stigma around this. Here&amp;rsquo;s some helpful information if you want to read into this some more.
+Setting up Wireguard, the easy way I initially found setting up Wireguard confusing.</description>
+    </item>
+    
+    <item>
+      <title>Completely Self-Hosting Bitwarden Password Manager (Updated 2021)</title>
+      <link>https://edleeman.co.uk/posts/how-to-self-host-bitwarden-on-ubuntu-server/</link>
+      <pubDate>Sun, 30 Aug 2020 18:10:05 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/how-to-self-host-bitwarden-on-ubuntu-server/</guid>
+      <description>Introduction This article will cover setting up your own self-hosted Bitwarden instance with Docker and configuring ngnix to allow for public exposure for cross-device access to your vault.
+What is Bitwarden? Bitwarden is a free and open-source password management service that stores sensitive information such as website credentials in an encrypted vault. The Bitwarden platform offers avariety of client applications including a web interface, desktop applications, browser extensions, mobile apps, and a CLI.</description>
+    </item>
+    
+    <item>
+      <title>How to completely self-host Standard Notes (Updated 2021)</title>
+      <link>https://edleeman.co.uk/posts/how-to-completely-self-host-standard-notes/</link>
+      <pubDate>Tue, 25 Aug 2020 18:29:25 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/how-to-completely-self-host-standard-notes/</guid>
+      <description>Introduction This article will cover setting up your own self-hosted Standard Notes instance and routing your instance through Nginx to allow for public exposure. We&amp;rsquo;ll also go over self-hosting Standard Notes Extensions to allow you to use extensions within your instance, such as a Markdown editor or secure spreadsheets
+What is Standard Notes Standard Notes is a free, open-source, and completely encrypted notes app. Being open-source, allows anyone to self-host their own Standard Notes server.</description>
+    </item>
+    
+    <item>
+      <title>How to Set Up a Headless Syncthing Network</title>
+      <link>https://edleeman.co.uk/posts/how-to-set-up-a-headless-syncthing-network/</link>
+      <pubDate>Mon, 03 Aug 2020 18:31:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/how-to-set-up-a-headless-syncthing-network/</guid>
+      <description>Overview of Syncthing Syncthing is a P2P (peer to peer) network that allows you to keep your files synchronised.
+Syncthing aims to replace services such as: Dropbox, Google Drive and OneDrive. By putting the user in control of their own data. Syncthing enables the user to set up multiple &amp;lsquo;nodes&amp;rsquo; which can communicate with eachother.
+A node can be, your personal computer, a work machine, a machine in another location or even a central server.</description>
+    </item>
+    
+    <item>
+      <title>Configuring Vim for Node Js Development</title>
+      <link>https://edleeman.co.uk/posts/configuring-vim-for-node-js-development/</link>
+      <pubDate>Tue, 28 Jul 2020 18:58:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/configuring-vim-for-node-js-development/</guid>
+      <description>Using Vim If you have come across this article, I probably don&amp;rsquo;t need to explain why you need to use Vim as your development IDE.
+You&amp;rsquo;re probably here because you want to use Vim, but not sure how to integrate it into your current workflow.
+I was in the same position a few months ago.
+The easiest way is to install a vim extension into your current IDE of choice, this will bring all of the features of vim into your current workflow.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Cucumber, Nightwatch.js and Selenium Grid for highly scalable remote Chrome execution from Buddy</title>
+      <link>https://edleeman.co.uk/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</link>
+      <pubDate>Tue, 21 Jul 2020 11:26:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</guid>
+      <description>Technical Overview  Nightwatch.js - Node.js powered end-to-end testing framework Cucumber - BDD testing framework that sits on top of Nightwatch.js Selenium Grid - Highly scalable browser automation for running tests Buddy - CI/CD pipeline  End Goal The outcome of setting up this pipeline will allow us to execute end-to-end tests from anywhere, in any development environment.
+Having Selenium Grid as a public endpoint also allows us to execute these end-to-end tests from our existing CI/CD pipeline.</description>
+    </item>
+    
+    <item>
+      <title>My Self Hosted Note Syncing Journey Once Switching to Iphone</title>
+      <link>https://edleeman.co.uk/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</link>
+      <pubDate>Tue, 25 Feb 2020 11:32:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</guid>
+      <description>Recently moving to the iPhone meant that I had to re-think and re-design my existing note-taking solution, this is a quick writeup of my journey.
+My existing solution with Syncthing and VS Code I loved my original solution. I had recently discovered Syncthing and got it set up on my self hosted solution in my loft. I had a central sync server and then a node on each of my devices, including my Huawei P20 Pro.</description>
+    </item>
+    
+    <item>
+      <title>How to Route Nginx Through a Child Nginx Configuration - Jumpbox to Web Server Configuration</title>
+      <link>https://edleeman.co.uk/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</link>
+      <pubDate>Thu, 02 Jan 2020 11:34:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</guid>
+      <description>I had a specific use case where I needed to run a docker instance, which had it&amp;rsquo;s own configured nginx instance.
+The issue was that I already use nginx on my JumpBox.
+The fix was relatively self explanatory, but I wanted somewhere to write down the issues that I had to tackle.
+The Solution So the solution is just to point nginx (JumpBox) to the other nginx instance (docker).
+ Just to let you know, in my case, there are separate physical servers.</description>
+    </item>
+    
+    <item>
+      <title>Setting Up UFW on Ubuntu Server</title>
+      <link>https://edleeman.co.uk/posts/setting-up-ufw-on-ubuntu-server/</link>
+      <pubDate>Sun, 15 Dec 2019 11:29:00 +0000</pubDate>
+      
+      <guid>https://edleeman.co.uk/posts/setting-up-ufw-on-ubuntu-server/</guid>
+      <description>UFW (Uncomplicated Firewall) is a program that allows you to internally control ports on your Linux instance. This gives you the ability to forward ports from your machine.
+The common use of a firewall is to control the ports that have access from the outside world, for instance, running a website would need ports 80/443 exposed on your network to be able to route your site.
+UFW is different, think of port forwarding, but between local instances.</description>
     </item>
     
   </channel>

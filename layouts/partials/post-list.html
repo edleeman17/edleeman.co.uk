@@ -1,0 +1,13 @@
+<div class="post-feed">
+    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+    {{ $mainPosts := (sort ( where site.RegularPages "Type" "post" ) "Date" "desc") }}
+    {{ range (.Paginate $mainPosts).Pages }}
+    <article class="feed post">
+        <span class="post-date">{{ .Date.Format $dataFormat }}</span>
+        <span class="link"><a href="{{ .Permalink  }}">{{ .Title }}</a></span>
+        <span class="reading-time">
+            {{ .ReadingTime }} min read
+        </span>
+    </article>
+    {{ end }}
+</div>

@@ -1,0 +1,208 @@
+html.dark {
+    filter: invert(1);
+}
+
+body {
+    padding: 0rem 0em 0rem 0em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100%;
+}
+
+body > * {
+    font-size: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 1.5;
+}
+
+body, li p {
+    background: white;
+    font-family: monospace;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, header, header.a {
+    text-transform: lowercase;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom:2px solid black ;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0;
+    border-bottom: 0.10em solid black;
+}
+
+header > a {
+    margin: 0 10px;
+}
+
+.right-wrap {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.right-wrap > * {
+    margin: 0 5px;
+}
+
+.right-wrap > a {
+    line-height: 0;
+}
+
+.underline {
+    border-bottom: 2px solid black;
+}
+
+#main {
+    padding-top: 20px;
+}
+
+#me {
+    padding: 10px;
+    display: flex;
+}
+
+#button {
+    background: transparent;
+    outline: none;
+    border: 1px solid black;
+}
+
+.name {
+    margin-left: 10px;
+}
+
+.name > h1 {
+    text-transform: capitalize;
+}
+
+.green {
+    color: green;
+}
+
+.cyan {
+    color: #05989a;
+}
+
+.feed {
+    margin: 5px 0;
+    display: flex;
+}
+
+.blink {
+  display: none;
+  border-right: .15em solid black; /* The typwriter cursor */
+  animation:
+    blink-caret .75s step-end infinite;
+}
+
+.divider {
+    padding: 15px 0;
+    border-bottom: 1px solid black;
+}
+
+.reading-time {
+    /* https://medium.com/@iamryanyu/how-to-align-last-flex-item-to-right-73512e4e5912 */
+    margin-left: auto;
+    text-align: right;
+}
+
+.image > img {
+    width: 100%;
+}
+
+.link {
+    display: inline-block;
+    padding-left: 15px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.highlight {
+    overflow: auto;
+}
+
+.archive {
+    margin-top: 10px;
+}
+
+pre {
+    overflow: auto;
+    background: rgb(241, 241, 241);
+    padding: 2px;
+}
+
+code {
+    background: rgb(241, 241, 241);
+}
+
+.page-toc {
+    display: none;
+    margin-top: 30px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.post img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.post-date {
+    display: none;
+}
+
+.sticky-toc-link {
+    display: block;
+    padding: 5px 0;
+}
+
+.sticky-toc-link-indented {
+    margin-left: 15px;
+    color: #474747;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 1px solid black;
+    padding:10px 0;
+}
+
+footer > a, #now_playing > a, header a, .page-toc > a, .link > a {
+    border-bottom:none;
+}
+
+footer > a:hover {
+    border-bottom: 2px solid black;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+  }
+
+  @media (min-width:600px)  { 
+      /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+      .post-date {
+          display: block;
+      }
+
+}

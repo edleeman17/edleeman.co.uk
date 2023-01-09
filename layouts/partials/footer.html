@@ -1,22 +1,56 @@
-<footer id="footer">
-    {{ if .Site.Social }}
-        {{ partial "social.html" . }}
-    {{ end }}
-
-    <p class="copyright">
-    {{ with .Site.Params.copyright }}
-        {{ . | markdownify }}
-    {{ else }}
-       © Copyright 
-       {{ now.Format "2006"}} 
-       <span class="split">
-        {{ partial "svgs/heart.svg" (dict "fill" "#bbbbbb" "width" 15 "height" 15 ) }}
-       </span>
-       {{ .Site.Params.Author }}
-    {{ end }}
-    </p>
-    <p style="text-align: center;"><a href="https://512kb.club"><img src="https://512kb.club/assets/images/green-team.svg" /></a><a href="https://edleeman.co.uk/cookie-zero"><img src="https://edleeman.co.uk/images/cookiezero.svg" /></a></p>
-    <p class="powerby">
-    This site is hosted on a small <a href="https://amzn.to/3qvyjj2">Raspberry Pi 4</a> in my loft. If you wanna build a website, why not use Digital Ocean? <a href="https://m.do.co/c/d2a3afe52625">This link</a> will give you $100 to play around with. Both of those are affiliate links, but I do genuinely recommend them! <br />If you're really feeling generous, why not <a href="https://www.buymeacoffee.com/selfhostingblog">buy me a coffee?</a> It'll all be spent on hosting fees for <a href="https://theselfhostingblog.com">The Self-Hosting Blog</a>
-    </p>
+<footer>
+    <a href="https://github.com/edleeman17">Github</a>
+    <a href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
+    <a href="https://open.spotify.com/user/edleeman17">Spotify</a>
+    <a href="https://www.last.fm/user/ed1727">Last.fm</a>
+    <a href="https://matrix.to/#/@ed:selfhostingblog.com">@ed:selfhostingblog.com</a>
+    <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
+    <br />
+    Running on a <a class="underline" href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.<br />
+    Get $100 Digital Ocean credit using <a class="underline" href="https://m.do.co/c/d2a3afe52625">this link</a>
 </footer>
+<script>
+    var output = '';
+
+    $('.post')
+        .find('> h2, > h3')
+        .each(function (index, value) {
+            $('.page-toc').show();
+            var linkClass =
+                $(this).prop('tagName') == 'H3'
+                    ? 'sticky-toc-link sticky-toc-link-indented'
+                    : 'sticky-toc-link';
+            output +=
+                '<a class="' + linkClass + '" href="#' + $(value).attr('id') + '">- ' + $(value).text() + '</a>';
+        });
+
+    $('.page-toc').html(output);
+
+    $('.sticky-toc-link').on('click', function (e) {
+        e.preventDefault();
+        var link = $(this).attr('href');
+
+        $('html, body').animate(
+            {
+                scrollTop: $(link).offset().top - 82,
+            },
+            500
+        );
+    });
+
+
+    $("#button").click(function () {
+        if (localStorage.toggled != 'dark') {
+            $('html').toggleClass('dark', true);
+            $('#button').html('light');
+            localStorage.toggled = "dark";
+        } else {
+            $('html').toggleClass('dark', false);
+            $('#button').html('dark');
+            localStorage.toggled = "";
+        }
+    });
+</script>
+</body>
+
+</html>
