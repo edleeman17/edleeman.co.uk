@@ -11,7 +11,7 @@ What am I up to now?
 - Portsmouth, UK
 
 ### ### Employment
-- TotalJobs Group, UK
+- Stepstone, UK
 
 ### ### Languages
 - .NET Core
@@ -25,4 +25,4 @@ What am I up to now?
 - Writing - at [The Self-Hosting Blog](https://theselfhostingblog.com)
 - Building - E-Ticket generation API at [Bluprint Events](https://bluprintevents.io)
 
-Last updated: 18 May 2022
+Last updated: 22 Dec 2023

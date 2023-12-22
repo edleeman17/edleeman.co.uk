@@ -5,7 +5,7 @@ type: page
 
 # About me
 
-Hi, I’m Ed. I’m a Software Engineer and DevOps Engineer in training based in Portsmouth, UK. I currently work for TotalJobs Group.
+Hi, I’m Ed. I’m a Platform Engineer in training based in Portsmouth, UK. I currently work for Stepstone Group.
 
 I am a keen writer over at my main blog The Self-Hosting Blog where I write informative tutorials on how to self-host opensource software. I try to keep the blog posts simple, to try and show my readers how easy it is to spin up their own applications, rather than using centralised software.
 
