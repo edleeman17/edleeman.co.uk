@@ -1,6 +1,6 @@
 baseURL: https://edleeman.co.uk
 languageCode: en-gb
-title: "Ed Leeman - #100DaysToOffload"
+title: "Ed Leeman | Software / Platform Engineer"
 theme: hugo-theme-mini
 
 # for exampleSite only, you may need to delete the line: `themesDir: ../../` 
@@ -35,9 +35,9 @@ params:
   # Site Author
   author: Ed Leeman
   # Author biography
-  bio: Software Engineer | Privacy Advocate | Blogger
+  bio: Software Engineer | Platform Engineer | Privacy Advocate
   # Site Description, used in HTML meat
-  description: "I want to get better at writing blog posts on my main blog (theselfhostingblog.com). I figured I would take part in #100DaysToOffload to help with this."
+  description: "My corner of the internet where I try my best to write something that might be somewhat useful for someone else"
   enableRSS: true
   # To enable comments, you may need to set `disqusShortname`
   enableComments: true
