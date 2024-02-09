@@ -26,6 +26,10 @@ body, li p {
     margin-bottom: 10px;
 }
 
+#posts > h2, #notes > h2 {
+  margin-top: 40px;
+}
+
 h3, h4, h5, h6, header, header.a {
     text-transform: lowercase;
 }
