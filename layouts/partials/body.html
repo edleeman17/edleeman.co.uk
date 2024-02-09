@@ -16,11 +16,15 @@
         <span class="type"></span>
         <span class="blink"></span>
     </section>
-    <div class="divider"></div>
-    <section id="notes">
-        <h2>## notes</h2>
+    <section id="posts">
+        <h2>## Posts</h2>
+        <p>Latest long form posts talking about things I've been working on, or things I've been thinking about.</p>
         {{- partial "post-list.html" . -}}
-        <div class="archive">View all notes in the <a href ="{{ .Site.BaseURL }}/archive">archive</a></div>
+    </section>
+    <section id="notes">
+        <h2>## Quick Notes</h2>
+        <p>Quick notes and thoughts that I've been jotting down. Mostly for my own reference, but you might find them interesting.</p>
+        {{ partial "note-list.html" . }}
     </section>
 </div>
 

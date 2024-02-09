@@ -2,7 +2,7 @@
 title: "Preventing Email Floods"
 date: 2021-08-03T14:46:16Z
 draft: false
-type: post
+type: "post"
 ---
 
 # How to prevent being flooded with emails

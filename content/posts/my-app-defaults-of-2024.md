@@ -3,7 +3,7 @@ title: "My App Defaults of 2024"
 date: 2024-01-16T12:28:12Z
 draft: false
 slug: my-app-defaults-of-2024
-type: post
+type: "post"
 
 ---
 

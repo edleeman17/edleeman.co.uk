@@ -2,7 +2,7 @@
 title: "Disable JavaScript to view this site?"
 date: 2021-03-29T15:58:50Z
 draft: false
-type: post
+type: "post"
 ---
 
 I have fallen down a bit of a rabbit hole. Said rabbit hole is around disabling JavaScript to view certain websites. All as part of a privacy movement originally started by GNU. 

@@ -2,7 +2,7 @@
 title: "No Ads"
 date: 2021-03-21T00:03:14Z
 draft: false
-type: post
+type: "post"
 ---
 
 # GoNads

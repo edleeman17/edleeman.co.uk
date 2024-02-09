@@ -2,7 +2,7 @@
 title: "Self Hosting Your Own Matrix Server on a Raspberry Pi"
 date: 2021-07-02T19:39:30Z
 draft: false
-type: post
+type: "post"
 ---
 
 ## What is Matrix?

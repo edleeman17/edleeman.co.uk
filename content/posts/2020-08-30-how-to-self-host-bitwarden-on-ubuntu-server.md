@@ -2,7 +2,7 @@
 title: Completely Self-Hosting Bitwarden Password Manager (Updated 2021)
 slug: how-to-self-host-bitwarden-on-ubuntu-server
 date: 2020-08-30T18:10:05.000Z
-type: post
+type: "post"
 ---
 
 

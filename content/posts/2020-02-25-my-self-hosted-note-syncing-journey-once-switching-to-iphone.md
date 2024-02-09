@@ -2,7 +2,7 @@
 title: My Self Hosted Note Syncing Journey Once Switching to Iphone
 slug: my-self-hosted-note-syncing-journey-once-switching-to-iphone
 date: 2020-02-25T11:32:00.000Z
-type: post
+type: "post"
 ---
 
 

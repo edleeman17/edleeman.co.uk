@@ -2,7 +2,7 @@
 title: "Blog Automation"
 date: 2021-03-23T20:09:49Z
 draft: false
-type: post
+type: "post"
 ---
 
 I have recently discovered that a lot of my posts over at [The Self-Hosting Blog](https://theselfhostingblog.com) follow the same passage.

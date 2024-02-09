@@ -2,7 +2,7 @@
 title: "Monetisation"
 date: 2021-03-19T13:00:28Z
 draft: false
-type: post
+type: "post"
 ---
 
 So, today [The Self-Hosting Blog](https://theselfhostingblog.com) got approved for monitisation via [NitroPay](https://nitropay.com). Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn't have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through. That was around 2 years go. 

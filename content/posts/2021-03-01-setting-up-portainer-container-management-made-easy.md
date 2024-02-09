@@ -2,7 +2,7 @@
 title: Setting up Portainer. Docker Container management made easy
 slug: setting-up-portainer-container-management-made-easy
 date: 2021-03-01T08:30:00.000Z
-type: post
+type: "post"
 ---
 
 

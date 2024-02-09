@@ -2,7 +2,7 @@
 title: Self-hosting Papercups.io - Open-source live customer chat with Slack integration!
 slug: self-hosting-papercups-io-open-source-live-customer-chat
 date: 2021-03-23T15:45:17.000Z
-type: post
+type: "post"
 ---
 
 

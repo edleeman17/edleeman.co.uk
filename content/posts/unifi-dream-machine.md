@@ -2,7 +2,7 @@
 title: "Unifi Dream Machine"
 date: 2021-03-20T00:00:11Z
 draft: false
-type: post
+type: "post"
 ---
 
 ## The Dream Machine

@@ -2,7 +2,7 @@
 title: "Our first sponsorship"
 date: 2021-03-24T15:19:44Z
 draft: false
-type: post
+type: "post"
 ---
 
 We got our first sponsorship on [The Self-Hosting Blog](https://theselfhostingblog.com), albeit, my parter! But it was a nice surprise and I didn't ask for it!

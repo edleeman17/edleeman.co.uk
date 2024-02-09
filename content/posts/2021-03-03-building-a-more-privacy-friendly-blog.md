@@ -2,7 +2,7 @@
 title: We don't care who you are
 slug: building-a-more-privacy-friendly-blog
 date: 2021-03-03T21:23:25.000Z
-type: post
+type: "post"
 ---
 
 

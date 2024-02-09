@@ -2,7 +2,7 @@
 title: How to completely self-host Standard Notes (Updated 2021)
 slug: how-to-completely-self-host-standard-notes
 date: 2020-08-25T18:29:25.000Z
-type: post
+type: "post"
 ---
 
 

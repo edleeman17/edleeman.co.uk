@@ -2,7 +2,7 @@
 title: How to Set Up a Headless Syncthing Network
 slug: how-to-set-up-a-headless-syncthing-network
 date: 2020-08-03T18:31:00.000Z
-type: post
+type: "post"
 ---
 
 

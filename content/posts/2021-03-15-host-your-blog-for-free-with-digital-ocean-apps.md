@@ -2,7 +2,7 @@
 title: Host your static blog for free with the Digital Ocean App Platform
 slug: host-your-blog-for-free-with-digital-ocean-apps
 date: 2021-03-15T15:57:01.000Z
-type: post
+type: "post"
 ---
 
 

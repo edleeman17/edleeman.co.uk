@@ -2,7 +2,7 @@
 title: "Creating really simple API Authentication in .NET"
 date: 2022-11-09T12:29:19Z
 draft: false
-type: post
+type: "post"
 ---
 
 # Creating 'really simple' API key authentication in .NET

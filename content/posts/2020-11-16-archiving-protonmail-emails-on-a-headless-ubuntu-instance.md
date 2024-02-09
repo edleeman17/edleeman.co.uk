@@ -2,7 +2,7 @@
 title: Archiving ProtonMail Emails on a headless Ubuntu instance
 slug: archiving-protonmail-emails-on-a-headless-ubuntu-instance
 date: 2020-11-16T11:17:00.000Z
-type: post
+type: "post"
 ---
 
 

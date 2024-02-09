@@ -2,7 +2,7 @@
 title: "Virtual Computing"
 date: 2021-03-22T19:21:07Z
 draft: false
-type: post
+type: "post"
 ---
 
 A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. [He has spoken about it over on his blog](https://www.pietersartain.com/post/2020-08-05-personal-virtual-computing-i/). There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It's a really interesting read, I'd highly recommend checking it out.

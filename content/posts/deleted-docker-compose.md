@@ -2,7 +2,7 @@
 title: "Deleted docker-compose"
 date: 2021-03-26T21:49:09Z
 draft: false
-type: post
+type: "post"
 ---
 
 Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.

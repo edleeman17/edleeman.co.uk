@@ -2,7 +2,7 @@
 title: Self-hosting a Wireguard VPN, the easy way
 slug: self-hosting-a-wireguard-vpn-the-easy-way
 date: 2020-09-13T19:49:07.000Z
-type: post
+type: "post"
 ---
 
 

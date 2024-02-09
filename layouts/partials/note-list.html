@@ -1,0 +1,12 @@
+<div class="post-feed">
+    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+    {{ range where .Site.RegularPages "Type" "note" }}
+    <article class="feed post">
+        <span class="post-date">{{ .Date.Format $dataFormat }}</span>
+        <span class="link"><a href="{{ .Permalink  }}">{{ .Title }}</a></span>
+        <span class="reading-time">
+            {{ .ReadingTime }} min read
+        </span>
+    </article>
+    {{ end }}
+</div>

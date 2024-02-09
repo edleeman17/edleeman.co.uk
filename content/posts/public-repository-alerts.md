@@ -2,7 +2,7 @@
 title: "Dabbling with Bash, public repository alerting"
 date: 2021-03-25T14:04:59Z
 draft: false
-type: post
+type: "post"
 ---
 
 I have been playing around with Bash over the last 24 hours, which has had its highs and lows.

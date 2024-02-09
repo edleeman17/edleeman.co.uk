@@ -2,7 +2,7 @@
 title: "Confessions of a Failed Multitasker"
 date: 2024-02-08T18:23:55Z
 draft: false
-type: post
+type: "post"
 ---
 
 # Confessions of a failed multitasker

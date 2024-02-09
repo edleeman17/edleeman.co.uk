@@ -2,7 +2,7 @@
 title: 10 of the BEST Self-hosting Subreddits To Follow (In 2021)
 slug: the-best-self-hosting-subreddits-to-follow-in-2021
 date: 2021-02-07T21:31:34.000Z
-type: post
+type: "post"
 ---
 
 

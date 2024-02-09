@@ -1,16 +1,16 @@
 {{- partial "header.html" . -}}
 
 <div class="main">
-    <h1>Archive</h2>
+    <h2>Archive</h2>
 
-    {{ with .Site.GetPage "section" "posts" }}
-    {{ range .Data.Pages.GroupByDate "2006" }}
+    {{ $pagesByYear := .Site.RegularPages.GroupByDate "2006" "year" }}
+    {{ range $pages := $pagesByYear }}
 
     <section>
-        <h2>{{ .Key }}</h2>
+        <h2>{{ $pages.Key }}</h2>
         <div class="preview">
             <ul>
-                {{ range .Pages }}
+                {{ range $pages.Pages }}
                 {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
                 <article class="feed post">
                     <span class="post-date">{{ .Date.Format $dataFormat }}</span>
@@ -23,7 +23,6 @@
             </ul>
         </div>
     </section>
-    {{ end }}
     {{ end }}
 </div>
 {{- partial "footer.html" . -}}

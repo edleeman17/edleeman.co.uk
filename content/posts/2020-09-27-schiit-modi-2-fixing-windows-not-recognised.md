@@ -2,7 +2,7 @@
 title: Schiit Modi 2 - Fixing Windows not recognizing USB device
 slug: schiit-modi-2-fixing-windows-not-recognised
 date: 2020-09-27T16:31:02.000Z
-type: post
+type: "post"
 ---
 
 

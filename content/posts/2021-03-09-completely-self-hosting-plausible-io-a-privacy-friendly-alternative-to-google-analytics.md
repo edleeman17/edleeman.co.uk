@@ -2,7 +2,7 @@
 title: Completely Self-Hosting Plausible.io. A privacy-friendly alternative to Google Analytics
 slug: completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics
 date: 2021-03-09T13:17:39.000Z
-type: post
+type: "post"
 ---
 
 

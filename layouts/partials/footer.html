@@ -12,20 +12,6 @@
 <script>
     var output = '';
 
-    $('.post')
-        .find('> h2, > h3')
-        .each(function (index, value) {
-            $('.page-toc').show();
-            var linkClass =
-                $(this).prop('tagName') == 'H3'
-                    ? 'sticky-toc-link sticky-toc-link-indented'
-                    : 'sticky-toc-link';
-            output +=
-                '<a class="' + linkClass + '" href="#' + $(value).attr('id') + '">- ' + $(value).text() + '</a>';
-        });
-
-    $('.page-toc').html(output);
-
     $('.sticky-toc-link').on('click', function (e) {
         e.preventDefault();
         var link = $(this).attr('href');

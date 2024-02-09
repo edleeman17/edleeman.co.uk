@@ -2,7 +2,7 @@
 title: "Freelance Writing"
 date: 2021-03-21T19:19:43Z
 draft: false
-type: post
+type: "post"
 ---
 
 I’m starting to enjoy writing these blog posts. I mean, I enjoy writing, I just haven’t been very good at it. I often struggle with trying to think of an idea to write about, but I’m five days in now and haven’t run out of ideas yet! I think I’m finding my flow now. I have already met so many interesting people as a result of #100DaysToOffLoad. The guys over at [Fosstodon.org](https://fosstodon.org) are awesome! 

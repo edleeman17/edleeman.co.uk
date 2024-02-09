@@ -2,7 +2,7 @@
 title: How to Route Nginx Through a Child Nginx Configuration - Jumpbox to Web Server Configuration
 slug: how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration
 date: 2020-01-02T11:34:00.000Z
-type: post
+type: "post"
 ---
 
 

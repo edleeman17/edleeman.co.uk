@@ -74,6 +74,14 @@ header > a {
     display: flex;
 }
 
+#about {
+    padding: 10px;
+    background: #1f1d2e;
+    color: #e0def4;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 #button {
     background: transparent;
     outline: none;
@@ -119,8 +127,13 @@ header > a {
     text-align: right;
 }
 
+.image {
+  padding-right: 15px;
+}
+
 .image > img {
     width: 100%;
+    max-height: 165px;
 }
 
 .link {
@@ -150,14 +163,6 @@ pre {
 
 code {
     background: rgb(241, 241, 241);
-}
-
-.page-toc {
-    display: none;
-    margin-top: 30px;
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 10px;
 }
 
 .post img {

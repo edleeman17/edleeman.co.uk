@@ -2,7 +2,7 @@
 title: Setting up Focalboard - A self-hosted alternative to Trello and Notion
 slug: setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion
 date: 2021-03-20T18:18:29.000Z
-type: post
+type: "post"
 ---
 
 

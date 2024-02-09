@@ -2,7 +2,7 @@
 title: Setting Up UFW on Ubuntu Server
 slug: setting-up-ufw-on-ubuntu-server
 date: 2019-12-15T11:29:00.000Z
-type: post
+type: "post"
 ---
 
 

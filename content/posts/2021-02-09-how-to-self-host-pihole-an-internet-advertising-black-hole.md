@@ -2,7 +2,7 @@
 title: How to self-host PiHole, an internet advertising black hole
 slug: how-to-self-host-pihole-an-internet-advertising-black-hole
 date: 2021-02-09T12:00:37.000Z
-type: post
+type: "post"
 ---
 
 

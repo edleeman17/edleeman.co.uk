@@ -2,7 +2,7 @@
 title: Configuring Vim for Node Js Development
 slug: configuring-vim-for-node-js-development
 date: 2020-07-28T18:58:00.000Z
-type: post
+type: "post"
 ---
 
 

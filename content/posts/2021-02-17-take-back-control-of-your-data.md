@@ -2,7 +2,7 @@
 title: Why should you should spend the time, effort (and money) on self-hosting?
 slug: take-back-control-of-your-data
 date: 2021-02-17T17:00:00.000Z
-type: post
+type: "post"
 ---
 
 

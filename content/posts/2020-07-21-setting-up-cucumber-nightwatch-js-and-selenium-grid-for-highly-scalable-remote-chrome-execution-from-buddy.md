@@ -2,7 +2,7 @@
 title: Setting up Cucumber, Nightwatch.js and Selenium Grid for highly scalable remote Chrome execution from Buddy
 slug: setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy
 date: 2020-07-21T11:26:00.000Z
-type: post
+type: "post"
 ---
 
 
