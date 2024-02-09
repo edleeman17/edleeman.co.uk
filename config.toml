@@ -6,12 +6,12 @@ title = "Ed Leeman"
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
-    guessSyntax = false
+    guessSyntax = true
     hl_Lines = ""
     lineAnchors = ""
     lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
+    lineNos = true
+    lineNumbersInTable = false
     noClasses = true
-    style = "github"
+    style = "rose-pine-moon"
     tabWidth = 4
