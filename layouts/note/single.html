@@ -3,5 +3,10 @@
 <div class="post">
     {{ .Content }}
 </div>
+<div class="post-meta">
+    <p class="post-date">Published on {{ .Date.Format "January 2, 2006" }}</p>
+    <p class="post-tags">Tags: {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
+    <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
+</div>
 {{- partial "footer.html" . -}}
 

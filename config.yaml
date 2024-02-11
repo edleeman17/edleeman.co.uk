@@ -2,6 +2,7 @@ baseURL: https://edleeman.co.uk
 languageCode: en-gb
 title: "Ed Leeman | Software / Platform Engineer"
 theme: hugo-theme-mini
+email: hello@edleeman.co.uk
 
 # for exampleSite only, you may need to delete the line: `themesDir: ../../` 
 themesDir: themes/
