@@ -26,6 +26,21 @@ body, li p {
     margin-bottom: 10px;
 }
 
+p.reply-by-email a:hover {
+    background: #fefefe;
+    border: 2px solid black;
+    font-weight: 600;
+}
+
+p.reply-by-email a {
+    border: 1px solid black;
+    padding: 10px;
+}
+p.reply-by-email {
+    text-align: center;
+    font-size: 16px;
+}
+
 #posts > h2, #notes > h2 {
   margin-top: 40px;
 }
