@@ -12,6 +12,6 @@ title = "Ed Leeman"
     lineNoStart = 1
     lineNos = true
     lineNumbersInTable = false
-    noClasses = true
+    noClasses = false
     style = "rose-pine-moon"
     tabWidth = 4
