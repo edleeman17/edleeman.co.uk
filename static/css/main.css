@@ -39,6 +39,7 @@ p.reply-by-email a {
 p.reply-by-email {
     text-align: center;
     font-size: 16px;
+    margin: 30px 0;
 }
 
 #posts > h2, #notes > h2 {
