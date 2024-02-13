@@ -227,7 +227,7 @@ footer > a:hover {
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: black }
+    50% { border-color: #e0def4 }
   }
 
   @media (min-width:600px)  { 
