@@ -53,7 +53,7 @@ h3, h4, h5, h6, header, header.a {
 a {
     text-decoration: none;
     color: inherit;
-    border-bottom:2px solid black ;
+    border-bottom:2px solid #b00c1f;
 }
 
 header {
@@ -82,7 +82,7 @@ header > a {
 }
 
 .underline {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #b00c1f;
 }
 
 #main {
@@ -106,7 +106,7 @@ header > a {
 #button {
     background: transparent;
     outline: none;
-    border: 1px solid black;
+    border: 1px solid #b00c1f;
 }
 
 .name {
