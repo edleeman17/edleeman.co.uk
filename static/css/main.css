@@ -28,12 +28,12 @@ body, li p {
 
 p.reply-by-email a:hover {
     background: #fefefe;
-    border: 2px solid black;
+    border: 2px solid #b00c1f;
     font-weight: 600;
 }
 
 p.reply-by-email a {
-    border: 1px solid black;
+    border: 1px solid #b00c1f;
     padding: 10px;
 }
 p.reply-by-email {
