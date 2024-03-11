@@ -15,12 +15,12 @@
   <!-- Schema.org for Google -->
   <meta itemprop="name" content="{{ .Title }}">
   <meta itemprop="description" content="{{ .Description }}">
-  <meta itemprop="image" content="{{ $.Param "image" }}">
+  <meta itemprop="image" content="{{ .Site.BaseURL}}/{{ $.Param "image" }}">
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:description" content="{{ .Description }}">
   {{ if $.Param "image" }}
-  <meta property="og:image" content="{{ .Site.BaseURL}}{{ $.Param "image" }}">
+  <meta property="og:image" content="{{ .Site.BaseURL}}/{{ $.Param "image" }}">
   {{ end }}
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:site_name" content="{{ .Title }}">
