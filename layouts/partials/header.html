@@ -3,29 +3,30 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="viewport" content="width=device-width, initial-scale=1">
 	<!-- COMMON TAGS -->
 	<title>{{ .Title }}</title>
   <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}/images/favicon-16x16.png">
 	<!-- Search Engine -->
-	<meta name="description" content="{{ .Description }}">
-	<meta name="image" content="{{ $.Param " image" }}">
+	<meta property="description" content="{{ .Description }}">
+	<meta property="image" content="{{ $.Param "image" }}">
 	<!-- Schema.org for Google -->
 	<meta itemprop="name" content="{{ .Title }}">
 	<meta itemprop="description" content="{{ .Description }}">
-	<meta itemprop="image" content="{{ $.Param " image" }}">
+	<meta itemprop="image" content="{{ $.Param "image" }}">
 	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
-	<meta name="og:title" content="{{ .Title }}">
-	<meta name="og:description" content="{{ .Description }}">
+	<meta property="og:title" content="{{ .Title }}">
+	<meta property="og:description" content="{{ .Description }}">
 	{{ if $.Param "image" }}
-	<meta name="og:image" content="{{ .Site.BaseURL}}{{ $.Param " image" }}">{{ end }}
-	<meta name="og:url" content="{{ .Permalink }}">
-	<meta name="og:site_name" content="{{ .Title }}">
-	<meta name="og:type" content="article">
+	<meta property="og:image" content="{{ .Site.BaseURL}}{{ $.Param "image" }}">
+  {{ end }}
+	<meta property="og:url" content="{{ .Permalink }}">
+	<meta property="og:site_name" content="{{ .Title }}">
+	<meta property="og:type" content="article">
 	<!-- Open Graph - Article -->
-	<meta name="article:tag" content="{{ range .Params.tags }}{{.}} {{end}}">
+	<meta property="article:tag" content="{{ range .Params.tags }}{{.}} {{end}}">
 	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/main.css">
 	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/syntax.css">
 
