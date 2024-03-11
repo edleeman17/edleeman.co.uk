@@ -24,3 +24,18 @@ This can then be used as...
 ~ cdr
 ~/my-repository
 ```
+Or event better...
+
+```shell
+# ~/.zshrc/.bashrc/whatever...
+function git() {
+    if [ $1 = "clone" ]
+    then 
+        command git $@ && cd "$(basename "$_" .git)"
+    else
+        command git $@
+    fi
+}
+```
+
+[source](https://stackoverflow.com/questions/59392153/git-clone-and-cd-into-it)
