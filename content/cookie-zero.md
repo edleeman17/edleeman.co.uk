@@ -22,3 +22,4 @@ Get added to our hall of fame below!
 - https://reaper.im
 - https://tillwhen.barelyhuman.dev
 - https://taylantatli.com/
+- https://cri.cl
