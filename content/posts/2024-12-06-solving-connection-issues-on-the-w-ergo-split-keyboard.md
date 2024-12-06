@@ -5,6 +5,8 @@ date: 2024-12-06T20:29:00.000Z
 type: "post"
 ---
 
+# Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)
+
 TLDR with my solution at the bottom!
 
 I recently purchased the W-Ergo Wireless Split Keyboard from keyclicks.ca. 
