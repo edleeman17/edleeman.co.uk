@@ -1,4 +1,9 @@
-
+---
+title: Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)
+slug: solving-connection-issues-on-the-w-ergo
+date: 2024-12-06T20:29:00.000Z
+type: "post"
+---
 
 TLDR with my solution at the bottom!
 
