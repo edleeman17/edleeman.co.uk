@@ -70,7 +70,7 @@ It may not be the solution, but figured I’d document my journey for those also
 
 ## TLDR;
 
-EDIT 14/01/2025: I've done some more debugging and had determined that 2.4ghz interference is the issue I am facing.
+*EDIT 14/01/2025*: I've done some more debugging and had determined that 2.4ghz interference is the issue I am facing.
 
 I changed my Mac to use hardwired ethernet and swiched my Logitech mouse from using Bluetooth to using the Unifying Reciever.
 
