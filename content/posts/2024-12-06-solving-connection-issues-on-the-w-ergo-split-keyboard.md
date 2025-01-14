@@ -5,7 +5,7 @@ date: 2024-12-06T20:29:00.000Z
 type: "post"
 ---
 
-# Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)
+# Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe) UPDATED: 2025
 
 > TLDR with my solution at the bottom!
 
@@ -70,7 +70,21 @@ It may not be the solution, but figured I’d document my journey for those also
 
 ## TLDR;
 
-Here’s what I tried:
+EDIT 14/01/2025: I've done some more debugging and had determined that 2.4ghz interference is the issue I am facing.
+
+I changed my Mac to use hardwired ethernet and swiched my Logitech mouse from using Bluetooth to using the Unifying Reciever.
+
+I then disabled WiFi and Bluetooth on my Mac in the settings. This seems to have helped the issues I was having.
+
+The keyboard wireless receiver is sat in between my keyboard halves and under my deskmat.
+
+I sometimes find that having my iPhone nearby also causes some issues. I'll keep an eye on this as that's pretty ridiculous.
+
+I'll keep my steps below for archival purposes, I'm not sure if they contributed to the solution or if I was just chasing my tail.
+
+---
+
+Here’s what I tried: (SEE EDIT ABOVE)
 - Rebooted
 - Changed USB ports
 - Switched the Keyboard to its on thunderbolt port with a USB to USB-C converter 
@@ -80,8 +94,12 @@ Here’s what I tried:
 - Updated firmware of the receiver and left/right halves (twice)
 - Disabled Mac powering off USB devices
 
-What worked:
+What worked: (SEE EDIT ABOVE)
 - Turning off unmounting USB drives automatically 
+
+What worked 2025:
+- Wifi interference. Hardwired ethernet, turned off Bluetooth, possible USB3.0 interference.
+- Moved receiver in between the keyboard halfs. 10cm away from each half.
 
 Well, this may have worked in combination with any of the above steps, but I’m too exhausted to determine the magic combination of settings to get the keyboard working. 
 
