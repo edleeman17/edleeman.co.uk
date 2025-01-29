@@ -82,6 +82,8 @@ I sometimes find that having my iPhone nearby also causes some issues. I'll keep
 
 I'll keep my steps below for archival purposes, I'm not sure if they contributed to the solution or if I was just chasing my tail.
 
+*EDIT 29/01/2025*: I've determined that all my issues are purely down to interference. I now have the receiver sat between the two halves under my desk mat. This has been working now since the last update.
+
 ---
 
 Here’s what I tried: (SEE EDIT ABOVE)
