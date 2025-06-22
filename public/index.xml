@@ -2,406 +2,347 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ed Leeman</title>
-    <link>https://edleeman.co.uk/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Ed Leeman</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 09 Nov 2022 12:29:19 +0000</lastBuildDate>
-    
-	<atom:link href="https://edleeman.co.uk/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 06 Dec 2024 20:29:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)</title>
+      <link>http://localhost:1313/posts/solving-connection-issues-on-the-w-ergo/</link>
+      <pubDate>Fri, 06 Dec 2024 20:29:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/solving-connection-issues-on-the-w-ergo/</guid>
+      <description>&lt;h1 id=&#34;solving-connection-issues-on-the-w-ergo-split-keyboard-ergodox-dupe-updated-2025&#34;&gt;Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe) UPDATED: 2025&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;TLDR with my solution at the bottom!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;I recently purchased the W-Ergo Wireless Split Keyboard from keyclicks.ca.&lt;/p&gt;&#xA;&lt;p&gt;First impressions are great, it’s my first split keyboard and so far has stopped the RSI I was feeling in my wrists.&lt;/p&gt;&#xA;&lt;p&gt;Very much enjoying the process of getting comfortable with the split. The hardest thing for me has been relearning how to type. The split isn’t so bad, but I took the opportunity to also teach myself to TouchType, properly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CD into a cloned git repository</title>
+      <link>http://localhost:1313/notes/cd-into-cloned-repository/</link>
+      <pubDate>Mon, 11 Mar 2024 17:56:22 +0000</pubDate>
+      <guid>http://localhost:1313/notes/cd-into-cloned-repository/</guid>
+      <description>&lt;h1 id=&#34;cd-into-a-cloned-git-repository&#34;&gt;CD into a cloned Git repository&lt;/h1&gt;&#xA;&lt;p&gt;Regularly I clone down repositories into a directory and then have to manually pluck the repository name out of the clone URL to &lt;code&gt;cd&lt;/code&gt; into the cloned directory.&lt;/p&gt;&#xA;&lt;p&gt;I found the following snippet which will extract the repository name out of the clone url and &lt;code&gt;cd&lt;/code&gt; into it.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ~/.zshrc/.bashrc/whatever...&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cdr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;cd $(basename $_ .git)&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This can then be used as&amp;hellip;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;~ git clone my-repository-url &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;~ cdr&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;~/my-repository&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or even better&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing Syntax Highlighting for Hugo Chroma iOS</title>
+      <link>http://localhost:1313/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/</link>
+      <pubDate>Mon, 12 Feb 2024 23:42:41 +0000</pubDate>
+      <guid>http://localhost:1313/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/</guid>
+      <description>&lt;h1 id=&#34;fixing-syntax-highlighting-for-hugo-chroma-in-ios&#34;&gt;Fixing Syntax highlighting for Hugo chroma in iOS&lt;/h1&gt;&#xA;&lt;p&gt;I recently came across the issue of text being different sizes when displayed as a code fence in Hugo.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/invalid-formatting-in-ios.png&#34; alt=&#34;Invalid Chroma formatting in iOS&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It was hard to debug as at only seemed to happen on iOS in both Chrome and Safari. It wasn&amp;rsquo;t happening on the desktop so I wasn&amp;rsquo;t able to jump into dev tools to inspect why the elements are displaying as different sizes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Formatting JSON files in Vim</title>
+      <link>http://localhost:1313/notes/formatting-json-files-in-vim/</link>
+      <pubDate>Fri, 09 Feb 2024 16:15:14 +0000</pubDate>
+      <guid>http://localhost:1313/notes/formatting-json-files-in-vim/</guid>
+      <description>&lt;h1 id=&#34;formatting-json-files-in-vim&#34;&gt;Formatting JSON files in Vim&lt;/h1&gt;&#xA;&lt;p&gt;You can paste a bunch of minified JSON into a buffer, open the command window and type &lt;code&gt;:%!jq&lt;/code&gt; and then hit enter. This will update the buffer with the formatted output.&lt;/p&gt;&#xA;&lt;p&gt;You can then use &lt;code&gt;:%!jq -c&lt;/code&gt; to re-minify the output&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[[: not found fix</title>
+      <link>http://localhost:1313/notes/not-found/</link>
+      <pubDate>Fri, 09 Feb 2024 16:12:46 +0000</pubDate>
+      <guid>http://localhost:1313/notes/not-found/</guid>
+      <description>&lt;h1 id=&#34;-not-found-fix&#34;&gt;[[: not found fix&lt;/h1&gt;&#xA;&lt;p&gt;This just means that the script isn&amp;rsquo;t using &lt;code&gt;bash&lt;/code&gt;. Need to add &lt;code&gt;#!/bin/bash&lt;/code&gt; to the top of the file.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assuming an AWS Role in CI/CD</title>
+      <link>http://localhost:1313/notes/assuming-an-aws-role-in-ci-cd/</link>
+      <pubDate>Fri, 09 Feb 2024 13:30:38 +0000</pubDate>
+      <guid>http://localhost:1313/notes/assuming-an-aws-role-in-ci-cd/</guid>
+      <description>&lt;h1 id=&#34;assuming-an-aws-role-in-cicd&#34;&gt;Assuming an AWS Role in CI/CD&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ROLE_UUID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;uuidgen&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;TMPFILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;mktemp&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;aws_region&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;AWS_REGION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;aws sts assume-role --role-arn arn:aws:iam::0123456789:role/publisher-role --role-session-name role_&lt;span class=&#34;nv&#34;&gt;$ROLE_UUID&lt;/span&gt; &amp;gt; &lt;span class=&#34;nv&#34;&gt;$TMPFILE&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; ! -s &lt;span class=&#34;nv&#34;&gt;$TMPFILE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;!!! AWS Credentials file empty !!!&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;cat &lt;span class=&#34;nv&#34;&gt;$TMPFILE&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r .&lt;span class=&#34;s2&#34;&gt;&amp;#34;Credentials&amp;#34;&lt;/span&gt;.&lt;span class=&#34;s2&#34;&gt;&amp;#34;AccessKeyId&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;cat &lt;span class=&#34;nv&#34;&gt;$TMPFILE&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r .&lt;span class=&#34;s2&#34;&gt;&amp;#34;Credentials&amp;#34;&lt;/span&gt;.&lt;span class=&#34;s2&#34;&gt;&amp;#34;SecretAccessKey&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_SESSION_TOKEN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;cat &lt;span class=&#34;nv&#34;&gt;$TMPFILE&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; jq -r .&lt;span class=&#34;s2&#34;&gt;&amp;#34;Credentials&amp;#34;&lt;/span&gt;.&lt;span class=&#34;s2&#34;&gt;&amp;#34;SessionToken&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_DEFAULT_REGION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$aws_region&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Assume role doesn’t export the new AWS credentials, so we need to export the new variable values ourselves&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Commands Using Existing Docker Images</title>
+      <link>http://localhost:1313/notes/installing-commands-using-existing-docker-images/</link>
+      <pubDate>Fri, 09 Feb 2024 13:28:26 +0000</pubDate>
+      <guid>http://localhost:1313/notes/installing-commands-using-existing-docker-images/</guid>
+      <description>&lt;h1 id=&#34;installing-commands-using-existing-docker-images&#34;&gt;Installing commands using existing Docker Images&lt;/h1&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; --from&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;library/docker:latest /usr/local/bin/docker /usr/bin/docker&lt;span class=&#34;err&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;COPY&lt;/span&gt; --from&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;docker/compose:latest /usr/local/bin/docker-compose /usr/bin/docker-compose&lt;span class=&#34;err&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Devcontainers will override entrypoints defined in Dockerfiles</title>
+      <link>http://localhost:1313/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/</link>
+      <pubDate>Fri, 09 Feb 2024 11:08:23 +0000</pubDate>
+      <guid>http://localhost:1313/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/</guid>
+      <description>&lt;h1 id=&#34;devcontainers-will-override-entrypoints-defined-in-dockerfiles&#34;&gt;Devcontainers will override entrypoints defined in Dockerfiles&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>Confessions of a Failed Multitasker</title>
+      <link>http://localhost:1313/posts/confessions-of-a-failed-multitasker/</link>
+      <pubDate>Thu, 08 Feb 2024 18:23:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/confessions-of-a-failed-multitasker/</guid>
+      <description>&lt;h1 id=&#34;confessions-of-a-failed-multitasker&#34;&gt;Confessions of a failed multitasker&lt;/h1&gt;&#xA;&lt;p&gt;I suck at managing multiple tasks at once which is something that I need to force myself to be better at as it’s starting to affect my life more than it ever has.&lt;/p&gt;&#xA;&lt;p&gt;Both in personal life and work, I struggle with managing multiple tasks at once. I’m forgetful, I prioritise the wrong tasks and I’m a chief procrastinator of what’s important.&lt;/p&gt;&#xA;&lt;p&gt;I wanted to write something, probably to benefit myself, maybe as something to refer back to in the future and hopefully to allow others to know that someone else out there has the same struggles.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My App Defaults of 2024</title>
+      <link>http://localhost:1313/posts/my-app-defaults-of-2024/</link>
+      <pubDate>Tue, 16 Jan 2024 12:28:12 +0000</pubDate>
+      <guid>http://localhost:1313/posts/my-app-defaults-of-2024/</guid>
+      <description>&lt;h1 id=&#34;default-apps-2024&#34;&gt;Default Apps 2024&lt;/h1&gt;&#xA;&lt;p&gt;It&amp;rsquo;s a new year and I&amp;rsquo;m making a promise to myself to write some more blog posts. So to kick off the new habit, I&amp;rsquo;ll be starting with the &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;collection of Default Apps&lt;/a&gt; by Robb Knight. I encourage everyone to contribute as I like being nosy and seeing what others use!&lt;/p&gt;&#xA;&lt;p&gt;Here’s my defaults for 2024:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mail Server&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://proton.me/mail&#34;&gt;Protonmail&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://mailcow.email/&#34;&gt;Mailcow&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mail Client&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://proton.me/mail/bridge&#34;&gt;Proton Bridge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.thunderbird.net&#34;&gt;Thunderbird&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Web Hosting&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;Digital Ocean&lt;/a&gt; (Use &lt;a href=&#34;https://m.do.co/c/d2a3afe52625&#34;&gt;this link&lt;/a&gt; for $200 dollar credit (shameless plug))&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.ssdnodes.com/&#34;&gt;SSDNODES&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;An abundance of Raspberry Pi’s&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Notes&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Creating really simple API Authentication in .NET</title>
-      <link>https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/</link>
+      <link>http://localhost:1313/posts/creating-really-simple-api-authentication-in-dotnet/</link>
       <pubDate>Wed, 09 Nov 2022 12:29:19 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/</guid>
-      <description>Creating &amp;lsquo;really simple&amp;rsquo; API key authentication in .NET Sometimes you&amp;rsquo;re going to run into a situation where you need to add some level of authentication to your .NET API.
-If you&amp;rsquo;re like me, the whole .NET authentication and authorization is pretty complicated. Especially when in a language like JavaScript, it&amp;rsquo;s pretty simple to add middleware to a request and check to see whether a header is present in the request.</description>
+      <guid>http://localhost:1313/posts/creating-really-simple-api-authentication-in-dotnet/</guid>
+      <description>&lt;h1 id=&#34;creating-really-simple-api-key-authentication-in-net&#34;&gt;Creating &amp;lsquo;really simple&amp;rsquo; API key authentication in .NET&lt;/h1&gt;&#xA;&lt;p&gt;Sometimes you&amp;rsquo;re going to run into a situation where you need to add some level of authentication to your .NET API.&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re like me, the whole .NET authentication and authorization is pretty complicated. Especially when in a language like JavaScript, it&amp;rsquo;s pretty simple to add middleware to a request and check to see whether a header is present in the request.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Preventing Email Floods</title>
-      <link>https://edleeman.co.uk/posts/preventing-email-floods/</link>
+      <link>http://localhost:1313/posts/preventing-email-floods/</link>
       <pubDate>Tue, 03 Aug 2021 14:46:16 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/preventing-email-floods/</guid>
-      <description>How to prevent being flooded with emails I&amp;rsquo;ve just moved companies and I am already being flooded with emails. Some are important, some not so much.
-I could just put my PC into Do Not Disturb mode, but what if I miss something directed at me personally.
-This is where email rules come in, all major email providers can do this.
-But have you considered this rule?
-If the email is directly intended for me i.</description>
+      <guid>http://localhost:1313/posts/preventing-email-floods/</guid>
+      <description>&lt;h1 id=&#34;how-to-prevent-being-flooded-with-emails&#34;&gt;How to prevent being flooded with emails&lt;/h1&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve just moved companies and I am already being flooded with emails. Some are important, some not so much.&lt;/p&gt;&#xA;&lt;p&gt;I could just put my PC into &lt;code&gt;Do Not Disturb&lt;/code&gt; mode, but what if I miss something directed at me personally.&lt;/p&gt;&#xA;&lt;p&gt;This is where email rules come in, all major email providers can do this.&lt;/p&gt;&#xA;&lt;p&gt;But have you considered this rule?&lt;/p&gt;&#xA;&lt;p&gt;If the email is directly intended for me i.e my email is in the &lt;code&gt;To:&lt;/code&gt; field, then send it to my Inbox.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Self Hosting Your Own Matrix Server on a Raspberry Pi</title>
-      <link>https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</link>
+      <link>http://localhost:1313/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</link>
       <pubDate>Fri, 02 Jul 2021 19:39:30 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</guid>
-      <description>What is Matrix? &amp;ldquo;Matrix is an open source project that publishes the Matrix open standard for secure, decentralised, real-time communication, and its Apache licensed reference implementations. Maintained by the non-profit Matrix.org Foundation, we aim to create an open platform which is as independent, vibrant and evolving as the Web itself&amp;hellip; but for communication. As of June 2019, Matrix is out of beta, and the protocol is fully suitable for production usage.</description>
+      <guid>http://localhost:1313/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</guid>
+      <description>&lt;h2 id=&#34;what-is-matrix&#34;&gt;What is Matrix?&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;Matrix is an open source project that publishes the &lt;a href=&#34;https://matrix.org/docs/spec&#34;&gt;Matrix open standard&lt;/a&gt; for secure, decentralised, real-time communication, and its Apache licensed &lt;a href=&#34;https://github.com/matrix-org&#34;&gt;reference implementations&lt;/a&gt;. Maintained by the non-profit &lt;a href=&#34;https://matrix.org/foundation/&#34;&gt;Matrix.org Foundation&lt;/a&gt;, we aim to create an open platform which is as independent, vibrant and evolving as the Web itself&amp;hellip; but for communication. As of June 2019, Matrix is &lt;a href=&#34;https://matrix.org/blog/2019/06/11/introducing-matrix-1-0-and-the-matrix-org-foundation&#34;&gt;out of beta&lt;/a&gt;, and the protocol is fully suitable for production usage.&amp;rdquo; ~ &lt;a href=&#34;https://matrix.org/&#34;&gt;matrix.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;self-hosting-synapse-matrix&#34;&gt;Self-hosting Synapse (Matrix)&lt;/h2&gt;&#xA;&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;&#xA;&lt;p&gt;There are a few assumptions that need to be made before we can start:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Disable JavaScript to view this site?</title>
-      <link>https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/</link>
+      <link>http://localhost:1313/posts/disable-javascript-to-view-this-site/</link>
       <pubDate>Mon, 29 Mar 2021 15:58:50 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/</guid>
-      <description>I have fallen down a bit of a rabbit hole. Said rabbit hole is around disabling JavaScript to view certain websites. All as part of a privacy movement originally started by GNU.
-My first experience of this movement was HeydonWorks. Which just proves that you don&amp;rsquo;t need JavaScript to have a beautiful website.
-I had a look at how The Self-Hosting Blog performs. And well, not too great.
-This website however&amp;hellip; No change.</description>
+      <guid>http://localhost:1313/posts/disable-javascript-to-view-this-site/</guid>
+      <description>&lt;p&gt;I have fallen down a bit of a rabbit hole. Said rabbit hole is around disabling JavaScript to view certain websites. All as part of a privacy movement originally started by GNU.&lt;/p&gt;&#xA;&lt;p&gt;My first experience of this movement was &lt;a href=&#34;https://heydonworks.com&#34;&gt;HeydonWorks&lt;/a&gt;. Which just proves that you don&amp;rsquo;t need JavaScript to have a beautiful website.&lt;/p&gt;&#xA;&lt;p&gt;I had a look at how &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt; performs. And well, not too great.&lt;/p&gt;&#xA;&lt;p&gt;This website however&amp;hellip; No change. 🙂&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deleted docker-compose</title>
-      <link>https://edleeman.co.uk/posts/deleted-docker-compose/</link>
+      <link>http://localhost:1313/posts/deleted-docker-compose/</link>
       <pubDate>Fri, 26 Mar 2021 21:49:09 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/deleted-docker-compose/</guid>
-      <description>Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.
-Luckily, the container was still running, even if it wasn&amp;rsquo;t we probably could have spun up an old containers using something from docker ps -a.
-As the container was still running, we exec&amp;rsquo;d into it with docker exec -it &amp;lt;container_id&amp;gt; bash and we&amp;rsquo;re able to run the env command which revealed the password that was set in the docker-compose file.</description>
+      <guid>http://localhost:1313/posts/deleted-docker-compose/</guid>
+      <description>&lt;p&gt;Today, we ran out of space on a drive which was running an internal wiki. Unfortunately for us, we lost the docker-compose file which contained the database password used to get the data for our wiki.&lt;/p&gt;&#xA;&lt;p&gt;Luckily, the container was still running, even if it wasn&amp;rsquo;t we probably could have spun up an old containers using something from &lt;code&gt;docker ps -a&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;As the container was still running, we exec&amp;rsquo;d into it with &lt;code&gt;docker exec -it &amp;lt;container_id&amp;gt; bash&lt;/code&gt; and we&amp;rsquo;re able to run the &lt;code&gt;env&lt;/code&gt; command which revealed the password that was set in the docker-compose file.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Dabbling with Bash, public repository alerting</title>
-      <link>https://edleeman.co.uk/posts/public-repository-alerts/</link>
+      <link>http://localhost:1313/posts/public-repository-alerts/</link>
       <pubDate>Thu, 25 Mar 2021 14:04:59 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/public-repository-alerts/</guid>
-      <description>I have been playing around with Bash over the last 24 hours, which has had its highs and lows.
-I still don&amp;rsquo;t understand when to echo a variable into another variable and when to do a direct assignment. But it&amp;rsquo;s early days for me. I&amp;rsquo;m looking to take a more architectural approach to my day job, which means spending even more time in the Linux environment. I&amp;rsquo;d like to automate a lot of my repetitive tasks, reason 1 being that I save some time, reason 2 being that I will definitely forget to do the task.</description>
+      <guid>http://localhost:1313/posts/public-repository-alerts/</guid>
+      <description>&lt;p&gt;I have been playing around with Bash over the last 24 hours, which has had its highs and lows.&lt;/p&gt;&#xA;&lt;p&gt;I still don&amp;rsquo;t understand when to echo a variable into another variable and when to do a direct assignment. But it&amp;rsquo;s early days for me. I&amp;rsquo;m looking to take a more architectural approach to my day job, which means spending even more time in the Linux environment. I&amp;rsquo;d like to automate a lot of my repetitive tasks, reason 1 being that I save some time, reason 2 being that I will definitely forget to do the task.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Our first sponsorship</title>
-      <link>https://edleeman.co.uk/posts/sponsorship/</link>
+      <link>http://localhost:1313/posts/sponsorship/</link>
       <pubDate>Wed, 24 Mar 2021 15:19:44 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/sponsorship/</guid>
-      <description>We got our first sponsorship on The Self-Hosting Blog, albeit, my parter! But it was a nice surprise and I didn&amp;rsquo;t ask for it! Even though it shouldn&amp;rsquo;t officially count, something inside me is feeling motivated, almost like it was all worth it, you know?
-With the blog, we&amp;rsquo;re going to have a guest blogger. He&amp;rsquo;s Piete, over at https://www.pietersartain.com who is doing some really cool stuff with Ansible at the moment.</description>
+      <guid>http://localhost:1313/posts/sponsorship/</guid>
+      <description>&lt;p&gt;We got our first sponsorship on &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt;, albeit, my parter! But it was a nice surprise and I didn&amp;rsquo;t ask for it!&#xA;Even though it shouldn&amp;rsquo;t officially count, something inside me is feeling motivated, almost like it was all worth it, you know?&lt;/p&gt;&#xA;&lt;p&gt;With the blog, we&amp;rsquo;re going to have a guest blogger. He&amp;rsquo;s Piete, over at &lt;a href=&#34;https://www.pietersartain.com/post/&#34;&gt;https://www.pietersartain.com&lt;/a&gt; who is doing some really cool stuff with Ansible at the moment. He also has an interest in self-hosting.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Blog Automation</title>
-      <link>https://edleeman.co.uk/posts/blog-automation/</link>
+      <link>http://localhost:1313/posts/blog-automation/</link>
       <pubDate>Tue, 23 Mar 2021 20:09:49 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/blog-automation/</guid>
-      <description>I have recently discovered that a lot of my posts over at The Self-Hosting Blog follow the same passage.
- Introduction about the Software Provisioning your server Installing prerequisite requirements Installing the thing Configuring Nginx Port forwarding Certbot Recap  The only thing that really changes is step 4, maybe step 3 depending on whether Docker is required or not.
-Why aren&amp;rsquo;t I automating this.
-I think I know why, the content will be shite.</description>
+      <guid>http://localhost:1313/posts/blog-automation/</guid>
+      <description>&lt;p&gt;I have recently discovered that a lot of my posts over at &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt; follow the same passage.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Introduction about the Software&lt;/li&gt;&#xA;&lt;li&gt;Provisioning your server&lt;/li&gt;&#xA;&lt;li&gt;Installing prerequisite requirements&lt;/li&gt;&#xA;&lt;li&gt;Installing &lt;em&gt;the thing&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;Configuring Nginx&lt;/li&gt;&#xA;&lt;li&gt;Port forwarding&lt;/li&gt;&#xA;&lt;li&gt;Certbot&lt;/li&gt;&#xA;&lt;li&gt;Recap&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;The only thing that really changes is step 4, maybe step 3 depending on whether Docker is required or not.&lt;/p&gt;&#xA;&lt;p&gt;Why aren&amp;rsquo;t I automating this.&lt;/p&gt;&#xA;&lt;p&gt;I think I know why, the content will be shite. It&amp;rsquo;ll lack personal touch.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Self-hosting Papercups.io - Open-source live customer chat with Slack integration!</title>
-      <link>https://edleeman.co.uk/posts/self-hosting-papercups-io-open-source-live-customer-chat/</link>
+      <link>http://localhost:1313/posts/self-hosting-papercups-io-open-source-live-customer-chat/</link>
       <pubDate>Tue, 23 Mar 2021 15:45:17 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/self-hosting-papercups-io-open-source-live-customer-chat/</guid>
-      <description>Papercups.io Papercups is an opensource self-hosted chat window that you can add to your site to interact with your visitors instantly. Papercups gives you the ability to reply directly from Slack or using their built-in messenger.
-Papercups gives you the freedom to customise your chat windows to fit your branding, show whether you have representatives online to help your customers. A feature-rich dashboard with all the analytics data you&amp;rsquo;ll need. Papercups even has screen sharing built-in, for when it&amp;rsquo;s just easier to show something that isn&amp;rsquo;t working.</description>
+      <guid>http://localhost:1313/posts/self-hosting-papercups-io-open-source-live-customer-chat/</guid>
+      <description>&lt;h2 id=&#34;papercupsio&#34;&gt;Papercups.io&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://papercups.io&#34;&gt;Papercups&lt;/a&gt; is an opensource self-hosted chat window that you can add to your site to interact with your visitors instantly. Papercups gives you the ability to reply directly from Slack or using their built-in messenger.&lt;/p&gt;&#xA;&lt;p&gt;Papercups gives you the freedom to customise your chat windows to fit your branding, show whether you have representatives online to help your customers. A feature-rich dashboard with all the analytics data you&amp;rsquo;ll need. Papercups even has screen sharing built-in, for when it&amp;rsquo;s just easier to show something that isn&amp;rsquo;t working. It&amp;rsquo;s super easy to install, as you&amp;rsquo;ll see in just a minute.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Virtual Computing</title>
-      <link>https://edleeman.co.uk/posts/virtual-computing/</link>
+      <link>http://localhost:1313/posts/virtual-computing/</link>
       <pubDate>Mon, 22 Mar 2021 19:21:07 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/virtual-computing/</guid>
-      <description>A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. He has spoken about it over on his blog. There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It&amp;rsquo;s a really interesting read, I&amp;rsquo;d highly recommend checking it out.
-He&amp;rsquo;s using Proxmox, which I have some experience with, but not to the extent of what he has managed to achieve with it.</description>
+      <guid>http://localhost:1313/posts/virtual-computing/</guid>
+      <description>&lt;p&gt;A friend of mine has recently set up his own virtual server. Which allows him to run 3 virtual machines on a single machine. &lt;a href=&#34;https://www.pietersartain.com/post/2020-08-05-personal-virtual-computing-i/&#34;&gt;He has spoken about it over on his blog&lt;/a&gt;. There are 4 parts to the series which go through picking the parts, technical challenges, and finally the end result. It&amp;rsquo;s a really interesting read, I&amp;rsquo;d highly recommend checking it out.&lt;/p&gt;&#xA;&lt;p&gt;He&amp;rsquo;s using Proxmox, which I have some experience with, but not to the extent of what he has managed to achieve with it. I used to run Proxmox in my loft to host all of my internal services. More recently though, I have had to retire my server to be my desktop machine. Requirements became a little more resource intensive, that my Dell XPS 13 couldn&amp;rsquo;t even handle.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Freelance Writing</title>
-      <link>https://edleeman.co.uk/posts/freelance-writing/</link>
+      <link>http://localhost:1313/posts/freelance-writing/</link>
       <pubDate>Sun, 21 Mar 2021 19:19:43 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/freelance-writing/</guid>
-      <description>I’m starting to enjoy writing these blog posts. I mean, I enjoy writing, I just haven’t been very good at it. I often struggle with trying to think of an idea to write about, but I’m five days in now and haven’t run out of ideas yet! I think I’m finding my flow now. I have already met so many interesting people as a result of #100DaysToOffLoad. The guys over at Fosstodon.</description>
+      <guid>http://localhost:1313/posts/freelance-writing/</guid>
+      <description>&lt;p&gt;I’m starting to enjoy writing these blog posts. I mean, I enjoy writing, I just haven’t been very good at it. I often struggle with trying to think of an idea to write about, but I’m five days in now and haven’t run out of ideas yet! I think I’m finding my flow now. I have already met so many interesting people as a result of #100DaysToOffLoad. The guys over at &lt;a href=&#34;https://fosstodon.org&#34;&gt;Fosstodon.org&lt;/a&gt; are awesome!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Ads</title>
-      <link>https://edleeman.co.uk/posts/no-ads/</link>
+      <link>http://localhost:1313/posts/no-ads/</link>
       <pubDate>Sun, 21 Mar 2021 00:03:14 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/no-ads/</guid>
-      <description>GoNads I decided not to put ads on the site. They make the site look poo and it doesn&amp;rsquo;t sit with me ethically. I did however make 30p which ia just about enough to buy myself a Freddo. Ads suck, in general, and as a source of income. They&amp;rsquo;re spammy, obtrusive and distract the readers from the content that you&amp;rsquo;ve worked so hard to produce.
-So, I have made the executive decision not the run ads on The Self-Hosting Blog.</description>
+      <guid>http://localhost:1313/posts/no-ads/</guid>
+      <description>&lt;h1 id=&#34;gonads&#34;&gt;GoNads&lt;/h1&gt;&#xA;&lt;p&gt;I decided not to put ads on the site. They make the site look poo and it doesn&amp;rsquo;t sit with me ethically. I did however make 30p which ia just about enough to buy myself a Freddo. Ads suck, in general, and as a source of income. They&amp;rsquo;re spammy, obtrusive and distract the readers from the content that you&amp;rsquo;ve worked so hard to produce.&lt;/p&gt;&#xA;&lt;p&gt;So, I have made the executive decision not the run ads on &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt;. There is, however, a &lt;a href=&#34;https://www.buymeacoffee.com/selfhostingblog&#34;&gt;buy me a coffee&lt;/a&gt; link for anyone feeling super generous.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setting up Focalboard - A self-hosted alternative to Trello and Notion</title>
-      <link>https://edleeman.co.uk/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</link>
+      <link>http://localhost:1313/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</link>
       <pubDate>Sat, 20 Mar 2021 18:18:29 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</guid>
-      <description>Focalboard Focalboard is a self-hosted open-source alternative to tools such as Notion or Trello which you can run on your own instance. Focalboard helps with tracking and organising your own work, as well as across a team.
-Focalboard is currently in early-access beta, so this post may change over time. We&amp;rsquo;ll try out best to update our tutorial as the project becomes more mature.
-You can read more on Focalboard on their site https://www.</description>
+      <guid>http://localhost:1313/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</guid>
+      <description>&lt;h2 id=&#34;focalboard&#34;&gt;Focalboard&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.focalboard.com&#34;&gt;Focalboard&lt;/a&gt; is a self-hosted &lt;a href=&#34;https://github.com/mattermost/focalboard&#34;&gt;open-source&lt;/a&gt; alternative to tools such as &lt;a href=&#34;https://www.notion.so&#34;&gt;Notion&lt;/a&gt; or &lt;a href=&#34;https://trello.com&#34;&gt;Trello&lt;/a&gt; which you can run on your own instance. Focalboard helps with tracking and organising your own work, as well as across a team.&lt;/p&gt;&#xA;&lt;p&gt;Focalboard is currently in early-access beta, so this post may change over time. We&amp;rsquo;ll try out best to update our tutorial as the project becomes more mature.&lt;/p&gt;&#xA;&lt;p&gt;You can read more on Focalboard on their site &lt;a href=&#34;https://www.focalboard.com&#34;&gt;https://www.focalboard.com&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Unifi Dream Machine</title>
-      <link>https://edleeman.co.uk/posts/unifi-dream-machine/</link>
+      <link>http://localhost:1313/posts/unifi-dream-machine/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:11 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/unifi-dream-machine/</guid>
-      <description>The Dream Machine The other day, I purchased the Ubiquiti Unifi Dream Machine. A company well known by the guys over at /r/homelab and /r/homenetworking. Ubiquiti have made a name for themselves in the enterprise world, but over the last few years, more and more homelabbers have taken it upon themselves to set up enterprise grade hardware at home.
-Why did I buy The Dream Machine So for me personally, I wanted it just for fun.</description>
+      <guid>http://localhost:1313/posts/unifi-dream-machine/</guid>
+      <description>&lt;h2 id=&#34;the-dream-machine&#34;&gt;The Dream Machine&lt;/h2&gt;&#xA;&lt;p&gt;The other day, I purchased the Ubiquiti &lt;a href=&#34;https://amzn.to/3lBAhxd&#34;&gt;Unifi Dream Machine&lt;/a&gt;. A company well known by the guys over at &lt;a href=&#34;https://www.reddit.com/r/homelab&#34;&gt;/r/homelab&lt;/a&gt; and &lt;a href=&#34;https://www.reddit.com/r/homenetworking&#34;&gt;/r/homenetworking&lt;/a&gt;. Ubiquiti have made a name for themselves in the enterprise world, but over the last few years, more and more &lt;em&gt;homelabbers&lt;/em&gt; have taken it upon themselves to set up enterprise grade hardware at home.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-did-i-buy-the-dream-machine&#34;&gt;Why did I buy The Dream Machine&lt;/h2&gt;&#xA;&lt;p&gt;So for me personally, I wanted it just for fun. But also, the simple UI and VLAN management is what sold me the &lt;a href=&#34;https://amzn.to/3r1eUq7&#34;&gt;Dream Machine&lt;/a&gt;. I know that it&amp;rsquo;s possible to set up VLANs with other routers, but Ubiquiti have made it simple.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Monetisation</title>
-      <link>https://edleeman.co.uk/posts/monetisation/</link>
+      <link>http://localhost:1313/posts/monetisation/</link>
       <pubDate>Fri, 19 Mar 2021 13:00:28 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/monetisation/</guid>
-      <description>So, today The Self-Hosting Blog got approved for monitisation via NitroPay. Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn&amp;rsquo;t have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through.</description>
+      <guid>http://localhost:1313/posts/monetisation/</guid>
+      <description>&lt;p&gt;So, today &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt; got approved for monitisation via &lt;a href=&#34;https://nitropay.com&#34;&gt;NitroPay&lt;/a&gt;. Which has got me thinking about where I would like to take the blog. I started the blog to be able to document my findings and giver back to the self-hosting community. When I was working on something that didn&amp;rsquo;t have much of a presence on Google, I would type up my notes as a tutorial to hopefully save someone else the headache that I went through. That was around 2 years go.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Host your static blog for free with the Digital Ocean App Platform</title>
-      <link>https://edleeman.co.uk/posts/host-your-blog-for-free-with-digital-ocean-apps/</link>
+      <link>http://localhost:1313/posts/host-your-blog-for-free-with-digital-ocean-apps/</link>
       <pubDate>Mon, 15 Mar 2021 15:57:01 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/host-your-blog-for-free-with-digital-ocean-apps/</guid>
-      <description>Digital Ocean What is Digital Ocean&amp;rsquo;s App Platform? Digital Ocean has introduced a new product called App Platform which allows developers to quickly and easily build, deploy and scale apps. Digital Ocean will manage the solution for you, which means that the infrastructure, HTTPS, CDN and DNS routing is all done for you. This is awesome as it makes deploying apps simple.
-With Digital Ocean&amp;rsquo;s App Platform, there is also the offer to host 3 static sites for free using their Starter pricing structure.</description>
+      <guid>http://localhost:1313/posts/host-your-blog-for-free-with-digital-ocean-apps/</guid>
+      <description>&lt;h2 id=&#34;digital-ocean&#34;&gt;Digital Ocean&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-is-digital-oceans-app-platform&#34;&gt;What is Digital Ocean&amp;rsquo;s App Platform?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;Digital Ocean&lt;/a&gt; has introduced a new product called &lt;a href=&#34;https://www.digitalocean.com/products/app-platform/&#34;&gt;App Platform&lt;/a&gt; which allows developers to quickly and easily build, deploy and scale apps. Digital Ocean will manage the solution for you, which means that the infrastructure, HTTPS, CDN and DNS routing is all done for you. This is awesome as it makes deploying apps simple.&lt;/p&gt;&#xA;&lt;p&gt;With &lt;a href=&#34;https://www.digitalocean.com/products/app-platform/&#34;&gt;Digital Ocean&amp;rsquo;s App Platform&lt;/a&gt;, there is also the offer to host 3 static sites for free using their Starter pricing structure.&#xA;&lt;img src=&#34;https://theselfhostingblog.com/content/images/2021/03/image-12.png&#34; alt=&#34;&#34;&gt;Digital Ocean&amp;rsquo;s Starter offerings&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Completely Self-Hosting Plausible.io. A privacy-friendly alternative to Google Analytics</title>
-      <link>https://edleeman.co.uk/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</link>
+      <link>http://localhost:1313/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</link>
       <pubDate>Tue, 09 Mar 2021 13:17:39 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</guid>
-      <description>What is Plausible? Plausible is a lightweight, ethical, open-source and privacy-friendly Google Analytics alternative.
-Google Analytics Google Analytics collects more data than the average site owner needs to analyse their business, meaning that there is a lot of data being sent to the site owner that is unnecessary and will never be used. Plausible focuses only on the important web analytics data required for a business to get what it needs.</description>
+      <guid>http://localhost:1313/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</guid>
+      <description>&lt;h2 id=&#34;what-is-plausible&#34;&gt;What is Plausible?&lt;/h2&gt;&#xA;&lt;p&gt;Plausible is a lightweight, ethical, open-source and privacy-friendly Google Analytics alternative.&lt;/p&gt;&#xA;&lt;h3 id=&#34;google-analytics&#34;&gt;Google Analytics&lt;/h3&gt;&#xA;&lt;p&gt;Google Analytics collects more data than the average site owner needs to analyse their business, meaning that there is a lot of data being sent to the site owner that is unnecessary and will never be used. Plausible focuses only on the important web analytics data required for a business to get what it needs.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>We don&#39;t care who you are</title>
-      <link>https://edleeman.co.uk/posts/building-a-more-privacy-friendly-blog/</link>
+      <link>http://localhost:1313/posts/building-a-more-privacy-friendly-blog/</link>
       <pubDate>Wed, 03 Mar 2021 21:23:25 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/building-a-more-privacy-friendly-blog/</guid>
-      <description>At The Self-Hosting Blog, we are huge advocates for online privacy. We believe that you should never have to compromise your own privacy, just to use the internet.
-Today, in an age where giving up your personal details to randomers on the web is way too common, we want to make a change and give you back your rights.
-This is why we&amp;rsquo;ve decided that we can make better choices with this blog.</description>
+      <guid>http://localhost:1313/posts/building-a-more-privacy-friendly-blog/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;https://theselfhostingblog.com/&#34;&gt;The Self-Hosting Blog&lt;/a&gt;, we are huge advocates for online privacy. We believe that you should never have to compromise your own privacy, just to use the internet.&lt;/p&gt;&#xA;&lt;p&gt;Today, in an age where giving up your personal details to randomers on the web is way too common, we want to make a change and give you back your rights.&lt;/p&gt;&#xA;&lt;p&gt;This is why we&amp;rsquo;ve decided that we can make better choices with this blog.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setting up Portainer. Docker Container management made easy</title>
-      <link>https://edleeman.co.uk/posts/setting-up-portainer-container-management-made-easy/</link>
+      <link>http://localhost:1313/posts/setting-up-portainer-container-management-made-easy/</link>
       <pubDate>Mon, 01 Mar 2021 08:30:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/setting-up-portainer-container-management-made-easy/</guid>
-      <description>What is Portainer? Portainer is a lightweight management UI that allows you to easily manage your Docker host or Kubernetes Clusters. Portainer is as simple to deploy as it is to use.
-It allows anyone to deploy and manage containers without the need to write code.
-Portainer can be used to set up and manage an environment, deploy applications, monitor application performance, and spot problems easily. Portainer showing Docker container logs Portainer, as a whole, is a self-hostable, open-source, container management system.</description>
+      <guid>http://localhost:1313/posts/setting-up-portainer-container-management-made-easy/</guid>
+      <description>&lt;h2 id=&#34;what-is-portainer&#34;&gt;What is Portainer?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.portainer.io/&#34;&gt;Portainer&lt;/a&gt; is a lightweight management UI that allows you to easily manage your Docker host or Kubernetes Clusters. Portainer is as simple to deploy as it is to use.&lt;/p&gt;&#xA;&lt;p&gt;It allows anyone to deploy and manage containers without the need to write code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;portainer-showing-usage-statistics-for-a-containerportainer-showing-usage-statistics-for-a-docker-container&#34;&gt;Portainer can be used to set up and manage an environment, deploy applications, monitor application performance, and spot problems easily.&#xA;&lt;img src=&#34;https://theselfhostingblog.com/content/images/2021/02/image-6.png&#34; alt=&#34;Portainer showing container logs&#34;&gt;Portainer showing Docker container logs&#xA;Portainer, as a whole, is a self-hostable, open-source, container management system. Giving you complete visual control over your Docker instances. With Image management, restart policies and usage logs.&#xA;&lt;img src=&#34;https://theselfhostingblog.com/content/images/2021/02/image-5.png&#34; alt=&#34;Portainer showing usage statistics for a container&#34;&gt;Portainer showing usage statistics for a Docker container&lt;/h2&gt;&#xA;&lt;h2 id=&#34;installing-portainer&#34;&gt;Installing Portainer&lt;/h2&gt;&#xA;&lt;h3 id=&#34;prerequisites-provisioning-your-server&#34;&gt;Prerequisites: Provisioning your server&lt;/h3&gt;&#xA;&lt;p&gt;You&amp;rsquo;ll need to either purchase something like a &lt;a href=&#34;https://www.amazon.co.uk/gp/search?ie=UTF8&amp;amp;tag=bowlerdesign-21&amp;amp;linkCode=ur2&amp;amp;linkId=838d86d54be7e521a789421988ebe7d1&amp;amp;camp=1634&amp;amp;creative=6738&amp;amp;index=computers&amp;amp;keywords=Raspberry%20Pi&#34;&gt;Raspberry Pi&lt;/a&gt; or use an existing server at your disposal.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why should you should spend the time, effort (and money) on self-hosting?</title>
-      <link>https://edleeman.co.uk/posts/take-back-control-of-your-data/</link>
+      <link>http://localhost:1313/posts/take-back-control-of-your-data/</link>
       <pubDate>Wed, 17 Feb 2021 17:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/take-back-control-of-your-data/</guid>
-      <description>Self-hosting. Why? What&amp;rsquo;s the point? Everything you could use is already available online. Why should you spend the time and effort (and money) on self-hosting projects?
- A question that I have asked myself many times.
- Why should I spend the time setting up my own servers, complicating already seamless services, re-inventing the wheel?
-I can just use Dropbox to host my files. Maybe Google Photos to automatically save all my pictures instantly when I capture them.</description>
+      <guid>http://localhost:1313/posts/take-back-control-of-your-data/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Self-hosting. Why?&lt;/strong&gt; What&amp;rsquo;s the point? Everything you could use is already available online. Why should you spend the time and effort (and money) on self-hosting projects?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;A question that I have asked myself many times.&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Why should I spend the time setting up my own servers, complicating already seamless services, re-inventing the wheel?&lt;/p&gt;&#xA;&lt;p&gt;I can just use Dropbox to host my files. Maybe Google Photos to automatically save all my pictures instantly when I capture them. How about my password manager? I can just use LastPass, it does everything for me. &lt;strong&gt;I don&amp;rsquo;t even need to think about it.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to self-host PiHole, an internet advertising black hole</title>
-      <link>https://edleeman.co.uk/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</link>
+      <link>http://localhost:1313/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</link>
       <pubDate>Tue, 09 Feb 2021 12:00:37 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</guid>
-      <description>This article will cover setting up your own self-hosted PiHole instance. Allowing you to run an internal DNS and block internet advertisements from reaching your machine.
-What is PiHole? PiHole offers Network-wide protection for internet advertisements. PiHole saves you from needing to install an Ad-blocker on each device that you own. PiHole even blocks in-app advertisements, so no longer, are your free-to-play games interrupted by those annoying adverts.
-PiHole can also improve your network performance, as advertisements are no longer being downloaded, every time you load up a new website.</description>
+      <guid>http://localhost:1313/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</guid>
+      <description>&lt;p&gt;This article will cover setting up your own self-hosted PiHole instance. Allowing you to run an internal DNS and block internet advertisements from reaching your machine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-pihole&#34;&gt;What is PiHole?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://pi-hole.net/&#34;&gt;PiHole&lt;/a&gt; offers Network-wide protection for internet advertisements. PiHole saves you from needing to install an Ad-blocker on each device that you own. PiHole even blocks in-app advertisements, so no longer, are your free-to-play games interrupted by those annoying adverts.&lt;/p&gt;&#xA;&lt;p&gt;PiHole can also improve your network performance, as advertisements are no longer being downloaded, every time you load up a new website.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>10 of the BEST Self-hosting Subreddits To Follow (In 2021)</title>
-      <link>https://edleeman.co.uk/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</link>
+      <link>http://localhost:1313/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</link>
       <pubDate>Sun, 07 Feb 2021 21:31:34 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</guid>
-      <description>Introduction Reddit is a wonderful place. It&amp;rsquo;s full of like-minded people who share common interests. Rarely, a Subreddit does not exist.
-I&amp;rsquo;ve been using Reddit for many years now, and I have curated a list of Subreddits that I believe cover all the countless issues I have encountered during my journey of self-hosting.
-My personal curated list of self-hosting related Subreddits. Here is what I believe is the best self-hosting Subreddits to join in 2021.</description>
+      <guid>http://localhost:1313/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Reddit is a wonderful place. It&amp;rsquo;s full of like-minded people who share common interests. Rarely, a Subreddit does not exist.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been using Reddit for many years now, and I have curated a list of Subreddits that I believe cover all the countless issues I have encountered during my journey of self-hosting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;my-personal-curated-list-of-self-hosting-related-subreddits&#34;&gt;My personal curated list of self-hosting related Subreddits.&lt;/h2&gt;&#xA;&lt;p&gt;Here is what I believe is the best self-hosting Subreddits to join in 2021.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Archiving ProtonMail Emails on a headless Ubuntu instance</title>
-      <link>https://edleeman.co.uk/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</link>
+      <link>http://localhost:1313/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</link>
       <pubDate>Mon, 16 Nov 2020 11:17:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</guid>
-      <description>Introduction I wanted to be able to store all of my ProtonMail emails locally for archival purposes, with the intention of running a local content search whenever I needed something retrieving.
-I&amp;rsquo;m going to talk through my steps. There&amp;rsquo;s plenty of tutorials out there for email services such as; Gmail, Hotmail etc. But not much around ProtonMail, especially using a headless instance.
-ProtonMail bridge ProtonMail Bridge is an open-source piece of software built by the Proton Team to create a dummy IMAP server locally, with a sole purpose of decrypting your emails locally to enable you to use a desktop email client such as ThunderBird.</description>
+      <guid>http://localhost:1313/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I wanted to be able to store all of my &lt;a href=&#34;https://protonmail.com/&#34;&gt;ProtonMail&lt;/a&gt; emails locally for archival purposes, with the intention of running a local content search whenever I needed something retrieving.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m going to talk through my steps. There&amp;rsquo;s plenty of tutorials out there for email services such as; Gmail, Hotmail etc. But not much around ProtonMail, especially using a headless instance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;protonmail-bridge&#34;&gt;ProtonMail bridge&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://protonmail.com/bridge/&#34;&gt;ProtonMail Bridge&lt;/a&gt; is an open-source piece of software built by the Proton Team to create a dummy IMAP server locally, with a sole purpose of decrypting your emails locally to enable you to use a desktop email client such as &lt;a href=&#34;https://www.thunderbird.net/en-US/&#34;&gt;ThunderBird&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Schiit Modi 2 - Fixing Windows not recognizing USB device</title>
-      <link>https://edleeman.co.uk/posts/schiit-modi-2-fixing-windows-not-recognised/</link>
+      <link>http://localhost:1313/posts/schiit-modi-2-fixing-windows-not-recognised/</link>
       <pubDate>Sun, 27 Sep 2020 16:31:02 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/schiit-modi-2-fixing-windows-not-recognised/</guid>
-      <description>Sorry for the off-topic post, but this has been bugging me for months Having recently purchased a Schiit Modi 2 from eBay, just to try out before commiting to something a little more expensive (and reliable).
-The Modi 2 has some real issues with Windows 10, I belive the Modi 3 solves all of these issues.
-There&amp;rsquo;s an error message when plugging the Modi into Windows which is something like &amp;ldquo;USB device not recognized, the last USB device you connected to this computer malfunctioned, and Windows does not recognize it.</description>
+      <guid>http://localhost:1313/posts/schiit-modi-2-fixing-windows-not-recognised/</guid>
+      <description>&lt;h2 id=&#34;sorry-for-the-off-topic-post-but-this-has-been-bugging-me-for-months&#34;&gt;Sorry for the off-topic post, but this has been bugging me for months&lt;/h2&gt;&#xA;&lt;p&gt;Having recently purchased a Schiit Modi 2 from eBay, just to try out before commiting to something a little more expensive (and reliable).&lt;/p&gt;&#xA;&lt;p&gt;The Modi 2 has some real issues with Windows 10, I belive the Modi 3 solves all of these issues.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s an error message when plugging the Modi into Windows which is something like &amp;ldquo;USB device not recognized, the last USB device you connected to this computer malfunctioned, and Windows does not recognize it.&amp;rdquo;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Self-hosting a Wireguard VPN, the easy way</title>
-      <link>https://edleeman.co.uk/posts/self-hosting-a-wireguard-vpn-the-easy-way/</link>
+      <link>http://localhost:1313/posts/self-hosting-a-wireguard-vpn-the-easy-way/</link>
       <pubDate>Sun, 13 Sep 2020 19:49:07 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/self-hosting-a-wireguard-vpn-the-easy-way/</guid>
-      <description>Introduction We&amp;rsquo;re going to cover setting up a Wireguard VPN on your home server or cloud service. For secure remote access to your internal network, or a cheap, secure connection to a cloud service for some increased privacy when browsing online. VPN&amp;rsquo;s don&amp;rsquo;t make you anonymous, there&amp;rsquo;s a lot of stigma around this. Here&amp;rsquo;s some helpful information if you want to read into this some more.
-Setting up Wireguard, the easy way I initially found setting up Wireguard confusing.</description>
+      <guid>http://localhost:1313/posts/self-hosting-a-wireguard-vpn-the-easy-way/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;We&amp;rsquo;re going to cover setting up a Wireguard VPN on your home server or cloud service. For secure remote access to your internal network, or a cheap, secure connection to a cloud service for &lt;em&gt;some&lt;/em&gt; increased privacy when browsing online.&#xA;VPN&amp;rsquo;s don&amp;rsquo;t make you anonymous, there&amp;rsquo;s a lot of stigma around this. Here&amp;rsquo;s some &lt;a href=&#34;https://www.privacytools.io/providers/vpn/&#34;&gt;helpful information&lt;/a&gt; if you want to read into this some more.&lt;/p&gt;&#xA;&lt;h2 id=&#34;setting-up-wireguard-the-easy-way&#34;&gt;Setting up Wireguard, the easy way&lt;/h2&gt;&#xA;&lt;p&gt;I initially found setting up Wireguard confusing. Keys kept getting mixed up, I had no way of sending public keys between devices so that I could set up a client on my mobile device etc..&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Completely Self-Hosting Bitwarden Password Manager (Updated 2021)</title>
-      <link>https://edleeman.co.uk/posts/how-to-self-host-bitwarden-on-ubuntu-server/</link>
+      <link>http://localhost:1313/posts/how-to-self-host-bitwarden-on-ubuntu-server/</link>
       <pubDate>Sun, 30 Aug 2020 18:10:05 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/how-to-self-host-bitwarden-on-ubuntu-server/</guid>
-      <description>Introduction This article will cover setting up your own self-hosted Bitwarden instance with Docker and configuring ngnix to allow for public exposure for cross-device access to your vault.
-What is Bitwarden? Bitwarden is a free and open-source password management service that stores sensitive information such as website credentials in an encrypted vault. The Bitwarden platform offers avariety of client applications including a web interface, desktop applications, browser extensions, mobile apps, and a CLI.</description>
+      <guid>http://localhost:1313/posts/how-to-self-host-bitwarden-on-ubuntu-server/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This article will cover setting up your own self-hosted Bitwarden instance with Docker and configuring ngnix to allow for public exposure for cross-device access to your vault.&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-bitwarden&#34;&gt;What is Bitwarden?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://bitwarden.com/&#34;&gt;Bitwarden &lt;/a&gt;is a free and open-source password management service that stores sensitive information such as website credentials in an encrypted vault. The Bitwarden platform offers a&lt;a href=&#34;https://bitwarden.com/download/&#34;&gt; variety of client applications &lt;/a&gt;including a web interface, desktop applications, browser extensions, mobile apps, and a CLI.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to completely self-host Standard Notes (Updated 2021)</title>
-      <link>https://edleeman.co.uk/posts/how-to-completely-self-host-standard-notes/</link>
+      <link>http://localhost:1313/posts/how-to-completely-self-host-standard-notes/</link>
       <pubDate>Tue, 25 Aug 2020 18:29:25 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/how-to-completely-self-host-standard-notes/</guid>
-      <description>Introduction This article will cover setting up your own self-hosted Standard Notes instance and routing your instance through Nginx to allow for public exposure. We&amp;rsquo;ll also go over self-hosting Standard Notes Extensions to allow you to use extensions within your instance, such as a Markdown editor or secure spreadsheets
-What is Standard Notes Standard Notes is a free, open-source, and completely encrypted notes app. Being open-source, allows anyone to self-host their own Standard Notes server.</description>
+      <guid>http://localhost:1313/posts/how-to-completely-self-host-standard-notes/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;This article will cover setting up your own self-hosted Standard Notes instance and routing your instance through Nginx to allow for public exposure.&#xA;We&amp;rsquo;ll also go over self-hosting Standard Notes Extensions to allow you to use extensions within your instance, such as a Markdown editor or secure spreadsheets&lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-standard-notes&#34;&gt;What is Standard Notes&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://standardnotes.org/&#34;&gt;Standard Notes&lt;/a&gt; is a free, open-source, and completely encrypted notes app. Being open-source, allows anyone to self-host their own Standard Notes server. This means that you own all of your data, on your server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to Set Up a Headless Syncthing Network</title>
-      <link>https://edleeman.co.uk/posts/how-to-set-up-a-headless-syncthing-network/</link>
+      <link>http://localhost:1313/posts/how-to-set-up-a-headless-syncthing-network/</link>
       <pubDate>Mon, 03 Aug 2020 18:31:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/how-to-set-up-a-headless-syncthing-network/</guid>
-      <description>Overview of Syncthing Syncthing is a P2P (peer to peer) network that allows you to keep your files synchronised.
-Syncthing aims to replace services such as: Dropbox, Google Drive and OneDrive. By putting the user in control of their own data. Syncthing enables the user to set up multiple &amp;lsquo;nodes&amp;rsquo; which can communicate with eachother.
-A node can be, your personal computer, a work machine, a machine in another location or even a central server.</description>
+      <guid>http://localhost:1313/posts/how-to-set-up-a-headless-syncthing-network/</guid>
+      <description>&lt;h2 id=&#34;overview-of-syncthing&#34;&gt;Overview of Syncthing&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://syncthing.net/&#34;&gt;Syncthing&lt;/a&gt; is a P2P (peer to peer) network that allows you to keep your files synchronised.&lt;/p&gt;&#xA;&lt;p&gt;Syncthing aims to replace services such as: Dropbox, Google Drive and OneDrive. By putting the user in control of their own data. Syncthing enables the user to set up multiple &amp;rsquo;nodes&amp;rsquo; which can communicate with eachother.&lt;/p&gt;&#xA;&lt;p&gt;A node can be, your personal computer, a work machine, a machine in another location or even a central server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Configuring Vim for Node Js Development</title>
-      <link>https://edleeman.co.uk/posts/configuring-vim-for-node-js-development/</link>
+      <link>http://localhost:1313/posts/configuring-vim-for-node-js-development/</link>
       <pubDate>Tue, 28 Jul 2020 18:58:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/configuring-vim-for-node-js-development/</guid>
-      <description>Using Vim If you have come across this article, I probably don&amp;rsquo;t need to explain why you need to use Vim as your development IDE.
-You&amp;rsquo;re probably here because you want to use Vim, but not sure how to integrate it into your current workflow.
-I was in the same position a few months ago.
-The easiest way is to install a vim extension into your current IDE of choice, this will bring all of the features of vim into your current workflow.</description>
+      <guid>http://localhost:1313/posts/configuring-vim-for-node-js-development/</guid>
+      <description>&lt;h2 id=&#34;using-vim&#34;&gt;Using Vim&lt;/h2&gt;&#xA;&lt;p&gt;If you have come across this article, I probably don&amp;rsquo;t need to explain why you need to use Vim as your development IDE.&lt;/p&gt;&#xA;&lt;p&gt;You&amp;rsquo;re probably here because you want to use Vim, but not sure how to integrate it into your current workflow.&lt;/p&gt;&#xA;&lt;p&gt;I was in the same position a few months ago.&lt;/p&gt;&#xA;&lt;p&gt;The easiest way is to install a vim extension into your current IDE of choice, this will bring all of the features of vim into your current workflow.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setting up Cucumber, Nightwatch.js and Selenium Grid for highly scalable remote Chrome execution from Buddy</title>
-      <link>https://edleeman.co.uk/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</link>
+      <link>http://localhost:1313/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</link>
       <pubDate>Tue, 21 Jul 2020 11:26:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</guid>
-      <description>Technical Overview  Nightwatch.js - Node.js powered end-to-end testing framework Cucumber - BDD testing framework that sits on top of Nightwatch.js Selenium Grid - Highly scalable browser automation for running tests Buddy - CI/CD pipeline  End Goal The outcome of setting up this pipeline will allow us to execute end-to-end tests from anywhere, in any development environment.
-Having Selenium Grid as a public endpoint also allows us to execute these end-to-end tests from our existing CI/CD pipeline.</description>
+      <guid>http://localhost:1313/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</guid>
+      <description>&lt;h2 id=&#34;technical-overview&#34;&gt;Technical Overview&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://nightwatchjs.org/&#34;&gt;Nightwatch.js&lt;/a&gt; - &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Node.js&lt;/a&gt; powered end-to-end testing framework&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cucumber.io/&#34;&gt;Cucumber&lt;/a&gt; - BDD testing framework that sits on top of Nightwatch.js&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.selenium.dev/&#34;&gt;Selenium Grid&lt;/a&gt; - Highly scalable browser automation for running tests&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://buddy.works/&#34;&gt;Buddy&lt;/a&gt; - CI/CD pipeline&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;end-goal&#34;&gt;End Goal&lt;/h2&gt;&#xA;&lt;p&gt;The outcome of setting up this pipeline will allow us to execute end-to-end tests from anywhere, in any development environment.&lt;/p&gt;&#xA;&lt;p&gt;Having Selenium Grid as a public endpoint also allows us to execute these end-to-end tests from our existing CI/CD pipeline.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>My Self Hosted Note Syncing Journey Once Switching to Iphone</title>
-      <link>https://edleeman.co.uk/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</link>
+      <link>http://localhost:1313/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</link>
       <pubDate>Tue, 25 Feb 2020 11:32:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</guid>
-      <description>Recently moving to the iPhone meant that I had to re-think and re-design my existing note-taking solution, this is a quick writeup of my journey.
-My existing solution with Syncthing and VS Code I loved my original solution. I had recently discovered Syncthing and got it set up on my self hosted solution in my loft. I had a central sync server and then a node on each of my devices, including my Huawei P20 Pro.</description>
+      <guid>http://localhost:1313/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</guid>
+      <description>&lt;p&gt;Recently moving to the iPhone meant that I had to re-think and re-design my existing note-taking solution, this is a quick writeup of my journey.&lt;/p&gt;&#xA;&lt;h2 id=&#34;my-existing-solution-with-syncthing-and-vs-code&#34;&gt;My existing solution with Syncthing and VS Code&lt;/h2&gt;&#xA;&lt;p&gt;I &lt;strong&gt;loved&lt;/strong&gt; my original solution. I had recently discovered &lt;a href=&#34;https://syncthing.net/&#34;&gt;Syncthing&lt;/a&gt; and got it set up on my self hosted solution in my loft. I had a central sync server and then a node on each of my devices, including my Huawei P20 Pro.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to Route Nginx Through a Child Nginx Configuration - Jumpbox to Web Server Configuration</title>
-      <link>https://edleeman.co.uk/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</link>
+      <link>http://localhost:1313/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</link>
       <pubDate>Thu, 02 Jan 2020 11:34:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</guid>
-      <description>I had a specific use case where I needed to run a docker instance, which had it&amp;rsquo;s own configured nginx instance.
-The issue was that I already use nginx on my JumpBox.
-The fix was relatively self explanatory, but I wanted somewhere to write down the issues that I had to tackle.
-The Solution So the solution is just to point nginx (JumpBox) to the other nginx instance (docker).
- Just to let you know, in my case, there are separate physical servers.</description>
+      <guid>http://localhost:1313/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</guid>
+      <description>&lt;p&gt;I had a specific use case where I needed to run a docker instance, which had it&amp;rsquo;s own configured nginx instance.&lt;/p&gt;&#xA;&lt;p&gt;The issue was that I already use nginx on my JumpBox.&lt;/p&gt;&#xA;&lt;p&gt;The fix was relatively self explanatory, but I wanted somewhere to write down the issues that I had to tackle.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-solution&#34;&gt;The Solution&lt;/h2&gt;&#xA;&lt;p&gt;So the solution is just to point nginx (JumpBox) to the other nginx instance (docker).&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Just to let you know, in my case, there are separate physical servers. The configuration will not differ, but you may need to internally expose ports between hosts if you have something like UFW installed. &lt;a href=&#34;https://blog.bowlerdesign.tech/2019/12/15/setting-up-ufw-on-ubuntu-server/&#34;&gt;I have a tutorial here on how to set up UFW.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Setting Up UFW on Ubuntu Server</title>
-      <link>https://edleeman.co.uk/posts/setting-up-ufw-on-ubuntu-server/</link>
+      <link>http://localhost:1313/posts/setting-up-ufw-on-ubuntu-server/</link>
       <pubDate>Sun, 15 Dec 2019 11:29:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/posts/setting-up-ufw-on-ubuntu-server/</guid>
-      <description>UFW (Uncomplicated Firewall) is a program that allows you to internally control ports on your Linux instance. This gives you the ability to forward ports from your machine.
-The common use of a firewall is to control the ports that have access from the outside world, for instance, running a website would need ports 80/443 exposed on your network to be able to route your site.
-UFW is different, think of port forwarding, but between local instances.</description>
+      <guid>http://localhost:1313/posts/setting-up-ufw-on-ubuntu-server/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://help.ubuntu.com/community/UFW&#34;&gt;UFW&lt;/a&gt; (Uncomplicated Firewall) is a program that allows you to internally control ports on your Linux instance. This gives you the ability to forward ports from your machine.&lt;/p&gt;&#xA;&lt;p&gt;The common use of a firewall is to control the ports that have access from the outside world, for instance, running a website would need ports &lt;code&gt;80&lt;/code&gt;/&lt;code&gt;443&lt;/code&gt; exposed on your network to be able to route your site.&lt;/p&gt;&#xA;&lt;p&gt;UFW is different, think of port forwarding, but between local instances. You can lock down internal exposure to port &lt;code&gt;22&lt;/code&gt; (&lt;code&gt;ssh&lt;/code&gt;) for example.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>About me</title>
-      <link>https://edleeman.co.uk/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/about/</guid>
-      <description>About me Hi, I’m Ed. I’m a Software Engineer and DevOps Engineer in training based in Portsmouth, UK. I currently work for TotalJobs Group.
-I am a keen writer over at my main blog The Self-Hosting Blog where I write informative tutorials on how to self-host opensource software. I try to keep the blog posts simple, to try and show my readers how easy it is to spin up their own applications, rather than using centralised software.</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About me&lt;/h1&gt;&#xA;&lt;p&gt;Hi, I’m Ed. I’m a Platform Engineer based in Portsmouth, UK. I currently work for Stepstone Group.&lt;/p&gt;&#xA;&lt;p&gt;I am a keen writer over at my main blog The Self-Hosting Blog where I write informative tutorials on how to self-host opensource software. I try to keep the blog posts simple, to try and show my readers how easy it is to spin up their own applications, rather than using centralised software.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Archive</title>
-      <link>https://edleeman.co.uk/archive/</link>
+      <link>http://localhost:1313/archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/archive/</guid>
+      <guid>http://localhost:1313/archive/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cookie Zero</title>
-      <link>https://edleeman.co.uk/cookie-zero/</link>
+      <link>http://localhost:1313/cookie-zero/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/cookie-zero/</guid>
-      <description>Cookie Zero is to show you that we don’t need to have cookies on our sites. We don’t need to track users across the internet. I speak a little bit more about #CookieZero here
-Send me your site URL’s without Cookies. Display this cool banner on your site.
-&amp;lt;a href=&amp;quot;https://edleeman.co.uk/cookie-zero&amp;quot;&amp;gt; &amp;lt;img src=&amp;quot;https://edleeman.co.uk/images/cookiezero.svg&amp;quot;&amp;gt; &amp;lt;/a&amp;gt; Get added to our hall of fame below!
- https://thecrow.uk/ https://joelchrono12.ml/ https://reaper.im https://tillwhen.barelyhuman.dev https://taylantatli.com/  </description>
+      <guid>http://localhost:1313/cookie-zero/</guid>
+      <description>&lt;p&gt;Cookie Zero is to show you that we don’t need to have cookies on our sites. We don’t need to track users across the internet. I speak a little bit more about #CookieZero &lt;a href=&#34;https://edleeman.co.uk/posts/no-ads/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Send me your site URL’s without Cookies. Display this cool banner on your site.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/cookiezero.svg&#34; alt=&#34;Cookie Zero&#34;&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;a href=&amp;#34;https://edleeman.co.uk/cookie-zero&amp;#34;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &amp;lt;img src=&amp;#34;https://edleeman.co.uk/images/cookiezero.svg&amp;#34;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/a&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Get added to our hall of fame below!&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://thecrow.uk/&#34;&gt;https://thecrow.uk/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://joelchrono12.ml/&#34;&gt;https://joelchrono12.ml/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://reaper.im&#34;&gt;https://reaper.im&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://tillwhen.barelyhuman.dev&#34;&gt;https://tillwhen.barelyhuman.dev&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://taylantatli.com/&#34;&gt;https://taylantatli.com/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://cri.cl&#34;&gt;https://cri.cl&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
+    <item>
+      <title>Favourites</title>
+      <link>http://localhost:1313/favourites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/favourites/</guid>
+      <description>&lt;h1 id=&#34;favourites&#34;&gt;Favourites&lt;/h1&gt;&#xA;&lt;p&gt;I am often asked what my favourite &amp;lsquo;insert thing here&amp;rsquo; is. I have terrible recall, so I&amp;rsquo;m commitng it to the internet.&lt;/p&gt;&#xA;&lt;h2 id=&#34;songs&#34;&gt;Songs&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;America - Razorlight&lt;/li&gt;&#xA;&lt;li&gt;Starlight - The Supermen Lovers&lt;/li&gt;&#xA;&lt;li&gt;The kid&amp;rsquo;s don&amp;rsquo;t stand a chance - Vampire Weekend&lt;/li&gt;&#xA;&lt;li&gt;Please forgive me - David Gray&lt;/li&gt;&#xA;&lt;li&gt;The loneliness of a Tower Crane Driver - Elbow&lt;/li&gt;&#xA;&lt;li&gt;Human - The Killers&lt;/li&gt;&#xA;&lt;li&gt;The Bucket - Kings of Leon&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;films&#34;&gt;Films&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Minority Report&lt;/li&gt;&#xA;&lt;li&gt;Limitless&lt;/li&gt;&#xA;&lt;li&gt;The Number 23&lt;/li&gt;&#xA;&lt;li&gt;Source Code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The Silent Patient&lt;/li&gt;&#xA;&lt;li&gt;Project Hail Mary&lt;/li&gt;&#xA;&lt;li&gt;Midnight Library&lt;/li&gt;&#xA;&lt;li&gt;Bird Box&lt;/li&gt;&#xA;&lt;li&gt;The Butterfly Garden&lt;/li&gt;&#xA;&lt;li&gt;Dark Matter&lt;/li&gt;&#xA;&lt;li&gt;All Quiet on the Western Front&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Now</title>
-      <link>https://edleeman.co.uk/now/</link>
+      <link>http://localhost:1313/now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://edleeman.co.uk/now/</guid>
-      <description>Now What am I up to now?
-### Location  Portsmouth, UK  ### Employment  TotalJobs Group, UK  ### Languages  .NET Core React Native Vue.js Node.js Bash Terraform  ### Pastimes  Writing - at The Self-Hosting Blog Building - E-Ticket generation API at Bluprint Events  Last updated: 18 May 2022</description>
+      <guid>http://localhost:1313/now/</guid>
+      <description>&lt;h1 id=&#34;now&#34;&gt;Now&lt;/h1&gt;&#xA;&lt;p&gt;What am I up to now?&lt;/p&gt;&#xA;&lt;h3 id=&#34;-location&#34;&gt;### Location&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Portsmouth, UK&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-employment&#34;&gt;### Employment&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Stepstone, UK&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-languages&#34;&gt;### Languages&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;.NET Core&lt;/li&gt;&#xA;&lt;li&gt;React Native&lt;/li&gt;&#xA;&lt;li&gt;Vue.js&lt;/li&gt;&#xA;&lt;li&gt;Node.js&lt;/li&gt;&#xA;&lt;li&gt;Bash&lt;/li&gt;&#xA;&lt;li&gt;Terraform&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-pastimes&#34;&gt;### Pastimes&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Writing - at &lt;a href=&#34;https://theselfhostingblog.com&#34;&gt;The Self-Hosting Blog&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Building - E-Ticket generation API at &lt;a href=&#34;https://bluprintevents.io&#34;&gt;Bluprint Events&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Last updated: 22 Dec 2023&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

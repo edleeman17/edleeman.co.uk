@@ -1,204 +1,161 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-12-06T20:29:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-12-06T20:29:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/solving-connection-issues-on-the-w-ergo/</loc>
+    <lastmod>2024-12-06T20:29:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/cd-into-cloned-repository/</loc>
+    <lastmod>2024-03-11T17:56:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/</loc>
+    <lastmod>2024-03-11T17:56:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/</loc>
+    <lastmod>2024-02-12T23:42:41+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/formatting-json-files-in-vim/</loc>
+    <lastmod>2024-02-09T16:15:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/not-found/</loc>
+    <lastmod>2024-02-09T16:12:46+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/assuming-an-aws-role-in-ci-cd/</loc>
+    <lastmod>2024-02-09T13:30:38+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/knowledge/</loc>
+    <lastmod>2024-02-09T13:30:38+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-02-09T13:30:38+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/installing-commands-using-existing-docker-images/</loc>
+    <lastmod>2024-02-09T13:28:26+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/</loc>
+    <lastmod>2024-02-09T11:08:23+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/confessions-of-a-failed-multitasker/</loc>
+    <lastmod>2024-02-08T18:23:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/my-app-defaults-of-2024/</loc>
+    <lastmod>2024-01-16T12:28:12+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/creating-really-simple-api-authentication-in-dotnet/</loc>
     <lastmod>2022-11-09T12:29:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/</loc>
-    <lastmod>2022-11-09T12:29:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/</loc>
-    <lastmod>2022-11-09T12:29:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/preventing-email-floods/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/preventing-email-floods/</loc>
     <lastmod>2021-08-03T14:46:16+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/</loc>
     <lastmod>2021-07-02T19:39:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/disable-javascript-to-view-this-site/</loc>
     <lastmod>2021-03-29T15:58:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/deleted-docker-compose/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/deleted-docker-compose/</loc>
     <lastmod>2021-03-26T21:49:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/public-repository-alerts/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/public-repository-alerts/</loc>
     <lastmod>2021-03-25T14:04:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/sponsorship/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/sponsorship/</loc>
     <lastmod>2021-03-24T15:19:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/blog-automation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/blog-automation/</loc>
     <lastmod>2021-03-23T20:09:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/self-hosting-papercups-io-open-source-live-customer-chat/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/self-hosting-papercups-io-open-source-live-customer-chat/</loc>
     <lastmod>2021-03-23T15:45:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/virtual-computing/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/virtual-computing/</loc>
     <lastmod>2021-03-22T19:21:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/freelance-writing/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/freelance-writing/</loc>
     <lastmod>2021-03-21T19:19:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/no-ads/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/no-ads/</loc>
     <lastmod>2021-03-21T00:03:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/setting-up-focalboard-a-self-hosted-alternative-to-trello-and-notion/</loc>
     <lastmod>2021-03-20T18:18:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/unifi-dream-machine/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/unifi-dream-machine/</loc>
     <lastmod>2021-03-20T00:00:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/monetisation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/monetisation/</loc>
     <lastmod>2021-03-19T13:00:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/host-your-blog-for-free-with-digital-ocean-apps/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/host-your-blog-for-free-with-digital-ocean-apps/</loc>
     <lastmod>2021-03-15T15:57:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/completely-self-hosting-plausible-io-a-privacy-friendly-alternative-to-google-analytics/</loc>
     <lastmod>2021-03-09T13:17:39+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/building-a-more-privacy-friendly-blog/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/building-a-more-privacy-friendly-blog/</loc>
     <lastmod>2021-03-03T21:23:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/setting-up-portainer-container-management-made-easy/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/setting-up-portainer-container-management-made-easy/</loc>
     <lastmod>2021-03-01T08:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/take-back-control-of-your-data/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/take-back-control-of-your-data/</loc>
     <lastmod>2021-02-17T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-self-host-pihole-an-internet-advertising-black-hole/</loc>
     <lastmod>2021-02-09T12:00:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/the-best-self-hosting-subreddits-to-follow-in-2021/</loc>
     <lastmod>2021-02-07T21:31:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/archiving-protonmail-emails-on-a-headless-ubuntu-instance/</loc>
     <lastmod>2020-11-16T11:17:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/schiit-modi-2-fixing-windows-not-recognised/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/schiit-modi-2-fixing-windows-not-recognised/</loc>
     <lastmod>2020-09-27T16:31:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/self-hosting-a-wireguard-vpn-the-easy-way/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/self-hosting-a-wireguard-vpn-the-easy-way/</loc>
     <lastmod>2020-09-13T19:49:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/how-to-self-host-bitwarden-on-ubuntu-server/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-self-host-bitwarden-on-ubuntu-server/</loc>
     <lastmod>2020-08-30T18:10:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/how-to-completely-self-host-standard-notes/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-completely-self-host-standard-notes/</loc>
     <lastmod>2020-08-25T18:29:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/how-to-set-up-a-headless-syncthing-network/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-set-up-a-headless-syncthing-network/</loc>
     <lastmod>2020-08-03T18:31:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/configuring-vim-for-node-js-development/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/configuring-vim-for-node-js-development/</loc>
     <lastmod>2020-07-28T18:58:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/setting-up-cucumber-nightwatch-js-and-selenium-grid-for-highly-scalable-remote-chrome-execution-from-buddy/</loc>
     <lastmod>2020-07-21T11:26:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/my-self-hosted-note-syncing-journey-once-switching-to-iphone/</loc>
     <lastmod>2020-02-25T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/how-to-route-nginx-through-a-child-nginx-configuration-jumpbox-to-web-server-configuration/</loc>
     <lastmod>2020-01-02T11:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/posts/setting-up-ufw-on-ubuntu-server/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/setting-up-ufw-on-ubuntu-server/</loc>
     <lastmod>2019-12-15T11:29:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/archive/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/cookie-zero/</loc>
+  </url><url>
+    <loc>http://localhost:1313/favourites/</loc>
+  </url><url>
+    <loc>http://localhost:1313/now/</loc>
   </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/archive/</loc>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/cookie-zero/</loc>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/now/</loc>
-  </url>
-  
-  <url>
-    <loc>https://edleeman.co.uk/tags/</loc>
-  </url>
-  
 </urlset>
