@@ -18,7 +18,7 @@ Send me your site URL’s without Cookies. Display this cool banner on your site
 Get added to our hall of fame below!
 
 - https://thecrow.uk/
-- https://joelchrono12.ml/
+- http://joelchrono.xyz/
 - https://reaper.im
 - https://tillwhen.barelyhuman.dev
 - https://taylantatli.com/
