@@ -7,7 +7,7 @@ Cookie Zero is to show you that we don’t need to have cookies on our sites. We
 
 Send me your site URL’s without Cookies. Display this cool banner on your site.
 
-Or [submit a PR](https://github.com/edleeman17/edleeman.co.uk/compare)
+Or [submit a PR](https://github.com/edleeman17/edleeman.co.uk/compare) (/content/cookie-zero.md)
 
 ![Cookie Zero](/images/cookiezero.svg)
 
