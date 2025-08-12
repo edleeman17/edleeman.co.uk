@@ -7,6 +7,8 @@ Cookie Zero is to show you that we don’t need to have cookies on our sites. We
 
 Send me your site URL’s without Cookies. Display this cool banner on your site.
 
+Or [submit a PR](https://github.com/edleeman17/edleeman.co.uk/compare)
+
 ![Cookie Zero](/images/cookiezero.svg)
 
 ```
@@ -23,3 +25,4 @@ Get added to our hall of fame below!
 - https://tillwhen.barelyhuman.dev
 - https://taylantatli.com/
 - https://cri.cl
+- https://alexzeecomedy.com/
