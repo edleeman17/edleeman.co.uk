@@ -26,3 +26,4 @@ Get added to our hall of fame below!
 - https://taylantatli.com/
 - https://cri.cl
 - https://alexzeecomedy.com/
+- https://perrotta.dev/
