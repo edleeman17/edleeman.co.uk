@@ -224,6 +224,11 @@ footer > a, #now_playing > a, header a, .page-toc > a, .link > a {
     vertical-align: middle;
 }
 
+.menu-item.active {
+    font-weight: bold;
+    border-bottom: 2px solid #b00c1f;
+}
+
 footer > a:hover {
     border-bottom: 2px solid black;
 }

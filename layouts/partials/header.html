@@ -53,9 +53,9 @@
   <!-- Navigation Pages -->
   <nav class="nav-links">
     {{ range where site.RegularPages "Type" "page" }}
-    <a class="menu-item" href="{{ .Permalink }}">{{ .Title }}</a>
+    <a class="menu-item{{ if eq $.Page.Permalink .Permalink }} active{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}
-    <a href="{{ .Site.BaseURL }}archive">archive</a>
+    <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
   </nav>
 
   <div class="right-wrap">
