@@ -1,4 +1,7 @@
 {{- partial "header.html" . -}}
+<progress id="reading-progress" max="100" value="0"></progress>
+
+{{ partial "toc.html" . }}
 
 <div class="post">
     {{ .Content }}
@@ -8,4 +11,19 @@
     <p class="post-tags">Tags: {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
     <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
 </div>
+<script>
+(function() {
+  var progress = document.getElementById('reading-progress');
+  if (!progress) return;
+  function updateProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.body.scrollHeight - window.innerHeight;
+    if (docHeight > 0) {
+      progress.value = (scrollTop / docHeight) * 100;
+    }
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+})();
+</script>
 {{- partial "footer.html" . -}}

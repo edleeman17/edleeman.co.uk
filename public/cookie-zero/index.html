@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <title>Cookie Zero</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://edleeman.co.uk/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://edleeman.co.uk/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://edleeman.co.uk/images/favicon-16x16.png">
   
   <meta name="description" content="">
   <meta name="image" content="">
   
   <meta itemprop="name" content="Cookie Zero">
   <meta itemprop="description" content="">
-  <meta itemprop="image" content="http://localhost:1313/">
+  <meta itemprop="image" content="https://edleeman.co.uk/">
   
   <meta property="og:title" content="Cookie Zero">
   <meta property="og:description" content="">
   
-  <meta property="og:url" content="http://localhost:1313/cookie-zero/">
+  <meta property="og:url" content="https://edleeman.co.uk/cookie-zero/">
   <meta property="og:site_name" content="Cookie Zero">
   <meta property="og:type" content="article">
   
   <meta property="article:tag" content="">
   <meta name="fediverse:creator" content="@edphones@fosstodon.org">
-  <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/main.css">
-  <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/syntax.css">
+  <link rel="stylesheet" type="text/css" href="https://edleeman.co.uk/css/main.css?v=1772665693">
+  <link rel="stylesheet" type="text/css" href="https://edleeman.co.uk/css/syntax.css?v=1772665693">
 
-  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Ed Leeman">
+  <link rel="alternate" type="application/rss+xml" href="https://edleeman.co.uk/index.xml" title="Ed Leeman">
 
   
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
 
 <header>
   
-  <a href="http://localhost:1313/"><strong>Home</strong></a>
+  <a href="https://edleeman.co.uk/" class="logo"><img src="https://edleeman.co.uk/images/ed.png" alt="Home" height="32"></a>
+
   
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
   
-  <a class="menu-item" href="http://localhost:1313/about/">About me</a>
-  
-  <a class="menu-item" href="http://localhost:1313/cookie-zero/">Cookie Zero</a>
-  
-  <a class="menu-item" href="http://localhost:1313/favourites/">Favourites</a>
-  
-  <a class="menu-item" href="http://localhost:1313/now/">Now</a>
-  
-  <a href="http://localhost:1313/archive">archive</a>
+  <nav class="nav-links">
+    
+    <a class="menu-item" href="https://edleeman.co.uk/about/">About me</a>
+    
+    <a class="menu-item active" href="https://edleeman.co.uk/cookie-zero/">Cookie Zero</a>
+    
+    <a class="menu-item" href="https://edleeman.co.uk/favourites/">Favourites</a>
+    
+    <a class="menu-item" href="https://edleeman.co.uk/now/">Now</a>
+    
+    <a class="menu-item" href="https://edleeman.co.uk/archive">archive</a>
+  </nav>
 
   <div class="right-wrap">
+    <button id="button">dark</button>
     
-    <a href="http://localhost:1313/index.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
+    <a href="https://edleeman.co.uk/index.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
       height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
       <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -67,18 +77,23 @@
 <div class="main">
     <p>Cookie Zero is to show you that we don’t need to have cookies on our sites. We don’t need to track users across the internet. I speak a little bit more about #CookieZero <a href="https://edleeman.co.uk/posts/no-ads/">here</a></p>
 <p>Send me your site URL’s without Cookies. Display this cool banner on your site.</p>
-<p><img src="/images/cookiezero.svg" alt="Cookie Zero"></p>
+<p>Or <a href="https://github.com/edleeman17/edleeman.co.uk/compare">submit a PR</a> (/content/cookie-zero.md)</p>
+<p><img src="/images/cookiezero.svg" alt="Cookie Zero"  loading="lazy">
+</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">&lt;a href=&#34;https://edleeman.co.uk/cookie-zero&#34;&gt;
 </span></span><span class="line"><span class="ln">2</span><span class="cl">    &lt;img src=&#34;https://edleeman.co.uk/images/cookiezero.svg&#34;&gt;
 </span></span><span class="line"><span class="ln">3</span><span class="cl">&lt;/a&gt;
 </span></span></code></pre></div><p>Get added to our hall of fame below!</p>
 <ul>
 <li><a href="https://thecrow.uk/">https://thecrow.uk/</a></li>
-<li><a href="https://joelchrono12.ml/">https://joelchrono12.ml/</a></li>
+<li><a href="https://joelchrono.xyz/">https://joelchrono.xyz/</a></li>
 <li><a href="https://reaper.im">https://reaper.im</a></li>
 <li><a href="https://tillwhen.barelyhuman.dev">https://tillwhen.barelyhuman.dev</a></li>
 <li><a href="https://taylantatli.com/">https://taylantatli.com/</a></li>
 <li><a href="https://cri.cl">https://cri.cl</a></li>
+<li><a href="https://alexzeecomedy.com/">https://alexzeecomedy.com/</a></li>
+<li><a href="https://perrotta.dev/">https://perrotta.dev/</a></li>
+<li><a href="https://burgeonlab.com/">https://burgeonlab.com/</a></li>
 </ul>
 
 </div><footer>
@@ -91,6 +106,8 @@
     <br />
     Running on a <a class="underline" href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.<br />
     Get $200 Digital Ocean credit using <a class="underline" href="https://m.do.co/c/d2a3afe52625">this link</a>
+    <br />
+    <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
 </footer>
 <script>
     var output = '';
@@ -108,6 +125,12 @@
     });
 
 
+    
+    if (localStorage.toggled === 'dark') {
+        $('html').addClass('dark');
+        $('#button').html('light');
+    }
+
     $("#button").click(function () {
         if (localStorage.toggled != 'dark') {
             $('html').toggleClass('dark', true);
@@ -119,6 +142,42 @@
             localStorage.toggled = "";
         }
     });
+
+    
+    document.querySelectorAll('.highlight').forEach(function(block) {
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.addEventListener('click', function() {
+        var code = block.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(function() {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.textContent = 'copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      });
+      block.appendChild(btn);
+    });
+
+    
+    (function() {
+      var posts = document.querySelectorAll('.feed');
+      if (!posts.length) return;
+      var current = -1;
+      document.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === 'j') {
+          current = Math.min(current + 1, posts.length - 1);
+          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (e.key === 'k') {
+          current = Math.max(current - 1, 0);
+          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    })();
 </script>
 </body>
 

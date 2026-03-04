@@ -8,6 +8,8 @@
     <br />
     Running on a <a class="underline" href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.<br />
     Get $200 Digital Ocean credit using <a class="underline" href="https://m.do.co/c/d2a3afe52625">this link</a>
+    <br />
+    <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
 </footer>
 <script>
     var output = '';
@@ -25,6 +27,12 @@
     });
 
 
+    // Restore dark mode on page load
+    if (localStorage.toggled === 'dark') {
+        $('html').addClass('dark');
+        $('#button').html('light');
+    }
+
     $("#button").click(function () {
         if (localStorage.toggled != 'dark') {
             $('html').toggleClass('dark', true);
@@ -36,6 +44,42 @@
             localStorage.toggled = "";
         }
     });
+
+    // Code block copy button
+    document.querySelectorAll('.highlight').forEach(function(block) {
+      var btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.textContent = 'copy';
+      btn.addEventListener('click', function() {
+        var code = block.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(function() {
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(function() {
+            btn.textContent = 'copy';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      });
+      block.appendChild(btn);
+    });
+
+    // Keyboard navigation (j/k for posts)
+    (function() {
+      var posts = document.querySelectorAll('.feed');
+      if (!posts.length) return;
+      var current = -1;
+      document.addEventListener('keydown', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === 'j') {
+          current = Math.min(current + 1, posts.length - 1);
+          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else if (e.key === 'k') {
+          current = Math.max(current - 1, 0);
+          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    })();
 </script>
 </body>
 

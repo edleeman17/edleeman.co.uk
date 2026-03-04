@@ -131,10 +131,12 @@ header > a {
 }
 
 .blink {
-  display: none;
+  display: inline-block;
   border-right: .15em solid black; /* The typwriter cursor */
-  animation:
-    blink-caret .75s step-end infinite;
+  animation: blink-caret .75s step-end infinite;
+}
+html.dark .blink {
+  border-color: #e0def4;
 }
 
 .divider {
@@ -170,6 +172,7 @@ header > a {
 
 .highlight {
     overflow: auto;
+    position: relative;
 }
 
 .archive {
@@ -341,4 +344,209 @@ footer > a:hover {
     .post-date {
         display: block;
     }
+}
+
+/* Blockquote terminal style */
+blockquote {
+  border-left: 2px solid #b00c1f;
+  padding-left: 1em;
+  margin-left: 0;
+  font-style: italic;
+}
+blockquote::before {
+  content: '>';
+  color: #b00c1f;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+/* Monospace timestamps */
+time, .post-date, .reading-time {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+
+/* Footnotes styling */
+.footnotes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+}
+.footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+.footnote-backref {
+  margin-left: 0.25em;
+}
+
+/* Reading progress bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  appearance: none;
+  border: none;
+  background: transparent;
+  z-index: 1000;
+}
+#reading-progress::-webkit-progress-bar {
+  background: transparent;
+}
+#reading-progress::-webkit-progress-value {
+  background: #b00c1f;
+}
+#reading-progress::-moz-progress-bar {
+  background: #b00c1f;
+}
+
+/* Code block copy button */
+.copy-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.highlight:hover .copy-btn {
+  opacity: 1;
+}
+.copy-btn.copied {
+  background: #2d7d46;
+}
+
+/* Keyboard navigation hints */
+kbd {
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-family: monospace;
+  font-size: 0.85em;
+}
+.kbd-hints {
+  font-size: 0.8em;
+  color: #666;
+}
+@media (max-width: 599px) {
+  .kbd-hints { display: none; }
+}
+
+/* Table of contents */
+.page-toc {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #f9f9f9;
+  border-left: 2px solid #b00c1f;
+}
+.page-toc summary {
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+.page-toc nav ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.page-toc li {
+  margin: 0.25rem 0;
+}
+
+/* Tables - terminal style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9em;
+}
+th, td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  text-align: left;
+}
+th {
+  background: #1f1d2e;
+  color: #e0def4;
+  text-transform: lowercase;
+}
+tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2rem 0;
+  position: relative;
+}
+hr::after {
+  content: '---';
+  position: absolute;
+  top: -0.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 0 0.5rem;
+  color: #666;
+  font-size: 0.8em;
+}
+
+/* Task lists / checkboxes */
+.post ul li input[type="checkbox"] {
+  margin-right: 0.5em;
+  accent-color: #b00c1f;
+}
+.post ul li:has(input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.2em;
+}
+
+/* Inline code distinct from blocks */
+:not(pre) > code {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+
+/* Nested lists - different bullets */
+ul { list-style-type: disc; }
+ul ul { list-style-type: circle; }
+ul ul ul { list-style-type: square; }
+ol { list-style-type: decimal; }
+ol ol { list-style-type: lower-alpha; }
+ol ol ol { list-style-type: lower-roman; }
+
+/* Mark/highlight */
+mark {
+  background: #fff3cd;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+/* Details/summary collapsible */
+details {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-left: 2px solid #b00c1f;
+}
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+details[open] summary {
+  margin-bottom: 0.5rem;
 }
