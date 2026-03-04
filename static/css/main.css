@@ -220,6 +220,10 @@ footer > a, #now_playing > a, header a, .page-toc > a, .link > a {
     border-bottom:none;
 }
 
+.logo img {
+    vertical-align: middle;
+}
+
 footer > a:hover {
     border-bottom: 2px solid black;
 }
