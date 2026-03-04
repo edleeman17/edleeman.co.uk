@@ -264,11 +264,17 @@ footer > a:hover {
 @media (max-width: 599px) {
   header {
     flex-wrap: wrap;
+    position: relative;
   }
 
   .nav-toggle-label {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
     margin-left: auto;
+    height: 40px;
+    width: 40px;
   }
 
   .nav-links {
@@ -276,6 +282,7 @@ footer > a:hover {
     width: 100%;
     flex-direction: column;
     padding: 10px 0;
+    order: 3;
   }
 
   .nav-links a {
@@ -287,6 +294,7 @@ footer > a:hover {
   }
 
   .right-wrap {
+    order: 4;
     width: 100%;
     justify-content: flex-end;
     padding-top: 10px;
