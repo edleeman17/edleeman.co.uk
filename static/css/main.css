@@ -230,53 +230,61 @@ footer > a:hover {
     50% { border-color: #e0def4 }
   }
 
-/* Hamburger toggle - hidden by default */
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  display: block;
-  background: black;
-  height: 2px;
-  width: 20px;
-  position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-  content: '';
+/* Hamburger toggle - checkbox always hidden */
+input.nav-toggle {
+  display: none !important;
+  visibility: hidden;
   position: absolute;
 }
 
-.nav-toggle-label span::before { top: -6px; }
-.nav-toggle-label span::after { top: 6px; }
+/* Hamburger icon - hidden on desktop */
+.nav-toggle-label {
+  display: none;
+}
 
 /* Mobile styles */
 @media (max-width: 599px) {
   header {
     flex-wrap: wrap;
+  }
+
+  /* Hamburger icon */
+  .nav-toggle-label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .nav-toggle-label span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: black;
     position: relative;
   }
 
-  .nav-toggle-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    order: 2;
-    margin-left: auto;
-    height: 40px;
-    width: 40px;
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 0;
   }
 
+  .nav-toggle-label span::before {
+    top: -7px;
+  }
+
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+
+  /* Nav links - hidden by default on mobile */
   .nav-links {
     display: none;
     width: 100%;
@@ -287,8 +295,10 @@ footer > a:hover {
 
   .nav-links a {
     padding: 8px 10px;
+    display: block;
   }
 
+  /* Show nav when checkbox is checked */
   .nav-toggle:checked ~ .nav-links {
     display: flex;
   }
