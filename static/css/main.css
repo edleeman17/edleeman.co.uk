@@ -231,15 +231,28 @@ footer > a:hover {
   }
 
 /* Hamburger toggle - checkbox always hidden */
-input.nav-toggle {
-  display: none !important;
-  visibility: hidden;
+.nav-toggle {
   position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
 
-/* Hamburger icon - hidden on desktop */
+/* Hamburger icon */
 .nav-toggle-label {
   display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Desktop: show nav links inline */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin: 0 10px;
 }
 
 /* Mobile styles */
@@ -248,11 +261,13 @@ input.nav-toggle {
     flex-wrap: wrap;
   }
 
-  /* Hamburger icon */
+  /* Show hamburger icon */
   .nav-toggle-label {
-    display: block;
-    cursor: pointer;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     margin-left: auto;
     order: 2;
   }
@@ -261,7 +276,7 @@ input.nav-toggle {
     display: block;
     width: 22px;
     height: 2px;
-    background: black;
+    background: #000;
     position: relative;
   }
 
@@ -271,7 +286,7 @@ input.nav-toggle {
     display: block;
     width: 22px;
     height: 2px;
-    background: black;
+    background: #000;
     position: absolute;
     left: 0;
   }
@@ -284,7 +299,7 @@ input.nav-toggle {
     top: 7px;
   }
 
-  /* Nav links - hidden by default on mobile */
+  /* Hide nav links by default on mobile */
   .nav-links {
     display: none;
     width: 100%;
@@ -295,7 +310,7 @@ input.nav-toggle {
 
   .nav-links a {
     padding: 8px 10px;
-    display: block;
+    margin: 0;
   }
 
   /* Show nav when checkbox is checked */
