@@ -34,8 +34,8 @@
   <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -43,11 +43,20 @@
 <header>
   <!-- Homepage Title -->
   <a href="{{ .Site.BaseURL }}"><strong>Home</strong></a>
+
+  <!-- Mobile hamburger toggle -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
   <!-- Navigation Pages -->
-  {{ range where site.RegularPages "Type" "page" }}
-  <a class="menu-item" href="{{ .Permalink }}">{{ .Title }}</a>
-  {{ end }}
-  <a href="{{ .Site.BaseURL }}archive">archive</a>
+  <nav class="nav-links">
+    {{ range where site.RegularPages "Type" "page" }}
+    <a class="menu-item" href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    <a href="{{ .Site.BaseURL }}archive">archive</a>
+  </nav>
 
   <div class="right-wrap">
     <!-- Show RSS feed in the header -->

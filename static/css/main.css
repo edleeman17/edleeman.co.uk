@@ -230,10 +230,73 @@ footer > a:hover {
     50% { border-color: #e0def4 }
   }
 
-  @media (min-width:600px)  { 
-      /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
-      .post-date {
-          display: block;
-      }
+/* Hamburger toggle - hidden by default */
+.nav-toggle {
+  display: none;
+}
 
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 20px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before { top: -6px; }
+.nav-toggle-label span::after { top: 6px; }
+
+/* Mobile styles */
+@media (max-width: 599px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 8px 10px;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .right-wrap {
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+  }
+}
+
+@media (min-width:600px)  {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    .post-date {
+        display: block;
+    }
 }

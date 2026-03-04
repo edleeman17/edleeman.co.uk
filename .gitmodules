@@ -1,6 +1,3 @@
-[submodule "themes/mini"]
-	path = themes/mini
-	url = https://github.com/nodejh/hugo-theme-mini.git
 [submodule "themes/hugo-theme-mini"]
 	path = themes/hugo-theme-mini
 	url = git@github.com:nodejh/hugo-theme-mini.git
