@@ -12,37 +12,49 @@
     <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
 </footer>
 <script>
-    var output = '';
+    // Theme toggle (vanilla JS with system preference support)
+    (function() {
+      var btn = document.getElementById('button');
+      var html = document.documentElement;
 
-    $('.sticky-toc-link').on('click', function (e) {
-        e.preventDefault();
-        var link = $(this).attr('href');
+      function updateButtonText() {
+        btn.textContent = html.classList.contains('dark') ? 'light' : 'dark';
+      }
 
-        $('html, body').animate(
-            {
-                scrollTop: $(link).offset().top - 82,
-            },
-            500
-        );
-    });
+      // Initial button state
+      updateButtonText();
 
+      // Toggle handler
+      btn.addEventListener('click', function() {
+        var isDark = html.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateButtonText();
+      });
 
-    // Restore dark mode on page load
-    if (localStorage.toggled === 'dark') {
-        $('html').addClass('dark');
-        $('#button').html('light');
-    }
-
-    $("#button").click(function () {
-        if (localStorage.toggled != 'dark') {
-            $('html').toggleClass('dark', true);
-            $('#button').html('light');
-            localStorage.toggled = "dark";
-        } else {
-            $('html').toggleClass('dark', false);
-            $('#button').html('dark');
-            localStorage.toggled = "";
+      // Listen for system preference changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+          if (e.matches) {
+            html.classList.add('dark');
+          } else {
+            html.classList.remove('dark');
+          }
+          updateButtonText();
         }
+      });
+    })();
+
+    // Smooth scroll for TOC links (vanilla JS)
+    document.querySelectorAll('.sticky-toc-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }
+      });
     });
 
     // Code block copy button

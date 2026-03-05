@@ -13,7 +13,7 @@
         <span class="green">➜</span>
         <span class="cyan">~</span>
         <span class="type"></span>
-        <span class="blink"></span>
+        <span class="blink" style="display:none;"></span>
     </section>
     <section id="posts">
         <h2>## Posts</h2>
@@ -29,37 +29,61 @@
 </div>
 
 <script>
-    var str = `echo "Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate
-and solver of problems that I make for myself. Currently exploring AI and automating my life." > about.txt`;
+    // Typing animation (vanilla JS)
+    (function() {
+        var str = 'echo "Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life." > about.txt';
+        var typeEl = document.querySelector('.type');
+        var blinkEl = document.querySelector('.blink');
+        var i = 0;
 
+        function typeChar() {
+            if (i < str.length) {
+                var span = document.createElement('span');
+                span.textContent = str[i];
+                span.style.opacity = '0';
+                typeEl.appendChild(span);
 
-var spans = '<span>' + str.split('').join('</span><span>') + '</span>';
+                // Fade in
+                setTimeout(function() {
+                    span.style.transition = 'opacity 100ms';
+                    span.style.opacity = '1';
+                }, 10);
 
-$(spans).hide().appendTo('.type').each(function (i) {
-    $(this).delay(25 * i).css({display: 'inline', opacity: 0}).animate({opacity: 1}, 100);
-}).promise().done(function (){
-    $('.blink').show();
-});
+                i++;
+                setTimeout(typeChar, 25);
+            } else {
+                blinkEl.style.display = 'inline-block';
+            }
+        }
 
-const api_key = '35d69c5ad21f4fc86e2d4269b9c949bd';
-const url_base = 'https://ws.audioscrobbler.com/2.0/?'
-const username = 'ed1727';
-const user = '&user='+username
-const key = '&api_key='+api_key
+        typeChar();
+    })();
 
-$(document).ready(function()  {
-  const base_url = url_base+'method=user.getrecenttracks&user='+username+'&api_key='+api_key+'&limit=1&format=json';
-  $.getJSON(base_url, function(data){
-    if(jQuery.type(data.recenttracks.track) === 'array') {
-      var nowPlaying = data.recenttracks.track[0];
-      var listening_text = 'Currently listening to... ';
-    }
-    else {
-      var nowPlaying = data.recenttracks.track;
-      var listening_text = 'Last listened to...  ';
-    }
-    var currentTrack = nowPlaying['name'] + ' by ' + nowPlaying['artist']['#text'];
-    $('#now_playing').html("<a href="+nowPlaying['url']+">" + listening_text + currentTrack + " <i class='fas fa-compact-disc fa-spin'></i>" + "</a>");
-  });
-});
+    // Last.fm now playing (vanilla JS)
+    (function() {
+        var apiKey = '35d69c5ad21f4fc86e2d4269b9c949bd';
+        var username = 'ed1727';
+        var url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + username + '&api_key=' + apiKey + '&limit=1&format=json';
+
+        fetch(url)
+            .then(function(response) { return response.json(); })
+            .then(function(data) {
+                var track, listeningText;
+
+                if (Array.isArray(data.recenttracks.track)) {
+                    track = data.recenttracks.track[0];
+                    listeningText = 'Currently listening to... ';
+                } else {
+                    track = data.recenttracks.track;
+                    listeningText = 'Last listened to... ';
+                }
+
+                var currentTrack = track.name + ' by ' + track.artist['#text'];
+                var nowPlayingEl = document.getElementById('now_playing');
+                nowPlayingEl.innerHTML = '<a href="' + track.url + '">' + listeningText + currentTrack + ' <i class="fas fa-compact-disc fa-spin"></i></a>';
+            })
+            .catch(function(err) {
+                console.log('Last.fm error:', err);
+            });
+    })();
 </script>
