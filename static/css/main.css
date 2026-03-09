@@ -332,13 +332,44 @@ h6 {
   color: var(--color-h6);
 }
 
-/* Markdown-style hashtags - only in post content */
-.post h1::before { content: '# '; color: var(--color-text-muted); }
-.post h2::before { content: '## '; color: var(--color-text-muted); }
-.post h3::before { content: '### '; color: var(--color-text-muted); }
-.post h4::before { content: '#### '; color: var(--color-text-muted); }
-.post h5::before { content: '##### '; color: var(--color-text-muted); }
-.post h6::before { content: '###### '; color: var(--color-text-muted); }
+/* Markdown-style hashtags - only in post content, shown on hover */
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
+  position: relative;
+}
+
+.post h1 .heading-anchor,
+.post h2 .heading-anchor,
+.post h3 .heading-anchor,
+.post h4 .heading-anchor,
+.post h5 .heading-anchor,
+.post h6 .heading-anchor {
+  position: absolute;
+  right: 100%;
+  padding-right: var(--space-2);
+  opacity: 0;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  background: none;
+  transition: opacity var(--transition-fast);
+}
+
+.post h1:hover .heading-anchor,
+.post h2:hover .heading-anchor,
+.post h3:hover .heading-anchor,
+.post h4:hover .heading-anchor,
+.post h5:hover .heading-anchor,
+.post h6:hover .heading-anchor {
+  opacity: 1;
+}
+
+.post h1 .heading-anchor:hover,
+.post h2 .heading-anchor:hover,
+.post h3 .heading-anchor:hover,
+.post h4 .heading-anchor:hover,
+.post h5 .heading-anchor:hover,
+.post h6 .heading-anchor:hover {
+  color: var(--color-accent);
+}
 
 
 .underline {
@@ -366,6 +397,7 @@ h6 {
   border-radius: var(--border-radius);
   border-left: 3px solid var(--color-accent);
   box-shadow: var(--shadow-lg);
+  font-family: var(--font-mono);
 }
 
 /* ============================================
@@ -595,9 +627,11 @@ code {
 
 .page-toc {
   margin: var(--space-4) 0;
+}
+
+.page-toc details {
   padding: var(--space-2) var(--space-4);
   background: var(--color-bg-secondary);
-  border-left: 3px solid var(--color-accent);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-sm);
 }
