@@ -61,7 +61,8 @@
   --border-radius: 4px;
 
   /* Font */
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
 }
 
 /* ============================================
@@ -107,7 +108,8 @@ body {
   min-height: 100%;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-weight: 300;
   font-size: var(--text-base);
   line-height: 1.6;
   transition: background var(--transition-base), color var(--transition-base);
@@ -121,7 +123,7 @@ body > * {
 }
 
 body, li p {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-base);
   margin-top: var(--space-3);
   margin-bottom: var(--space-3);
@@ -143,6 +145,20 @@ a {
 a:hover {
   background-size: 100% 100%;
   color: white;
+}
+
+/* External link indicator */
+a[href^='http']:not([href*='edleeman.co.uk']):not(.logo):not(.no-external-icon)::after {
+  content: '┓';
+  font-family: var(--font-sans);
+  font-size: 0.5em;
+  vertical-align: super;
+  margin-left: 0.1em;
+  opacity: 0.7;
+}
+
+a[href^='http']:has(img)::after {
+  content: none;
 }
 
 /* ============================================
@@ -363,7 +379,7 @@ h6 {
   color: var(--color-text);
   padding: var(--space-1) var(--space-2);
   cursor: pointer;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-sm);
   transition: background var(--transition-fast), color var(--transition-fast);
 }
