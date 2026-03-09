@@ -345,7 +345,7 @@ h6 {
   color: var(--color-text-muted);
   text-decoration: none;
   background: none;
-  vertical-align: baseline;
+  vertical-align: bottom;
   transition: width var(--transition-base);
 }
 
