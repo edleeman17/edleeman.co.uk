@@ -333,19 +333,13 @@ h6 {
 }
 
 /* Markdown-style hashtags - only in post content, shown on hover */
-.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
-  position: relative;
-}
-
 .post h1 .heading-anchor,
 .post h2 .heading-anchor,
 .post h3 .heading-anchor,
 .post h4 .heading-anchor,
 .post h5 .heading-anchor,
 .post h6 .heading-anchor {
-  position: absolute;
-  right: 100%;
-  padding-right: var(--space-2);
+  margin-right: var(--space-2);
   opacity: 0;
   color: var(--color-text-muted);
   text-decoration: none;
