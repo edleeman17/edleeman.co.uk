@@ -332,29 +332,29 @@ h6 {
   color: var(--color-h6);
 }
 
-/* Markdown-style hashtags - only in post content, shown on hover */
+/* Markdown-style hashtags - only in post content, slide in on hover */
 .post h1 .heading-anchor,
 .post h2 .heading-anchor,
 .post h3 .heading-anchor,
 .post h4 .heading-anchor,
 .post h5 .heading-anchor,
 .post h6 .heading-anchor {
-  margin-right: var(--space-2);
-  opacity: 0;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
   color: var(--color-text-muted);
   text-decoration: none;
   background: none;
-  transition: opacity var(--transition-fast);
+  vertical-align: baseline;
+  transition: width var(--transition-base);
 }
 
-.post h1:hover .heading-anchor,
-.post h2:hover .heading-anchor,
-.post h3:hover .heading-anchor,
-.post h4:hover .heading-anchor,
-.post h5:hover .heading-anchor,
-.post h6:hover .heading-anchor {
-  opacity: 1;
-}
+.post h1:hover .heading-anchor { width: 1.2em; }
+.post h2:hover .heading-anchor { width: 1.8em; }
+.post h3:hover .heading-anchor { width: 2.4em; }
+.post h4:hover .heading-anchor { width: 3em; }
+.post h5:hover .heading-anchor { width: 3.6em; }
+.post h6:hover .heading-anchor { width: 4.2em; }
 
 .post h1 .heading-anchor:hover,
 .post h2 .heading-anchor:hover,
