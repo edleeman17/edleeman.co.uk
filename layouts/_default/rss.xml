@@ -16,7 +16,9 @@
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
-      <description>{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ .Content | replaceRE ` data-lang="[^"]*"` "" | replaceRE ` loading="[^"]*"` "" | html }}{{ end }}{{ end }}</description>
+      {{ $permalink := .Permalink -}}
+      {{ $desc := .Content | replaceRE ` data-lang="[^"]*"` "" | replaceRE ` loading="[^"]*"` "" | replaceRE `href="#([^"]*)"` (printf `href="%s#$1"` $permalink) -}}
+      <description>{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}</description>
     </item>
     {{ end }}
   </channel>
