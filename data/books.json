@@ -1,5 +1,47 @@
 {
-  "last_updated": "2026-03-29T20:06:37Z",
+  "last_updated": "2026-03-29T20:15:15Z",
+  "favourites": [
+    {
+      "title": "Strange Pictures",
+      "author": "Uketsu",
+      "link": "https://www.goodreads.com/review/show/8474881026?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1728787087l/216670080._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2026-03-28T00:00:00Z",
+      "date_added": "2026-03-28T23:56:06Z"
+    },
+    {
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "link": "https://www.goodreads.com/review/show/7021456203?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668782119l/40097951._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-11-23T00:00:00Z",
+      "date_added": "2024-11-23T23:14:38Z"
+    },
+    {
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/5279235856?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1607709203l/55313155._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-02-05T00:00:00Z",
+      "date_added": "2023-02-06T01:46:41Z"
+    },
+    {
+      "title": "All Quiet on the Western Front",
+      "author": "Erich Maria Remarque",
+      "link": "https://www.goodreads.com/review/show/4985394314?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528360205l/11223446._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-09-15T00:00:00Z",
+      "date_added": "2022-09-15T21:01:09Z"
+    }
+  ],
   "read": [
     {
       "title": "Strange Pictures",

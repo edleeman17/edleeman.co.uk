@@ -37,8 +37,6 @@ def get_text(item, tag, default=""):
 
 def fetch_shelf(user_id, shelf):
     sort = "date_read" if shelf == "read" else "date_added"
-    if shelf == "favorites":
-        sort = "date_added"
     url = (
         f"https://www.goodreads.com/review/list_rss/{user_id}"
         f"?shelf={shelf}&per_page=200&sort={sort}&order=d"
@@ -119,8 +117,16 @@ def main():
     tbr_books = fetch_shelf(user_id, "to-read")
     print(f"  Found {len(tbr_books)} TBR books")
 
-    favourites = fetch_shelf(user_id, "favorites")
-    print(f"  Found {len(favourites)} favourite books")
+    pinned_links = set()
+    if os.path.exists("data/pinned.json"):
+        with open("data/pinned.json", encoding="utf-8") as f:
+            raw = json.load(f)
+        # Strip UTM params so links match regardless of source
+        for link in raw:
+            pinned_links.add(link.split("?")[0])
+
+    favourites = [b for b in read_books if b.get("link", "").split("?")[0] in pinned_links]
+    print(f"  Found {len(favourites)} pinned favourite books")
 
     sort_read_books(read_books)
 
