@@ -1,5 +1,1670 @@
 {
-  "last_updated": "",
-  "read": [],
-  "tbr": []
+  "last_updated": "2026-03-29T20:06:37Z",
+  "read": [
+    {
+      "title": "Strange Pictures",
+      "author": "Uketsu",
+      "link": "https://www.goodreads.com/review/show/8474881026?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1728787087l/216670080._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2026-03-28T00:00:00Z",
+      "date_added": "2026-03-28T23:56:06Z"
+    },
+    {
+      "title": "A Short Stay in Hell",
+      "author": "Steven L. Peck",
+      "link": "https://www.goodreads.com/review/show/7674767190?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751978801l/13456414._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-06-28T00:00:00Z",
+      "date_added": "2025-06-28T22:40:10Z"
+    },
+    {
+      "title": "Lone Survivors: How We Came to Be the Only Humans on Earth",
+      "author": "Chris Stringer",
+      "link": "https://www.goodreads.com/review/show/7673424838?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344314833l/12116875.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-06-22T00:00:00Z",
+      "date_added": "2025-06-21T23:26:10Z"
+    },
+    {
+      "title": "507 Mechanical Movements: Mechanisms and Devices",
+      "author": "Henry T. Brown",
+      "link": "https://www.goodreads.com/review/show/7649751480?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328864917l/108397.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-06-12T00:00:00Z",
+      "date_added": "2025-06-12T22:45:55Z"
+    },
+    {
+      "title": "Practical Vim: Edit Text at the Speed of Thought",
+      "author": "Drew Neil",
+      "link": "https://www.goodreads.com/review/show/7582577474?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1336278962l/13607232.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-05-19T00:00:00Z",
+      "date_added": "2025-05-19T20:15:05Z"
+    },
+    {
+      "title": "Food Noise: How weight loss medications & smart nutrition can silence your cravings",
+      "author": "Jack Mosley",
+      "link": "https://www.goodreads.com/review/show/7537837157?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740560055l/223914871._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-05-03T00:00:00Z",
+      "date_added": "2025-05-02T23:02:04Z"
+    },
+    {
+      "title": "Sunrise on the Reaping (The Hunger Games, #0.5)",
+      "author": "Suzanne Collins",
+      "link": "https://www.goodreads.com/review/show/7492094254?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729085500l/214331246._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-04-16T00:00:00Z",
+      "date_added": "2025-04-16T01:30:54Z"
+    },
+    {
+      "title": "Kafka on the Shore",
+      "author": "Haruki Murakami",
+      "link": "https://www.goodreads.com/review/show/7281864885?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1429638085l/4929._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-02-02T00:00:00Z",
+      "date_added": "2025-02-02T07:56:41Z"
+    },
+    {
+      "title": "Digital Minimalism: Choosing a Focused Life in a Noisy World",
+      "author": "Cal Newport",
+      "link": "https://www.goodreads.com/review/show/7042859499?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549433350l/40672036._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2025-01-06T00:00:00Z",
+      "date_added": "2025-01-06T01:19:42Z"
+    },
+    {
+      "title": "Bird Box (Bird Box, #1)",
+      "author": "Josh Malerman",
+      "link": "https://www.goodreads.com/review/show/7040705050?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1383949470l/18498558.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-12-04T00:00:00Z",
+      "date_added": "2024-12-04T23:03:36Z"
+    },
+    {
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "link": "https://www.goodreads.com/review/show/7021456203?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668782119l/40097951._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-11-23T00:00:00Z",
+      "date_added": "2024-11-23T23:14:38Z"
+    },
+    {
+      "title": "Angels & Demons (Robert Langdon, #1)",
+      "author": "Dan    Brown",
+      "link": "https://www.goodreads.com/review/show/6993817778?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696691404l/960._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-11-19T00:00:00Z",
+      "date_added": "2024-11-19T01:12:24Z"
+    },
+    {
+      "title": "Hidden Pictures",
+      "author": "Jason Rekulak",
+      "link": "https://www.goodreads.com/review/show/6953430229?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1635260162l/58724923.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-10-30T00:00:00Z",
+      "date_added": "2024-10-31T20:38:19Z"
+    },
+    {
+      "title": "We Used to Live Here",
+      "author": "Marcus Kliewer",
+      "link": "https://www.goodreads.com/review/show/6953415199?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1697756012l/199798006._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-10-27T00:00:00Z",
+      "date_added": "2024-10-27T23:21:24Z"
+    },
+    {
+      "title": "None of This Is True",
+      "author": "Lisa Jewell",
+      "link": "https://www.goodreads.com/review/show/6882964386?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1676068052l/67990541._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-09-27T00:00:00Z",
+      "date_added": "2024-09-28T00:38:35Z"
+    },
+    {
+      "title": "The Lost Art of Running: A Journey to Rediscover the Forgotten Essence of Human Movement",
+      "author": "Shane Benzie",
+      "link": "https://www.goodreads.com/review/show/6842279991?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597878182l/55032554._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2024-09-12T00:00:00Z",
+      "date_added": "2024-09-13T01:19:38Z"
+    },
+    {
+      "title": "American Sniper: The Autobiography of the Most Lethal Sniper in U.S. Military History",
+      "author": "Chris Kyle",
+      "link": "https://www.goodreads.com/review/show/5778389151?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472243504l/31686053._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-08-31T00:00:00Z",
+      "date_added": "2023-09-01T00:52:48Z"
+    },
+    {
+      "title": "Recursion",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5523924205?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547660378l/43592998._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-05-26T00:00:00Z",
+      "date_added": "2023-05-26T23:54:56Z"
+    },
+    {
+      "title": "Upgrade",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5466691424?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657730342l/60280135._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-05-01T00:00:00Z",
+      "date_added": "2023-05-01T22:55:45Z"
+    },
+    {
+      "title": "Dark Matter",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5454691172?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542996308l/42937515._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-04-05T00:00:00Z",
+      "date_added": "2023-04-05T22:57:51Z"
+    },
+    {
+      "title": "Project Hail Mary",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/5279235856?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1607709203l/55313155._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2023-02-05T00:00:00Z",
+      "date_added": "2023-02-06T01:46:41Z"
+    },
+    {
+      "title": "The Crucifix Killer (Robert Hunter, #1)",
+      "author": "Chris         Carter",
+      "link": "https://www.goodreads.com/review/show/5089249587?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328346259l/11795531.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-11-12T00:00:00Z",
+      "date_added": "2022-11-12T23:36:18Z"
+    },
+    {
+      "title": "The Shadow Project (Ben Hope, #5)",
+      "author": "Scott Mariani",
+      "link": "https://www.goodreads.com/review/show/5055660615?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601009611l/55448910._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-10-28T00:00:00Z",
+      "date_added": "2022-10-28T21:55:06Z"
+    },
+    {
+      "title": "The Doomsday Prophecy (Ben Hope, #3)",
+      "author": "Scott Mariani",
+      "link": "https://www.goodreads.com/review/show/4992865949?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328028722l/8260127.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-10-02T00:00:00Z",
+      "date_added": "2022-10-02T22:58:52Z"
+    },
+    {
+      "title": "All Quiet on the Western Front",
+      "author": "Erich Maria Remarque",
+      "link": "https://www.goodreads.com/review/show/4985394314?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528360205l/11223446._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-09-15T00:00:00Z",
+      "date_added": "2022-09-15T21:01:09Z"
+    },
+    {
+      "title": "The Mozart Conspiracy (Ben Hope #2)",
+      "author": "Scott Mariani",
+      "link": "https://www.goodreads.com/review/show/4959927004?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328317486l/10596469.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-09-13T00:00:00Z",
+      "date_added": "2022-09-13T21:26:57Z"
+    },
+    {
+      "title": "The Alchemist's Secret (Ben Hope, #1)",
+      "author": "Scott Mariani",
+      "link": "https://www.goodreads.com/review/show/4914719021?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601009398l/55448897._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-08-31T00:00:00Z",
+      "date_added": "2022-08-31T23:04:06Z"
+    },
+    {
+      "title": "Dearly Devoted Dexter (Dexter, #2)",
+      "author": "Jeff Lindsay",
+      "link": "https://www.goodreads.com/review/show/4894224535?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364137554l/11959892.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-08-12T00:00:00Z",
+      "date_added": "2022-08-12T23:31:16Z"
+    },
+    {
+      "title": "Darkly Dreaming Dexter (Dexter, #1)",
+      "author": "Jeff Lindsay",
+      "link": "https://www.goodreads.com/review/show/4894156738?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1384500629l/11193580.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2022-08-03T00:00:00Z",
+      "date_added": "2022-08-03T23:27:40Z"
+    },
+    {
+      "title": "The Shining (The Shining, #1)",
+      "author": "Stephen  King",
+      "link": "https://www.goodreads.com/review/show/4003194976?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377161001l/762530.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2021-08-21T00:00:00Z",
+      "date_added": "2021-08-21T14:12:30Z"
+    },
+    {
+      "title": "The Rosie Project (Don Tillman #1)",
+      "author": "Graeme Simsion",
+      "link": "https://www.goodreads.com/review/show/3924493340?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437469224l/18927643._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2021-04-09T00:00:00Z",
+      "date_added": "2021-04-10T00:09:44Z"
+    },
+    {
+      "title": "The Midnight Library (The Midnight World, #1)",
+      "author": "Matt Haig",
+      "link": "https://www.goodreads.com/review/show/3700840043?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1602190253l/52578297.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2021-04-04T00:00:00Z",
+      "date_added": "2021-04-04T16:49:29Z"
+    },
+    {
+      "title": "The House",
+      "author": "Simon Lelic",
+      "link": "https://www.goodreads.com/review/show/3689711399?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1484325000l/33557461.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2020-12-12T00:00:00Z",
+      "date_added": "2020-12-13T02:27:29Z"
+    },
+    {
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/3395177054?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580451730l/50728243._SY475_.jpg",
+      "rating": 5,
+      "pages": "",
+      "date_read": "2020-06-19T00:00:00Z",
+      "date_added": "2020-06-19T11:45:07Z"
+    },
+    {
+      "title": "Stoner",
+      "author": "John  Williams",
+      "link": "https://www.goodreads.com/review/show/8339827670?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1742326950l/166997._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2026-03-08T00:00:00Z",
+      "date_added": "2026-03-08T21:01:39Z"
+    },
+    {
+      "title": "The Courage to Be Disliked: How to Free Yourself, Change Your Life and Achieve Real Happiness",
+      "author": "Ichiro Kishimi",
+      "link": "https://www.goodreads.com/review/show/7167472681?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545421684l/43306206._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2025-01-03T00:00:00Z",
+      "date_added": "2025-01-03T23:06:07Z"
+    },
+    {
+      "title": "The Butterfly Garden  (The Collector, #1)",
+      "author": "Dot Hutchison",
+      "link": "https://www.goodreads.com/review/show/7040707661?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461392121l/29981261._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2024-12-10T00:00:00Z",
+      "date_added": "2024-12-10T23:24:58Z"
+    },
+    {
+      "title": "56 Days",
+      "author": "Catherine Ryan Howard",
+      "link": "https://www.goodreads.com/review/show/7049054827?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623124494l/57628810.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2024-12-01T00:00:00Z",
+      "date_added": "2024-12-01T22:41:59Z"
+    },
+    {
+      "title": "Ikigai: The Japanese Secret to a Long and Happy Life",
+      "author": "Héctor  García",
+      "link": "https://www.goodreads.com/review/show/7017276134?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680629184l/124950497._SX318_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2024-11-20T00:00:00Z",
+      "date_added": "2024-11-20T22:22:57Z"
+    },
+    {
+      "title": "Black Sheep",
+      "author": "Rachel   Harrison",
+      "link": "https://www.goodreads.com/review/show/6966374181?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680293749l/69704909.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2024-11-07T00:00:00Z",
+      "date_added": "2024-11-07T23:37:02Z"
+    },
+    {
+      "title": "The Family Upstairs (The Family Upstairs, #1)",
+      "author": "Lisa Jewell",
+      "link": "https://www.goodreads.com/review/show/6885262995?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567403312l/43264734._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2024-10-09T00:00:00Z",
+      "date_added": "2024-10-09T22:38:04Z"
+    },
+    {
+      "title": "Can't Hurt Me: Master Your Mind and Defy the Odds",
+      "author": "David Goggins",
+      "link": "https://www.goodreads.com/review/show/5753773535?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1536184191l/41721428._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2023-08-08T00:00:00Z",
+      "date_added": "2023-08-08T22:13:26Z"
+    },
+    {
+      "title": "A Study in Scarlet",
+      "author": "Arthur Conan Doyle",
+      "link": "https://www.goodreads.com/review/show/5667864733?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1619932219l/57915911._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2023-07-04T00:00:00Z",
+      "date_added": "2023-07-04T22:19:31Z"
+    },
+    {
+      "title": "Pines: The gripping first instalment of the blockbuster Wayward Pines trilogy",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5556044919?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673294854l/73665350._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2023-06-26T00:00:00Z",
+      "date_added": "2023-06-27T06:16:11Z"
+    },
+    {
+      "title": "Digital Fortress",
+      "author": "Dan    Brown",
+      "link": "https://www.goodreads.com/review/show/3395159623?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328340801l/11495326.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2022-11-03T00:00:00Z",
+      "date_added": "2022-11-03T23:46:41Z"
+    },
+    {
+      "title": "The Heretic's Treasure (Ben Hope #4)",
+      "author": "Scott Mariani",
+      "link": "https://www.goodreads.com/review/show/5022607863?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408315019l/6450320.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2022-10-19T00:00:00Z",
+      "date_added": "2022-10-19T21:58:03Z"
+    },
+    {
+      "title": "The Song of Achilles",
+      "author": "Madeline Miller",
+      "link": "https://www.goodreads.com/review/show/3952221211?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331154660l/11250317.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2021-06-25T00:00:00Z",
+      "date_added": "2021-06-25T20:18:42Z"
+    },
+    {
+      "title": "Sharp Objects",
+      "author": "Gillian Flynn",
+      "link": "https://www.goodreads.com/review/show/3691624817?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556639858l/45416649._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2021-04-19T00:00:00Z",
+      "date_added": "2021-04-20T00:13:55Z"
+    },
+    {
+      "title": "Klara and the Sun",
+      "author": "Kazuo Ishiguro",
+      "link": "https://www.goodreads.com/review/show/3935205772?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622500451l/55111243._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2021-04-14T00:00:00Z",
+      "date_added": "2021-04-14T23:23:35Z"
+    },
+    {
+      "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+      "author": "James Clear",
+      "link": "https://www.goodreads.com/review/show/3769743954?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1745148347l/33154385._SY475_.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2021-02-09T00:00:00Z",
+      "date_added": "2021-04-22T09:13:24Z"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "link": "https://www.goodreads.com/review/show/3702057450?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1325861570l/170448.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": "2020-12-21T00:00:00Z",
+      "date_added": "2020-12-22T00:45:34Z"
+    },
+    {
+      "title": "Test-Driven Development: By Example",
+      "author": "Kent Beck",
+      "link": "https://www.goodreads.com/review/show/4033415777?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372039943l/387190.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-05-31T23:07:06Z"
+    },
+    {
+      "title": "Trainspotting (Mark Renton, #2)",
+      "author": "Irvine Welsh",
+      "link": "https://www.goodreads.com/review/show/3395177367?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353033083l/135836.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-04-22T09:14:00Z"
+    },
+    {
+      "title": "Algorithms to Live By: The Computer Science of Human Decisions",
+      "author": "Brian  Christian",
+      "link": "https://www.goodreads.com/review/show/3811670070?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1454296875l/25666050.jpg",
+      "rating": 4,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-02-01T20:23:25Z"
+    },
+    {
+      "title": "After Dark",
+      "author": "Haruki Murakami",
+      "link": "https://www.goodreads.com/review/show/7334418469?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437952316l/17803._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2025-02-19T00:00:00Z",
+      "date_added": "2025-02-19T01:56:56Z"
+    },
+    {
+      "title": "What Moves the Dead (Sworn Soldier, #1)",
+      "author": "T. Kingfisher",
+      "link": "https://www.goodreads.com/review/show/6966369664?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632936332l/58724626.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2024-11-03T00:00:00Z",
+      "date_added": "2024-11-03T22:46:21Z"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "link": "https://www.goodreads.com/review/show/3924496237?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1609435069l/56493392._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2024-02-21T00:00:00Z",
+      "date_added": "2024-02-21T23:06:27Z"
+    },
+    {
+      "title": "Artemis",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/5582453213?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580566893l/50812451._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2023-08-12T00:00:00Z",
+      "date_added": "2023-08-12T22:30:24Z"
+    },
+    {
+      "title": "The Girl with the Dragon Tattoo (Millennium, #1)",
+      "author": "Stieg Larsson",
+      "link": "https://www.goodreads.com/review/show/3693094362?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439984198l/26128097._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2023-02-26T00:00:00Z",
+      "date_added": "2023-02-27T08:33:02Z"
+    },
+    {
+      "title": "Slaughterhouse Five",
+      "author": "Kurt Vonnegut Jr.",
+      "link": "https://www.goodreads.com/review/show/3689685694?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590609356l/53500355._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2023-01-01T00:00:00Z",
+      "date_added": "2023-01-02T00:54:01Z"
+    },
+    {
+      "title": "The Executioner (Robert Hunter, #2)",
+      "author": "Chris         Carter",
+      "link": "https://www.goodreads.com/review/show/5081499813?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328346260l/11795532.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2022-11-24T00:00:00Z",
+      "date_added": "2022-11-24T23:37:14Z"
+    },
+    {
+      "title": "Man's Search for Meaning",
+      "author": "Viktor E. Frankl",
+      "link": "https://www.goodreads.com/review/show/3952287521?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535419394l/4069._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2021-05-08T00:00:00Z",
+      "date_added": "2021-05-08T22:16:16Z"
+    },
+    {
+      "title": "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+      "author": "Morgan Housel",
+      "link": "https://www.goodreads.com/review/show/3813105724?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581527774l/41881472._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2021-02-12T00:00:00Z",
+      "date_added": "2021-04-22T09:13:08Z"
+    },
+    {
+      "title": "Show Your Work!: 10 Ways to Share Your Creativity and Get Discovered (Austin Kleon)",
+      "author": "Austin Kleon",
+      "link": "https://www.goodreads.com/review/show/3828626296?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394749483l/20874659.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2021-02-10T00:00:00Z",
+      "date_added": "2021-04-22T09:14:11Z"
+    },
+    {
+      "title": "Anything You Want: 40 Lessons for a New Kind of Entrepreneur",
+      "author": "Derek Sivers",
+      "link": "https://www.goodreads.com/review/show/3811390920?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442563520l/26635016._SX318_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2021-02-01T00:00:00Z",
+      "date_added": "2021-04-22T09:13:20Z"
+    },
+    {
+      "title": "The Richest Man In Babylon",
+      "author": "George S. Clason",
+      "link": "https://www.goodreads.com/review/show/3693575800?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601344151l/55504397._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2021-01-30T00:00:00Z",
+      "date_added": "2021-04-22T09:13:36Z"
+    },
+    {
+      "title": "Slated (Slated, #1)",
+      "author": "Teri Terry",
+      "link": "https://www.goodreads.com/review/show/3395177210?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337473666l/14059998.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": "2020-06-22T00:00:00Z",
+      "date_added": "2021-04-22T09:14:02Z"
+    },
+    {
+      "title": "The Egg",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/3692565051?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431492647l/17563539.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-04-22T09:13:44Z"
+    },
+    {
+      "title": "Oversubscribed: How to Get People Lining Up to Do Business with You",
+      "author": "Daniel Priestley",
+      "link": "https://www.goodreads.com/review/show/3933119600?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432419050l/25305548._SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-04-22T09:14:06Z"
+    },
+    {
+      "title": "The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth",
+      "author": "Amy C. Edmondson",
+      "link": "https://www.goodreads.com/review/show/5037984884?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1539096270l/40275161.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2022-10-10T21:11:22Z"
+    },
+    {
+      "title": "Randomize (Forward Collection, #6)",
+      "author": "Andy Weir",
+      "link": "https://www.goodreads.com/review/show/3692577215?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563467829l/49661162._SX318_SY475_.jpg",
+      "rating": 3,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2021-04-22T09:13:40Z"
+    },
+    {
+      "title": "Ring Shout",
+      "author": "P. Djèlí Clark",
+      "link": "https://www.goodreads.com/review/show/6966373344?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580134382l/49247242.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": "2024-10-31T00:00:00Z",
+      "date_added": "2024-11-10T19:50:13Z"
+    },
+    {
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "link": "https://www.goodreads.com/review/show/3691565686?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1738704267l/49552._SY475_.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": "2021-08-08T00:00:00Z",
+      "date_added": "2021-08-08T16:46:26Z"
+    },
+    {
+      "title": "We",
+      "author": "Yevgeny Zamyatin",
+      "link": "https://www.goodreads.com/review/show/3952293728?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1600074673l/55333203._SY475_.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": "2021-04-22T00:00:00Z",
+      "date_added": "2021-04-23T05:35:39Z"
+    },
+    {
+      "title": "The Institute",
+      "author": "Stephen  King",
+      "link": "https://www.goodreads.com/review/show/3733685614?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549241208l/43798285.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": "2021-02-08T00:00:00Z",
+      "date_added": "2021-04-22T09:13:28Z"
+    },
+    {
+      "title": "The Guest List",
+      "author": "Lucy Foley",
+      "link": "https://www.goodreads.com/review/show/3691541345?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580194251l/51933429.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": "2020-12-20T00:00:00Z",
+      "date_added": "2021-04-22T09:13:51Z"
+    },
+    {
+      "title": "The Guest List",
+      "author": "Lucy Foley",
+      "link": "https://www.goodreads.com/review/show/5420257055?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1591461181l/52656911._SY475_.jpg",
+      "rating": 2,
+      "pages": "",
+      "date_read": null,
+      "date_added": "2023-03-17T09:25:24Z"
+    },
+    {
+      "title": "Into the Wild",
+      "author": "Jon Krakauer",
+      "link": "https://www.goodreads.com/review/show/3691582958?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382850352l/12185731.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_read": "2024-09-12T00:00:00Z",
+      "date_added": "2024-09-13T01:21:01Z"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "link": "https://www.goodreads.com/review/show/3405277050?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590608155l/53497899._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_read": "2020-06-30T00:00:00Z",
+      "date_added": "2024-02-22T14:33:12Z"
+    }
+  ],
+  "tbr": [
+    {
+      "title": "The Remains of the Day",
+      "author": "Kazuo Ishiguro",
+      "link": "https://www.goodreads.com/review/show/8474885469?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724104650l/217826754._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2026-03-28T18:21:25Z"
+    },
+    {
+      "title": "The Employees",
+      "author": "Olga Ravn",
+      "link": "https://www.goodreads.com/review/show/8439675875?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1591135601l/53780642.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2026-03-15T19:01:08Z"
+    },
+    {
+      "title": "Flowers for Algernon",
+      "author": "Daniel Keyes",
+      "link": "https://www.goodreads.com/review/show/8339829424?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1689071681l/18373.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2026-02-07T21:20:22Z"
+    },
+    {
+      "title": "The Salt Path",
+      "author": "Raynor Winn",
+      "link": "https://www.goodreads.com/review/show/7649754274?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518670845l/38587334._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-12T22:47:10Z"
+    },
+    {
+      "title": "The Book of Five Rings",
+      "author": "Miyamoto Musashi",
+      "link": "https://www.goodreads.com/review/show/7643112277?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1701192944l/25789._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-10T13:18:24Z"
+    },
+    {
+      "title": "Gödel, Escher, Bach: An Eternal Golden Braid",
+      "author": "Douglas R. Hofstadter",
+      "link": "https://www.goodreads.com/review/show/7643111613?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547125681l/24113._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-10T13:18:04Z"
+    },
+    {
+      "title": "The Perfect Storm: A True Story of Men Against the Sea",
+      "author": "Sebastian Junger",
+      "link": "https://www.goodreads.com/review/show/7641643727?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387738340l/108229.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-09T23:03:00Z"
+    },
+    {
+      "title": "Walden or, Life in the Woods",
+      "author": "Henry David Thoreau",
+      "link": "https://www.goodreads.com/review/show/7641639820?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630470982l/16902._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-09T23:01:06Z"
+    },
+    {
+      "title": "The Design of Everyday Things",
+      "author": "Donald A. Norman",
+      "link": "https://www.goodreads.com/review/show/7630943087?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442460745l/840._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-05T22:56:18Z"
+    },
+    {
+      "title": "A Philosophy of Software Design",
+      "author": "John Ousterhout",
+      "link": "https://www.goodreads.com/review/show/7630941878?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1531857377l/39996759._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-06-05T22:55:43Z"
+    },
+    {
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "link": "https://www.goodreads.com/review/show/7534285631?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421618636l/30659.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-05-01T17:14:11Z"
+    },
+    {
+      "title": "Mickey7 (Mickey7 #1)",
+      "author": "Edward Ashton",
+      "link": "https://www.goodreads.com/review/show/7534285387?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636369192l/57693457.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-05-01T17:14:06Z"
+    },
+    {
+      "title": "Surrounded by Idiots",
+      "author": "Thomas Erikson",
+      "link": "https://www.goodreads.com/review/show/7394310469?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583763517l/39101777._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-03-11T13:06:09Z"
+    },
+    {
+      "title": "A System for Writing: How an Unconventional Approach to Note-Making Can Help You Capture Ideas, Think Wildly, and Write Constantly - A Zettelkasten Primer",
+      "author": "Bob Doto",
+      "link": "https://www.goodreads.com/review/show/7160507229?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718737386l/214971755._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-01-02T20:21:49Z"
+    },
+    {
+      "title": "How To Take Smart Notes Summary: A Summary of the Book That Teaches One Simple Technique To Boost Writing, Learning and Thinking - for Students, Academics, and Nonfiction Book Writers",
+      "author": "Upgraded Brain",
+      "link": "https://www.goodreads.com/review/show/7160497659?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1592232090l/54100332._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-01-02T20:20:17Z"
+    },
+    {
+      "title": "Strong Fathers, Strong Daughters: 10 Secrets Every Father Should Know",
+      "author": "Meg Meeker",
+      "link": "https://www.goodreads.com/review/show/7158533827?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393447280l/136959.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2025-01-02T14:45:43Z"
+    },
+    {
+      "title": "The Anxious Generation: How the Great Rewiring of Childhood Caused an Epidemic of Mental Illness",
+      "author": "Jonathan Haidt",
+      "link": "https://www.goodreads.com/review/show/7077056287?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711573377l/171681821._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-12-11T19:59:14Z"
+    },
+    {
+      "title": "You Like It Darker",
+      "author": "Stephen  King",
+      "link": "https://www.goodreads.com/review/show/7077050523?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1699311050l/201242757._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-12-11T19:56:51Z"
+    },
+    {
+      "title": "The God of the Woods",
+      "author": "Liz    Moore",
+      "link": "https://www.goodreads.com/review/show/7077047419?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1717970585l/199700434._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-12-11T19:55:35Z"
+    },
+    {
+      "title": "The Reformatory",
+      "author": "Tananarive Due",
+      "link": "https://www.goodreads.com/review/show/7040704771?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686761184l/62919847.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-28T18:54:10Z"
+    },
+    {
+      "title": "The One (Dark Future #1)",
+      "author": "John Marrs",
+      "link": "https://www.goodreads.com/review/show/7040704053?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612001976l/40670312._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-28T18:53:47Z"
+    },
+    {
+      "title": "Red Rising (Red Rising Saga, #1)",
+      "author": "Pierce Brown",
+      "link": "https://www.goodreads.com/review/show/7040703334?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461354651l/15839976._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-28T18:53:25Z"
+    },
+    {
+      "title": "4000 Weeks",
+      "author": "Robert Bosman",
+      "link": "https://www.goodreads.com/review/show/7017275304?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509029798l/36481028._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-19T09:55:01Z"
+    },
+    {
+      "title": "Eat That Frog!: Get More of the Important Things Done Today!",
+      "author": "Brian Tracy",
+      "link": "https://www.goodreads.com/review/show/7016390356?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1460586406l/29911924._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-19T01:18:33Z"
+    },
+    {
+      "title": "Shutter Island",
+      "author": "Dennis Lehane",
+      "link": "https://www.goodreads.com/review/show/6993808615?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1329269081l/21686.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-10T19:59:34Z"
+    },
+    {
+      "title": "When the Lion Feeds: The book that started it all (Courtney series 1)",
+      "author": "Wilbur Smith",
+      "link": "https://www.goodreads.com/review/show/6993781901?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1514185323l/37669986._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-11-10T19:48:57Z"
+    },
+    {
+      "title": "Our Share of Night",
+      "author": "Mariana Enriquez",
+      "link": "https://www.goodreads.com/review/show/6966370351?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1660429329l/61111034.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2024-10-30T17:49:15Z"
+    },
+    {
+      "title": "Drive: The Surprising Truth About What Motivates Us",
+      "author": "Daniel H. Pink",
+      "link": "https://www.goodreads.com/review/show/5992706335?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348931599l/6452796.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-11-21T14:19:03Z"
+    },
+    {
+      "title": "21 Lessons for the 21st Century",
+      "author": "Yuval Noah Harari",
+      "link": "https://www.goodreads.com/review/show/5992704286?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1564577305l/38820046._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-11-21T14:17:49Z"
+    },
+    {
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "link": "https://www.goodreads.com/review/show/5992703585?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1703329310l/23692271._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-11-21T14:17:23Z"
+    },
+    {
+      "title": "The Gift of Fear: Survival Signals That Protect Us from Violence",
+      "author": "Gavin de Becker",
+      "link": "https://www.goodreads.com/review/show/5895810178?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348829921l/56465.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-10-08T22:06:03Z"
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "link": "https://www.goodreads.com/review/show/5822583214?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573114210l/48725100._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-09-05T23:33:24Z"
+    },
+    {
+      "title": "Traction: Get a Grip on Your Business",
+      "author": "Gino Wickman",
+      "link": "https://www.goodreads.com/review/show/5682651243?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385141177l/18886376.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-07-10T20:01:18Z"
+    },
+    {
+      "title": "The Road Back",
+      "author": "Erich Maria Remarque",
+      "link": "https://www.goodreads.com/review/show/5584079762?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347610621l/6058.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-30T15:48:42Z"
+    },
+    {
+      "title": "The Last Town (Wayward Pines, #3)",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5556044957?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1399508172l/20423680.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-17T09:23:04Z"
+    },
+    {
+      "title": "Wayward (Wayward Pines, #2)",
+      "author": "Blake Crouch",
+      "link": "https://www.goodreads.com/review/show/5556044945?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388363926l/17920175.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-17T09:23:04Z"
+    },
+    {
+      "title": "The Things They Carried",
+      "author": "Tim O'Brien",
+      "link": "https://www.goodreads.com/review/show/5556039379?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424663847l/133518.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-17T09:15:34Z"
+    },
+    {
+      "title": "The Wave",
+      "author": "Todd Strasser",
+      "link": "https://www.goodreads.com/review/show/5556036257?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320402950l/481743.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-17T09:11:13Z"
+    },
+    {
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "link": "https://www.goodreads.com/review/show/5556034527?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639969375l/4406.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-05-17T09:09:01Z"
+    },
+    {
+      "title": "Storm Front (The Dresden Files, #1)",
+      "author": "Jim  Butcher",
+      "link": "https://www.goodreads.com/review/show/5478138792?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572991273l/47212._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-04-11T11:11:24Z"
+    },
+    {
+      "title": "The Color of Magic (Discworld, #1; Rincewind, #1)",
+      "author": "Terry Pratchett",
+      "link": "https://www.goodreads.com/review/show/5377702764?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407111017l/34497.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-02-27T20:21:30Z"
+    },
+    {
+      "title": "The Da Vinci Code (Robert Langdon, #2)",
+      "author": "Dan    Brown",
+      "link": "https://www.goodreads.com/review/show/5376657618?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1720313229l/968._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-02-27T08:36:07Z"
+    },
+    {
+      "title": "Ready Player One (Ready Player One, #1)",
+      "author": "Ernest Cline",
+      "link": "https://www.goodreads.com/review/show/5327238032?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500930947l/9969571._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-02-06T16:17:11Z"
+    },
+    {
+      "title": "Fight Club",
+      "author": "Chuck Palahniuk",
+      "link": "https://www.goodreads.com/review/show/5327228508?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1357128997l/5759.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-02-06T16:12:50Z"
+    },
+    {
+      "title": "Start With Why: How Great Leaders Inspire Everyone to Take Action",
+      "author": "Simon Sinek",
+      "link": "https://www.goodreads.com/review/show/5233703620?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385436443l/18954141.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2023-01-05T16:53:06Z"
+    },
+    {
+      "title": "The Maid (Molly the Maid, #1)",
+      "author": "Nita Prose",
+      "link": "https://www.goodreads.com/review/show/5153115246?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1643228739l/55196813.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-12-09T11:56:03Z"
+    },
+    {
+      "title": "If They Knew",
+      "author": "Sophie Flynn",
+      "link": "https://www.goodreads.com/review/show/5047091739?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1664441252l/61410147._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-10-15T18:01:10Z"
+    },
+    {
+      "title": "I See You",
+      "author": "Clare Mackintosh",
+      "link": "https://www.goodreads.com/review/show/5043753658?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1458476144l/26233572._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-10-13T21:03:18Z"
+    },
+    {
+      "title": "Earthlings",
+      "author": "Sayaka Murata",
+      "link": "https://www.goodreads.com/review/show/4986682756?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580144195l/50269327._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-09-14T15:18:37Z"
+    },
+    {
+      "title": "The 48 Laws of Power",
+      "author": "Robert Greene",
+      "link": "https://www.goodreads.com/review/show/4986678771?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694722764l/1303._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-09-14T15:16:22Z"
+    },
+    {
+      "title": "Children of Time (Children of Time, #1)",
+      "author": "Adrian Tchaikovsky",
+      "link": "https://www.goodreads.com/review/show/4904506260?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431014197l/25499718.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-08-08T15:43:50Z"
+    },
+    {
+      "title": "On Earth We're Briefly Gorgeous",
+      "author": "Ocean Vuong",
+      "link": "https://www.goodreads.com/review/show/4193956587?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1615580168l/41880609._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-08-23T15:11:08Z"
+    },
+    {
+      "title": "A Brief History of Infinity",
+      "author": "Paolo Zellini",
+      "link": "https://www.goodreads.com/review/show/4193923853?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309209893l/542394.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-08-23T14:53:01Z"
+    },
+    {
+      "title": "Misery",
+      "author": "Stephen  King+",
+      "link": "https://www.goodreads.com/review/show/4176582004?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746142586l/10614._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-08-15T08:30:03Z"
+    },
+    {
+      "title": "Pet Sematary",
+      "author": "Stephen  King",
+      "link": "https://www.goodreads.com/review/show/4169860008?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1480069533l/33124137._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-08-11T23:05:58Z"
+    },
+    {
+      "title": "The Haunting of Hill House",
+      "author": "Shirley Jackson",
+      "link": "https://www.goodreads.com/review/show/4169859931?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327871336l/89717._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-08-11T23:05:54Z"
+    },
+    {
+      "title": "Outliers: The Story of Success",
+      "author": "Malcolm Gladwell",
+      "link": "https://www.goodreads.com/review/show/4003189676?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344266315l/3228917.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-15T21:27:22Z"
+    },
+    {
+      "title": "The Girl on the Train",
+      "author": "Paula Hawkins",
+      "link": "https://www.goodreads.com/review/show/4003189154?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1748242265l/22557272._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-15T21:27:03Z"
+    },
+    {
+      "title": "Reasons to Stay Alive",
+      "author": "Matt Haig",
+      "link": "https://www.goodreads.com/review/show/4003188125?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1418674667l/23363874.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-15T21:26:20Z"
+    },
+    {
+      "title": "Zero to One: Notes on Startups, or How to Build the Future",
+      "author": "Peter Thiel",
+      "link": "https://www.goodreads.com/review/show/4003184920?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630663027l/18050143.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-15T21:24:12Z"
+    },
+    {
+      "title": "Hypnobirthing: Practical Ways to Make Your Birth Better",
+      "author": "Siobhan Miller",
+      "link": "https://www.goodreads.com/review/show/3997919843?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547575665l/43581021._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-12T21:53:56Z"
+    },
+    {
+      "title": "Chavs: The Demonization of the Working Class",
+      "author": "Owen   Jones",
+      "link": "https://www.goodreads.com/review/show/3995823496?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1374000667l/10408011.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-11T19:34:12Z"
+    },
+    {
+      "title": "The Establishment: And How They Get Away with It",
+      "author": "Owen   Jones",
+      "link": "https://www.goodreads.com/review/show/3995818820?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409237095l/23120225.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-11T19:31:24Z"
+    },
+    {
+      "title": "Have You Seen Me?",
+      "author": "Kate White",
+      "link": "https://www.goodreads.com/review/show/3986905801?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572992493l/49949683._SX318_SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-06T19:01:30Z"
+    },
+    {
+      "title": "Red Watch: A true account of four days in the life of A21 (Paddington) and of the fatal fire in which seven people were killed, one of them a fireman",
+      "author": "Gordon Honeycombe",
+      "link": "https://www.goodreads.com/review/show/3978401237?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1198995309l/2411650.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-05-02T13:40:18Z"
+    },
+    {
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "author": "Mark Haddon",
+      "link": "https://www.goodreads.com/review/show/3956484023?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385361819l/3437.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-20T18:51:29Z"
+    },
+    {
+      "title": "Lolita",
+      "author": "Vladimir Nabokov",
+      "link": "https://www.goodreads.com/review/show/3955797478?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377756377l/7604.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-20T11:43:24Z"
+    },
+    {
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "link": "https://www.goodreads.com/review/show/3952324571?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546103428l/5297.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T18:23:34Z"
+    },
+    {
+      "title": "The Count of Monte Cristo",
+      "author": "Alexandre Dumas",
+      "link": "https://www.goodreads.com/review/show/3952284030?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724863997l/7126._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T18:00:08Z"
+    },
+    {
+      "title": "The Sailor Who Fell from Grace with the Sea",
+      "author": "Yukio Mishima",
+      "link": "https://www.goodreads.com/review/show/3952282907?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327629352l/162332.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T17:59:32Z"
+    },
+    {
+      "title": "The Vanishing Half",
+      "author": "Brit Bennett",
+      "link": "https://www.goodreads.com/review/show/3952224072?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577090827l/51791252._SX318_SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T17:24:55Z"
+    },
+    {
+      "title": "The Boy, the Mole, the Fox and the Horse",
+      "author": "Charlie Mackesy",
+      "link": "https://www.goodreads.com/review/show/3952223430?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579017235l/43708884._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T17:24:32Z"
+    },
+    {
+      "title": "Norwegian Wood",
+      "author": "Haruki Murakami",
+      "link": "https://www.goodreads.com/review/show/3952220306?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1713542603l/11297._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-18T17:22:36Z"
+    },
+    {
+      "title": "The Minority Report",
+      "author": "Philip K. Dick",
+      "link": "https://www.goodreads.com/review/show/3943981222?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390719396l/581125.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-14T11:16:35Z"
+    },
+    {
+      "title": "The Growing Pains of Adrian Mole (Adrian Mole, #2)",
+      "author": "Sue Townsend",
+      "link": "https://www.goodreads.com/review/show/3935179241?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1301643288l/51069.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-04-09T18:03:38Z"
+    },
+    {
+      "title": "Tax-Free Wealth: How to Build Massive Wealth by Permanently Lowering Your Taxes",
+      "author": "Tom Wheelwright",
+      "link": "https://www.goodreads.com/review/show/3878042296?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360055973l/13238716.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-03-07T21:30:17Z"
+    },
+    {
+      "title": "The Bitcoin Standard: The Decentralized Alternative to Central Banking",
+      "author": "Saifedean Ammous",
+      "link": "https://www.goodreads.com/review/show/3878040453?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517051735l/36448501.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-03-07T21:29:13Z"
+    },
+    {
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "link": "https://www.goodreads.com/review/show/3818157493?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559900949l/29453740._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-02-04T18:47:22Z"
+    },
+    {
+      "title": "How Will You Measure Your Life?",
+      "author": "Clayton M. Christensen",
+      "link": "https://www.goodreads.com/review/show/3813105398?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328046792l/13425570.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-02-02T11:34:07Z"
+    },
+    {
+      "title": "A Million Miles in a Thousand Years: What I Learned While Editing My Life",
+      "author": "Donald Miller",
+      "link": "https://www.goodreads.com/review/show/3811552709?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328305584l/8139407.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-02-01T19:27:30Z"
+    },
+    {
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "link": "https://www.goodreads.com/review/show/3769737620?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-01-13T23:00:36Z"
+    },
+    {
+      "title": "Good Morning, Midnight",
+      "author": "Lily Brooks-Dalton",
+      "link": "https://www.goodreads.com/review/show/3757608609?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449682335l/27405160._SX318_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2021-01-08T21:13:44Z"
+    },
+    {
+      "title": "Tinker, Tailor, Soldier, Spy",
+      "author": "John le Carré",
+      "link": "https://www.goodreads.com/review/show/3693098324?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327889127l/18989.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-13T19:09:32Z"
+    },
+    {
+      "title": "The Thursday Murder Club (Thursday Murder Club, #1)",
+      "author": "Richard Osman",
+      "link": "https://www.goodreads.com/review/show/3693076849?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582287822l/46000520.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-13T18:55:49Z"
+    },
+    {
+      "title": "Before I Go to Sleep",
+      "author": "S.J. Watson",
+      "link": "https://www.goodreads.com/review/show/3691622290?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1358353512l/9736930.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-12T22:51:15Z"
+    },
+    {
+      "title": "Fatherland",
+      "author": "Robert   Harris",
+      "link": "https://www.goodreads.com/review/show/3691601395?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1261912137l/56842.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-12T22:37:44Z"
+    },
+    {
+      "title": "Brighton Rock",
+      "author": "Graham Greene",
+      "link": "https://www.goodreads.com/review/show/3691598405?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337363402l/48862.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-12T22:35:40Z"
+    },
+    {
+      "title": "Catch-22",
+      "author": "Joseph Heller",
+      "link": "https://www.goodreads.com/review/show/3691567445?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463157317l/168668.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-12T22:14:47Z"
+    },
+    {
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "link": "https://www.goodreads.com/review/show/3691564936?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630683326l/10534._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-12T22:13:00Z"
+    },
+    {
+      "title": "A Man Called Ove",
+      "author": "Fredrik Backman",
+      "link": "https://www.goodreads.com/review/show/3689828035?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405259930l/18774964.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-11T21:58:59Z"
+    },
+    {
+      "title": "Dune (Dune, #1)",
+      "author": "Frank Herbert",
+      "link": "https://www.goodreads.com/review/show/3689691527?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1354465704l/11323604.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-09-14T15:06:20Z"
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "link": "https://www.goodreads.com/review/show/3404878247?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1494225554l/11517032._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-09-14T15:06:25Z"
+    },
+    {
+      "title": "The Outsider (Holly Gibney #1)",
+      "author": "Stephen  King",
+      "link": "https://www.goodreads.com/review/show/3396826779?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1524596540l/36124936._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-17T22:52:28Z"
+    },
+    {
+      "title": "Rendezvous with Rama (Rama, #1)",
+      "author": "Arthur C. Clarke",
+      "link": "https://www.goodreads.com/review/show/3395194153?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625662761l/16114995._SY475_.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-12-17T22:52:10Z"
+    },
+    {
+      "title": "The Fountains of Paradise",
+      "author": "Arthur C. Clarke",
+      "link": "https://www.goodreads.com/review/show/3395186438?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440136007l/18889680.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-06-16T16:04:31Z"
+    },
+    {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "link": "https://www.goodreads.com/review/show/3395182896?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1383718290l/13079982.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2022-09-14T15:06:28Z"
+    },
+    {
+      "title": "The Name of the Wind (The Kingkiller Chronicle, #1)",
+      "author": "Patrick Rothfuss",
+      "link": "https://www.goodreads.com/review/show/3395156139?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328125373l/11127294.jpg",
+      "rating": 0,
+      "pages": "",
+      "date_added": "2020-06-16T15:45:53Z"
+    }
+  ]
 }
