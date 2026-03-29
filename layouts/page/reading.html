@@ -1,0 +1,244 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .books-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  @media (max-width: 600px) {
+    .book-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .book-cover-wrap {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .book-cover-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .book-cover-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    text-align: center;
+    padding: var(--space-2);
+  }
+
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .book-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .book-author {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .book-rating {
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    letter-spacing: 1px;
+  }
+
+  .book-rating .fa-star,
+  .book-rating .fa-star-half-alt {
+    color: var(--color-accent);
+  }
+
+  .book-rating .far.fa-star {
+    color: var(--color-border-light);
+  }
+
+  .book-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  /* TBR Accordion */
+  .tbr-accordion {
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: var(--space-7);
+  }
+
+  .tbr-accordion > summary {
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-text);
+    background: var(--color-bg-secondary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    user-select: none;
+  }
+
+  .tbr-accordion > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .tbr-accordion > summary::before {
+    content: '▶';
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+    display: inline-block;
+  }
+
+  .tbr-accordion[open] > summary::before {
+    transform: rotate(90deg);
+  }
+
+  .tbr-list {
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .tbr-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  .tbr-item img {
+    width: 48px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-light);
+    flex-shrink: 0;
+  }
+
+  .tbr-cover-placeholder {
+    width: 48px;
+    height: 72px;
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-light);
+    flex-shrink: 0;
+  }
+
+  .tbr-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+  }
+</style>
+
+<div class="main">
+  <h1>Reading</h1>
+
+  {{ with .Site.Data.books }}
+
+  {{ if .last_updated }}
+  <p class="books-meta">Last updated {{ .last_updated | time.Format "2 January 2006" }}</p>
+  {{ end }}
+
+  {{ if .read }}
+  <h2>Books Read</h2>
+  <div class="book-grid">
+    {{ range .read }}
+    <div class="book-card">
+      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="book-cover-wrap">
+        {{ if .cover }}
+        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ else }}
+        <div class="book-cover-placeholder">no cover</div>
+        {{ end }}
+      </a>
+      <div class="book-info">
+        <div class="book-title">{{ .title }}</div>
+        <div class="book-author">{{ .author }}</div>
+        <div class="book-rating">
+          {{ $rating := int .rating }}
+          {{ range seq 5 }}
+            {{ if le . $rating -}}
+              <i class="fas fa-star"></i>
+            {{- else -}}
+              <i class="far fa-star"></i>
+            {{- end }}
+          {{ end }}
+        </div>
+        {{ if .date_read }}
+        <div class="book-date">{{ .date_read | time.Format "Jan 2006" }}</div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if .tbr }}
+  <h2>To Read</h2>
+  <details class="tbr-accordion">
+    <summary>{{ len .tbr }} books on my TBR list</summary>
+    <div class="tbr-list">
+      {{ range .tbr }}
+      <div class="tbr-item">
+        {{ if .cover }}
+        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ else }}
+        <div class="tbr-cover-placeholder"></div>
+        {{ end }}
+        <div class="tbr-info">
+          <div class="book-title">{{ .title }}</div>
+          <div class="book-author">{{ .author }}</div>
+          {{ if .date_added }}
+          <div class="book-date">Added {{ .date_added | time.Format "Jan 2006" }}</div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </details>
+  {{ end }}
+
+  {{ else }}
+  <p>No book data yet — run the GitHub Action to populate.</p>
+  {{ end }}
+</div>
+
+{{- partial "footer.html" . -}}
