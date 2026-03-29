@@ -1,0 +1,87 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .links-intro {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .links-category {
+    margin-bottom: var(--space-7);
+  }
+
+  .links-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .link-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .link-title {
+    font-weight: 600;
+    font-size: var(--text-base);
+  }
+
+  .link-title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .link-title a:hover {
+    color: var(--color-accent);
+  }
+
+  .link-title a::after {
+    content: ' ↗';
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .link-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .link-meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+</style>
+
+<div class="main">
+  <h1>Links</h1>
+  <p class="links-intro">Things I've found interesting, useful, or worth remembering.</p>
+
+  {{ range .Site.Data.links }}
+  {{ if .links }}
+  <div class="links-category">
+    <h2>{{ .category }}</h2>
+    <ul class="links-list">
+      {{ range .links }}
+      <li class="link-item">
+        <div class="link-title"><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a></div>
+        {{ if .description }}<div class="link-desc">{{ .description }}</div>{{ end }}
+        {{ if .date }}<div class="link-meta">{{ .date }}</div>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{ if not (index .Site.Data "links") }}
+  <p style="color: var(--color-text-muted)">No links yet — add some to <code>data/links.yaml</code>.</p>
+  {{ end }}
+</div>
+
+{{- partial "footer.html" . -}}
