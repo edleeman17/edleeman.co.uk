@@ -37,6 +37,8 @@ def get_text(item, tag, default=""):
 
 def fetch_shelf(user_id, shelf):
     sort = "date_read" if shelf == "read" else "date_added"
+    if shelf == "favorites":
+        sort = "date_added"
     url = (
         f"https://www.goodreads.com/review/list_rss/{user_id}"
         f"?shelf={shelf}&per_page=200&sort={sort}&order=d"
@@ -117,10 +119,14 @@ def main():
     tbr_books = fetch_shelf(user_id, "to-read")
     print(f"  Found {len(tbr_books)} TBR books")
 
+    favourites = fetch_shelf(user_id, "favorites")
+    print(f"  Found {len(favourites)} favourite books")
+
     sort_read_books(read_books)
 
     output = {
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "favourites": favourites,
         "read": read_books,
         "tbr": tbr_books,
     }
@@ -129,7 +135,7 @@ def main():
     with open("data/books.json", "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"Written data/books.json — {len(read_books)} read, {len(tbr_books)} TBR")
+    print(f"Written data/books.json — {len(favourites)} favourites, {len(read_books)} read, {len(tbr_books)} TBR")
 
 
 if __name__ == "__main__":

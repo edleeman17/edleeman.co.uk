@@ -92,6 +92,28 @@
     color: var(--color-text-muted);
   }
 
+  /* Favourites */
+  .favourites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  .favourites-grid .book-cover-wrap {
+    aspect-ratio: 2 / 3;
+  }
+
+  .favourites-grid .book-title {
+    font-size: var(--text-base);
+  }
+
+  @media (max-width: 600px) {
+    .favourites-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   /* TBR Accordion */
   .tbr-accordion {
     border: 1px solid var(--color-border-light);
@@ -175,6 +197,39 @@
 
   {{ if .last_updated }}
   <p class="books-meta">Last updated {{ .last_updated | time.Format "2 January 2006" }}</p>
+  {{ end }}
+
+  {{ if .favourites }}
+  <h2>Favourites</h2>
+  <div class="book-grid favourites-grid">
+    {{ range .favourites }}
+    <div class="book-card">
+      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="book-cover-wrap">
+        {{ if .cover }}
+        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ else }}
+        <div class="book-cover-placeholder">no cover</div>
+        {{ end }}
+      </a>
+      <div class="book-info">
+        <div class="book-title">{{ .title }}</div>
+        <div class="book-author">{{ .author }}</div>
+        {{ if .rating }}
+        <div class="book-rating">
+          {{ $rating := int .rating }}
+          {{ range seq 5 }}
+            {{ if le . $rating -}}
+              <i class="fas fa-star"></i>
+            {{- else -}}
+              <i class="far fa-star"></i>
+            {{- end }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
   {{ end }}
 
   {{ if .read }}
