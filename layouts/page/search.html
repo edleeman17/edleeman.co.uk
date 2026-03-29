@@ -1,0 +1,22 @@
+{{- partial "header.html" . -}}
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<div class="main">
+  <h1>Search</h1>
+  <div class="search-wrap" id="search"></div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    new PagefindUI({
+      element: '#search',
+      showSubResults: false,
+      showImages: false,
+      resetStyles: false
+    });
+  });
+</script>
+
+{{- partial "footer.html" . -}}

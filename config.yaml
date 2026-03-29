@@ -35,6 +35,8 @@ social:
 params:
   # Site Author
   author: Ed Leeman
+  lastfmUsername: "ed1727"
+  lastfmApiKey: "35d69c5ad21f4fc86e2d4269b9c949bd"
   # Author biography
   bio: Software Engineer | Platform Engineer | Privacy Advocate
   # Site Description, used in HTML meat

@@ -61,8 +61,8 @@
 
     // Last.fm now playing (vanilla JS)
     (function() {
-        var apiKey = '35d69c5ad21f4fc86e2d4269b9c949bd';
-        var username = 'ed1727';
+        var apiKey = '{{ .Site.Params.lastfmApiKey }}';
+        var username = '{{ .Site.Params.lastfmUsername }}';
         var url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + username + '&api_key=' + apiKey + '&limit=1&format=json';
 
         fetch(url)

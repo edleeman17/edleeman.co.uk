@@ -1021,3 +1021,126 @@ details[open] summary {
 .iine-button .counter {
   font-variant-numeric: tabular-nums;
 }
+
+/* ============================================
+   Webmentions
+   ============================================ */
+
+.webmentions {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.wm-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.wm-counts {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.wm-counts span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.wm-counts .fa-heart { color: var(--color-accent); }
+
+.wm-avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.wm-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-light);
+  object-fit: cover;
+  display: block;
+}
+
+.wm-avatar-fallback {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.wm-replies {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.wm-reply {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.wm-reply-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.wm-reply-author {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.wm-reply-author:hover { text-decoration: underline; }
+
+.wm-reply-date {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.wm-reply-text {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin: 0;
+  padding-left: calc(32px + var(--space-3));
+  line-height: 1.5;
+}
+
+/* ============================================
+   Pagefind Search
+   ============================================ */
+
+.search-wrap {
+  margin-top: var(--space-4);
+}
+
+/* Override Pagefind UI to match Rose Pine theme */
+:root {
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--color-accent);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-bg);
+  --pagefind-ui-border: var(--color-border-light);
+  --pagefind-ui-tag: var(--color-bg-secondary);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: var(--border-radius);
+  --pagefind-ui-font: var(--font-sans);
+}
