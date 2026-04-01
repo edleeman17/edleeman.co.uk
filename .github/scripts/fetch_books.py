@@ -60,6 +60,8 @@ def fetch_shelf(user_id, shelf):
             or get_text(item, "book_image_url")
         )
 
+        review = get_text(item, "user_review")
+
         book = {
             "title": get_text(item, "title"),
             "author": get_text(item, "author_name"),
@@ -67,6 +69,7 @@ def fetch_shelf(user_id, shelf):
             "cover": cover,
             "rating": int(get_text(item, "user_rating", "0") or "0"),
             "pages": get_text(item, "num_pages"),
+            "review": review if review else None,
         }
 
         if shelf == "read":

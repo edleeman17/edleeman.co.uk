@@ -92,6 +92,14 @@
     color: var(--color-text-muted);
   }
 
+  .book-review {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-1);
+    line-height: 1.4;
+  }
+
   /* Favourites */
   .favourites-grid {
     display: grid;
@@ -226,6 +234,9 @@
           {{ end }}
         </div>
         {{ end }}
+        {{ if .review }}
+        <div class="book-review">{{ .review }}</div>
+        {{ end }}
       </div>
     </div>
     {{ end }}
@@ -259,6 +270,9 @@
         </div>
         {{ if .date_read }}
         <div class="book-date">{{ .date_read | time.Format "Jan 2006" }}</div>
+        {{ end }}
+        {{ if .review }}
+        <div class="book-review">{{ .review }}</div>
         {{ end }}
       </div>
     </div>

@@ -5,17 +5,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  
   <title>Cookie Zero</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="https://edleeman.co.uk/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://edleeman.co.uk/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://edleeman.co.uk/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://edleeman.co.ukimages/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://edleeman.co.ukimages/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://edleeman.co.ukimages/favicon-16x16.png">
   
   <meta name="description" content="">
   <meta name="image" content="">
   
   <meta itemprop="name" content="Cookie Zero">
   <meta itemprop="description" content="">
-  <meta itemprop="image" content="https://edleeman.co.uk/">
+  <meta itemprop="image" content="https://edleeman.co.uk">
   
   <meta property="og:title" content="Cookie Zero">
   <meta property="og:description" content="">
@@ -26,21 +36,36 @@
   
   <meta property="article:tag" content="">
   <meta name="fediverse:creator" content="@edphones@fosstodon.org">
-  <link rel="stylesheet" type="text/css" href="https://edleeman.co.uk/css/main.css?v=1772665693">
-  <link rel="stylesheet" type="text/css" href="https://edleeman.co.uk/css/syntax.css?v=1772665693">
+  <link rel="stylesheet" type="text/css" href="https://edleeman.co.ukcss/main.css?v=1774817174">
+  <link rel="stylesheet" type="text/css" href="https://edleeman.co.ukcss/syntax.css?v=1774817174">
 
-  <link rel="alternate" type="application/rss+xml" href="https://edleeman.co.uk/index.xml" title="Ed Leeman">
+  <link rel="alternate" type="application/rss+xml" href="https://edleeman.co.ukindex.xml" title="Ed Leeman">
+
+  
+  <link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
+  <link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js" defer></script>
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
 
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  
+  <script defer data-domain="edleeman.co.uk" src="https://clicks.bowlerdesign.co.uk/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
 
 <body>
 
 <header>
   
-  <a href="https://edleeman.co.uk/" class="logo"><img src="https://edleeman.co.uk/images/ed.png" alt="Home" height="32"></a>
+  <a href="https://edleeman.co.uk" class="logo"><img src="https://edleeman.co.ukimages/ed.png" alt="Home" height="32"></a>
 
   
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -57,15 +82,23 @@
     
     <a class="menu-item" href="https://edleeman.co.uk/favourites/">Favourites</a>
     
+    <a class="menu-item" href="https://edleeman.co.uk/links/">Links</a>
+    
     <a class="menu-item" href="https://edleeman.co.uk/now/">Now</a>
     
-    <a class="menu-item" href="https://edleeman.co.uk/archive">archive</a>
+    <a class="menu-item" href="https://edleeman.co.uk/reading/">Reading</a>
+    
+    <a class="menu-item" href="https://edleeman.co.uk/search/">Search</a>
+    
+    <a class="menu-item" href="https://edleeman.co.uk/uses/">Uses</a>
+    
+    <a class="menu-item" href="https://edleeman.co.ukarchive">archive</a>
   </nav>
 
   <div class="right-wrap">
     <button id="button">dark</button>
     
-    <a href="https://edleeman.co.uk/index.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
+    <a href="https://edleeman.co.ukindex.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
       height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
       <path d="M4 11a9 9 0 0 1 9 9"></path>
@@ -110,37 +143,49 @@
     <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
 </footer>
 <script>
-    var output = '';
+    
+    (function() {
+      var btn = document.getElementById('button');
+      var html = document.documentElement;
 
-    $('.sticky-toc-link').on('click', function (e) {
-        e.preventDefault();
-        var link = $(this).attr('href');
+      function updateButtonText() {
+        btn.textContent = html.classList.contains('dark') ? 'light' : 'dark';
+      }
 
-        $('html, body').animate(
-            {
-                scrollTop: $(link).offset().top - 82,
-            },
-            500
-        );
-    });
+      
+      updateButtonText();
 
+      
+      btn.addEventListener('click', function() {
+        var isDark = html.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateButtonText();
+      });
+
+      
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        
+        if (!localStorage.getItem('theme')) {
+          if (e.matches) {
+            html.classList.add('dark');
+          } else {
+            html.classList.remove('dark');
+          }
+          updateButtonText();
+        }
+      });
+    })();
 
     
-    if (localStorage.toggled === 'dark') {
-        $('html').addClass('dark');
-        $('#button').html('light');
-    }
-
-    $("#button").click(function () {
-        if (localStorage.toggled != 'dark') {
-            $('html').toggleClass('dark', true);
-            $('#button').html('light');
-            localStorage.toggled = "dark";
-        } else {
-            $('html').toggleClass('dark', false);
-            $('#button').html('dark');
-            localStorage.toggled = "";
+    document.querySelectorAll('.sticky-toc-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
         }
+      });
     });
 
     
