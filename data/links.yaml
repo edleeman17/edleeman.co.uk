@@ -5,4 +5,7 @@
   links: []
 
 - category: "Interesting"
-  links: []
+  links:
+    - title: "Cloudflare emdash for WordPress"
+      url: "https://blog.cloudflare.com/emdash-wordpress/"
+      description: "Can't wait to get my hands dirty with this. Just need to see if ecommerce is viable"
