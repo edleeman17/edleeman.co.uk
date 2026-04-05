@@ -80,6 +80,7 @@
     {{ range where site.RegularPages "Type" "page" }}
     <a class="menu-item{{ if eq $.Page.Permalink .Permalink }} active{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}
+    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/links/" }} active{{ end }}" href="{{ .Site.BaseURL }}links">links</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
   </nav>
 
