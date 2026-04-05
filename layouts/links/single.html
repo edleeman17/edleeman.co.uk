@@ -1,0 +1,58 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .link-single {
+    max-width: 640px;
+  }
+
+  .link-single-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .link-single-description {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .link-single-url {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .link-single-url:hover {
+    text-decoration: underline;
+  }
+
+  .link-single-url::after {
+    content: ' ↗';
+    font-size: var(--text-sm);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-bottom: var(--space-6);
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+</style>
+
+<div class="main link-single">
+  <a href="/links/" class="back-link">← Links</a>
+  <h1>{{ .Title }}</h1>
+  <div class="link-single-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.category }} · {{ . }}{{ end }}</div>
+  {{ with .Params.description }}<p class="link-single-description">{{ . }}</p>{{ end }}
+  {{ with .Params.url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="link-single-url">Visit link</a>{{ end }}
+</div>
+
+{{- partial "footer.html" . -}}

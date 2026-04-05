@@ -18,7 +18,7 @@
       <guid>{{ .Permalink }}</guid>
       {{ $permalink := .Permalink -}}
       {{ $desc := .Content | replaceRE ` data-lang="[^"]*"` "" | replaceRE ` loading="[^"]*"` "" | replaceRE `href="#([^"]*)"` (printf `href="%s#$1"` $permalink) -}}
-      <description>{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}</description>
+      <description>{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}</description>
     </item>
     {{ end }}
   </channel>
