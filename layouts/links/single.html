@@ -52,7 +52,7 @@
   <h1>{{ .Title }}</h1>
   <div class="link-single-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.category }} · {{ . }}{{ end }}</div>
   {{ with .Params.description }}<p class="link-single-description">{{ . }}</p>{{ end }}
-  {{ with .Params.url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="link-single-url">Visit link</a>{{ end }}
+  {{ with .Params.link }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="link-single-url">Visit link</a>{{ end }}
 </div>
 
 {{- partial "footer.html" . -}}

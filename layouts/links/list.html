@@ -57,7 +57,7 @@
   <h1>Links</h1>
   <p class="links-intro">Things I've found interesting, useful, or worth remembering.</p>
 
-  {{ $pages := .Pages | sort "Date" "desc" }}
+  {{ $pages := .Pages.ByDate.Reverse }}
   {{ $categories := slice }}
   {{ range $pages }}
     {{ $cat := .Params.category | default "Uncategorised" }}
