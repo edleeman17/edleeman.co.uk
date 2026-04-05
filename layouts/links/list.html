@@ -40,11 +40,6 @@
     color: var(--color-accent);
   }
 
-  .link-title a::after {
-    content: ' ↗';
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-  }
 
   .link-desc {
     font-size: var(--text-sm);
@@ -80,7 +75,7 @@
     <ul class="links-list">
       {{ range $catPages }}
       <li class="link-item">
-        <div class="link-title"><a href="{{ .Params.url }}" target="_blank" rel="noopener noreferrer">{{ .Title }}</a></div>
+        <div class="link-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
         {{ if .Params.description }}<div class="link-desc">{{ .Params.description }}</div>{{ end }}
         <div class="link-meta">{{ .Date.Format "2 Jan 2006" }}</div>
       </li>
