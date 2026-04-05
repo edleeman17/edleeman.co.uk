@@ -12,7 +12,7 @@
     {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
     {{ range where $pages ".Date.IsZero" false }}
     <item>
-      <title>{{ .Title }}</title>
+      <title>{{ if .Params.link }}→ {{ end }}{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
