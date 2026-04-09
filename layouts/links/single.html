@@ -45,6 +45,19 @@
   .back-link:hover {
     color: var(--color-text);
   }
+
+  .email-link {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    margin-top: var(--space-4);
+  }
+
+  .email-link:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
 </style>
 
 <div class="main link-single">
@@ -53,6 +66,8 @@
   <div class="link-single-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.category }} · {{ . }}{{ end }}</div>
   {{ with .Params.description }}<p class="link-single-description">{{ . }}</p>{{ end }}
   {{ with .Params.link }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="link-single-url">Visit link</a>{{ end }}
+  <br>
+  <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}" class="email-link">Email me about this</a>
 </div>
 
 {{- partial "footer.html" . -}}

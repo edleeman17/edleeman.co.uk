@@ -144,7 +144,7 @@ a {
 
 a:hover {
   background-size: 100% 100%;
-  color: white;
+  color: var(--color-bg);
 }
 
 /* External link indicator */
@@ -252,6 +252,7 @@ header > a {
 
 .nav-links a {
   margin: 0 var(--space-3);
+  text-transform: lowercase;
   transition: opacity var(--transition-fast);
 }
 

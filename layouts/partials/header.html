@@ -77,22 +77,17 @@
 
   <!-- Navigation Pages -->
   <nav class="nav-links">
-    {{ range where site.RegularPages "Type" "page" }}
+    {{ range where site.RegularPages "Type" "page" }}{{ if ne .Title "Cookie Zero" }}
     <a class="menu-item{{ if eq $.Page.Permalink .Permalink }} active{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
+    {{ end }}{{ end }}
     <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/links/" }} active{{ end }}" href="{{ .Site.BaseURL }}links">links</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
-  </nav>
-
-  <div class="right-wrap">
-    <button id="button">dark</button>
-    <!-- Show RSS feed in the header -->
-    <a href="{{ .Site.BaseURL }}index.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
-      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    <a class="menu-item" href="{{ .Site.BaseURL }}index.xml"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+      height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
       <path d="M4 11a9 9 0 0 1 9 9"></path>
       <path d="M4 4a16 16 0 0 1 16 16"></path>
       <circle cx="5" cy="19" r="1"></circle>
-    </svg></strong></a>
-  </div>
+    </svg> rss</a>
+  </nav>
 </header>
