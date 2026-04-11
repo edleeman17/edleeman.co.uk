@@ -118,6 +118,14 @@
     margin-bottom: 0;
   }
 
+  .reading-personality-label {
+    font-size: var(--text-xs) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2) !important;
+  }
+
   .reading-tags {
     display: flex;
     flex-wrap: wrap;
@@ -352,6 +360,7 @@
 
 <div class="main">
   <h1>Reading</h1>
+  <p class="books-meta">A personal reference for what to pick next — not a book blog. Synced from Goodreads and Fable.</p>
 
   {{ with .Site.Data.books }}
 
@@ -360,7 +369,8 @@
   {{ end }}
 
   <section class="reading-personality">
-    <p>My taste runs toward high-concept thrillers, propulsive sci-fi, and visceral horror — books that explain themselves as you read rather than demanding inference. I consistently 5★ Blake Crouch sci-fi, Ben Hope-style action thrillers, and horror with momentum; literary fiction that withholds meaning tends to land at 3★ or below.</p>
+    <p class="reading-personality-label">Pick list — what I actually finish and rate 5★</p>
+    <p>High concept, plot-driven, explains itself as you read. 5★ patterns: Crouch/Weir sci-fi, Ben Hope-style action thrillers, momentum horror (Bird Box, The Shining). Avoid literary fiction that withholds meaning — lands at 3★ or below.</p>
     <div class="reading-tags">
       <span class="reading-tag">High Concept</span>
       <span class="reading-tag">Thriller</span>
@@ -579,7 +589,7 @@
   </details>
   {{ end }}
 
-  <h2>Where I find books</h2>
+  <h2>Useful sources</h2>
   <div class="finds-grid">
     <div class="finds-card">
       <h3>Communities</h3>
