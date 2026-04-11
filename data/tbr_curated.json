@@ -1,0 +1,117 @@
+{
+  "_prompt": "Re-curate this file from data/books.json. For every book in books.json.tbr, place it under exactly one of: aligned (grouped by tag), risky, or not_aligned (grouped by reason). Tags are: 'High Concept / Crichton-esque', 'Thriller', 'Propulsive Sci-Fi', 'Horror'. My reading personality: I 5★ high-concept thrillers (Silent Patient, Hidden Pictures), Blake Crouch-style sci-fi (Dark Matter, Recursion, Project Hail Mary), action thrillers (Ben Hope, Angels & Demons), and horror with momentum (Bird Box, The Shining). Literary fiction that withholds meaning lands at 3★ or below. Use Crichton-esque as the north star: high concept, plot-driven, everything earned on the page. 'risky' = could go either way (literary/sci-fi crossovers, slower fantasy, Murakami-style). 'not_aligned' buckets are 'Literary fiction that withholds' and 'Non-fiction / self-help / philosophy'. Each entry: { title, author, link }. Preserve _prompt verbatim. Update last_curated to today (YYYY-MM-DD). Every TBR book must appear exactly once.",
+  "last_curated": "2026-04-11",
+  "tags": [
+    "High Concept / Crichton-esque",
+    "Thriller",
+    "Propulsive Sci-Fi",
+    "Horror"
+  ],
+  "aligned": {
+    "High Concept / Crichton-esque": [
+      { "title": "Flowers for Algernon", "author": "Daniel Keyes", "link": "https://www.goodreads.com/review/show/8339829424" },
+      { "title": "The One (Dark Future #1)", "author": "John Marrs", "link": "https://www.goodreads.com/review/show/7040704053" },
+      { "title": "The Minority Report", "author": "Philip K. Dick", "link": "https://www.goodreads.com/review/show/3943981222" },
+      { "title": "Fight Club", "author": "Chuck Palahniuk", "link": "https://www.goodreads.com/review/show/5327228508" },
+      { "title": "Fatherland", "author": "Robert Harris", "link": "https://www.goodreads.com/review/show/3691601395" }
+    ],
+    "Thriller": [
+      { "title": "Shutter Island", "author": "Dennis Lehane", "link": "https://www.goodreads.com/review/show/6993808615" },
+      { "title": "Before I Go to Sleep", "author": "S.J. Watson", "link": "https://www.goodreads.com/review/show/3691622290" },
+      { "title": "The Girl on the Train", "author": "Paula Hawkins", "link": "https://www.goodreads.com/review/show/4003189154" },
+      { "title": "I See You", "author": "Clare Mackintosh", "link": "https://www.goodreads.com/review/show/5043753658" },
+      { "title": "If They Knew", "author": "Sophie Flynn", "link": "https://www.goodreads.com/review/show/5047091739" },
+      { "title": "Have You Seen Me?", "author": "Kate White", "link": "https://www.goodreads.com/review/show/3986905801" },
+      { "title": "The Da Vinci Code (Robert Langdon, #2)", "author": "Dan Brown", "link": "https://www.goodreads.com/review/show/5376657618" },
+      { "title": "Tinker, Tailor, Soldier, Spy", "author": "John le Carré", "link": "https://www.goodreads.com/review/show/3693098324" }
+    ],
+    "Propulsive Sci-Fi": [
+      { "title": "Wayward (Wayward Pines, #2)", "author": "Blake Crouch", "link": "https://www.goodreads.com/review/show/5556044945" },
+      { "title": "The Last Town (Wayward Pines, #3)", "author": "Blake Crouch", "link": "https://www.goodreads.com/review/show/5556044957" },
+      { "title": "Mickey7 (Mickey7 #1)", "author": "Edward Ashton", "link": "https://www.goodreads.com/review/show/7534285387" },
+      { "title": "Red Rising (Red Rising Saga, #1)", "author": "Pierce Brown", "link": "https://www.goodreads.com/review/show/7040703334" },
+      { "title": "Children of Time (Children of Time, #1)", "author": "Adrian Tchaikovsky", "link": "https://www.goodreads.com/review/show/4904506260" },
+      { "title": "Dune (Dune, #1)", "author": "Frank Herbert", "link": "https://www.goodreads.com/review/show/3689691527" },
+      { "title": "Rendezvous with Rama (Rama, #1)", "author": "Arthur C. Clarke", "link": "https://www.goodreads.com/review/show/3395194153" },
+      { "title": "The Fountains of Paradise", "author": "Arthur C. Clarke", "link": "https://www.goodreads.com/review/show/3395186438" },
+      { "title": "Fahrenheit 451", "author": "Ray Bradbury", "link": "https://www.goodreads.com/review/show/3395182896" }
+    ],
+    "Horror": [
+      { "title": "You Like It Darker", "author": "Stephen King", "link": "https://www.goodreads.com/review/show/7077050523" },
+      { "title": "Misery", "author": "Stephen King", "link": "https://www.goodreads.com/review/show/4176582004" },
+      { "title": "Pet Sematary", "author": "Stephen King", "link": "https://www.goodreads.com/review/show/4169860008" },
+      { "title": "The Outsider (Holly Gibney #1)", "author": "Stephen King", "link": "https://www.goodreads.com/review/show/3396826779" },
+      { "title": "The Haunting of Hill House", "author": "Shirley Jackson", "link": "https://www.goodreads.com/review/show/4169859931" },
+      { "title": "The Reformatory", "author": "Tananarive Due", "link": "https://www.goodreads.com/review/show/7040704771" },
+      { "title": "The Eyes Are the Best Part", "author": "Monika Kim", "link": "https://www.goodreads.com/review/show/8487251672" },
+      { "title": "Bat Eater and Other Names for Cora Zeng", "author": "Kylie Lee Baker", "link": "https://www.goodreads.com/review/show/8487250993" }
+    ]
+  },
+  "risky": [
+    { "title": "Earthlings", "author": "Sayaka Murata", "link": "https://www.goodreads.com/review/show/4986682756", "note": "high concept but literary/withholding" },
+    { "title": "The Employees", "author": "Olga Ravn", "link": "https://www.goodreads.com/review/show/8439675875", "note": "literary sci-fi, sparse" },
+    { "title": "Norwegian Wood", "author": "Haruki Murakami", "link": "https://www.goodreads.com/review/show/3952220306", "note": "5★'d Kafka but 3★'d After Dark — Murakami is hit and miss" },
+    { "title": "Good Morning, Midnight", "author": "Lily Brooks-Dalton", "link": "https://www.goodreads.com/review/show/3757608609", "note": "literary sci-fi" },
+    { "title": "The Name of the Wind (The Kingkiller Chronicle, #1)", "author": "Patrick Rothfuss", "link": "https://www.goodreads.com/review/show/3395156139", "note": "fantasy, slower pace" },
+    { "title": "The Color of Magic (Discworld, #1; Rincewind, #1)", "author": "Terry Pratchett", "link": "https://www.goodreads.com/review/show/5377702764", "note": "fantasy comedy, not your usual lane" },
+    { "title": "Storm Front (The Dresden Files, #1)", "author": "Jim Butcher", "link": "https://www.goodreads.com/review/show/5478138792", "note": "urban fantasy, untested" },
+    { "title": "When the Lion Feeds (Courtney series 1)", "author": "Wilbur Smith", "link": "https://www.goodreads.com/review/show/6993781901", "note": "adventure epic" },
+    { "title": "The Maid (Molly the Maid, #1)", "author": "Nita Prose", "link": "https://www.goodreads.com/review/show/5153115246", "note": "cozy mystery, not propulsive" },
+    { "title": "Catch-22", "author": "Joseph Heller", "link": "https://www.goodreads.com/review/show/3691567445", "note": "literary, demands inference" }
+  ],
+  "not_aligned": {
+    "Literary fiction that withholds": [
+      { "title": "The Remains of the Day", "author": "Kazuo Ishiguro", "link": "https://www.goodreads.com/review/show/8474885469" },
+      { "title": "War and Peace", "author": "Leo Tolstoy", "link": "https://www.goodreads.com/review/show/5822583214" },
+      { "title": "East of Eden", "author": "John Steinbeck", "link": "https://www.goodreads.com/review/show/5556034527" },
+      { "title": "Lolita", "author": "Vladimir Nabokov", "link": "https://www.goodreads.com/review/show/3955797478" },
+      { "title": "The Picture of Dorian Gray", "author": "Oscar Wilde", "link": "https://www.goodreads.com/review/show/3952324571" },
+      { "title": "The Count of Monte Cristo", "author": "Alexandre Dumas", "link": "https://www.goodreads.com/review/show/3952284030" },
+      { "title": "The Sailor Who Fell from Grace with the Sea", "author": "Yukio Mishima", "link": "https://www.goodreads.com/review/show/3952282907" },
+      { "title": "The Vanishing Half", "author": "Brit Bennett", "link": "https://www.goodreads.com/review/show/3952224072" },
+      { "title": "On Earth We're Briefly Gorgeous", "author": "Ocean Vuong", "link": "https://www.goodreads.com/review/show/4193956587" },
+      { "title": "The Book Thief", "author": "Markus Zusak", "link": "https://www.goodreads.com/review/show/3818157493" },
+      { "title": "The Curious Incident of the Dog in the Night-Time", "author": "Mark Haddon", "link": "https://www.goodreads.com/review/show/3956484023" },
+      { "title": "A Man Called Ove", "author": "Fredrik Backman", "link": "https://www.goodreads.com/review/show/3689828035" },
+      { "title": "The Things They Carried", "author": "Tim O'Brien", "link": "https://www.goodreads.com/review/show/5556039379" },
+      { "title": "The Road Back", "author": "Erich Maria Remarque", "link": "https://www.goodreads.com/review/show/5584079762" },
+      { "title": "The Boy, the Mole, the Fox and the Horse", "author": "Charlie Mackesy", "link": "https://www.goodreads.com/review/show/3952223430" },
+      { "title": "The Growing Pains of Adrian Mole (Adrian Mole, #2)", "author": "Sue Townsend", "link": "https://www.goodreads.com/review/show/3935179241" },
+      { "title": "The Wave", "author": "Todd Strasser", "link": "https://www.goodreads.com/review/show/5556036257" }
+    ],
+    "Non-fiction / self-help / philosophy": [
+      { "title": "Sapiens: A Brief History of Humankind", "author": "Yuval Noah Harari", "link": "https://www.goodreads.com/review/show/5992703585" },
+      { "title": "21 Lessons for the 21st Century", "author": "Yuval Noah Harari", "link": "https://www.goodreads.com/review/show/5992704286" },
+      { "title": "Thinking, Fast and Slow", "author": "Daniel Kahneman", "link": "https://www.goodreads.com/review/show/3769737620" },
+      { "title": "Outliers: The Story of Success", "author": "Malcolm Gladwell", "link": "https://www.goodreads.com/review/show/4003189676" },
+      { "title": "Drive: The Surprising Truth About What Motivates Us", "author": "Daniel H. Pink", "link": "https://www.goodreads.com/review/show/5992706335" },
+      { "title": "Start With Why", "author": "Simon Sinek", "link": "https://www.goodreads.com/review/show/5233703620" },
+      { "title": "Zero to One", "author": "Peter Thiel", "link": "https://www.goodreads.com/review/show/4003184920" },
+      { "title": "Traction: Get a Grip on Your Business", "author": "Gino Wickman", "link": "https://www.goodreads.com/review/show/5682651243" },
+      { "title": "4000 Weeks", "author": "Robert Bosman", "link": "https://www.goodreads.com/review/show/7017275304" },
+      { "title": "Eat That Frog!", "author": "Brian Tracy", "link": "https://www.goodreads.com/review/show/7016390356" },
+      { "title": "Surrounded by Idiots", "author": "Thomas Erikson", "link": "https://www.goodreads.com/review/show/7394310469" },
+      { "title": "The 48 Laws of Power", "author": "Robert Greene", "link": "https://www.goodreads.com/review/show/4986678771" },
+      { "title": "Tax-Free Wealth", "author": "Tom Wheelwright", "link": "https://www.goodreads.com/review/show/3878042296" },
+      { "title": "The Bitcoin Standard", "author": "Saifedean Ammous", "link": "https://www.goodreads.com/review/show/3878040453" },
+      { "title": "How Will You Measure Your Life?", "author": "Clayton M. Christensen", "link": "https://www.goodreads.com/review/show/3813105398" },
+      { "title": "A Million Miles in a Thousand Years", "author": "Donald Miller", "link": "https://www.goodreads.com/review/show/3811552709" },
+      { "title": "Walden or, Life in the Woods", "author": "Henry David Thoreau", "link": "https://www.goodreads.com/review/show/7641639820" },
+      { "title": "Meditations", "author": "Marcus Aurelius", "link": "https://www.goodreads.com/review/show/7534285631" },
+      { "title": "The Art of War", "author": "Sun Tzu", "link": "https://www.goodreads.com/review/show/3691564936" },
+      { "title": "The Book of Five Rings", "author": "Miyamoto Musashi", "link": "https://www.goodreads.com/review/show/7643112277" },
+      { "title": "Gödel, Escher, Bach: An Eternal Golden Braid", "author": "Douglas R. Hofstadter", "link": "https://www.goodreads.com/review/show/7643111613" },
+      { "title": "A Brief History of Infinity", "author": "Paolo Zellini", "link": "https://www.goodreads.com/review/show/4193923853" },
+      { "title": "A System for Writing", "author": "Bob Doto", "link": "https://www.goodreads.com/review/show/7160507229" },
+      { "title": "How To Take Smart Notes Summary", "author": "Upgraded Brain", "link": "https://www.goodreads.com/review/show/7160497659" },
+      { "title": "Hypnobirthing", "author": "Siobhan Miller", "link": "https://www.goodreads.com/review/show/3997919843" },
+      { "title": "Chavs: The Demonization of the Working Class", "author": "Owen Jones", "link": "https://www.goodreads.com/review/show/3995823496" },
+      { "title": "The Establishment", "author": "Owen Jones", "link": "https://www.goodreads.com/review/show/3995818820" },
+      { "title": "Reasons to Stay Alive", "author": "Matt Haig", "link": "https://www.goodreads.com/review/show/4003188125" },
+      { "title": "The Gift of Fear", "author": "Gavin de Becker", "link": "https://www.goodreads.com/review/show/5895810178" },
+      { "title": "Red Watch", "author": "Gordon Honeycombe", "link": "https://www.goodreads.com/review/show/3978401237" },
+      { "title": "The Perfect Storm", "author": "Sebastian Junger", "link": "https://www.goodreads.com/review/show/7641643727" },
+      { "title": "The Salt Path", "author": "Raynor Winn", "link": "https://www.goodreads.com/review/show/7649754274" }
+    ]
+  }
+}

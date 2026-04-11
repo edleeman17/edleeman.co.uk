@@ -100,6 +100,42 @@
     line-height: 1.4;
   }
 
+  .reading-personality {
+    margin-bottom: var(--space-7);
+    padding: var(--space-5);
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .reading-personality p {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  .reading-personality p:last-child {
+    margin-bottom: 0;
+  }
+
+  .reading-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .reading-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-accent);
+    background: var(--color-bg);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    line-height: 1.4;
+  }
+
   /* Favourites */
   .favourites-grid {
     display: grid;
@@ -206,6 +242,19 @@
   {{ if .last_updated }}
   <p class="books-meta">Last updated {{ .last_updated | time.Format "2 January 2006" }}</p>
   {{ end }}
+
+  <section class="reading-personality">
+    <p>My taste runs toward high-concept thrillers, propulsive sci-fi, and visceral horror — books that explain themselves as you read rather than demanding inference. I consistently 5★ Blake Crouch sci-fi, Ben Hope-style action thrillers, and horror with momentum; literary fiction that withholds meaning tends to land at 3★ or below.</p>
+    <div class="reading-tags">
+      <span class="reading-tag">High Concept</span>
+      <span class="reading-tag">Thriller</span>
+      <span class="reading-tag">Propulsive Sci-Fi</span>
+      <span class="reading-tag">Horror</span>
+      <span class="reading-tag">Page-Turner</span>
+      <span class="reading-tag">Plot-Driven</span>
+      <span class="reading-tag">Crichton-esque</span>
+    </div>
+  </section>
 
   {{ if .favourites }}
   <h2>Favourites</h2>
