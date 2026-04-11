@@ -232,6 +232,62 @@
     gap: 2px;
     justify-content: center;
   }
+
+  .tbr-categorised {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: var(--space-5);
+  }
+
+  .tbr-section-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .tbr-category {
+    margin-bottom: var(--space-5);
+  }
+
+  .tbr-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .tbr-category-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tbr-section-misaligned .tbr-category-title {
+    color: var(--color-text-muted);
+  }
+
+  .tbr-section-misaligned .tbr-item {
+    opacity: 0.7;
+  }
+
+  .tbr-note {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .tbr-info a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .tbr-info a:hover {
+    color: var(--color-accent);
+  }
 </style>
 
 <div class="main">
@@ -331,8 +387,108 @@
 
   {{ if .tbr }}
   <h2>To Read</h2>
+  {{ $curated := $.Site.Data.tbr_curated }}
+
+  {{/* Build a link → cover lookup from books.json (links carry utm params, strip them) */}}
+  {{ $covers := dict }}
+  {{ range .tbr }}
+    {{ $key := index (split .link "?") 0 }}
+    {{ $covers = merge $covers (dict $key .cover) }}
+  {{ end }}
+
   <details class="tbr-accordion">
     <summary>{{ len .tbr }} books on my TBR list</summary>
+    {{ if $curated }}
+    <div class="tbr-categorised">
+
+      <div class="tbr-section">
+        <h3 class="tbr-section-title">Aligned</h3>
+        {{ range $tag := $curated.tags }}
+          {{ $items := index $curated.aligned $tag }}
+          {{ if $items }}
+          <div class="tbr-category">
+            <h4 class="tbr-category-title">{{ $tag }}</h4>
+            <div class="tbr-list">
+              {{ range $items }}
+                {{ $cover := index $covers .link }}
+                <div class="tbr-item">
+                  {{ if $cover }}
+                  <img src="{{ $cover }}" alt="{{ .title }}" loading="lazy">
+                  {{ else }}
+                  <div class="tbr-cover-placeholder"></div>
+                  {{ end }}
+                  <div class="tbr-info">
+                    <div class="book-title">
+                      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                    </div>
+                    <div class="book-author">{{ .author }}</div>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{ if $curated.risky }}
+      <div class="tbr-section">
+        <h3 class="tbr-section-title">Could go either way</h3>
+        <div class="tbr-list">
+          {{ range $curated.risky }}
+            {{ $cover := index $covers .link }}
+            <div class="tbr-item">
+              {{ if $cover }}
+              <img src="{{ $cover }}" alt="{{ .title }}" loading="lazy">
+              {{ else }}
+              <div class="tbr-cover-placeholder"></div>
+              {{ end }}
+              <div class="tbr-info">
+                <div class="book-title">
+                  <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                </div>
+                <div class="book-author">{{ .author }}</div>
+                {{ if .note }}
+                <div class="tbr-note">{{ .note }}</div>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if $curated.not_aligned }}
+      <div class="tbr-section tbr-section-misaligned">
+        <h3 class="tbr-section-title">Probably not for me</h3>
+        {{ range $reason, $items := $curated.not_aligned }}
+        <div class="tbr-category">
+          <h4 class="tbr-category-title">{{ $reason }}</h4>
+          <div class="tbr-list">
+            {{ range $items }}
+              {{ $cover := index $covers .link }}
+              <div class="tbr-item">
+                {{ if $cover }}
+                <img src="{{ $cover }}" alt="{{ .title }}" loading="lazy">
+                {{ else }}
+                <div class="tbr-cover-placeholder"></div>
+                {{ end }}
+                <div class="tbr-info">
+                  <div class="book-title">
+                    <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                  </div>
+                  <div class="book-author">{{ .author }}</div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+    {{ else }}
     <div class="tbr-list">
       {{ range .tbr }}
       <div class="tbr-item">
@@ -351,6 +507,7 @@
       </div>
       {{ end }}
     </div>
+    {{ end }}
   </details>
   {{ end }}
 
