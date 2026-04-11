@@ -288,6 +288,66 @@
   .tbr-info a:hover {
     color: var(--color-accent);
   }
+
+  .finds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  @media (max-width: 700px) {
+    .finds-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .finds-card {
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .finds-card h3 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .finds-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .finds-card li {
+    font-size: var(--text-sm);
+    line-height: 1.4;
+  }
+
+  .finds-card a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-base);
+  }
+
+  .finds-card a:hover {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .finds-card .finds-note {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
 </style>
 
 <div class="main">
@@ -445,7 +505,11 @@
               {{ end }}
               <div class="tbr-info">
                 <div class="book-title">
+                  {{ if .link }}
                   <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                  {{ else }}
+                  {{ .title }}
+                  {{ end }}
                 </div>
                 <div class="book-author">{{ .author }}</div>
                 {{ if .note }}
@@ -475,7 +539,11 @@
                 {{ end }}
                 <div class="tbr-info">
                   <div class="book-title">
+                    {{ if .link }}
                     <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+                    {{ else }}
+                    {{ .title }}
+                    {{ end }}
                   </div>
                   <div class="book-author">{{ .author }}</div>
                 </div>
@@ -510,6 +578,44 @@
     {{ end }}
   </details>
   {{ end }}
+
+  <h2>Where I find books</h2>
+  <div class="finds-grid">
+    <div class="finds-card">
+      <h3>Communities</h3>
+      <ul>
+        <li><a href="https://www.reddit.com/r/suggestmeabook/" target="_blank" rel="noopener noreferrer">r/suggestmeabook</a></li>
+        <li><a href="https://www.reddit.com/r/printSF/" target="_blank" rel="noopener noreferrer">r/printSF</a></li>
+        <li><a href="https://www.reddit.com/r/horrorlit/" target="_blank" rel="noopener noreferrer">r/horrorlit</a></li>
+        <li><a href="https://www.reddit.com/r/thrillers/" target="_blank" rel="noopener noreferrer">r/thrillers</a></li>
+        <li><a href="https://www.reddit.com/r/MysteryThriller/" target="_blank" rel="noopener noreferrer">r/MysteryThriller</a></li>
+      </ul>
+    </div>
+
+    <div class="finds-card">
+      <h3>Editorial</h3>
+      <ul>
+        <li><a href="https://crimereads.com/" target="_blank" rel="noopener noreferrer">CrimeReads</a><span class="finds-note">thriller-heavy editorial</span></li>
+        <li><a href="https://the-line-up.com/" target="_blank" rel="noopener noreferrer">The Lineup</a><span class="finds-note">horror &amp; true crime</span></li>
+        <li><a href="https://bookriot.com/" target="_blank" rel="noopener noreferrer">Book Riot</a><span class="finds-note">broad but well filtered</span></li>
+        <li><a href="https://www.goodreads.com/list" target="_blank" rel="noopener noreferrer">Goodreads Listopia</a><span class="finds-note">"high concept thrillers", "page-turners"</span></li>
+      </ul>
+    </div>
+
+    <div class="finds-card">
+      <h3>Authors to mine</h3>
+      <ul>
+        <li>Riley Sager</li>
+        <li>Paul Tremblay</li>
+        <li>Catriona Ward</li>
+        <li>Adam Nevill</li>
+        <li>Greg Iles</li>
+        <li>Peter Watts</li>
+        <li>Daryl Gregory</li>
+        <li>T.J. Newman</li>
+      </ul>
+    </div>
+  </div>
 
   {{ else }}
   <p>No book data yet — run the GitHub Action to populate.</p>
