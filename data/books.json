@@ -1,6 +1,17 @@
 {
-  "last_updated": "2026-04-14T20:09:33Z",
+  "last_updated": "2026-04-14T20:27:03Z",
   "favourites": [
+    {
+      "title": "Employees",
+      "author": "Olga Ravn, Jennifer Russell",
+      "link": "",
+      "cover": "",
+      "rating": 5,
+      "pages": "144",
+      "review": null,
+      "date_read": "2026-04-12T00:00:00Z",
+      "date_added": "2026-04-14T20:27:03Z"
+    },
     {
       "title": "Strange Pictures",
       "author": "Uketsu",
@@ -47,6 +58,17 @@
     }
   ],
   "read": [
+    {
+      "title": "Employees",
+      "author": "Olga Ravn, Jennifer Russell",
+      "link": "",
+      "cover": "",
+      "rating": 5,
+      "pages": "144",
+      "review": null,
+      "date_read": "2026-04-12T00:00:00Z",
+      "date_added": "2026-04-14T20:27:03Z"
+    },
     {
       "title": "Strange Pictures",
       "author": "Uketsu",
