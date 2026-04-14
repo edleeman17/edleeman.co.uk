@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-14T20:09:14Z",
+  "last_updated": "2026-04-14T20:09:33Z",
   "favourites": [
     {
       "title": "Strange Pictures",
@@ -47,6 +47,17 @@
     }
   ],
   "read": [
+    {
+      "title": "Strange Pictures",
+      "author": "Uketsu, Jim Rion",
+      "link": "",
+      "cover": "https://covers.openlibrary.org/b/id/15123137-L.jpg",
+      "rating": null,
+      "pages": "239",
+      "review": null,
+      "date_read": "2026-04-14T00:00:00Z",
+      "date_added": "2026-04-14T20:09:33Z"
+    },
     {
       "title": "Strange Pictures",
       "author": "Uketsu",
