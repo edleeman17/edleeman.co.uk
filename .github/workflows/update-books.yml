@@ -1,9 +1,13 @@
 name: Update Goodreads Books
 
-on:
-  schedule:
-    - cron: '0 7 * * 0'  # Every Sunday at 07:00 UTC
-  workflow_dispatch:      # Allow manual runs from the Actions tab
+# Disabled — edleeman.co.uk/data/books.json is now the source of truth.
+# Books are pushed FROM here TO Goodreads/Fable via scripts/book-sync/.
+# on:
+#   schedule:
+#     - cron: '0 7 * * 0'
+#   workflow_dispatch:
+
+on: workflow_dispatch  # manual-only, kept as a fallback
 
 jobs:
   update-books:
