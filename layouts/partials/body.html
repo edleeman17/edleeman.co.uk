@@ -12,8 +12,7 @@
     <section id="about">
         <span class="green">➜</span>
         <span class="cyan">~</span>
-        <span class="type"></span>
-        <span class="blink" style="display:none;"></span>
+        <span>Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life.</span>
     </section>
     <section id="posts">
         <h2>Posts</h2>
@@ -29,36 +28,6 @@
 </div>
 
 <script>
-    // Typing animation (vanilla JS)
-    (function() {
-        var str = 'echo "Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life." > about.txt';
-        var typeEl = document.querySelector('.type');
-        var blinkEl = document.querySelector('.blink');
-        var i = 0;
-
-        function typeChar() {
-            if (i < str.length) {
-                var span = document.createElement('span');
-                span.textContent = str[i];
-                span.style.opacity = '0';
-                typeEl.appendChild(span);
-
-                // Fade in
-                setTimeout(function() {
-                    span.style.transition = 'opacity 100ms';
-                    span.style.opacity = '1';
-                }, 10);
-
-                i++;
-                setTimeout(typeChar, 25);
-            } else {
-                blinkEl.style.display = 'inline-block';
-            }
-        }
-
-        typeChar();
-    })();
-
     // Last.fm now playing (vanilla JS)
     (function() {
         var apiKey = '{{ .Site.Params.lastfmApiKey }}';
