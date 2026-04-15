@@ -1,0 +1,28 @@
+name: Send Webmentions
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/posts/**'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'Process all posts (backfill)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  send-webmentions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send webmentions
+        run: |
+          if [ "${{ inputs.all }}" = "true" ]; then
+            LIMIT=0
+          else
+            LIMIT=10
+          fi
+          curl -s -X POST \
+            "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=https://edleeman.co.uk/index.xml&limit=${LIMIT}"
