@@ -356,6 +356,41 @@
     font-size: var(--text-xs);
     color: var(--color-text-muted);
   }
+  /* Currently Reading */
+  .currently-reading-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-bottom: var(--space-7);
+  }
+
+  @media (max-width: 600px) {
+    .currently-reading-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .currently-reading-grid .book-card {
+    flex-direction: row;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border-light);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .currently-reading-grid .book-cover-wrap {
+    width: 60px;
+    height: 90px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+  }
+
+  .currently-reading-grid .book-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
 </style>
 
 <div class="main">
@@ -381,6 +416,31 @@
       <span class="reading-tag">Crichton-esque</span>
     </div>
   </section>
+
+
+  {{ if index . "currently-reading" }}
+  <h2>Currently Reading</h2>
+  <div class="book-grid currently-reading-grid">
+    {{ range index . "currently-reading" }}
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        {{ if .cover }}
+        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ else }}
+        <div class="book-cover-placeholder">no cover</div>
+        {{ end }}
+      </div>
+      <div class="book-info">
+        <div class="book-title">{{ .title }}</div>
+        <div class="book-author">{{ .author }}</div>
+        {{ if .date_started }}
+        <div class="book-date">Started {{ .date_started | time.Format "2 Jan 2006" }}</div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
 
   {{ if .favourites }}
   <h2>Favourites</h2>
