@@ -4,6 +4,8 @@ date: 2026-02-26T12:00:00Z
 draft: false
 type: "note"
 image: images/apple-touch-icon.png
+syndication:
+  - "https://fosstodon.org/@edphones/116138861323928070"
 ---
 
 # Saving LLM tokens with quiet Makefiles

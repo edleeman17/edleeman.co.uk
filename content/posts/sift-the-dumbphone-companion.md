@@ -3,6 +3,8 @@ title: "Sift: The Dumbphone Companion"
 date: 2026-02-20T00:00:00Z
 type: "post"
 draft: false
+syndication:
+  - "https://fosstodon.org/@edphones/116105518340063744"
 ---
 
 ## The Problem
