@@ -18,13 +18,10 @@ jobs:
   send-webmentions:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for deploy
-        if: ${{ github.event_name == 'push' }}
-        run: sleep 120
       - name: Send webmentions
         run: |
           if [ "${{ inputs.all }}" = "true" ]; then
-            LIMIT=0
+            LIMIT=500
           else
             LIMIT=10
           fi
