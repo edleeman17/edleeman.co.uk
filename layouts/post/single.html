@@ -3,17 +3,21 @@
 
 {{ partial "toc.html" . }}
 
-<div class="post">
-    {{ .Content }}
-</div>
-<div class="post-meta">
-    <p class="post-date">Published on {{ .Date.Format "January 2, 2006" }}</p>
-    <p class="post-tags">Tags: {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
-    <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
-    <div class="post-like">
-        <button class="iine-button" data-slug="{{ .RelPermalink }}" aria-hidden="true"></button>
+<article class="h-entry">
+    <h1 class="p-name" style="display:none;">{{ .Title }}</h1>
+    <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    <div class="e-content post">
+        {{ .Content }}
     </div>
-</div>
+    <div class="post-meta">
+        <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+        <p class="post-tags">Tags: {{ range .Params.tags }}<a class="p-category" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
+        <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
+        <div class="post-like">
+            <button class="iine-button" data-slug="{{ .RelPermalink }}" aria-hidden="true"></button>
+        </div>
+    </div>
+</article>
 <div class="webmentions" id="webmentions"></div>
 
 <script>
