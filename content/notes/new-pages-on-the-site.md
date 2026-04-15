@@ -11,7 +11,7 @@ I have some new pages on the site. This is mainly for my RSS readers (Hey! Thank
 
 ## Links
 
-Interesting things I come across, I might add a short description, might not. They're for me to keep track of and for me to share if someone else might find interesting!
+Interesting things I come across, I might add a short description, might not. They're for me to keep track of and for me to share if someone else might find interesting! Inspired by [Jasper](https://jasper.tandy.is/blogging/march-2026) keeping track of his links. I have a bunch of iOS Shortcuts doing 'things' which I think are interesting. I'll write them up one day. 
 [/links](https://edleeman.co.uk/links)
 
 ## Reading
