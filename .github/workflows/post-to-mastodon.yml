@@ -18,7 +18,7 @@ jobs:
 
       - name: Find new content and post to Mastodon
         run: |
-          # Find added/modified markdown files in this push
+          # Find added markdown files in this push
           FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
 
           if [ -z "$FILES" ]; then
@@ -27,9 +27,6 @@ jobs:
           fi
 
           for FILE in $FILES; do
-            # Extract title from frontmatter
-            TITLE=$(grep -m1 '^title:' "$FILE" | sed 's/title: *//;s/^"//;s/"$//')
-
             # Build URL from file path: content/posts/my-post.md -> posts/my-post/
             SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
             URL="https://edleeman.co.uk/${SLUG}"
