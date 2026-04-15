@@ -3,6 +3,8 @@
 <article class="h-entry">
     <h1 class="p-name" style="display:none;">{{ .Title }}</h1>
     <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
+    {{ end }}
     <div class="e-content post">
         {{ .Content }}
     </div>
@@ -12,5 +14,74 @@
         <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
     </div>
 </article>
+<div class="webmentions" id="webmentions"></div>
+
+<script>
+(function() {
+  var container = document.getElementById('webmentions');
+  var target = encodeURIComponent(window.location.href);
+  fetch('https://webmention.io/api/mentions.jf2?target=' + target + '&per-page=100')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var children = (data && data.children) || [];
+      if (!children.length) return;
+
+      var likes    = children.filter(function(m) { return m['wm-property'] === 'like-of'; });
+      var reposts  = children.filter(function(m) { return m['wm-property'] === 'repost-of'; });
+      var replies  = children.filter(function(m) {
+        return m['wm-property'] === 'in-reply-to' || m['wm-property'] === 'mention-of';
+      });
+
+      var html = '<div class="wm-section">';
+
+      if (likes.length || reposts.length) {
+        html += '<p class="wm-counts">';
+        if (likes.length)   html += '<span><i class="fas fa-heart"></i> ' + likes.length + '</span>';
+        if (reposts.length) html += '<span><i class="fas fa-retweet"></i> ' + reposts.length + '</span>';
+        html += '</p>';
+        var avatars = likes.concat(reposts);
+        html += '<div class="wm-avatars">';
+        avatars.forEach(function(m) {
+          var photo = m.author && m.author.photo ? m.author.photo : '';
+          var name  = m.author && m.author.name  ? m.author.name  : 'Someone';
+          var url   = m.url || m['wm-source'] || '#';
+          html += '<a href="' + url + '" title="' + name + '" target="_blank" rel="noopener">';
+          if (photo) {
+            html += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
+          } else {
+            html += '<span class="wm-avatar wm-avatar-fallback">' + name.charAt(0) + '</span>';
+          }
+          html += '</a>';
+        });
+        html += '</div>';
+      }
+
+      if (replies.length) {
+        html += '<div class="wm-replies">';
+        replies.forEach(function(m) {
+          var author = m.author || {};
+          var photo  = author.photo || '';
+          var name   = author.name  || 'Anonymous';
+          var url    = m.url || m['wm-source'] || '#';
+          var text   = m.content && m.content.text ? m.content.text : '';
+          var date   = m.published ? new Date(m.published).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+          html += '<div class="wm-reply">';
+          html += '<div class="wm-reply-meta">';
+          if (photo) html += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
+          html += '<a href="' + url + '" target="_blank" rel="noopener" class="wm-reply-author">' + name + '</a>';
+          if (date) html += '<span class="wm-reply-date">' + date + '</span>';
+          html += '</div>';
+          if (text) html += '<p class="wm-reply-text">' + text + '</p>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      html += '</div>';
+      container.innerHTML = html;
+    })
+    .catch(function() {});
+})();
+</script>
 {{- partial "footer.html" . -}}
 

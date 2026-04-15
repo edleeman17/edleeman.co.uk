@@ -1,4 +1,4 @@
-name: Post to Mastodon
+name: Syndicate to Mastodon
 
 on:
   push:
@@ -8,17 +8,19 @@ on:
       - 'content/notes/**'
 
 jobs:
-  post-to-mastodon:
+  syndicate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Find new content and post to Mastodon
+      - name: Find new content and syndicate
+        env:
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
-          # Find added markdown files in this push
           FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
 
           if [ -z "$FILES" ]; then
@@ -26,18 +28,61 @@ jobs:
             exit 0
           fi
 
+          CHANGED=false
+
           for FILE in $FILES; do
-            # Build URL from file path: content/posts/my-post.md -> posts/my-post/
+            # Skip if syndication URLs already present
+            if grep -q '^syndication:' "$FILE"; then
+              echo "Skipping $FILE - already syndicated"
+              continue
+            fi
+
+            # Extract title from frontmatter
+            TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$FILE" | head -1)
+
+            # Build URL from file path
             SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
             URL="https://edleeman.co.uk/${SLUG}"
 
-            STATUS="New Post:\n${URL}"
+            STATUS="${TITLE}\n${URL}"
+            echo "Posting to Mastodon: $STATUS"
 
-            echo "Posting: $STATUS"
-
-            curl -s -X POST \
+            MASTODON_RESPONSE=$(curl -s -X POST \
               "https://fosstodon.org/api/v1/statuses" \
-              -H "Authorization: Bearer ${{ secrets.MASTODON_ACCESS_TOKEN }}" \
+              -H "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \
               -H "Content-Type: application/json" \
-              -d "{\"status\": \"${STATUS}\", \"visibility\": \"public\"}"
+              -d "{\"status\": \"${STATUS}\", \"visibility\": \"public\"}")
+
+            MASTODON_URL=$(echo "$MASTODON_RESPONSE" | jq -r '.url // empty')
+
+            if [ -n "$MASTODON_URL" ]; then
+              echo "Mastodon URL: $MASTODON_URL"
+
+              # Insert syndication into frontmatter before closing ---
+              awk -v url="$MASTODON_URL" '
+                BEGIN { count=0 }
+                /^---$/ {
+                  count++
+                  if (count == 2) {
+                    print "syndication:"
+                    print "  - \"" url "\""
+                  }
+                }
+                { print }
+              ' "$FILE" > "${FILE}.tmp" && mv "${FILE}.tmp" "$FILE"
+
+              CHANGED=true
+            else
+              echo "Warning: Mastodon post failed or returned no URL"
+              echo "$MASTODON_RESPONSE"
+            fi
           done
+
+          # Commit syndication URLs back
+          if [ "$CHANGED" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/
+            git commit -m "Add syndication URLs from Mastodon"
+            git push
+          fi
