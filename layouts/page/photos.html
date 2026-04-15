@@ -107,47 +107,37 @@
 <script>
 (function() {
   var container = document.getElementById('photos-container');
-  var feedUrl = 'https://charityshot.co.uk/feed/rss.xml';
+  var apiUrl = 'https://charityshot.co.uk/api/photos.json';
+  var siteUrl = 'https://charityshot.co.uk';
 
-  fetch(feedUrl)
+  fetch(apiUrl)
     .then(function(r) {
-      if (!r.ok) throw new Error('Feed fetch failed');
-      return r.text();
+      if (!r.ok) throw new Error('API fetch failed');
+      return r.json();
     })
-    .then(function(xml) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(xml, 'text/xml');
-      var items = doc.querySelectorAll('item');
-
-      if (!items.length) {
+    .then(function(photos) {
+      if (!photos.length) {
         container.innerHTML = '<p class="photos-error">No photos found.</p>';
         return;
       }
 
       var html = '<div class="photo-grid">';
 
-      items.forEach(function(item) {
-        var title = item.querySelector('title') ? item.querySelector('title').textContent : '';
-        var link = item.querySelector('link') ? item.querySelector('link').textContent : '#';
-        var enclosure = item.querySelector('enclosure');
-        var imageUrl = enclosure ? enclosure.getAttribute('url') : '';
+      photos.forEach(function(photo) {
+        var imageUrl = siteUrl + photo.image;
+        var link = siteUrl + '/feed/#photo-' + photo.slug;
+        var caption = photo.caption || '';
+        var location = photo.location || '';
 
-        // Try to extract location from description
-        var desc = item.querySelector('description') ? item.querySelector('description').textContent : '';
-        var locationMatch = desc.match(/Location:\s*([^|]+)/);
-        var location = locationMatch ? locationMatch[1].trim() : '';
-
-        if (imageUrl) {
-          html += '<div class="photo-card">';
-          html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
-          html += '<img src="' + imageUrl + '" alt="' + title.replace(/"/g, '&quot;') + '" loading="lazy">';
-          html += '</a>';
-          html += '<div class="photo-overlay">';
-          if (title) html += '<div class="photo-caption">' + title + '</div>';
-          if (location) html += '<div class="photo-location">' + location + '</div>';
-          html += '</div>';
-          html += '</div>';
-        }
+        html += '<div class="photo-card">';
+        html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
+        html += '<img src="' + imageUrl + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
+        html += '</a>';
+        html += '<div class="photo-overlay">';
+        if (caption) html += '<div class="photo-caption">' + caption + '</div>';
+        if (location) html += '<div class="photo-location">' + location + '</div>';
+        html += '</div>';
+        html += '</div>';
       });
 
       html += '</div>';
