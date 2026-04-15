@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T10:40:49Z",
+  "last_updated": "2026-04-15T10:49:08Z",
   "favourites": [
     {
       "title": "Strange Pictures",
@@ -1073,17 +1073,6 @@
       "date_added": "2026-04-14T20:09:14Z"
     },
     {
-      "title": "Strange Buildings",
-      "author": "Uketsu",
-      "link": "",
-      "cover": "https://covers.openlibrary.org/b/id/15174713-L.jpg",
-      "rating": null,
-      "pages": "382",
-      "review": null,
-      "date_read": null,
-      "date_added": "2026-04-14T20:08:35Z"
-    },
-    {
       "title": "The Eyes Are the Best Part",
       "author": "Monika Kim",
       "link": "https://www.goodreads.com/review/show/8487251672?utm_medium=api&utm_source=rss",
@@ -1972,6 +1961,20 @@
       "pages": "",
       "review": null,
       "date_added": "2020-06-16T15:45:53Z"
+    }
+  ],
+  "currently-reading": [
+    {
+      "title": "Strange Buildings",
+      "author": "Uketsu",
+      "link": "",
+      "cover": "https://covers.openlibrary.org/b/id/15174713-L.jpg",
+      "rating": null,
+      "pages": "382",
+      "review": null,
+      "date_read": null,
+      "date_added": "2026-04-14T20:08:35Z",
+      "date_started": "2026-04-15T10:49:08Z"
     }
   ]
 }
