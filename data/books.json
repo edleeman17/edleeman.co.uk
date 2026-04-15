@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T10:50:09Z",
+  "last_updated": "2026-04-15T10:50:19Z",
   "favourites": [
     {
       "title": "Strange Pictures",
@@ -47,6 +47,18 @@
     }
   ],
   "read": [
+    {
+      "title": "The Employees",
+      "author": "Olga Ravn",
+      "link": "https://www.goodreads.com/review/show/8439675875?utm_medium=api&utm_source=rss",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1591135601l/53780642.jpg",
+      "rating": 5,
+      "pages": "",
+      "review": null,
+      "date_added": "2026-03-15T19:01:08Z",
+      "date_started": "2026-04-15T10:50:09Z",
+      "date_read": "2026-04-12T00:00:00Z"
+    },
     {
       "title": "Employees",
       "author": "Olga Ravn, Jennifer Russell",
@@ -1954,17 +1966,6 @@
     }
   ],
   "currently-reading": [
-    {
-      "title": "The Employees",
-      "author": "Olga Ravn",
-      "link": "https://www.goodreads.com/review/show/8439675875?utm_medium=api&utm_source=rss",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1591135601l/53780642.jpg",
-      "rating": 0,
-      "pages": "",
-      "review": null,
-      "date_added": "2026-03-15T19:01:08Z",
-      "date_started": "2026-04-15T10:50:09Z"
-    },
     {
       "title": "Strange Buildings",
       "author": "Uketsu",
