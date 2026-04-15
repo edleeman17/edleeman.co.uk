@@ -5,6 +5,7 @@ on:
     branches: [master]
     paths:
       - 'content/posts/**'
+      - 'content/notes/**'
   workflow_dispatch:
     inputs:
       all:
