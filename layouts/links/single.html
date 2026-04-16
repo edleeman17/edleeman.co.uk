@@ -60,14 +60,15 @@
   }
 </style>
 
-<div class="main link-single">
+<article class="main link-single h-entry">
   <a href="/links/" class="back-link">← Links</a>
-  <h1>{{ .Title }}</h1>
-  <div class="link-single-meta">{{ .Date.Format "2 January 2006" }}{{ with .Params.category }} · {{ . }}{{ end }}</div>
-  {{ with .Params.description }}<p class="link-single-description">{{ . }}</p>{{ end }}
-  {{ with .Params.link }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="link-single-url">Visit link</a>{{ end }}
+  <h1 class="p-name">{{ .Title }}</h1>
+  <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+  <div class="link-single-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 January 2006" }}</time>{{ with .Params.category }} · <span class="p-category">{{ . }}</span>{{ end }}</div>
+  {{ with .Params.description }}<p class="link-single-description p-summary">{{ . }}</p>{{ end }}
+  {{ with .Params.link }}<a class="u-bookmark-of link-single-url" href="{{ . }}" target="_blank" rel="noopener noreferrer">Visit link</a>{{ end }}
   <br>
   <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}" class="email-link">Email me about this</a>
-</div>
+</article>
 
 {{- partial "footer.html" . -}}

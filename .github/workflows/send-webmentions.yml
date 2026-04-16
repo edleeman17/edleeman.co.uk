@@ -6,6 +6,7 @@ on:
     paths:
       - 'content/posts/**'
       - 'content/notes/**'
+      - 'content/links/**'
   workflow_dispatch:
 
 jobs:

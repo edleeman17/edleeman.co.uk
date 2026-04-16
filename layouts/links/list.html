@@ -68,24 +68,30 @@
     {{ end }}
   {{ end }}
 
-  {{ range $categories }}
-  {{ $cat := . }}
-  {{ $catPages := where $pages "Params.category" $cat }}
-  {{ if $catPages }}
-  <div class="links-category">
-    <h2>{{ $cat }}</h2>
-    <ul class="links-list">
-      {{ range $catPages }}
-      <li class="link-item">
-        <div class="link-title"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-        {{ if .Params.description }}<div class="link-desc">{{ .Params.description }}</div>{{ end }}
-        <div class="link-meta">{{ .Date.Format "2 Jan 2006" }}</div>
-      </li>
-      {{ end }}
-    </ul>
+  <div class="h-feed">
+    <span class="p-name" style="display:none;">Links — Ed Leeman</span>
+    {{ range $categories }}
+    {{ $cat := . }}
+    {{ $catPages := where $pages "Params.category" $cat }}
+    {{ if $catPages }}
+    <div class="links-category">
+      <h2>{{ $cat }}</h2>
+      <ul class="links-list">
+        {{ range $catPages }}
+        <li class="link-item h-entry">
+          <div class="link-title">
+            <a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ with .Params.link }}<a class="u-bookmark-of" href="{{ . }}" style="display:none;"></a>{{ end }}
+          </div>
+          {{ if .Params.description }}<div class="link-desc p-summary">{{ .Params.description }}</div>{{ end }}
+          <div class="link-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan 2006" }}</time></div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
   </div>
-  {{ end }}
-  {{ end }}
 
   {{ if not .Pages }}
   <p style="color: var(--color-text-muted)">No links yet.</p>

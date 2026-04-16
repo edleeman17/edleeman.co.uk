@@ -4,25 +4,28 @@
     <h2>Archive</h2>
 
     {{ $pagesByYear := .Site.RegularPages.GroupByDate "2006" "year" }}
-    {{ range $pages := $pagesByYear }}
+    <div class="h-feed">
+        <span class="p-name" style="display:none;">Archive — Ed Leeman</span>
+        {{ range $pages := $pagesByYear }}
 
-    <section>
-        <h2>{{ $pages.Key }}</h2>
-        <div class="preview">
-            <ul>
-                {{ range $pages.Pages }}
-                {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
-                <article class="feed post">
-                    <span class="post-date">{{ .Date.Format $dataFormat }}</span>
-                    <span class="link"><a href="{{ .Permalink  }}">{{ .Title }}</a></span>
-                    <span class="reading-time">
-                        {{ .ReadingTime }} min read
-                    </span>
-                </article>
-                {{ end }}
-            </ul>
-        </div>
-    </section>
-    {{ end }}
+        <section>
+            <h2>{{ $pages.Key }}</h2>
+            <div class="preview">
+                <ul>
+                    {{ range $pages.Pages }}
+                    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+                    <article class="feed post h-entry">
+                        <span class="post-date"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dataFormat }}</time></span>
+                        <span class="link"><a class="u-url p-name" href="{{ .Permalink  }}">{{ .Title }}</a></span>
+                        <span class="reading-time">
+                            {{ .ReadingTime }} min read
+                        </span>
+                    </article>
+                    {{ end }}
+                </ul>
+            </div>
+        </section>
+        {{ end }}
+    </div>
 </div>
 {{- partial "footer.html" . -}}

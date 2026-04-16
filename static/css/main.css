@@ -284,6 +284,25 @@ p.reply-by-email {
 }
 
 /* ============================================
+   Response context (reply/like/repost/bookmark)
+   ============================================ */
+
+.response-context {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--border-radius);
+  margin: 0 0 var(--space-4);
+  word-break: break-word;
+}
+
+.response-context a {
+  color: var(--color-text);
+}
+
+/* ============================================
    Main Content
    ============================================ */
 

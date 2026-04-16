@@ -1,9 +1,37 @@
 {{- partial "header.html" . -}}
 
-<article class="h-entry">
+{{- $replyTo := .Params.in_reply_to | default .Params.reply_to -}}
+{{- $likeOf  := .Params.like_of -}}
+{{- $repostOf := .Params.repost_of -}}
+{{- $bookmarkOf := .Params.bookmark_of -}}
+<article class="h-entry{{ with $replyTo }} p-reply{{ end }}{{ with $likeOf }} p-like{{ end }}{{ with $repostOf }} p-repost{{ end }}{{ with $bookmarkOf }} p-bookmark{{ end }}">
     <h1 class="p-name" style="display:none;">{{ .Title }}</h1>
     <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
+    {{ end }}
+    {{ with $replyTo }}
+    <p class="response-context">
+      In reply to
+      {{ if reflect.IsSlice . }}{{ range . }}<a class="u-in-reply-to" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-in-reply-to" href="{{ . }}">{{ . }}</a>{{ end }}
+    </p>
+    {{ end }}
+    {{ with $likeOf }}
+    <p class="response-context">
+      Liked
+      {{ if reflect.IsSlice . }}{{ range . }}<a class="u-like-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-like-of" href="{{ . }}">{{ . }}</a>{{ end }}
+    </p>
+    {{ end }}
+    {{ with $repostOf }}
+    <p class="response-context">
+      Reposted
+      {{ if reflect.IsSlice . }}{{ range . }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}
+    </p>
+    {{ end }}
+    {{ with $bookmarkOf }}
+    <p class="response-context">
+      Bookmarked
+      {{ if reflect.IsSlice . }}{{ range . }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}
+    </p>
     {{ end }}
     <div class="e-content post">
         {{ .Content }}
