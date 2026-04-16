@@ -30,5 +30,11 @@ jobs:
           URL: ${{ github.event.inputs.url || 'https://edleeman.co.uk/index.xml' }}
           LIMIT: ${{ github.event.inputs.limit || '10' }}
         run: |
-          curl -s -X POST \
-            "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=${URL}&limit=${LIMIT}"
+          echo "Checking feed: ${URL} (limit=${LIMIT})"
+          RESPONSE=$(curl -s -X POST \
+            "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=${URL}&limit=${LIMIT}")
+          echo "Response: ${RESPONSE}"
+          if echo "${RESPONSE}" | grep -q '"error":true'; then
+            echo "::error::webmention.app returned an error"
+            exit 1
+          fi
