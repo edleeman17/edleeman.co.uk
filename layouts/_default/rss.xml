@@ -18,7 +18,11 @@
       <guid>{{ .Permalink }}</guid>
       {{ $permalink := .Permalink -}}
       {{ $desc := .Content | replaceRE ` data-lang="[^"]*"` "" | replaceRE ` loading="[^"]*"` "" | replaceRE `href="#([^"]*)"` (printf `href="%s#$1"` $permalink) -}}
-      <description>{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}</description>
+      {{ $bookmarkLink := "" -}}
+      {{ with .Params.link -}}
+        {{ $bookmarkLink = printf "<p><a href=\"%s\">%s</a></p>" . . -}}
+      {{ end -}}
+      <description>{{ with $bookmarkLink }}{{ . | html }}{{ end }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}</description>
     </item>
     {{ end }}
   </channel>
