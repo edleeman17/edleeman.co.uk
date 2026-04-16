@@ -7,6 +7,12 @@ on:
       - 'content/posts/**'
       - 'content/notes/**'
       - 'content/links/**'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Backfill link files with this date prefix (YYYY-MM-DD). Leave blank for today.'
+        required: false
+        default: ''
 
 jobs:
   syndicate:
@@ -22,10 +28,19 @@ jobs:
         env:
           MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
-          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DATE="${{ github.event.inputs.date }}"
+            if [ -z "$DATE" ]; then
+              DATE=$(date -u +%Y-%m-%d)
+            fi
+            echo "Backfill mode: content/links/${DATE}-*.md"
+            FILES=$(ls content/links/${DATE}-*.md 2>/dev/null || true)
+          else
+            FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+          fi
 
           if [ -z "$FILES" ]; then
-            echo "No new posts, notes or links found"
+            echo "No matching files found"
             exit 0
           fi
 
