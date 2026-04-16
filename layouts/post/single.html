@@ -6,6 +6,7 @@
 <article class="h-entry">
     <h1 class="p-name" style="display:none;">{{ .Title }}</h1>
     <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    <a class="p-author h-card" href="https://edleeman.co.uk" rel="author" style="display:none;">Ed Leeman</a>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
     <div class="e-content post">
