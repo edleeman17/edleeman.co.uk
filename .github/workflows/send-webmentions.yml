@@ -8,6 +8,15 @@ on:
       - 'content/notes/**'
       - 'content/links/**'
   workflow_dispatch:
+    inputs:
+      url:
+        description: 'Feed URL to scan'
+        required: false
+        default: 'https://edleeman.co.uk/index.xml'
+      limit:
+        description: 'Max entries to process'
+        required: false
+        default: '10'
 
 jobs:
   send-webmentions:
@@ -17,6 +26,9 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: sleep 120
       - name: Send webmentions
+        env:
+          URL: ${{ github.event.inputs.url || 'https://edleeman.co.uk/index.xml' }}
+          LIMIT: ${{ github.event.inputs.limit || '10' }}
         run: |
           curl -s -X POST \
-            "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=https://edleeman.co.uk/index.xml"
+            "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=${URL}&limit=${LIMIT}"
