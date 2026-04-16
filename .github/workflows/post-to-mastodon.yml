@@ -6,6 +6,7 @@ on:
     paths:
       - 'content/posts/**'
       - 'content/notes/**'
+      - 'content/links/**'
 
 jobs:
   syndicate:
@@ -21,10 +22,10 @@ jobs:
         env:
           MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
-          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
+          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
 
           if [ -z "$FILES" ]; then
-            echo "No new posts or notes found"
+            echo "No new posts, notes or links found"
             exit 0
           fi
 
@@ -44,7 +45,20 @@ jobs:
             SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
             URL="https://edleeman.co.uk/${SLUG}"
 
-            STATUS="${TITLE}\n${URL}"
+            # Format link posts differently: include external URL
+            if [[ "$FILE" == content/links/* ]]; then
+              EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              # Strip leading "→ " if present in title
+              CLEAN_TITLE="${TITLE#→ }"
+              STATUS="🔖 ${CLEAN_TITLE}"
+              if [ -n "$DESCRIPTION" ]; then
+                STATUS="${STATUS}\n\n${DESCRIPTION}"
+              fi
+              STATUS="${STATUS}\n\n${EXTERNAL_LINK}\n\nvia ${URL}"
+            else
+              STATUS="${TITLE}\n${URL}"
+            fi
             echo "Posting to Mastodon: $STATUS"
 
             MASTODON_RESPONSE=$(curl -s -X POST \
