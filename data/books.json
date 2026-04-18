@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15T10:54:38Z",
+  "last_updated": "2026-04-18T23:32:23Z",
   "favourites": [
     {
       "title": "Strange Pictures",
@@ -47,6 +47,18 @@
     }
   ],
   "read": [
+    {
+      "title": "Strange Buildings",
+      "author": "Uketsu",
+      "link": "",
+      "cover": "https://covers.openlibrary.org/b/id/15174713-L.jpg",
+      "rating": 5,
+      "pages": "382",
+      "review": null,
+      "date_read": "2026-04-18T00:00:00Z",
+      "date_added": "2026-04-14T20:08:35Z",
+      "date_started": "2026-04-15T10:49:08Z"
+    },
     {
       "title": "The Employees",
       "author": "Olga Ravn",
@@ -1879,18 +1891,5 @@
       "date_added": "2020-06-16T15:45:53Z"
     }
   ],
-  "currently-reading": [
-    {
-      "title": "Strange Buildings",
-      "author": "Uketsu",
-      "link": "",
-      "cover": "https://covers.openlibrary.org/b/id/15174713-L.jpg",
-      "rating": null,
-      "pages": "382",
-      "review": null,
-      "date_read": null,
-      "date_added": "2026-04-14T20:08:35Z",
-      "date_started": "2026-04-15T10:49:08Z"
-    }
-  ]
+  "currently-reading": []
 }
