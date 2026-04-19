@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Alexandre Dumas"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724863997l/7126._SY475_.jpg"
-pages: 0
+pages: 1240
 goodreads_url: "https://www.goodreads.com/review/show/3952284030?utm_medium=api&utm_source=rss"
 goodreads_id: "7126"
 shelf: "tbr"

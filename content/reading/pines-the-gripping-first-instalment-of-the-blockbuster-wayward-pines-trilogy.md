@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Blake Crouch"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673294854l/73665350._SY475_.jpg"
-pages: 0
+pages: 314
 goodreads_url: "https://www.goodreads.com/review/show/5556044919?utm_medium=api&utm_source=rss"
 goodreads_id: "73665350"
 shelf: "read"

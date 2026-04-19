@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Dan    Brown"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328340801l/11495326.jpg"
-pages: 0
+pages: 447
 goodreads_url: "https://www.goodreads.com/review/show/3395159623?utm_medium=api&utm_source=rss"
 goodreads_id: "11495326"
 shelf: "read"

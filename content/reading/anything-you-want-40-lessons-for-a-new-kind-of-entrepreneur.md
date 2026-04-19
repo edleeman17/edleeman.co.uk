@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Derek Sivers"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442563520l/26635016._SX318_.jpg"
-pages: 0
+pages: 96
 goodreads_url: "https://www.goodreads.com/review/show/3811390920?utm_medium=api&utm_source=rss"
 goodreads_id: "26635016"
 shelf: "read"

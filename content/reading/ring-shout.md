@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "P. Djèlí Clark"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580134382l/49247242.jpg"
-pages: 0
+pages: 168
 goodreads_url: "https://www.goodreads.com/review/show/6966373344?utm_medium=api&utm_source=rss"
 goodreads_id: "49247242"
 shelf: "read"

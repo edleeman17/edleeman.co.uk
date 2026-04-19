@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Stephen  King"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377161001l/762530.jpg"
-pages: 0
+pages: 506
 goodreads_url: "https://www.goodreads.com/review/show/4003194976?utm_medium=api&utm_source=rss"
 goodreads_id: "762530"
 shelf: "read"

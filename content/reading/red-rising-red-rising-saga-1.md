@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Pierce Brown"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461354651l/15839976._SY475_.jpg"
-pages: 0
+pages: 442
 goodreads_url: "https://www.goodreads.com/review/show/7040703334?utm_medium=api&utm_source=rss"
 goodreads_id: "15839976"
 shelf: "tbr"

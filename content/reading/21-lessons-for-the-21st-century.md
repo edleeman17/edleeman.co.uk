@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Yuval Noah Harari"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1564577305l/38820046._SY475_.jpg"
-pages: 0
+pages: 400
 goodreads_url: "https://www.goodreads.com/review/show/5992704286?utm_medium=api&utm_source=rss"
 goodreads_id: "38820046"
 shelf: "tbr"

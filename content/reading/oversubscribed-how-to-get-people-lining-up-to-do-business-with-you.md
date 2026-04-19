@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Daniel Priestley"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432419050l/25305548._SY475_.jpg"
-pages: 0
+pages: 224
 goodreads_url: "https://www.goodreads.com/review/show/3933119600?utm_medium=api&utm_source=rss"
 goodreads_id: "25305548"
 shelf: "read"

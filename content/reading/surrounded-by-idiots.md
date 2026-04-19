@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Thomas Erikson"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583763517l/39101777._SX318_.jpg"
-pages: 0
+pages: 304
 goodreads_url: "https://www.goodreads.com/review/show/7394310469?utm_medium=api&utm_source=rss"
 goodreads_id: "39101777"
 shelf: "tbr"

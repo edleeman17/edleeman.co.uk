@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Richard Osman"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582287822l/46000520.jpg"
-pages: 0
+pages: 382
 goodreads_url: "https://www.goodreads.com/review/show/3693076849?utm_medium=api&utm_source=rss"
 goodreads_id: "46000520"
 shelf: "read"

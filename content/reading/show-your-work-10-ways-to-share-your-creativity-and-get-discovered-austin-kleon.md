@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Austin Kleon"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394749483l/20874659.jpg"
-pages: 0
+pages: 224
 goodreads_url: "https://www.goodreads.com/review/show/3828626296?utm_medium=api&utm_source=rss"
 goodreads_id: "20874659"
 shelf: "read"

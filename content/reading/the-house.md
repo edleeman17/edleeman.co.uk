@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Simon Lelic"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1484325000l/33557461.jpg"
-pages: 0
+pages: 353
 goodreads_url: "https://www.goodreads.com/review/show/3689711399?utm_medium=api&utm_source=rss"
 goodreads_id: "33557461"
 shelf: "read"

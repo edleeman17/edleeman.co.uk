@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Drew Neil"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1336278962l/13607232.jpg"
-pages: 0
+pages: 320
 goodreads_url: "https://www.goodreads.com/review/show/7582577474?utm_medium=api&utm_source=rss"
 goodreads_id: "13607232"
 shelf: "read"

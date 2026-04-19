@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Haruki Murakami"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437952316l/17803._SY475_.jpg"
-pages: 0
+pages: 176
 goodreads_url: "https://www.goodreads.com/review/show/7334418469?utm_medium=api&utm_source=rss"
 goodreads_id: "17803"
 shelf: "read"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Owen   Jones"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1374000667l/10408011.jpg"
-pages: 0
+pages: 298
 goodreads_url: "https://www.goodreads.com/review/show/3995823496?utm_medium=api&utm_source=rss"
 goodreads_id: "10408011"
 shelf: "tbr"

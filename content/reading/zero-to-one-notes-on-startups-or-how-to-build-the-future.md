@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Peter Thiel"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630663027l/18050143.jpg"
-pages: 0
+pages: 253
 goodreads_url: "https://www.goodreads.com/review/show/4003184920?utm_medium=api&utm_source=rss"
 goodreads_id: "18050143"
 shelf: "tbr"

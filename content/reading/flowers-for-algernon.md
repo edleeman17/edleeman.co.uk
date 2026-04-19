@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Daniel Keyes"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1689071681l/18373.jpg"
-pages: 0
+pages: 274
 goodreads_url: "https://www.goodreads.com/review/show/8339829424?utm_medium=api&utm_source=rss"
 goodreads_id: "18373"
 shelf: "tbr"

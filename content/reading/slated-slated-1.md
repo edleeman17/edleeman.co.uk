@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Teri Terry"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337473666l/14059998.jpg"
-pages: 0
+pages: 384
 goodreads_url: "https://www.goodreads.com/review/show/3395177210?utm_medium=api&utm_source=rss"
 goodreads_id: "14059998"
 shelf: "read"

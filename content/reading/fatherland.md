@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Robert   Harris"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1261912137l/56842.jpg"
-pages: 0
+pages: 386
 goodreads_url: "https://www.goodreads.com/review/show/3691601395?utm_medium=api&utm_source=rss"
 goodreads_id: "56842"
 shelf: "tbr"

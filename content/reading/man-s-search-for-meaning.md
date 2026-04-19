@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Viktor E. Frankl"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535419394l/4069._SY475_.jpg"
-pages: 0
+pages: 192
 goodreads_url: "https://www.goodreads.com/review/show/3952287521?utm_medium=api&utm_source=rss"
 goodreads_id: "4069"
 shelf: "read"

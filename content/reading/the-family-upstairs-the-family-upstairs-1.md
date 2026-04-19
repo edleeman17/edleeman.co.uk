@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Lisa Jewell"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1567403312l/43264734._SY475_.jpg"
-pages: 0
+pages: 464
 goodreads_url: "https://www.goodreads.com/review/show/6885262995?utm_medium=api&utm_source=rss"
 goodreads_id: "43264734"
 shelf: "read"

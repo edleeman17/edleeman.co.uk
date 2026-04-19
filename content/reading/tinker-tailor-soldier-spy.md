@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "John le Carré"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327889127l/18989.jpg"
-pages: 0
+pages: 369
 goodreads_url: "https://www.goodreads.com/review/show/3693098324?utm_medium=api&utm_source=rss"
 goodreads_id: "18989"
 shelf: "tbr"

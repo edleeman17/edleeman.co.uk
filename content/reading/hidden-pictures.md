@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Jason Rekulak"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1635260162l/58724923.jpg"
-pages: 0
+pages: 408
 goodreads_url: "https://www.goodreads.com/review/show/6953430229?utm_medium=api&utm_source=rss"
 goodreads_id: "58724923"
 shelf: "read"

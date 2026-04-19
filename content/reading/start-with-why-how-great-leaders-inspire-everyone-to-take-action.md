@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Simon Sinek"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385436443l/18954141.jpg"
-pages: 0
+pages: 247
 goodreads_url: "https://www.goodreads.com/review/show/5233703620?utm_medium=api&utm_source=rss"
 goodreads_id: "18954141"
 shelf: "tbr"

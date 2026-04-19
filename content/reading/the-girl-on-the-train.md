@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Paula Hawkins"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1748242265l/22557272._SY475_.jpg"
-pages: 0
+pages: 360
 goodreads_url: "https://www.goodreads.com/review/show/4003189154?utm_medium=api&utm_source=rss"
 goodreads_id: "22557272"
 shelf: "tbr"

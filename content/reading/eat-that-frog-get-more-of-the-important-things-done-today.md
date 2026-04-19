@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Brian Tracy"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1460586406l/29911924._SY475_.jpg"
-pages: 0
+pages: 128
 goodreads_url: "https://www.goodreads.com/review/show/7016390356?utm_medium=api&utm_source=rss"
 goodreads_id: "29911924"
 shelf: "tbr"

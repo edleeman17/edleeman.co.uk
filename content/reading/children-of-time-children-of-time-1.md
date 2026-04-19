@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Adrian Tchaikovsky"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431014197l/25499718.jpg"
-pages: 0
+pages: 616
 goodreads_url: "https://www.goodreads.com/review/show/4904506260?utm_medium=api&utm_source=rss"
 goodreads_id: "25499718"
 shelf: "tbr"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Rachel   Harrison"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680293749l/69704909.jpg"
-pages: 0
+pages: 289
 goodreads_url: "https://www.goodreads.com/review/show/6966374181?utm_medium=api&utm_source=rss"
 goodreads_id: "69704909"
 shelf: "read"

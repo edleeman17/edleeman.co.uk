@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Albert Camus"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1738704267l/49552._SY475_.jpg"
-pages: 0
+pages: 178
 goodreads_url: "https://www.goodreads.com/review/show/3691565686?utm_medium=api&utm_source=rss"
 goodreads_id: "49552"
 shelf: "read"

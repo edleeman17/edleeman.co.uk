@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Catherine Ryan Howard"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623124494l/57628810.jpg"
-pages: 0
+pages: 402
 goodreads_url: "https://www.goodreads.com/review/show/7049054827?utm_medium=api&utm_source=rss"
 goodreads_id: "57628810"
 shelf: "read"

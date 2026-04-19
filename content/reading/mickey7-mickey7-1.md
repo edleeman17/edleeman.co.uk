@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Edward Ashton"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636369192l/57693457.jpg"
-pages: 0
+pages: 320
 goodreads_url: "https://www.goodreads.com/review/show/7534285387?utm_medium=api&utm_source=rss"
 goodreads_id: "57693457"
 shelf: "tbr"

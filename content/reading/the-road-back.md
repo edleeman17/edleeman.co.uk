@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Erich Maria Remarque"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347610621l/6058.jpg"
-pages: 0
+pages: 358
 goodreads_url: "https://www.goodreads.com/review/show/5584079762?utm_medium=api&utm_source=rss"
 goodreads_id: "6058"
 shelf: "tbr"

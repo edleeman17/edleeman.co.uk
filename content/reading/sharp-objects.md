@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Gillian Flynn"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556639858l/45416649._SY475_.jpg"
-pages: 0
+pages: 312
 goodreads_url: "https://www.goodreads.com/review/show/3691624817?utm_medium=api&utm_source=rss"
 goodreads_id: "45416649"
 shelf: "read"

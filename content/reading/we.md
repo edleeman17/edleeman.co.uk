@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Yevgeny Zamyatin"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1600074673l/55333203._SY475_.jpg"
-pages: 0
+pages: 272
 goodreads_url: "https://www.goodreads.com/review/show/3952293728?utm_medium=api&utm_source=rss"
 goodreads_id: "55333203"
 shelf: "read"

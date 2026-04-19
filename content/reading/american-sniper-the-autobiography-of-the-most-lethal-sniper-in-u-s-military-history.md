@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Chris Kyle"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472243504l/31686053._SY475_.jpg"
-pages: 0
+pages: 448
 goodreads_url: "https://www.goodreads.com/review/show/5778389151?utm_medium=api&utm_source=rss"
 goodreads_id: "31686053"
 shelf: "read"

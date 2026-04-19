@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Graeme Simsion"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437469224l/18927643._SY475_.jpg"
-pages: 0
+pages: 326
 goodreads_url: "https://www.goodreads.com/review/show/3924493340?utm_medium=api&utm_source=rss"
 goodreads_id: "18927643"
 shelf: "read"

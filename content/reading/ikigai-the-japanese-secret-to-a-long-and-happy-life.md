@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Héctor  García"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680629184l/124950497._SX318_.jpg"
-pages: 0
+pages: 208
 goodreads_url: "https://www.goodreads.com/review/show/7017276134?utm_medium=api&utm_source=rss"
 goodreads_id: "124950497"
 shelf: "read"

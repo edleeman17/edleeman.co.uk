@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Arthur C. Clarke"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625662761l/16114995._SY475_.jpg"
-pages: 0
+pages: 256
 goodreads_url: "https://www.goodreads.com/review/show/3395194153?utm_medium=api&utm_source=rss"
 goodreads_id: "16114995"
 shelf: "tbr"

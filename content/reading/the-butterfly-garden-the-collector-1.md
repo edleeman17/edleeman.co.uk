@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Dot Hutchison"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461392121l/29981261._SY475_.jpg"
-pages: 0
+pages: 296
 goodreads_url: "https://www.goodreads.com/review/show/7040707661?utm_medium=api&utm_source=rss"
 goodreads_id: "29981261"
 shelf: "read"

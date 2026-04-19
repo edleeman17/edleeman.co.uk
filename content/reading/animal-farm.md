@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "George Orwell"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1325861570l/170448.jpg"
-pages: 0
+pages: 128
 goodreads_url: "https://www.goodreads.com/review/show/3702057450?utm_medium=api&utm_source=rss"
 goodreads_id: "170448"
 shelf: "read"

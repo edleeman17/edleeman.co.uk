@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Jeff Lindsay"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1384500629l/11193580.jpg"
-pages: 0
+pages: 304
 goodreads_url: "https://www.goodreads.com/review/show/4894156738?utm_medium=api&utm_source=rss"
 goodreads_id: "11193580"
 shelf: "read"

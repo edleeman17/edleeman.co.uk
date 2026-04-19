@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "James Clear"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1745148347l/33154385._SY475_.jpg"
-pages: 0
+pages: 322
 goodreads_url: "https://www.goodreads.com/review/show/3769743954?utm_medium=api&utm_source=rss"
 goodreads_id: "33154385"
 shelf: "read"

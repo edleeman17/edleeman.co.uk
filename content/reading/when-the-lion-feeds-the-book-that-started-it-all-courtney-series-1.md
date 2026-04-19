@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Wilbur Smith"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1514185323l/37669986._SY475_.jpg"
-pages: 0
+pages: 572
 goodreads_url: "https://www.goodreads.com/review/show/6993781901?utm_medium=api&utm_source=rss"
 goodreads_id: "37669986"
 shelf: "tbr"

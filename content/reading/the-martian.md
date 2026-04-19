@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Andy Weir"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1580451730l/50728243._SY475_.jpg"
-pages: 0
+pages: 407
 goodreads_url: "https://www.goodreads.com/review/show/3395177054?utm_medium=api&utm_source=rss"
 goodreads_id: "50728243"
 shelf: "read"

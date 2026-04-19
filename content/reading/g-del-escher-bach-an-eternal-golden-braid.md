@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Douglas R. Hofstadter"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547125681l/24113._SY475_.jpg"
-pages: 0
+pages: 777
 goodreads_url: "https://www.goodreads.com/review/show/7643111613?utm_medium=api&utm_source=rss"
 goodreads_id: "24113"
 shelf: "tbr"

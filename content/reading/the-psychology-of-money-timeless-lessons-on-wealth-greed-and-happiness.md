@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Morgan Housel"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581527774l/41881472._SY475_.jpg"
-pages: 0
+pages: 306
 goodreads_url: "https://www.goodreads.com/review/show/3813105724?utm_medium=api&utm_source=rss"
 goodreads_id: "41881472"
 shelf: "read"

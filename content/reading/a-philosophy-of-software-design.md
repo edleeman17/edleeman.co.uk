@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "John Ousterhout"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1531857377l/39996759._SX318_.jpg"
-pages: 0
+pages: 193
 goodreads_url: "https://www.goodreads.com/review/show/7630941878?utm_medium=api&utm_source=rss"
 goodreads_id: "39996759"
 shelf: "read"

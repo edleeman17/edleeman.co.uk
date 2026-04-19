@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Ray Bradbury"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1383718290l/13079982.jpg"
-pages: 0
+pages: 190
 goodreads_url: "https://www.goodreads.com/review/show/3395182896?utm_medium=api&utm_source=rss"
 goodreads_id: "13079982"
 shelf: "tbr"

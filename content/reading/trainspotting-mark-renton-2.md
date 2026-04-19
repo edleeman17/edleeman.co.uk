@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Irvine Welsh"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353033083l/135836.jpg"
-pages: 0
+pages: 352
 goodreads_url: "https://www.goodreads.com/review/show/3395177367?utm_medium=api&utm_source=rss"
 goodreads_id: "135836"
 shelf: "read"

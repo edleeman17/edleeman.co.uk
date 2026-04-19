@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Henry T. Brown"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328864917l/108397.jpg"
-pages: 0
+pages: 127
 goodreads_url: "https://www.goodreads.com/review/show/7649751480?utm_medium=api&utm_source=rss"
 goodreads_id: "108397"
 shelf: "read"

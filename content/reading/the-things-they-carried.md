@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Tim O'Brien"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424663847l/133518.jpg"
-pages: 0
+pages: 256
 goodreads_url: "https://www.goodreads.com/review/show/5556039379?utm_medium=api&utm_source=rss"
 goodreads_id: "133518"
 shelf: "tbr"

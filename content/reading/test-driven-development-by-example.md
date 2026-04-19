@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Kent Beck"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372039943l/387190.jpg"
-pages: 0
+pages: 220
 goodreads_url: "https://www.goodreads.com/review/show/4033415777?utm_medium=api&utm_source=rss"
 goodreads_id: "387190"
 shelf: "read"

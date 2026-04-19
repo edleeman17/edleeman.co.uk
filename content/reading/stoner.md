@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "John  Williams"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1742326950l/166997._SY475_.jpg"
-pages: 0
+pages: 291
 goodreads_url: "https://www.goodreads.com/review/show/8339827670?utm_medium=api&utm_source=rss"
 goodreads_id: "166997"
 shelf: "read"

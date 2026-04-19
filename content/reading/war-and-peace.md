@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Leo Tolstoy"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573114210l/48725100._SY475_.jpg"
-pages: 0
+pages: 696
 goodreads_url: "https://www.goodreads.com/review/show/5822583214?utm_medium=api&utm_source=rss"
 goodreads_id: "48725100"
 shelf: "tbr"

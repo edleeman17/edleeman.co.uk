@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Uketsu"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1728787087l/216670080._SY475_.jpg"
-pages: 0
+pages: 239
 goodreads_url: "https://www.goodreads.com/review/show/8474881026?utm_medium=api&utm_source=rss"
 goodreads_id: "216670080"
 shelf: "read"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Miyamoto Musashi"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1701192944l/25789._SY475_.jpg"
-pages: 0
+pages: 160
 goodreads_url: "https://www.goodreads.com/review/show/7643112277?utm_medium=api&utm_source=rss"
 goodreads_id: "25789"
 shelf: "tbr"

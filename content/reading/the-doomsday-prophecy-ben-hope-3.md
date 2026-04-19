@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Scott Mariani"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328028722l/8260127.jpg"
-pages: 0
+pages: 470
 goodreads_url: "https://www.goodreads.com/review/show/4992865949?utm_medium=api&utm_source=rss"
 goodreads_id: "8260127"
 shelf: "read"

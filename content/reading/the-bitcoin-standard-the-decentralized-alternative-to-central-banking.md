@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Saifedean Ammous"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517051735l/36448501.jpg"
-pages: 0
+pages: 304
 goodreads_url: "https://www.goodreads.com/review/show/3878040453?utm_medium=api&utm_source=rss"
 goodreads_id: "36448501"
 shelf: "tbr"

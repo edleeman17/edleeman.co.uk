@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Kazuo Ishiguro"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622500451l/55111243._SY475_.jpg"
-pages: 0
+pages: 330
 goodreads_url: "https://www.goodreads.com/review/show/3935205772?utm_medium=api&utm_source=rss"
 goodreads_id: "55111243"
 shelf: "read"
