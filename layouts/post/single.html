@@ -15,7 +15,16 @@
     <div class="post-meta">
         <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
         <p class="post-tags">Tags: {{ range .Params.tags }}<a class="p-category" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
-        <p class="reply-by-email"><a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">Reply by email</a></p>
+        {{- $mastodon := "" -}}
+        {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
+        <p class="reply-by-email">
+          {{- if $mastodon -}}
+          Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+          {{- else -}}
+          Reply by <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+          {{- end -}}
+        </p>
+        <p class="reply-by-email">Or mention <a href="{{ .Permalink }}">{{ .Permalink }}</a> on a webmention-enabled platform</p>
     </div>
 </article>
 <div class="webmentions" id="webmentions"></div>

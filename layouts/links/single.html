@@ -68,7 +68,16 @@
   {{ with .Params.description }}<p class="link-single-description p-summary">{{ . }}</p>{{ end }}
   {{ with .Params.link }}<a class="u-bookmark-of link-single-url" href="{{ . }}" target="_blank" rel="noopener noreferrer">Visit link</a>{{ end }}
   <br>
-  <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}" class="email-link">Email me about this</a>
+  {{- $mastodon := "" -}}
+  {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
+  <p class="email-link">
+    {{- if $mastodon -}}
+    Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}">email</a>
+    {{- else -}}
+    <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}">Email me about this</a>
+    {{- end -}}
+  </p>
+  <p class="email-link">Or mention <a href="{{ .Permalink }}">{{ .Permalink }}</a> on a webmention-enabled platform</p>
 </article>
 
 {{- partial "footer.html" . -}}

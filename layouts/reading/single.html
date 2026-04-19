@@ -200,6 +200,16 @@
       <a href="{{ . }}" target="_blank" rel="noopener noreferrer">View on Goodreads →</a>
     </div>
     {{ end }}
+    {{- $mastodon := "" -}}
+    {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
+    <p class="reply-by-email">
+      {{- if $mastodon -}}
+      Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+      {{- else -}}
+      Reply by <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+      {{- end -}}
+    </p>
+    <p class="reply-by-email">Or mention <a href="{{ .Permalink }}">{{ .Permalink }}</a> on a webmention-enabled platform</p>
   </article>
 </div>
 
