@@ -15,4 +15,5 @@ date_read: "2021-02-09T00:00:00Z"
 date_started: ""
 date_added: "2021-04-22T09:13:24Z"
 review: "Just finished and I already want to read it again"
+syndication: []
 ---

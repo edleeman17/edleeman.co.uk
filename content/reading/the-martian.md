@@ -15,4 +15,5 @@ date_read: "2020-06-19T00:00:00Z"
 date_started: ""
 date_added: "2020-06-19T11:45:07Z"
 review: "A bit slow in places, but a very good book"
+syndication: []
 ---
