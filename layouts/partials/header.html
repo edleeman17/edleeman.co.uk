@@ -76,6 +76,7 @@
     {{ range where site.RegularPages "Type" "page" }}{{ if ne .Title "Cookie Zero" }}
     <a class="menu-item{{ if eq $.Page.Permalink .Permalink }} active{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}{{ end }}
+    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/reading/" }} active{{ end }}" href="{{ .Site.BaseURL }}reading">reading</a>
     <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/links/" }} active{{ end }}" href="{{ .Site.BaseURL }}links">links</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
     <a class="menu-item" href="{{ .Site.BaseURL }}index.xml"><svg xmlns="http://www.w3.org/2000/svg" width="14"
