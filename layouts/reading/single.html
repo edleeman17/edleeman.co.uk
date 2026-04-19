@@ -3,21 +3,23 @@
 <style>
   .book-single {
     max-width: 680px;
+    padding-top: var(--space-6);
   }
 
   .book-single-hero {
     display: flex;
-    gap: var(--space-6);
-    margin-bottom: var(--space-6);
+    gap: var(--space-7);
+    margin-bottom: var(--space-7);
     align-items: flex-start;
   }
 
   .book-single-cover {
-    width: 120px;
+    width: 140px;
     flex-shrink: 0;
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-lg);
   }
 
   .book-single-cover img {
@@ -28,7 +30,16 @@
   .book-single-meta {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+  }
+
+  .book-single-title {
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--color-text);
   }
 
   .book-single-author {
@@ -36,30 +47,64 @@
     color: var(--color-text-muted);
   }
 
-  .book-single-rating {
-    color: var(--color-accent);
-    font-size: var(--text-base);
-    letter-spacing: 1px;
+  .book-single-author a {
+    color: var(--color-text-muted);
+    text-decoration: none;
   }
 
-  .book-single-dates {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
+  .book-single-author a:hover {
+    color: var(--color-accent);
+  }
+
+  .book-single-rating {
+    color: var(--color-accent);
+    font-size: var(--text-lg);
+    letter-spacing: 2px;
+  }
+
+  .book-single-chips {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-1);
+  }
+
+  .book-chip {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+    border-radius: 100px;
+    padding: 2px 10px;
+    white-space: nowrap;
   }
 
   .book-single-review {
-    font-size: var(--text-base);
+    border-left: 3px solid var(--color-accent);
+    margin: 0 0 var(--space-6) 0;
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-bg-secondary);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    font-size: var(--text-lg);
     line-height: 1.7;
-    margin-bottom: var(--space-6);
+    color: var(--color-text);
+    font-style: italic;
+  }
+
+  .book-single-review p {
+    margin: 0;
+  }
+
+  .book-single-review p + p {
+    margin-top: var(--space-4);
   }
 
   .book-links {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
-    margin-top: var(--space-6);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border-light);
   }
 
   .book-links a {
@@ -69,10 +114,15 @@
   @media (max-width: 500px) {
     .book-single-hero {
       flex-direction: column;
+      gap: var(--space-5);
     }
 
     .book-single-cover {
-      width: 100px;
+      width: 110px;
+    }
+
+    .book-single-title {
+      font-size: var(--text-2xl);
     }
   }
 </style>
@@ -91,10 +141,11 @@
       {{ end }}
 
       <div class="book-single-meta">
-        <h1 class="p-name">{{ .Title }}</h1>
+        <h1 class="book-single-title p-name">{{ .Title }}</h1>
+
         {{ with .Params.author }}
         <div class="book-single-author">
-          by <a class="p-author" {{ with $.Params.goodreads_url }}href="{{ . }}"{{ end }}>{{ . }}</a>
+          by <a class="p-author" {{ with $.Params.goodreads_url }}href="{{ . }}" target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
         </div>
         {{ end }}
 
@@ -110,15 +161,15 @@
         {{ end }}
         {{ end }}
 
-        <div class="book-single-dates">
+        <div class="book-single-chips">
           {{ with .Params.date_read }}
-          <span>Read <time class="dt-published" datetime="{{ . }}">{{ . | time.Format "2 January 2006" }}</time></span>
+          <span class="book-chip">Read <time class="dt-published" datetime="{{ . }}">{{ . | time.Format "Jan 2006" }}</time></span>
           {{ end }}
           {{ with .Params.date_started }}
-          <span>Started {{ . | time.Format "2 January 2006" }}</span>
+          <span class="book-chip">Started {{ . | time.Format "Jan 2006" }}</span>
           {{ end }}
           {{ with .Params.pages }}{{ if gt (int .) 0 }}
-          <span>{{ . }} pages</span>
+          <span class="book-chip">{{ . }} pages</span>
           {{ end }}{{ end }}
         </div>
       </div>
@@ -133,9 +184,9 @@
     {{ end }}
 
     {{ with .Params.review }}
-    <div class="book-single-review e-content">
+    <blockquote class="book-single-review e-content">
       <p>{{ . }}</p>
-    </div>
+    </blockquote>
     {{ end }}
 
     {{ if .Content }}
