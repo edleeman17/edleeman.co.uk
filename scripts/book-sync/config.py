@@ -3,7 +3,8 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = REPO_ROOT / "data"
-BOOKS_JSON = DATA_DIR / "books.json"
+BOOKS_JSON = DATA_DIR / "books.json"  # legacy — no longer source of truth
+READING_DIR = REPO_ROOT / "content" / "reading"
 SYNC_STATE = Path(__file__).resolve().parent / "last_synced.json"
 AUTH_DIR = Path.home() / ".config" / "book-sync"
 LOG_DIR = AUTH_DIR / "logs"

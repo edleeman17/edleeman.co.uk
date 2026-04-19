@@ -7,6 +7,7 @@ on:
       - 'content/posts/**'
       - 'content/notes/**'
       - 'content/links/**'
+      - 'content/reading/**'
   workflow_dispatch:
     inputs:
       date:
@@ -35,18 +36,24 @@ jobs:
             fi
             echo "Backfill mode: content/links/${DATE}-*.md"
             FILES=$(ls content/links/${DATE}-*.md 2>/dev/null || true)
+            READING_FILES=""
           else
             FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+            # For reading files use AM (Added or Modified) so shelf changes also trigger POSSE
+            READING_FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/reading/')
           fi
 
-          if [ -z "$FILES" ]; then
+          ALL_FILES="$FILES $READING_FILES"
+          if [ -z "$(echo $ALL_FILES | tr -d ' ')" ]; then
             echo "No matching files found"
             exit 0
           fi
 
           CHANGED=false
 
-          for FILE in $FILES; do
+          for FILE in $ALL_FILES; do
+            [ -f "$FILE" ] || continue
+
             # Skip if syndication URLs already present
             if grep -q '^syndication:' "$FILE"; then
               echo "Skipping $FILE - already syndicated"
@@ -60,11 +67,38 @@ jobs:
             SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
             URL="https://edleeman.co.uk/${SLUG}"
 
-            # Format link posts differently: include external URL
-            if [[ "$FILE" == content/links/* ]]; then
+            # Format by content type
+            if [[ "$FILE" == content/reading/* ]]; then
+              # Only POSSE finished reads
+              SHELF=$(sed -n 's/^shelf: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              if [ "$SHELF" != "read" ]; then
+                echo "Skipping $FILE - shelf is '$SHELF', not 'read'"
+                continue
+              fi
+
+              AUTHOR=$(sed -n 's/^author: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              RATING=$(sed -n 's/^rating: *\([0-9]*\)/\1/p' "$FILE" | head -1)
+              REVIEW=$(sed -n 's/^review: *"\(.*\)"/\1/p' "$FILE" | head -1)
+
+              # Build star string
+              STARS=""
+              if [ -n "$RATING" ] && [ "$RATING" -gt 0 ]; then
+                for i in $(seq 1 "$RATING"); do STARS="${STARS}★"; done
+                for i in $(seq "$RATING" 4); do STARS="${STARS}☆"; done
+              fi
+
+              STATUS="📚 \"${TITLE}\" by ${AUTHOR}"
+              if [ -n "$STARS" ]; then
+                STATUS="${STATUS} — ${STARS}"
+              fi
+              if [ -n "$REVIEW" ]; then
+                STATUS="${STATUS}\n\n${REVIEW}"
+              fi
+              STATUS="${STATUS}\n\n${URL}"
+
+            elif [[ "$FILE" == content/links/* ]]; then
               EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
               DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
-              # Strip leading "→ " if present in title
               CLEAN_TITLE="${TITLE#→ }"
               STATUS="🔖 ${CLEAN_TITLE}"
               if [ -n "$DESCRIPTION" ]; then
@@ -74,6 +108,7 @@ jobs:
             else
               STATUS="${TITLE}\n${URL}"
             fi
+
             echo "Posting to Mastodon: $STATUS"
 
             MASTODON_RESPONSE=$(curl -s -X POST \

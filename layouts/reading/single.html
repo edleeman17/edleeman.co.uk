@@ -1,0 +1,155 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .book-single {
+    max-width: 680px;
+  }
+
+  .book-single-hero {
+    display: flex;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    align-items: flex-start;
+  }
+
+  .book-single-cover {
+    width: 120px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border-light);
+  }
+
+  .book-single-cover img {
+    width: 100%;
+    display: block;
+  }
+
+  .book-single-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .book-single-author {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+  }
+
+  .book-single-rating {
+    color: var(--color-accent);
+    font-size: var(--text-base);
+    letter-spacing: 1px;
+  }
+
+  .book-single-dates {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .book-single-review {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .book-links {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-6);
+  }
+
+  .book-links a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 500px) {
+    .book-single-hero {
+      flex-direction: column;
+    }
+
+    .book-single-cover {
+      width: 100px;
+    }
+  }
+</style>
+
+<div class="main book-single">
+  <article class="h-entry">
+    <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
+    {{ end }}
+
+    <div class="book-single-hero">
+      {{ with .Params.cover }}
+      <div class="book-single-cover">
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      </div>
+      {{ end }}
+
+      <div class="book-single-meta">
+        <h1 class="p-name">{{ .Title }}</h1>
+        {{ with .Params.author }}
+        <div class="book-single-author">
+          by <a class="p-author" {{ with $.Params.goodreads_url }}href="{{ . }}"{{ end }}>{{ . }}</a>
+        </div>
+        {{ end }}
+
+        {{ with .Params.rating }}
+        {{ if gt (int .) 0 }}
+        <div class="book-single-rating">
+          <span class="p-rating" style="display:none;">{{ . }}</span>
+          {{- $r := int . -}}
+          {{- range seq 5 -}}
+            {{- if le . $r -}}<i class="fas fa-star"></i>{{- else -}}<i class="far fa-star"></i>{{- end -}}
+          {{- end }}
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <div class="book-single-dates">
+          {{ with .Params.date_read }}
+          <span>Read <time class="dt-published" datetime="{{ . }}">{{ . | time.Format "2 January 2006" }}</time></span>
+          {{ end }}
+          {{ with .Params.date_started }}
+          <span>Started {{ . | time.Format "2 January 2006" }}</span>
+          {{ end }}
+          {{ with .Params.pages }}{{ if gt (int .) 0 }}
+          <span>{{ . }} pages</span>
+          {{ end }}{{ end }}
+        </div>
+      </div>
+    </div>
+
+    {{/* u-read-of microformat — hidden h-cite pointing to the book */}}
+    {{ with .Params.goodreads_url }}
+    <span class="u-read-of h-cite" style="display:none;">
+      <a class="u-url p-name" href="{{ . }}">{{ $.Title }}</a>
+      {{ with $.Params.author }}<span class="p-author">{{ . }}</span>{{ end }}
+    </span>
+    {{ end }}
+
+    {{ with .Params.review }}
+    <div class="book-single-review e-content">
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ if .Content }}
+    <div class="book-single-review e-content">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ with .Params.goodreads_url }}
+    <div class="book-links">
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer">View on Goodreads →</a>
+    </div>
+    {{ end }}
+  </article>
+</div>
+
+{{- partial "footer.html" . -}}

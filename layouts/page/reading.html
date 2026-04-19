@@ -7,6 +7,80 @@
     margin-bottom: var(--space-6);
   }
 
+  .reading-stats {
+    display: flex;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-value {
+    font-size: var(--text-2xl, 1.5rem);
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .reading-year-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
+    height: 80px;
+  }
+
+  .year-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .year-bar-outer {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .year-bar-inner {
+    width: 100%;
+    background: var(--color-accent);
+    border-radius: 2px 2px 0 0;
+    opacity: 0.75;
+    min-height: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .year-bar-inner:hover {
+    opacity: 1;
+  }
+
+  .year-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .year-count {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+
   .book-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -395,12 +469,80 @@
 
 <div class="main">
   <h1>Reading</h1>
-  <p class="books-meta">A personal reference for what to pick next — not a book blog. Synced from Goodreads and Fable.</p>
 
-  {{ with .Site.Data.books }}
+  {{- $allReading := where site.RegularPages "Type" "reading" -}}
+  {{- $read := ((where $allReading ".Params.shelf" "read").ByParam "date_read").Reverse -}}
+  {{- $current := where $allReading ".Params.shelf" "currently-reading" -}}
+  {{- $tbr := where $allReading ".Params.shelf" "tbr" -}}
+  {{- $favs := where $allReading ".Params.favourite" true -}}
 
-  {{ if .last_updated }}
-  <p class="books-meta">Last updated {{ .last_updated | time.Format "2 January 2006" }}</p>
+  {{/* Compute stats from read books */}}
+  {{- $totalBooks := len $read -}}
+  {{- $totalPages := 0 -}}
+  {{- $totalRating := 0 -}}
+  {{- $ratedCount := 0 -}}
+  {{- $byYear := dict -}}
+  {{- range $read -}}
+    {{- $pages := int (.Params.pages | default 0) -}}
+    {{- $totalPages = add $totalPages $pages -}}
+    {{- $r := int (.Params.rating | default 0) -}}
+    {{- if gt $r 0 -}}
+      {{- $totalRating = add $totalRating $r -}}
+      {{- $ratedCount = add $ratedCount 1 -}}
+    {{- end -}}
+    {{- with .Params.date_read -}}
+      {{- $yr := . | time.Format "2006" -}}
+      {{- $prev := index $byYear $yr | default 0 -}}
+      {{- $byYear = merge $byYear (dict $yr (add $prev 1)) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $avgRating := 0.0 -}}
+  {{- if gt $ratedCount 0 -}}
+    {{- $avgRating = div (float $totalRating) (float $ratedCount) -}}
+  {{- end -}}
+
+  <div class="reading-stats">
+    <div class="stat-item">
+      <span class="stat-value">{{ $totalBooks }}</span>
+      <span class="stat-label">books read</span>
+    </div>
+    {{ if gt $totalPages 0 }}
+    <div class="stat-item">
+      <span class="stat-value">{{ $totalPages | lang.FormatNumber 0 }}</span>
+      <span class="stat-label">pages read</span>
+    </div>
+    {{ end }}
+    {{ if gt $ratedCount 0 }}
+    <div class="stat-item">
+      <span class="stat-value">{{ printf "%.1f" $avgRating }}★</span>
+      <span class="stat-label">avg rating</span>
+    </div>
+    {{ end }}
+    <div class="stat-item">
+      <span class="stat-value">{{ len $tbr }}</span>
+      <span class="stat-label">on TBR</span>
+    </div>
+  </div>
+
+  {{ if $byYear }}
+  <div class="reading-year-chart">
+    {{- $maxCount := 0 -}}
+    {{- range $yr, $count := $byYear -}}
+      {{- if gt $count $maxCount -}}{{- $maxCount = $count -}}{{- end -}}
+    {{- end -}}
+    {{ range $yr := (slice "2020" "2021" "2022" "2023" "2024" "2025" "2026") }}
+      {{- $count := index $byYear $yr | default 0 -}}
+      {{ if or (gt $count 0) (le (now.Year) (add (int $yr) 1)) }}
+      <div class="year-bar-wrap">
+        <div class="year-bar-outer">
+          <div class="year-bar-inner" style="height: {{ if gt $maxCount 0 }}{{ mul (div (float $count) (float $maxCount)) 100 | printf "%.0f" }}%{{ else }}0%{{ end }};"></div>
+        </div>
+        <span class="year-label">{{ $yr }}</span>
+        <span class="year-count">{{ $count }}</span>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
   {{ end }}
 
   <section class="reading-personality">
@@ -417,24 +559,23 @@
     </div>
   </section>
 
-
-  {{ if index . "currently-reading" }}
+  {{ if $current }}
   <h2>Currently Reading</h2>
   <div class="book-grid currently-reading-grid">
-    {{ range index . "currently-reading" }}
+    {{ range $current }}
     <div class="book-card">
       <div class="book-cover-wrap">
-        {{ if .cover }}
-        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ if .Params.cover }}
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
         {{ else }}
         <div class="book-cover-placeholder">no cover</div>
         {{ end }}
       </div>
       <div class="book-info">
-        <div class="book-title">{{ .title }}</div>
-        <div class="book-author">{{ .author }}</div>
-        {{ if .date_started }}
-        <div class="book-date">Started {{ .date_started | time.Format "2 Jan 2006" }}</div>
+        <div class="book-title">{{ .Title }}</div>
+        <div class="book-author">{{ .Params.author }}</div>
+        {{ with .Params.date_started }}
+        <div class="book-date">Started {{ . | time.Format "2 Jan 2006" }}</div>
         {{ end }}
       </div>
     </div>
@@ -442,24 +583,24 @@
   </div>
   {{ end }}
 
-  {{ if .favourites }}
+  {{ if $favs }}
   <h2>Favourites</h2>
   <div class="book-grid favourites-grid">
-    {{ range .favourites }}
+    {{ range $favs }}
     <div class="book-card">
-      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="book-cover-wrap">
-        {{ if .cover }}
-        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+      <a href="{{ .RelPermalink }}" class="book-cover-wrap">
+        {{ if .Params.cover }}
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
         {{ else }}
         <div class="book-cover-placeholder">no cover</div>
         {{ end }}
       </a>
       <div class="book-info">
-        <div class="book-title">{{ .title }}</div>
-        <div class="book-author">{{ .author }}</div>
-        {{ if .rating }}
+        <div class="book-title">{{ .Title }}</div>
+        <div class="book-author">{{ .Params.author }}</div>
+        {{ with .Params.rating }}{{ if gt (int .) 0 }}
         <div class="book-rating">
-          {{ $rating := int .rating }}
+          {{ $rating := int . }}
           {{ range seq 5 }}
             {{ if le . $rating -}}
               <i class="fas fa-star"></i>
@@ -468,9 +609,9 @@
             {{- end }}
           {{ end }}
         </div>
-        {{ end }}
-        {{ if .review }}
-        <div class="book-review">{{ .review }}</div>
+        {{ end }}{{ end }}
+        {{ with .Params.review }}
+        <div class="book-review">{{ . }}</div>
         {{ end }}
       </div>
     </div>
@@ -478,23 +619,24 @@
   </div>
   {{ end }}
 
-  {{ if .read }}
+  {{ if $read }}
   <h2>Books Read</h2>
   <div class="book-grid">
-    {{ range .read }}
+    {{ range $read }}
     <div class="book-card">
-      <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" class="book-cover-wrap">
-        {{ if .cover }}
-        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+      <a href="{{ .RelPermalink }}" class="book-cover-wrap">
+        {{ if .Params.cover }}
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
         {{ else }}
         <div class="book-cover-placeholder">no cover</div>
         {{ end }}
       </a>
       <div class="book-info">
-        <div class="book-title">{{ .title }}</div>
-        <div class="book-author">{{ .author }}</div>
+        <div class="book-title">{{ .Title }}</div>
+        <div class="book-author">{{ .Params.author }}</div>
+        {{ with .Params.rating }}{{ if gt (int .) 0 }}
         <div class="book-rating">
-          {{ $rating := int .rating }}
+          {{ $rating := int . }}
           {{ range seq 5 }}
             {{ if le . $rating -}}
               <i class="fas fa-star"></i>
@@ -503,11 +645,12 @@
             {{- end }}
           {{ end }}
         </div>
-        {{ if .date_read }}
-        <div class="book-date">{{ .date_read | time.Format "Jan 2006" }}</div>
+        {{ end }}{{ end }}
+        {{ with .Params.date_read }}
+        <div class="book-date">{{ . | time.Format "Jan 2006" }}</div>
         {{ end }}
-        {{ if .review }}
-        <div class="book-review">{{ .review }}</div>
+        {{ with .Params.review }}
+        <div class="book-review">{{ . }}</div>
         {{ end }}
       </div>
     </div>
@@ -515,19 +658,21 @@
   </div>
   {{ end }}
 
-  {{ if .tbr }}
+  {{ if $tbr }}
   <h2>To Read</h2>
   {{ $curated := $.Site.Data.tbr_curated }}
 
-  {{/* Build a link → cover lookup from books.json (links carry utm params, strip them) */}}
+  {{/* Build goodreads_url (base, no utm) → cover lookup from TBR reading pages */}}
   {{ $covers := dict }}
-  {{ range .tbr }}
-    {{ $key := index (split .link "?") 0 }}
-    {{ $covers = merge $covers (dict $key .cover) }}
+  {{ range $tbr }}
+    {{ $key := index (split (.Params.goodreads_url | default "") "?") 0 }}
+    {{ if $key }}
+    {{ $covers = merge $covers (dict $key .Params.cover) }}
+    {{ end }}
   {{ end }}
 
   <details class="tbr-accordion">
-    <summary>{{ len .tbr }} books on my TBR list</summary>
+    <summary>{{ len $tbr }} books on my TBR list</summary>
     {{ if $curated }}
     <div class="tbr-categorised">
 
@@ -628,18 +773,18 @@
     </div>
     {{ else }}
     <div class="tbr-list">
-      {{ range .tbr }}
+      {{ range $tbr }}
       <div class="tbr-item">
-        {{ if .cover }}
-        <img src="{{ .cover }}" alt="{{ .title }}" loading="lazy">
+        {{ if .Params.cover }}
+        <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
         {{ else }}
         <div class="tbr-cover-placeholder"></div>
         {{ end }}
         <div class="tbr-info">
-          <div class="book-title">{{ .title }}</div>
-          <div class="book-author">{{ .author }}</div>
-          {{ if .date_added }}
-          <div class="book-date">Added {{ .date_added | time.Format "Jan 2006" }}</div>
+          <div class="book-title">{{ .Title }}</div>
+          <div class="book-author">{{ .Params.author }}</div>
+          {{ with .Params.date_added }}
+          <div class="book-date">Added {{ . | time.Format "Jan 2006" }}</div>
           {{ end }}
         </div>
       </div>
@@ -686,10 +831,6 @@
       </ul>
     </div>
   </div>
-
-  {{ else }}
-  <p>No book data yet — run the GitHub Action to populate.</p>
-  {{ end }}
 </div>
 
 {{- partial "footer.html" . -}}
