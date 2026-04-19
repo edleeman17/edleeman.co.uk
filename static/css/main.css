@@ -283,6 +283,26 @@ p.reply-by-email {
   margin: var(--space-6) 0;
 }
 
+p.webmention-hint {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: var(--space-2) 0 var(--space-6);
+}
+
+p.webmention-hint a {
+  border: none;
+  padding: 0;
+  color: var(--color-text-muted);
+}
+
+p.webmention-hint a:hover {
+  background: none;
+  border: none;
+  font-weight: normal;
+  color: var(--color-text);
+}
+
 /* ============================================
    Response context (reply/like/repost/bookmark)
    ============================================ */

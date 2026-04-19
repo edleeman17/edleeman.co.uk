@@ -77,7 +77,7 @@
     <a href="mailto:hello@edleeman.co.uk?subject={{ .Title | urlquery }}&body={{ printf "Re: %s\n\n" .Permalink | urlquery }}">Email me about this</a>
     {{- end -}}
   </p>
-  <p class="email-link">Or mention <a href="{{ .Permalink }}">{{ .Permalink }}</a> on a webmention-enabled platform</p>
+  <p class="webmention-hint">Or mention <a href="{{ .Permalink }}"><code>{{ .Permalink }}</code></a> on a webmention-enabled platform</p>
 </article>
 
 {{- partial "footer.html" . -}}
