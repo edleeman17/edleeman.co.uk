@@ -15,5 +15,4 @@ date_read: "2026-04-19T00:00:00Z"
 date_started: "2026-04-15T10:49:08Z"
 date_added: "2026-04-14T20:08:35Z"
 review: "Another great read from Uketsu. Great puzzle book"
-syndication: []
 ---
