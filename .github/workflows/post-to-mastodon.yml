@@ -87,26 +87,27 @@ jobs:
                 for i in $(seq "$RATING" 4); do STARS="${STARS}☆"; done
               fi
 
-              STATUS="📚 \"${TITLE}\" by ${AUTHOR}"
+              HEADER="📚 \"${TITLE}\" by ${AUTHOR}"
               if [ -n "$STARS" ]; then
-                STATUS="${STATUS} — ${STARS}"
+                HEADER="${HEADER} — ${STARS}"
               fi
               if [ -n "$REVIEW" ]; then
-                STATUS="${STATUS}\n\n${REVIEW}"
+                STATUS=$(printf "%s\n\n%s\n\n%s" "$HEADER" "$REVIEW" "$URL")
+              else
+                STATUS=$(printf "%s\n\n%s" "$HEADER" "$URL")
               fi
-              STATUS="${STATUS}\n\n${URL}"
 
             elif [[ "$FILE" == content/links/* ]]; then
               EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
               DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
               CLEAN_TITLE="${TITLE#→ }"
-              STATUS="🔖 ${CLEAN_TITLE}"
               if [ -n "$DESCRIPTION" ]; then
-                STATUS="${STATUS}\n\n${DESCRIPTION}"
+                STATUS=$(printf "🔖 %s\n\n%s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$DESCRIPTION" "$EXTERNAL_LINK" "$URL")
+              else
+                STATUS=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
               fi
-              STATUS="${STATUS}\n\n${EXTERNAL_LINK}\n\nvia ${URL}"
             else
-              STATUS="${TITLE}\n${URL}"
+              STATUS=$(printf "%s\n%s" "$TITLE" "$URL")
             fi
 
             echo "Posting to Mastodon: $STATUS"
@@ -115,7 +116,7 @@ jobs:
               "https://fosstodon.org/api/v1/statuses" \
               -H "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \
               -H "Content-Type: application/json" \
-              -d "{\"status\": \"${STATUS}\", \"visibility\": \"public\"}")
+              -d "$(jq -n --arg status "$STATUS" '{"status": $status, "visibility": "public"}')")
 
             MASTODON_URL=$(echo "$MASTODON_RESPONSE" | jq -r '.url // empty')
 
