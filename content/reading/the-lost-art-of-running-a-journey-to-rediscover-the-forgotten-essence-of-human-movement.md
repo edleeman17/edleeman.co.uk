@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Shane Benzie"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597878182l/55032554._SY475_.jpg"
-pages: 0
+pages: 320
 goodreads_url: "https://www.goodreads.com/review/show/6842279991?utm_medium=api&utm_source=rss"
 goodreads_id: "55032554"
 shelf: "read"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Kylie Lee Baker"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724867496l/218185743._SY475_.jpg"
-pages: 0
+pages: 352
 goodreads_url: "https://www.goodreads.com/review/show/8487250993?utm_medium=api&utm_source=rss"
 goodreads_id: "218185743"
 shelf: "tbr"

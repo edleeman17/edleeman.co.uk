@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Upgraded Brain"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1592232090l/54100332._SY475_.jpg"
-pages: 0
+pages: 116
 goodreads_url: "https://www.goodreads.com/review/show/7160497659?utm_medium=api&utm_source=rss"
 goodreads_id: "54100332"
 shelf: "tbr"

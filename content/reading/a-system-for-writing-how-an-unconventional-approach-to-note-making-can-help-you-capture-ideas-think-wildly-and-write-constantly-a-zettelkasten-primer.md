@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Bob Doto"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718737386l/214971755._SY475_.jpg"
-pages: 0
+pages: 248
 goodreads_url: "https://www.goodreads.com/review/show/7160507229?utm_medium=api&utm_source=rss"
 goodreads_id: "214971755"
 shelf: "tbr"

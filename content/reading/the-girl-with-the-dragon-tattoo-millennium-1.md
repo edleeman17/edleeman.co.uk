@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Stieg Larsson"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439984198l/26128097._SY475_.jpg"
-pages: 0
+pages: 672
 goodreads_url: "https://www.goodreads.com/review/show/3693094362?utm_medium=api&utm_source=rss"
 goodreads_id: "26128097"
 shelf: "read"

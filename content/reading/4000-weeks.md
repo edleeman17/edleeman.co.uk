@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Robert Bosman"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509029798l/36481028._SY475_.jpg"
-pages: 0
+pages: 288
 goodreads_url: "https://www.goodreads.com/review/show/7017275304?utm_medium=api&utm_source=rss"
 goodreads_id: "36481028"
 shelf: "tbr"

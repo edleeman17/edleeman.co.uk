@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Chris Carter"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328346259l/11795531.jpg"
-pages: 0
+pages: 466
 goodreads_url: "https://www.goodreads.com/review/show/5089249587?utm_medium=api&utm_source=rss"
 goodreads_id: "11795531"
 shelf: "read"

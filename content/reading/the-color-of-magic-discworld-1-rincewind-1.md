@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Terry Pratchett"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407111017l/34497.jpg"
-pages: 0
+pages: 288
 goodreads_url: "https://www.goodreads.com/review/show/5377702764?utm_medium=api&utm_source=rss"
 goodreads_id: "34497"
 shelf: "tbr"

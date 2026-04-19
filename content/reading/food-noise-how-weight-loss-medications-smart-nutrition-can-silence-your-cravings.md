@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Jack Mosley"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740560055l/223914871._SY475_.jpg"
-pages: 0
+pages: 224
 goodreads_url: "https://www.goodreads.com/review/show/7537837157?utm_medium=api&utm_source=rss"
 goodreads_id: "223914871"
 shelf: "read"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Donald A. Norman"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442460745l/840._SY475_.jpg"
-pages: 0
+pages: 368
 goodreads_url: "https://www.goodreads.com/review/show/7630943087?utm_medium=api&utm_source=rss"
 goodreads_id: "840"
 shelf: "read"
