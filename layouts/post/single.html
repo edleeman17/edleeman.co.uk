@@ -1,6 +1,6 @@
 {{- partial "header.html" . -}}
 <progress id="reading-progress" max="100" value="0"></progress>
-
+<div class="prose-wrap">
 {{ partial "toc.html" . }}
 
 <article class="h-entry">
@@ -112,4 +112,5 @@
   updateProgress();
 })();
 </script>
+</div>
 {{- partial "footer.html" . -}}

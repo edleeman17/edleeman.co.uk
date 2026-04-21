@@ -1,5 +1,5 @@
 {{- partial "header.html" . -}}
-
+<div class="prose-wrap">
 {{- $replyTo := .Params.in_reply_to | default .Params.reply_to -}}
 {{- $likeOf  := .Params.like_of -}}
 {{- $repostOf := .Params.repost_of -}}
@@ -120,5 +120,6 @@
     .catch(function() {});
 })();
 </script>
+</div>
 {{- partial "footer.html" . -}}
 
