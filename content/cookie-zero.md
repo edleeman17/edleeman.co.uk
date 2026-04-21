@@ -9,13 +9,13 @@ Send me your site URL’s without Cookies. Display this cool banner on your site
 
 Or [submit a PR](https://github.com/edleeman17/edleeman.co.uk/compare) (/content/cookie-zero.md)
 
-[![Cookie Zero](/images/cookiezero.svg)](https://edleeman.co.uk/cookie-zero)
+[![Cookie Zero](/images/cookiezero.webp)](https://edleeman.co.uk/cookie-zero)
 
 Embed this badge on your site:
 
 ```html
 <a href="https://edleeman.co.uk/cookie-zero">
-    <img src="https://edleeman.co.uk/images/cookiezero.svg" alt="Cookie Zero">
+    <img src="https://edleeman.co.uk/images/cookiezero.webp" alt="Cookie Zero">
 </a>
 ```
 
