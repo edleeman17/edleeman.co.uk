@@ -79,6 +79,7 @@
 
   <!-- Navigation Pages -->
   <nav class="nav-links">
+    <a class="menu-item{{ if eq $.Page.RelPermalink "/about/" }} active{{ end }}" href="{{ .Site.BaseURL }}about">about</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/slashpages/" }} active{{ end }}" href="{{ .Site.BaseURL }}slashpages">/slashpages</a>
     <a class="menu-item menu-item--rss{{ if eq $.Page.RelPermalink "/rss/" }} active{{ end }}" href="{{ .Site.BaseURL }}rss"><svg xmlns="http://www.w3.org/2000/svg" width="14"
