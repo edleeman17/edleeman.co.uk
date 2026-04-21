@@ -3,30 +3,30 @@
    ============================================ */
 
 :root {
-  /* Colors - Light Mode (Rose Pine Dawn) */
-  --color-bg: #faf4ed;
-  --color-bg-secondary: #f2e9e1;
-  --color-text: #575279;
-  --color-text-muted: #9893a5;
-  --color-accent: #b4637a;
-  --color-border: #575279;
-  --color-border-light: #dfdad9;
+  /* Colors - Light Mode (Color.Bears) */
+  --color-bg: #EED3BA;
+  --color-bg-secondary: #e4c8aa;
+  --color-text: #151311;
+  --color-text-muted: #5a4a40;
+  --color-accent: #4B262F;
+  --color-border: #3d3028;
+  --color-border-light: #d4b99a;
 
   /* Code blocks */
-  --color-code-bg: #f2e9e1;
-  --color-code-border: #dfdad9;
+  --color-code-bg: #dfc4a4;
+  --color-code-border: #c4a98a;
 
   /* Table header */
-  --color-table-header-bg: #575279;
-  --color-table-header-text: #faf4ed;
-  --color-table-row-alt: #fffaf3;
+  --color-table-header-bg: #4B262F;
+  --color-table-header-text: #EED3BA;
+  --color-table-row-alt: #f5e8d5;
 
-  /* Heading colors (Rose Pine Dawn) */
-  --color-h2: #d7827e;
-  --color-h3: #286983;
-  --color-h4: #56949f;
-  --color-h5: #907aa9;
-  --color-h6: #ea9d34;
+  /* Heading colors (Color.Bears derived) */
+  --color-h2: #4B262F;
+  --color-h3: #7a3845;
+  --color-h4: #9a6040;
+  --color-h5: #5a4a40;
+  --color-h6: #6b3642;
 
   /* Spacing Scale (4px base) */
   --space-1: 4px;
@@ -66,33 +66,33 @@
 }
 
 /* ============================================
-   Dark Mode (Rose Pine inspired)
+   Dark Mode (Color.Bears)
    ============================================ */
 
 html.dark {
-  --color-bg: #191724;
-  --color-bg-secondary: #1f1d2e;
-  --color-text: #e0def4;
-  --color-text-muted: #c4bfd9;
-  --color-accent: #eb6f92;
-  --color-border: #e0def4;
-  --color-border-light: #26233a;
+  --color-bg: #151311;
+  --color-bg-secondary: #1e1b18;
+  --color-text: #EED3BA;
+  --color-text-muted: #b09070;
+  --color-accent: #b05870;
+  --color-border: #d4b99a;
+  --color-border-light: #2a2520;
 
   /* Code blocks */
-  --color-code-bg: #232136;
-  --color-code-border: #26233a;
+  --color-code-bg: #1e1b18;
+  --color-code-border: #2a2520;
 
   /* Table */
-  --color-table-header-bg: #26233a;
-  --color-table-header-text: #e0def4;
-  --color-table-row-alt: #1f1d2e;
+  --color-table-header-bg: #2a2520;
+  --color-table-header-text: #EED3BA;
+  --color-table-row-alt: #1e1b18;
 
-  /* Heading colors (Rose Pine Moon) */
-  --color-h2: #eb6f92;
-  --color-h3: #31748f;
-  --color-h4: #9ccfd8;
-  --color-h5: #c4a7e7;
-  --color-h6: #f6c177;
+  /* Heading colors (Color.Bears derived) */
+  --color-h2: #EED3BA;
+  --color-h3: #d4b99a;
+  --color-h4: #b05870;
+  --color-h5: #b09070;
+  --color-h6: #8a7060;
 }
 
 /* ============================================
@@ -469,19 +469,19 @@ h6 {
    ============================================ */
 
 .green {
-  color: green;
+  color: #5a7a50;
 }
 
 html.dark .green {
-  color: #31748f;
+  color: #8aaa78;
 }
 
 .cyan {
-  color: #05989a;
+  color: #3a6870;
 }
 
 html.dark .cyan {
-  color: #9ccfd8;
+  color: #7abac4;
 }
 
 /* ============================================
@@ -576,12 +576,12 @@ html.dark .cyan {
 .highlight {
   overflow: auto;
   position: relative;
-  background: #f2e9e1;
+  background: #dfc4a4;
   border-radius: var(--border-radius);
 }
 
 html.dark .highlight {
-  background: #232136;
+  background: #1e1b18;
 }
 
 pre {
@@ -600,11 +600,11 @@ pre.chroma {
 
 .highlight code {
   background: transparent;
-  color: #575279;
+  color: #151311;
 }
 
 html.dark .highlight code {
-  color: #e0def4;
+  color: #EED3BA;
 }
 
 code {
@@ -642,7 +642,7 @@ code {
 }
 
 .copy-btn.copied {
-  background: #2d7d46;
+  background: #5a7a50;
 }
 
 /* ============================================
@@ -894,14 +894,14 @@ ol ol ol { list-style-type: lower-roman; }
    ============================================ */
 
 mark {
-  background: #fff3cd;
+  background: #d4b99a;
   padding: 0.1em 0.2em;
   border-radius: 2px;
 }
 
 html.dark mark {
-  background: #c4a747;
-  color: #191724;
+  background: #4B262F;
+  color: #EED3BA;
 }
 
 /* ============================================

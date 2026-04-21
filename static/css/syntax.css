@@ -1,158 +1,158 @@
-/* Rose Pine Dawn (Light Mode) */
-.bg { color: #575279; background-color: #f2e9e1; }
-.chroma { color: #575279; background-color: #f2e9e1; }
+/* Color.Bears Light Mode */
+.bg { color: #151311; background-color: #dfc4a4; }
+.chroma { color: #151311; background-color: #dfc4a4; }
 .chroma .x {  }
-.chroma .err { color: #b4637a }
+.chroma .err { color: #4B262F }
 .chroma .cl {  }
 .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
 .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
 .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
-.chroma .hl { background-color: #dfdad9 }
-.chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #9893a5 }
-.chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #9893a5 }
+.chroma .hl { background-color: #c4a98a }
+.chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #907058 }
+.chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #907058 }
 .chroma .line { display: flex; }
-.chroma .k { color: #286983 }
-.chroma .kc { color: #286983 }
-.chroma .kd { color: #286983 }
-.chroma .kn { color: #907aa9 }
-.chroma .kp { color: #286983 }
-.chroma .kr { color: #286983 }
-.chroma .kt { color: #286983 }
-.chroma .n { color: #d7827e }
-.chroma .na { color: #d7827e }
-.chroma .nb { color: #d7827e }
-.chroma .bp { color: #d7827e }
-.chroma .nc { color: #56949f }
-.chroma .no { color: #ea9d34 }
-.chroma .nd { color: #797593 }
-.chroma .ni { color: #d7827e }
-.chroma .ne { color: #286983 }
-.chroma .nf { color: #d7827e }
-.chroma .fm { color: #d7827e }
-.chroma .nl { color: #d7827e }
-.chroma .nn { color: #d7827e }
+.chroma .k { color: #4B262F }
+.chroma .kc { color: #4B262F }
+.chroma .kd { color: #4B262F }
+.chroma .kn { color: #6b3642 }
+.chroma .kp { color: #4B262F }
+.chroma .kr { color: #4B262F }
+.chroma .kt { color: #4B262F }
+.chroma .n { color: #7a3845 }
+.chroma .na { color: #7a3845 }
+.chroma .nb { color: #7a3845 }
+.chroma .bp { color: #7a3845 }
+.chroma .nc { color: #9a6040 }
+.chroma .no { color: #b09070 }
+.chroma .nd { color: #5a4a40 }
+.chroma .ni { color: #7a3845 }
+.chroma .ne { color: #4B262F }
+.chroma .nf { color: #7a3845 }
+.chroma .fm { color: #7a3845 }
+.chroma .nl { color: #7a3845 }
+.chroma .nn { color: #7a3845 }
 .chroma .nx {  }
-.chroma .py { color: #d7827e }
-.chroma .nt { color: #d7827e }
-.chroma .nv { color: #d7827e }
-.chroma .vc { color: #d7827e }
-.chroma .vg { color: #d7827e }
-.chroma .vi { color: #d7827e }
-.chroma .vm { color: #d7827e }
-.chroma .l { color: #ea9d34 }
-.chroma .ld { color: #ea9d34 }
-.chroma .s { color: #ea9d34 }
-.chroma .sa { color: #ea9d34 }
-.chroma .sb { color: #ea9d34 }
-.chroma .sc { color: #ea9d34 }
-.chroma .dl { color: #ea9d34 }
-.chroma .sd { color: #ea9d34 }
-.chroma .s2 { color: #ea9d34 }
-.chroma .se { color: #286983 }
-.chroma .sh { color: #ea9d34 }
-.chroma .si { color: #ea9d34 }
-.chroma .sx { color: #ea9d34 }
-.chroma .sr { color: #ea9d34 }
-.chroma .s1 { color: #ea9d34 }
-.chroma .ss { color: #ea9d34 }
-.chroma .m { color: #ea9d34 }
-.chroma .mb { color: #ea9d34 }
-.chroma .mf { color: #ea9d34 }
-.chroma .mh { color: #ea9d34 }
-.chroma .mi { color: #ea9d34 }
-.chroma .il { color: #ea9d34 }
-.chroma .mo { color: #ea9d34 }
-.chroma .o { color: #797593 }
-.chroma .ow { color: #797593 }
-.chroma .p { color: #797593 }
-.chroma .c { color: #9893a5 }
-.chroma .ch { color: #9893a5 }
-.chroma .cm { color: #9893a5 }
-.chroma .c1 { color: #9893a5 }
-.chroma .cs { color: #9893a5 }
-.chroma .cp { color: #9893a5 }
-.chroma .cpf { color: #9893a5 }
+.chroma .py { color: #7a3845 }
+.chroma .nt { color: #7a3845 }
+.chroma .nv { color: #7a3845 }
+.chroma .vc { color: #7a3845 }
+.chroma .vg { color: #7a3845 }
+.chroma .vi { color: #7a3845 }
+.chroma .vm { color: #7a3845 }
+.chroma .l { color: #9a6040 }
+.chroma .ld { color: #9a6040 }
+.chroma .s { color: #9a6040 }
+.chroma .sa { color: #9a6040 }
+.chroma .sb { color: #9a6040 }
+.chroma .sc { color: #9a6040 }
+.chroma .dl { color: #9a6040 }
+.chroma .sd { color: #9a6040 }
+.chroma .s2 { color: #9a6040 }
+.chroma .se { color: #4B262F }
+.chroma .sh { color: #9a6040 }
+.chroma .si { color: #9a6040 }
+.chroma .sx { color: #9a6040 }
+.chroma .sr { color: #9a6040 }
+.chroma .s1 { color: #9a6040 }
+.chroma .ss { color: #9a6040 }
+.chroma .m { color: #b09070 }
+.chroma .mb { color: #b09070 }
+.chroma .mf { color: #b09070 }
+.chroma .mh { color: #b09070 }
+.chroma .mi { color: #b09070 }
+.chroma .il { color: #b09070 }
+.chroma .mo { color: #b09070 }
+.chroma .o { color: #5a4a40 }
+.chroma .ow { color: #5a4a40 }
+.chroma .p { color: #5a4a40 }
+.chroma .c { color: #907058 }
+.chroma .ch { color: #907058 }
+.chroma .cm { color: #907058 }
+.chroma .c1 { color: #907058 }
+.chroma .cs { color: #907058 }
+.chroma .cp { color: #907058 }
+.chroma .cpf { color: #907058 }
 .chroma .g {  }
-.chroma .gd { color: #b4637a }
+.chroma .gd { color: #4B262F }
 .chroma .ge { font-style: italic }
 .chroma .gr {  }
 .chroma .gh {  }
-.chroma .gi { color: #56949f }
+.chroma .gi { color: #5a7a50 }
 .chroma .go {  }
 .chroma .gp {  }
 .chroma .gs { font-weight: bold }
-.chroma .gu { color: #907aa9 }
+.chroma .gu { color: #6b3642 }
 .chroma .gt {  }
 .chroma .gl {  }
 .chroma .w {  }
 
-/* Rose Pine Moon (Dark Mode) */
-html.dark .bg { color: #e0def4; background-color: #232136; }
-html.dark .chroma { color: #e0def4; background-color: #232136; }
-html.dark .chroma .err { color: #eb6f92 }
-html.dark .chroma .hl { background-color: #39374a }
-html.dark .chroma .lnt { color: #6e6a86 }
-html.dark .chroma .ln { color: #6e6a86 }
-html.dark .chroma .k { color: #3e8fb0 }
-html.dark .chroma .kc { color: #3e8fb0 }
-html.dark .chroma .kd { color: #3e8fb0 }
-html.dark .chroma .kn { color: #c4a7e7 }
-html.dark .chroma .kp { color: #3e8fb0 }
-html.dark .chroma .kr { color: #3e8fb0 }
-html.dark .chroma .kt { color: #3e8fb0 }
-html.dark .chroma .n { color: #ea9a97 }
-html.dark .chroma .na { color: #ea9a97 }
-html.dark .chroma .nb { color: #ea9a97 }
-html.dark .chroma .bp { color: #ea9a97 }
-html.dark .chroma .nc { color: #9ccfd8 }
-html.dark .chroma .no { color: #f6c177 }
-html.dark .chroma .nd { color: #908caa }
-html.dark .chroma .ni { color: #ea9a97 }
-html.dark .chroma .ne { color: #3e8fb0 }
-html.dark .chroma .nf { color: #ea9a97 }
-html.dark .chroma .fm { color: #ea9a97 }
-html.dark .chroma .nl { color: #ea9a97 }
-html.dark .chroma .nn { color: #ea9a97 }
-html.dark .chroma .py { color: #ea9a97 }
-html.dark .chroma .nt { color: #ea9a97 }
-html.dark .chroma .nv { color: #ea9a97 }
-html.dark .chroma .vc { color: #ea9a97 }
-html.dark .chroma .vg { color: #ea9a97 }
-html.dark .chroma .vi { color: #ea9a97 }
-html.dark .chroma .vm { color: #ea9a97 }
-html.dark .chroma .l { color: #f6c177 }
-html.dark .chroma .ld { color: #f6c177 }
-html.dark .chroma .s { color: #f6c177 }
-html.dark .chroma .sa { color: #f6c177 }
-html.dark .chroma .sb { color: #f6c177 }
-html.dark .chroma .sc { color: #f6c177 }
-html.dark .chroma .dl { color: #f6c177 }
-html.dark .chroma .sd { color: #f6c177 }
-html.dark .chroma .s2 { color: #f6c177 }
-html.dark .chroma .se { color: #3e8fb0 }
-html.dark .chroma .sh { color: #f6c177 }
-html.dark .chroma .si { color: #f6c177 }
-html.dark .chroma .sx { color: #f6c177 }
-html.dark .chroma .sr { color: #f6c177 }
-html.dark .chroma .s1 { color: #f6c177 }
-html.dark .chroma .ss { color: #f6c177 }
-html.dark .chroma .m { color: #f6c177 }
-html.dark .chroma .mb { color: #f6c177 }
-html.dark .chroma .mf { color: #f6c177 }
-html.dark .chroma .mh { color: #f6c177 }
-html.dark .chroma .mi { color: #f6c177 }
-html.dark .chroma .il { color: #f6c177 }
-html.dark .chroma .mo { color: #f6c177 }
-html.dark .chroma .o { color: #908caa }
-html.dark .chroma .ow { color: #908caa }
-html.dark .chroma .p { color: #908caa }
-html.dark .chroma .c { color: #6e6a86 }
-html.dark .chroma .ch { color: #6e6a86 }
-html.dark .chroma .cm { color: #6e6a86 }
-html.dark .chroma .c1 { color: #6e6a86 }
-html.dark .chroma .cs { color: #6e6a86 }
-html.dark .chroma .cp { color: #6e6a86 }
-html.dark .chroma .cpf { color: #6e6a86 }
-html.dark .chroma .gd { color: #eb6f92 }
-html.dark .chroma .gi { color: #9ccfd8 }
-html.dark .chroma .gu { color: #c4a7e7 }
+/* Color.Bears Dark Mode */
+html.dark .bg { color: #EED3BA; background-color: #1e1b18; }
+html.dark .chroma { color: #EED3BA; background-color: #1e1b18; }
+html.dark .chroma .err { color: #b05870 }
+html.dark .chroma .hl { background-color: #2a2520 }
+html.dark .chroma .lnt { color: #5a4a40 }
+html.dark .chroma .ln { color: #5a4a40 }
+html.dark .chroma .k { color: #b05870 }
+html.dark .chroma .kc { color: #b05870 }
+html.dark .chroma .kd { color: #b05870 }
+html.dark .chroma .kn { color: #a87060 }
+html.dark .chroma .kp { color: #b05870 }
+html.dark .chroma .kr { color: #b05870 }
+html.dark .chroma .kt { color: #b05870 }
+html.dark .chroma .n { color: #d4b99a }
+html.dark .chroma .na { color: #d4b99a }
+html.dark .chroma .nb { color: #d4b99a }
+html.dark .chroma .bp { color: #d4b99a }
+html.dark .chroma .nc { color: #c4a98a }
+html.dark .chroma .no { color: #d4b99a }
+html.dark .chroma .nd { color: #8a7060 }
+html.dark .chroma .ni { color: #d4b99a }
+html.dark .chroma .ne { color: #b05870 }
+html.dark .chroma .nf { color: #d4b99a }
+html.dark .chroma .fm { color: #d4b99a }
+html.dark .chroma .nl { color: #d4b99a }
+html.dark .chroma .nn { color: #d4b99a }
+html.dark .chroma .py { color: #d4b99a }
+html.dark .chroma .nt { color: #d4b99a }
+html.dark .chroma .nv { color: #d4b99a }
+html.dark .chroma .vc { color: #d4b99a }
+html.dark .chroma .vg { color: #d4b99a }
+html.dark .chroma .vi { color: #d4b99a }
+html.dark .chroma .vm { color: #d4b99a }
+html.dark .chroma .l { color: #c4a98a }
+html.dark .chroma .ld { color: #c4a98a }
+html.dark .chroma .s { color: #c4a98a }
+html.dark .chroma .sa { color: #c4a98a }
+html.dark .chroma .sb { color: #c4a98a }
+html.dark .chroma .sc { color: #c4a98a }
+html.dark .chroma .dl { color: #c4a98a }
+html.dark .chroma .sd { color: #c4a98a }
+html.dark .chroma .s2 { color: #c4a98a }
+html.dark .chroma .se { color: #b05870 }
+html.dark .chroma .sh { color: #c4a98a }
+html.dark .chroma .si { color: #c4a98a }
+html.dark .chroma .sx { color: #c4a98a }
+html.dark .chroma .sr { color: #c4a98a }
+html.dark .chroma .s1 { color: #c4a98a }
+html.dark .chroma .ss { color: #c4a98a }
+html.dark .chroma .m { color: #d4b99a }
+html.dark .chroma .mb { color: #d4b99a }
+html.dark .chroma .mf { color: #d4b99a }
+html.dark .chroma .mh { color: #d4b99a }
+html.dark .chroma .mi { color: #d4b99a }
+html.dark .chroma .il { color: #d4b99a }
+html.dark .chroma .mo { color: #d4b99a }
+html.dark .chroma .o { color: #8a7060 }
+html.dark .chroma .ow { color: #8a7060 }
+html.dark .chroma .p { color: #8a7060 }
+html.dark .chroma .c { color: #5a4a40 }
+html.dark .chroma .ch { color: #5a4a40 }
+html.dark .chroma .cm { color: #5a4a40 }
+html.dark .chroma .c1 { color: #5a4a40 }
+html.dark .chroma .cs { color: #5a4a40 }
+html.dark .chroma .cp { color: #5a4a40 }
+html.dark .chroma .cpf { color: #5a4a40 }
+html.dark .chroma .gd { color: #b05870 }
+html.dark .chroma .gi { color: #8aaa78 }
+html.dark .chroma .gu { color: #a87060 }
