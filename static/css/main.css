@@ -740,6 +740,14 @@ footer {
   color: var(--color-muted);
 }
 
+.footer-webrings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
 footer a, #now_playing > a, header a, .page-toc > a, .link > a {
   background: none;
 }
