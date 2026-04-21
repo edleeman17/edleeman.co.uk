@@ -742,6 +742,27 @@ footer {
   color: var(--color-muted);
 }
 
+.cookiezero-badge {
+  height: 31px;
+  width: auto;
+  display: block;
+}
+
+.cookiezero-copy {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.cookiezero-copy:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
 .footer-webrings {
   display: flex;
   flex-direction: column;
