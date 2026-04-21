@@ -269,6 +269,10 @@ header > a {
   transition: opacity var(--transition-fast);
 }
 
+.menu-item--rss {
+  margin-left: auto !important;
+}
+
 .menu-item.active {
   font-weight: bold;
   border-bottom: 2px solid var(--color-accent);

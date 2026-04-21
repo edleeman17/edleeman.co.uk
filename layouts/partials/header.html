@@ -79,13 +79,9 @@
 
   <!-- Navigation Pages -->
   <nav class="nav-links">
-    {{ range where site.RegularPages "Type" "page" }}{{ if ne .Title "Cookie Zero" }}
-    <a class="menu-item{{ if eq $.Page.Permalink .Permalink }} active{{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}{{ end }}
-    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/reading/" }} active{{ end }}" href="{{ .Site.BaseURL }}reading">reading</a>
-    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/links/" }} active{{ end }}" href="{{ .Site.BaseURL }}links">links</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
-    <a class="menu-item{{ if eq $.Page.RelPermalink "/rss/" }} active{{ end }}" href="{{ .Site.BaseURL }}rss"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+    <a class="menu-item{{ if eq $.Page.RelPermalink "/slashpages/" }} active{{ end }}" href="{{ .Site.BaseURL }}slashpages">/slashpages</a>
+    <a class="menu-item menu-item--rss{{ if eq $.Page.RelPermalink "/rss/" }} active{{ end }}" href="{{ .Site.BaseURL }}rss"><svg xmlns="http://www.w3.org/2000/svg" width="14"
       height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
       <path d="M4 11a9 9 0 0 1 9 9"></path>
