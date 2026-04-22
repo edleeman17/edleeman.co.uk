@@ -211,6 +211,57 @@ footer[role="contentinfo"] {
 #reading-progress::-moz-progress-bar { background: var(--color-text-primary); }
 
 /* =============================================
+   Projects list
+   ============================================= */
+
+.project-list {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.project-item {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.project-item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.project-item-header a {
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.project-item-header a:hover {
+  text-decoration: underline;
+}
+
+.project-meta {
+  display: flex;
+  gap: 1em;
+  font-size: var(--font-size-small, 0.875rem);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  flex-shrink: 0;
+}
+
+.project-desc {
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-small, 0.875rem);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* =============================================
    Post / Note feed lists (homepage + list pages)
    ============================================= */
 
