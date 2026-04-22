@@ -33,6 +33,15 @@
    Typography overrides
    ============================================= */
 
+/* Suppress shibui's global heading auto-numbering counters */
+h2, h3, h4, h5 {
+  counter-increment: none;
+  counter-reset: none;
+}
+h2::before, h3::before, h4::before, h5::before {
+  content: none;
+}
+
 body {
   /* font-family: 'IBM Plex Sans', system-ui, sans-serif; */
 }
