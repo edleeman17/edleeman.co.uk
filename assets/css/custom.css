@@ -3,7 +3,7 @@
 :root {
   --container-width: 900px;
 
-  --color-accent: var(--color-link);
+  --color-accent: var(--color-text-primary);
   --color-bg-secondary: #f5f5f5;
   --color-text-muted: #666;
   --color-border-light: var(--color-border);
