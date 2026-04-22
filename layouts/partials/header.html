@@ -1,89 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Flash-free theme detection - runs before CSS loads -->
-  <script>
-    (function() {
-      var stored = localStorage.getItem('theme');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
-  <!-- COMMON TAGS -->
-  <title>{{ .Title }}</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}images/favicon-16x16.png">
-  <!-- Search Engine -->
-  <meta name="description" content="{{ .Description }}">
-  <meta name="image" content="{{ $.Param "image" }}">
-  <!-- Schema.org for Google -->
-  <meta itemprop="name" content="{{ .Title }}">
-  <meta itemprop="description" content="{{ .Description }}">
-  <meta itemprop="image" content="{{ .Site.BaseURL}}{{ $.Param "image" }}">
-  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:description" content="{{ .Description }}">
-  {{- $ogImage := "" -}}
-  {{- if and (eq .Type "reading") .Params.cover -}}
-    {{- $ogImage = .Params.cover -}}
-  {{- else -}}
-    {{- $ogImage = printf "%s%s" .Site.BaseURL (or ($.Param "image") "images/ed.png") -}}
-  {{- end -}}
-  <meta property="og:image" content="{{ $ogImage }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:site_name" content="{{ .Title }}">
-  <meta property="og:type" content="article">
-  <!-- Open Graph - Article -->
-  <meta property="article:tag" content="{{ range .Params.tags }}{{.}} {{end}}">
-  <meta name="fediverse:creator" content="@edphones@fosstodon.org">
-  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/main.css?v={{ now.Unix }}">
-  <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/syntax.css?v={{ now.Unix }}">
-
-  <link rel="alternate" type="application/rss+xml" href="{{.Site.BaseURL }}index.xml" title="{{ .Site.Title }}">
-
-  <!-- Webmentions -->
-  <link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
-  <link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
-
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
-
-  <!-- Plausible Analytics -->
-  <script defer data-domain="edleeman.co.uk" src="https://clicks.bowlerdesign.co.uk/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-</head>
-
-<body>
-
-<header>
-  <!-- Homepage Logo -->
-  <a href="{{ .Site.BaseURL }}" class="logo"><img src="{{ .Site.BaseURL }}images/ed.png" alt="Home" height="32"></a>
-
-  <!-- Mobile hamburger toggle -->
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="nav-toggle-label">
-    <span></span>
-  </label>
-
-  <!-- Navigation Pages -->
-  <nav class="nav-links">
-    <a class="menu-item{{ if eq $.Page.RelPermalink "/about/" }} active{{ end }}" href="{{ .Site.BaseURL }}about">about</a>
-    <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
-    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/projects" }} active{{ end }}" href="{{ .Site.BaseURL }}projects">projects</a>
-    <a class="menu-item{{ if eq $.Page.RelPermalink "/slashpages/" }} active{{ end }}" href="{{ .Site.BaseURL }}slashpages">/slashpages</a>
-    <a class="menu-item menu-item--rss{{ if eq $.Page.RelPermalink "/rss/" }} active{{ end }}" href="{{ .Site.BaseURL }}rss"><svg xmlns="http://www.w3.org/2000/svg" width="14"
-      height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
-      <path d="M4 11a9 9 0 0 1 9 9"></path>
-      <path d="M4 4a16 16 0 0 1 16 16"></path>
-      <circle cx="5" cy="19" r="1"></circle>
-    </svg> rss</a>
-  </nav>
-</header>
+<a href="{{ .Site.BaseURL }}" class="site-title">{{ site.Title }}</a>
+<nav aria-label="Main navigation">
+  <ul>
+    {{- range site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}"
+        {{- if $.Page.IsMenuCurrent "main" . }} class="active" aria-current="page"
+        {{- else if $.Page.HasMenuCurrent "main" . }} class="ancestor" aria-current="true"
+        {{- end }}>{{ .Name }}</a>
+    </li>
+    {{- end }}
+  </ul>
+</nav>

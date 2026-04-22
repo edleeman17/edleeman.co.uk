@@ -1,0 +1,88 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ with .Description | default .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title }}">
+{{ with .Description | default .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- $ogImage := "" -}}
+{{- if and (eq .Type "reading") .Params.cover -}}
+  {{- $ogImage = .Params.cover -}}
+{{- else -}}
+  {{- $ogImage = printf "%s%s" .Site.BaseURL "images/ed.png" -}}
+{{- end -}}
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title }}">
+{{ with .Description | default .Site.Params.description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+<!-- Schema.org -->
+<meta itemprop="name" content="{{ .Title }}">
+{{ with .Description | default .Site.Params.description }}<meta itemprop="description" content="{{ . }}">{{ end }}
+<meta itemprop="image" content="{{ $ogImage }}">
+
+<!-- Fediverse -->
+<meta name="fediverse:creator" content="@edphones@fosstodon.org">
+
+<!-- JSON-LD -->
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": { "@type": "Person", "name": "Ed Leeman" }
+  {{- with .Description | default .Site.Params.description }},
+  "description": "{{ . }}"
+  {{- end }}
+}
+</script>
+{{ end }}
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}images/favicon-16x16.png">
+
+<!-- RSS -->
+{{ with .OutputFormats.Get "rss" }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
+<!-- Webmentions -->
+<link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
+<link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+
+<!-- CSS: shibui base + site overrides -->
+{{- with resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+{{- with resources.Get "css/custom.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{- end }}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css?v={{ now.Unix }}">
+
+<!-- Icons (used by webmentions display) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+<!-- Pagefind (search page only) -->
+{{ if eq .RelPermalink "/search/" }}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+{{ end }}
+
+<!-- Plausible Analytics -->
+<script defer data-domain="edleeman.co.uk" src="https://clicks.bowlerdesign.co.uk/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>

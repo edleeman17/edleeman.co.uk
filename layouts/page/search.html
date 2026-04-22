@@ -1,6 +1,4 @@
-{{- partial "header.html" . -}}
-
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+{{ define "main" }}
 <script src="/pagefind/pagefind-ui.js"></script>
 
 <div class="main prose-wrap">
@@ -18,5 +16,4 @@
     });
   });
 </script>
-
-{{- partial "footer.html" . -}}
+{{ end }}

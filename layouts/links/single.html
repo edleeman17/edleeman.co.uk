@@ -1,5 +1,4 @@
-{{- partial "header.html" . -}}
-
+{{ define "main" }}
 <style>
   .link-single {
     max-width: 640px;
@@ -82,4 +81,4 @@
   <p class="webmention-hint">Or mention <a href="{{ .Permalink }}"><code>{{ .Permalink }}</code></a> on a webmention-enabled platform</p>
 </article>
 
-{{- partial "footer.html" . -}}
+{{ end }}

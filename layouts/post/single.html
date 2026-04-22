@@ -1,4 +1,4 @@
-{{- partial "header.html" . -}}
+{{ define "main" }}
 <progress id="reading-progress" max="100" value="0"></progress>
 <div class="prose-wrap">
 
@@ -112,4 +112,4 @@
 })();
 </script>
 </div>
-{{- partial "footer.html" . -}}
+{{ end }}

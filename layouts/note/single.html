@@ -1,4 +1,4 @@
-{{- partial "header.html" . -}}
+{{ define "main" }}
 <div class="prose-wrap">
 {{- $replyTo := .Params.in_reply_to | default .Params.reply_to -}}
 {{- $likeOf  := .Params.like_of -}}
@@ -121,5 +121,5 @@
 })();
 </script>
 </div>
-{{- partial "footer.html" . -}}
+{{ end }}
 

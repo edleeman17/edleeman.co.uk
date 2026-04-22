@@ -1,116 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en" dir="ltr">
+  <head>
 	<meta name="generator" content="Hugo 0.111.3">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <script>
-    (function() {
-      var stored = localStorage.getItem('theme');
-      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
-        document.documentElement.classList.add('dark');
-      }
-    })();
-  </script>
-  
-  <title>Ed Leeman</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="https://edleeman.co.ukimages/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://edleeman.co.ukimages/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://edleeman.co.ukimages/favicon-16x16.png">
-  
-  <meta name="description" content="">
-  <meta name="image" content="">
-  
-  <meta itemprop="name" content="Ed Leeman">
-  <meta itemprop="description" content="">
-  <meta itemprop="image" content="https://edleeman.co.uk">
-  
-  <meta property="og:title" content="Ed Leeman">
-  <meta property="og:description" content="">
-  
-  <meta property="og:url" content="https://edleeman.co.uk/">
-  <meta property="og:site_name" content="Ed Leeman">
-  <meta property="og:type" content="article">
-  
-  <meta property="article:tag" content="">
-  <meta name="fediverse:creator" content="@edphones@fosstodon.org">
-  <link rel="stylesheet" type="text/css" href="https://edleeman.co.ukcss/main.css?v=1774817174">
-  <link rel="stylesheet" type="text/css" href="https://edleeman.co.ukcss/syntax.css?v=1774817174">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ed Leeman</title>
 
-  <link rel="alternate" type="application/rss+xml" href="https://edleeman.co.ukindex.xml" title="Ed Leeman">
+<link rel="canonical" href="https://edleeman.co.uk/">
 
-  
-  <link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
-  <link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+<meta name="description" content="My corner of the internet where I try my best to write something that might be somewhat useful for someone else">
 
-  
-  <script src="https://cdn.jsdelivr.net/gh/welpo/iine@main/iine.mini.js" defer></script>
 
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<meta property="og:title" content="Ed Leeman">
+<meta property="og:description" content="My corner of the internet where I try my best to write something that might be somewhat useful for someone else">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://edleeman.co.uk/"><meta property="og:image" content="https://edleeman.co.ukimages/ed.png">
+<meta property="og:site_name" content="Ed Leeman">
 
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 
-  
-  <script defer data-domain="edleeman.co.uk" src="https://clicks.bowlerdesign.co.uk/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-</head>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ed Leeman">
+<meta name="twitter:description" content="My corner of the internet where I try my best to write something that might be somewhat useful for someone else">
+<meta name="twitter:image" content="https://edleeman.co.ukimages/ed.png">
 
-<body>
 
-<header>
-  
-  <a href="https://edleeman.co.uk" class="logo"><img src="https://edleeman.co.ukimages/ed.png" alt="Home" height="32"></a>
+<meta itemprop="name" content="Ed Leeman">
+<meta itemprop="description" content="My corner of the internet where I try my best to write something that might be somewhat useful for someone else">
+<meta itemprop="image" content="https://edleeman.co.ukimages/ed.png">
 
-  
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="nav-toggle-label">
-    <span></span>
-  </label>
 
-  
-  <nav class="nav-links">
-    
-    <a class="menu-item" href="https://edleeman.co.uk/about/">About me</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/cookie-zero/">Cookie Zero</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/favourites/">Favourites</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/links/">Links</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/now/">Now</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/reading/">Reading</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/search/">Search</a>
-    
-    <a class="menu-item" href="https://edleeman.co.uk/uses/">Uses</a>
-    
-    <a class="menu-item" href="https://edleeman.co.ukarchive">archive</a>
-  </nav>
+<meta name="fediverse:creator" content="@edphones@fosstodon.org">
 
-  <div class="right-wrap">
-    <button id="button">dark</button>
-    
-    <a href="https://edleeman.co.ukindex.xml"><strong><svg xmlns="http://www.w3.org/2000/svg" width="16"
-      height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
-      <path d="M4 11a9 9 0 0 1 9 9"></path>
-      <path d="M4 4a16 16 0 0 1 16 16"></path>
-      <circle cx="5" cy="19" r="1"></circle>
-    </svg></strong></a>
-  </div>
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://edleeman.co.ukimages/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://edleeman.co.ukimages/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://edleeman.co.ukimages/favicon-16x16.png">
+
+
+
+  <link rel="alternate" type="application/rss+xml" href="https://edleeman.co.uk/index.xml" title="Ed Leeman">
+
+
+
+<link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
+<link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+
+
+  <link rel="stylesheet" href="/css/main.min.2dde33969d4d5e378a33b00cb356d9d5b3b4ec0c6e8614348db13632ec0c1df4.css" integrity="sha256-Ld4zlp1NXjeKM7AMs1bZ1bO07AxuhhQ0jbE2MuwMHfQ=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/custom.min.757071093e278b5a7a32f9cb07034808c653d26a758be4753624c365dd8615ce.css" integrity="sha256-dXBxCT4ni1p6MvnLBwNICMZT0mp1i&#43;R1NiTDZd2GFc4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1776864493">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+
+
+
+
+<script defer data-domain="edleeman.co.uk" src="https://clicks.bowlerdesign.co.uk/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header role="banner"><a href="https://edleeman.co.uk" class="site-title">Ed Leeman</a>
+<nav aria-label="Main navigation">
+  <ul>
+    <li>
+      <a href="/posts/">posts</a>
+    </li>
+    <li>
+      <a href="/notes/">notes</a>
+    </li>
+    <li>
+      <a href="/reading/">reading</a>
+    </li>
+    <li>
+      <a href="/projects/">projects</a>
+    </li>
+    <li>
+      <a href="/links/">links</a>
+    </li>
+    <li>
+      <a href="/about/">about</a>
+    </li>
+    <li>
+      <a href="/search/">search</a>
+    </li>
+  </ul>
+</nav>
 </header>
-
-
-<div id="main">
+    <main id="main-content" role="main">
+<div id="main" class="prose-wrap">
     <section id="me">
         <div class="image">
             <img src="/images/ed.png" />
@@ -124,93 +108,63 @@
     <section id="about">
         <span class="green">➜</span>
         <span class="cyan">~</span>
-        <span class="type"></span>
-        <span class="blink" style="display:none;"></span>
+        <span>Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life.</span>
     </section>
     <section id="posts">
         <h2>Posts</h2>
-        <p>Latest long form posts talking about things I've been working on, or things I've been thinking about.</p><div class="post-feed">
+        <p>Latest long form posts talking about things I've been working on, or things I've been thinking about.</p><div class="post-feed h-feed">
+    <span class="p-name" style="display:none;">Posts by Ed Leeman</span>
     
     
     
-    <article class="feed post">
-        <span class="post-date">2026-03-04</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/claude-code-adhd-workflow/">Teaching Claude Code to Work With My ADHD Brain</a></span>
-        <span class="reading-time">
-            8 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-03-04T00:00:00Z">2026-03-04</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/teaching-claude-code-to-work-with-my-adhd-brain/">Teaching Claude Code to Work With My ADHD Brain</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2026-02-20</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/sift-the-dumbphone-companion/">Sift: The Dumbphone Companion</a></span>
-        <span class="reading-time">
-            6 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-02-20T00:00:00Z">2026-02-20</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/sift-the-dumbphone-companion/">Sift: The Dumbphone Companion</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-12-06</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/solving-connection-issues-on-the-w-ergo/">Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)</a></span>
-        <span class="reading-time">
-            5 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-12-06T20:29:00Z">2024-12-06</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/solving-connection-issues-on-the-w-ergo-split-keyboard-ergodox-dupe/">Solving connection issues on the W-Ergo Split Keyboard (Ergodox dupe)</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-08</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/confessions-of-a-failed-multitasker/">Confessions of a Failed Multitasker</a></span>
-        <span class="reading-time">
-            5 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-08T18:23:55Z">2024-02-08</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/confessions-of-a-failed-multitasker/">Confessions of a Failed Multitasker</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-01-16</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/my-app-defaults-of-2024/">My App Defaults of 2024</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-01-16T12:28:12Z">2024-01-16</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/my-app-defaults-of-2024/">My App Defaults of 2024</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2022-11-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-dotnet/">Creating really simple API Authentication in .NET</a></span>
-        <span class="reading-time">
-            9 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2022-11-09T12:29:19Z">2022-11-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-.net/">Creating really simple API Authentication in .NET</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2021-08-03</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/preventing-email-floods/">Preventing Email Floods</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2021-08-03T14:46:16Z">2021-08-03</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/preventing-email-floods/">Preventing Email Floods</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2021-07-02</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/">Self Hosting Your Own Matrix Server on a Raspberry Pi</a></span>
-        <span class="reading-time">
-            10 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2021-07-02T19:39:30Z">2021-07-02</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/">Self Hosting Your Own Matrix Server on a Raspberry Pi</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2021-03-29</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/">Disable JavaScript to view this site?</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2021-03-29T15:58:50Z">2021-03-29</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/">Disable JavaScript to view this site?</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2021-03-26</span>
-        <span class="link"><a href="https://edleeman.co.uk/posts/deleted-docker-compose/">Deleted docker-compose</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2021-03-26T21:49:09Z">2021-03-26</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/deleted-docker-compose/">Deleted docker-compose</a></span>
     </article>
     
 </div><p><a href="/archive">View all my posts in the archive</a></p>
@@ -218,113 +172,141 @@
     <section id="notes">
         <h2>Quick Notes</h2>
         <p>Quick notes and thoughts that I've been jotting down. Mostly for my own reference, but you might find them interesting.</p>
-        <div class="post-feed">
+        <div class="post-feed h-feed">
+    <span class="p-name" style="display:none;">Notes by Ed Leeman</span>
     
     
-    <article class="feed post">
-        <span class="post-date">2026-02-26</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/saving-tokens-with-quiet-makefiles/">Saving LLM tokens with quiet Makefiles</a></span>
-        <span class="reading-time">
-            2 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-04-15T10:59:07Z">2026-04-15</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/new-pages-on-the-site/">New Pages on the Site</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-03-11</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/cd-into-cloned-repository/">CD into a cloned git repository</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-02-26T12:00:00Z">2026-02-26</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/saving-tokens-with-quiet-makefiles/">Saving LLM tokens with quiet Makefiles</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-12</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/">Fixing Syntax Highlighting for Hugo Chroma iOS</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-03-11T17:56:22Z">2024-03-11</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/cd-into-cloned-repository/">CD into a cloned git repository</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/formatting-json-files-in-vim/">Formatting JSON files in Vim</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-12T23:42:41Z">2024-02-12</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/">Fixing Syntax Highlighting for Hugo Chroma iOS</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/not-found/">[[: not found fix</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-09T16:15:14Z">2024-02-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/formatting-json-files-in-vim/">Formatting JSON files in Vim</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/assuming-an-aws-role-in-ci-cd/">Assuming an AWS Role in CI/CD</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-09T16:12:46Z">2024-02-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/not-found/">[[: not found fix</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/installing-commands-using-existing-docker-images/">Installing Commands Using Existing Docker Images</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-09T13:30:38Z">2024-02-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/assuming-an-aws-role-in-ci-cd/">Assuming an AWS Role in CI/CD</a></span>
     </article>
     
-    <article class="feed post">
-        <span class="post-date">2024-02-09</span>
-        <span class="link"><a href="https://edleeman.co.uk/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/">Devcontainers will override entrypoints defined in Dockerfiles</a></span>
-        <span class="reading-time">
-            1 min read
-        </span>
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-09T13:28:26Z">2024-02-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/installing-commands-using-existing-docker-images/">Installing Commands Using Existing Docker Images</a></span>
+    </article>
+    
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2024-02-09T11:08:23Z">2024-02-09</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/">Devcontainers will override entrypoints defined in Dockerfiles</a></span>
     </article>
     
 </div>
 
     </section>
+    <section id="photos">
+        <h2>Photos</h2>
+        <p>Street and coastal photography from Portsmouth and Hampshire.</p>
+        <div id="photos-preview-container"></div>
+        <p><a href="/photos">View all photos</a></p>
+    </section>
 </div>
+
+<style>
+  #photos .photo-grid-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  @media (max-width: 600px) {
+    #photos .photo-grid-preview { grid-template-columns: repeat(2, 1fr); }
+  }
+  .photo-card {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+  }
+  .photo-card img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.3s ease;
+  }
+  .photo-card:hover img { transform: scale(1.05); }
+  .photo-card a {
+    display: block; width: 100%; height: 100%;
+    background: none;
+    background-size: unset;
+  }
+  .photo-card a:hover { background: none; color: inherit; }
+  .photo-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: var(--space-3);
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
+  }
+  .photo-card:hover .photo-overlay { opacity: 1; }
+  .photo-caption { font-size: var(--text-xs); color: #fff; line-height: 1.3; }
+  .photo-location { font-size: var(--text-xs); color: rgba(255,255,255,0.7); margin-top: 2px; }
+</style>
+
+<script>
+(function() {
+  fetch('https://charityshot.co.uk/api/photos.json')
+    .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function(photos) {
+      var six = photos.slice(0, 6);
+      var siteUrl = 'https://charityshot.co.uk';
+      var html = '<div class="photo-grid-preview">';
+      six.forEach(function(photo) {
+        var img = siteUrl + photo.image;
+        var link = siteUrl + '/feed/' + photo.slug;
+        var caption = photo.caption || '';
+        var location = photo.location || '';
+        html += '<div class="photo-card">';
+        html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
+        html += '<img src="' + img + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
+        html += '</a>';
+        html += '<div class="photo-overlay">';
+        if (caption) html += '<div class="photo-caption">' + caption + '</div>';
+        if (location) html += '<div class="photo-location">' + location + '</div>';
+        html += '</div></div>';
+      });
+      html += '</div>';
+      document.getElementById('photos-preview-container').innerHTML = html;
+    })
+    .catch(function() {});
+})();
+</script>
 
 <script>
     
     (function() {
-        var str = 'echo "Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life." > about.txt';
-        var typeEl = document.querySelector('.type');
-        var blinkEl = document.querySelector('.blink');
-        var i = 0;
-
-        function typeChar() {
-            if (i < str.length) {
-                var span = document.createElement('span');
-                span.textContent = str[i];
-                span.style.opacity = '0';
-                typeEl.appendChild(span);
-
-                
-                setTimeout(function() {
-                    span.style.transition = 'opacity 100ms';
-                    span.style.opacity = '1';
-                }, 10);
-
-                i++;
-                setTimeout(typeChar, 25);
-            } else {
-                blinkEl.style.display = 'inline-block';
-            }
-        }
-
-        typeChar();
-    })();
-
-    
-    (function() {
-        var apiKey = '';
-        var username = '';
+        var apiKey = '35d69c5ad21f4fc86e2d4269b9c949bd';
+        var username = 'ed1727';
         var url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + username + '&api_key=' + apiKey + '&limit=1&format=json';
 
         fetch(url)
@@ -350,103 +332,82 @@
     })();
 </script>
 
+</main>
+    <footer role="contentinfo"><div class="h-card" style="display:none;">
+    <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
+    <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
+    <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
+</div>
 
-<footer>
-    <a href="https://github.com/edleeman17">Github</a>
-    <a href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
-    <a href="https://open.spotify.com/user/edleeman17">Spotify</a>
-    <a href="https://www.last.fm/user/ed1727">Last.fm</a>
-    <a href="https://matrix.to/#/@ed:selfhostingblog.com">@ed:selfhostingblog.com</a>
+<div class="footer-social">
+    <a rel="me" href="https://github.com/edleeman17">Github</a>
+    <a rel="me" href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
+    <a rel="me" href="https://open.spotify.com/user/edleeman17">Spotify</a>
+    <a rel="me" href="https://www.last.fm/user/ed1727">Last.fm</a>
+    <a rel="me" href="https://matrix.to/#/@ed:selfhostingblog.com">Matrix</a>
     <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
-    <br />
-    Running on a <a class="underline" href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.<br />
-    Get $200 Digital Ocean credit using <a class="underline" href="https://m.do.co/c/d2a3afe52625">this link</a>
-    <br />
-    <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
-</footer>
+</div>
+
+<div class="footer-webrings">
+    <span><a href="https://xn--sr8hvo.ws/previous">←</a> <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next">→</a></span>
+    <span><a href="https://fediring.net/previous?host=edleeman.co.uk">←</a> <a href="https://fediring.net/">Fediring</a> <a href="https://fediring.net/next?host=edleeman.co.uk">→</a></span>
+</div>
+
+<div class="footer-meta">
+    <span>Running on a <a href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.</span>
+</div>
+
+<div class="footer-cookiezero">
+    <a href="/cookie-zero"><img src="/images/cookiezero.webp" alt="Cookie Zero" class="cookiezero-badge"></a>
+    <button class="cookiezero-copy" onclick="navigator.clipboard.writeText('&lt;a href=&quot;https://edleeman.co.uk/cookie-zero&quot;&gt;\n    &lt;img src=&quot;https://edleeman.co.uk/images/cookiezero.webp&quot; alt=&quot;Cookie Zero&quot;&gt;\n&lt;/a&gt;').then(function(){ var b=document.querySelector('.cookiezero-copy'); b.textContent='copied!'; setTimeout(function(){ b.textContent='copy embed'; },2000); })">copy embed</button>
+</div>
+
 <script>
-    
-    (function() {
-      var btn = document.getElementById('button');
-      var html = document.documentElement;
-
-      function updateButtonText() {
-        btn.textContent = html.classList.contains('dark') ? 'light' : 'dark';
-      }
-
-      
-      updateButtonText();
-
-      
-      btn.addEventListener('click', function() {
-        var isDark = html.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        updateButtonText();
-      });
-
-      
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        
-        if (!localStorage.getItem('theme')) {
-          if (e.matches) {
-            html.classList.add('dark');
-          } else {
-            html.classList.remove('dark');
-          }
-          updateButtonText();
-        }
-      });
-    })();
-
-    
     document.querySelectorAll('.sticky-toc-link').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
-          window.scrollTo({ top: offset, behavior: 'smooth' });
-        }
-      });
-    });
-
-    
-    document.querySelectorAll('.highlight').forEach(function(block) {
-      var btn = document.createElement('button');
-      btn.className = 'copy-btn';
-      btn.textContent = 'copy';
-      btn.addEventListener('click', function() {
-        var code = block.querySelector('code').textContent;
-        navigator.clipboard.writeText(code).then(function() {
-          btn.textContent = 'copied!';
-          btn.classList.add('copied');
-          setTimeout(function() {
-            btn.textContent = 'copy';
-            btn.classList.remove('copied');
-          }, 2000);
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
         });
-      });
-      block.appendChild(btn);
     });
 
-    
+    document.querySelectorAll('.highlight').forEach(function(block) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        btn.addEventListener('click', function() {
+            var code = block.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                btn.textContent = 'copied!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+        block.appendChild(btn);
+    });
+
     (function() {
-      var posts = document.querySelectorAll('.feed');
-      if (!posts.length) return;
-      var current = -1;
-      document.addEventListener('keydown', function(e) {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        if (e.key === 'j') {
-          current = Math.min(current + 1, posts.length - 1);
-          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else if (e.key === 'k') {
-          current = Math.max(current - 1, 0);
-          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      });
+        var posts = document.querySelectorAll('.feed');
+        if (!posts.length) return;
+        var current = -1;
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.key === 'j') {
+                current = Math.min(current + 1, posts.length - 1);
+                posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else if (e.key === 'k') {
+                current = Math.max(current - 1, 0);
+                posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
     })();
 </script>
-</body>
-
+</footer>
+  </body>
 </html>
-

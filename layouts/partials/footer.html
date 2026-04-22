@@ -1,120 +1,75 @@
-<footer>
-    <div class="h-card" style="display:none;">
-        <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
-        <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
-        <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
-    </div>
+<div class="h-card" style="display:none;">
+    <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
+    <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
+    <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
+</div>
 
-    <div class="footer-row footer-social">
-        <a rel="me" href="https://github.com/edleeman17">Github</a>
-        <a rel="me" href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
-        <a rel="me" href="https://open.spotify.com/user/edleeman17">Spotify</a>
-        <a rel="me" href="https://www.last.fm/user/ed1727">Last.fm</a>
-        <a rel="me" href="https://matrix.to/#/@ed:selfhostingblog.com">Matrix</a>
-        <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
-    </div>
+<div class="footer-social">
+    <a rel="me" href="https://github.com/edleeman17">Github</a>
+    <a rel="me" href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
+    <a rel="me" href="https://open.spotify.com/user/edleeman17">Spotify</a>
+    <a rel="me" href="https://www.last.fm/user/ed1727">Last.fm</a>
+    <a rel="me" href="https://matrix.to/#/@ed:selfhostingblog.com">Matrix</a>
+    <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
+</div>
 
-    <div class="footer-row footer-meta">
-        <span>Running on a <a class="underline" href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft. Get $200 DO credit <a class="underline" href="https://m.do.co/c/d2a3afe52625">here</a>.</span>
-    </div>
+<div class="footer-webrings">
+    <span><a href="https://xn--sr8hvo.ws/previous">←</a> <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next">→</a></span>
+    <span><a href="https://fediring.net/previous?host=edleeman.co.uk">←</a> <a href="https://fediring.net/">Fediring</a> <a href="https://fediring.net/next?host=edleeman.co.uk">→</a></span>
+</div>
 
-    <div class="footer-row footer-cookiezero">
-        <a href="/cookie-zero"><img src="/images/cookiezero.webp" alt="Cookie Zero" class="cookiezero-badge"></a>
-        <button class="cookiezero-copy" onclick="navigator.clipboard.writeText('&lt;a href=&quot;https://edleeman.co.uk/cookie-zero&quot;&gt;\n    &lt;img src=&quot;https://edleeman.co.uk/images/cookiezero.webp&quot; alt=&quot;Cookie Zero&quot;&gt;\n&lt;/a&gt;').then(function(){ var b=document.querySelector('.cookiezero-copy'); b.textContent='copied!'; setTimeout(function(){ b.textContent='copy embed'; },2000); })">copy embed</button>
-    </div>
+<div class="footer-meta">
+    <span>Running on a <a href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.</span>
+</div>
 
-    <div class="footer-webrings">
-        <span><a href="https://xn--sr8hvo.ws/previous">←</a> <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next">→</a></span>
-        <span><a href="https://fediring.net/previous?host=edleeman.co.uk">←</a> <a href="https://fediring.net/">Fediring</a> <a href="https://fediring.net/next?host=edleeman.co.uk">→</a></span>
-    </div>
+<div class="footer-cookiezero">
+    <a href="/cookie-zero"><img src="/images/cookiezero.webp" alt="Cookie Zero" class="cookiezero-badge"></a>
+    <button class="cookiezero-copy" onclick="navigator.clipboard.writeText('&lt;a href=&quot;https://edleeman.co.uk/cookie-zero&quot;&gt;\n    &lt;img src=&quot;https://edleeman.co.uk/images/cookiezero.webp&quot; alt=&quot;Cookie Zero&quot;&gt;\n&lt;/a&gt;').then(function(){ var b=document.querySelector('.cookiezero-copy'); b.textContent='copied!'; setTimeout(function(){ b.textContent='copy embed'; },2000); })">copy embed</button>
+</div>
 
-    <div class="footer-row footer-utils">
-        <span class="kbd-hints"><kbd>j</kbd>/<kbd>k</kbd> navigate posts</span>
-        <button id="button">dark</button>
-    </div>
-</footer>
 <script>
-    // Theme toggle (vanilla JS with system preference support)
-    (function() {
-      var btn = document.getElementById('button');
-      var html = document.documentElement;
-
-      function updateButtonText() {
-        btn.textContent = html.classList.contains('dark') ? 'light' : 'dark';
-      }
-
-      // Initial button state
-      updateButtonText();
-
-      // Toggle handler
-      btn.addEventListener('click', function() {
-        var isDark = html.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        updateButtonText();
-      });
-
-      // Listen for system preference changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        // Only auto-switch if user hasn't manually set a preference
-        if (!localStorage.getItem('theme')) {
-          if (e.matches) {
-            html.classList.add('dark');
-          } else {
-            html.classList.remove('dark');
-          }
-          updateButtonText();
-        }
-      });
-    })();
-
-    // Smooth scroll for TOC links (vanilla JS)
     document.querySelectorAll('.sticky-toc-link').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
-          window.scrollTo({ top: offset, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Code block copy button
-    document.querySelectorAll('.highlight').forEach(function(block) {
-      var btn = document.createElement('button');
-      btn.className = 'copy-btn';
-      btn.textContent = 'copy';
-      btn.addEventListener('click', function() {
-        var code = block.querySelector('code').textContent;
-        navigator.clipboard.writeText(code).then(function() {
-          btn.textContent = 'copied!';
-          btn.classList.add('copied');
-          setTimeout(function() {
-            btn.textContent = 'copy';
-            btn.classList.remove('copied');
-          }, 2000);
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                var offset = target.getBoundingClientRect().top + window.pageYOffset - 82;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
         });
-      });
-      block.appendChild(btn);
     });
 
-    // Keyboard navigation (j/k for posts)
+    document.querySelectorAll('.highlight').forEach(function(block) {
+        var btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        btn.addEventListener('click', function() {
+            var code = block.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(function() {
+                btn.textContent = 'copied!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+        block.appendChild(btn);
+    });
+
     (function() {
-      var posts = document.querySelectorAll('.feed');
-      if (!posts.length) return;
-      var current = -1;
-      document.addEventListener('keydown', function(e) {
-        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        if (e.key === 'j') {
-          current = Math.min(current + 1, posts.length - 1);
-          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else if (e.key === 'k') {
-          current = Math.max(current - 1, 0);
-          posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      });
+        var posts = document.querySelectorAll('.feed');
+        if (!posts.length) return;
+        var current = -1;
+        document.addEventListener('keydown', function(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.key === 'j') {
+                current = Math.min(current + 1, posts.length - 1);
+                posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else if (e.key === 'k') {
+                current = Math.max(current - 1, 0);
+                posts[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
     })();
 </script>
-</body>
-
-</html>
