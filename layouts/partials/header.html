@@ -1,3 +1,16 @@
+<nav class="top-nav" aria-label="Main navigation">
+  <ul>
+    {{- range site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}"
+        {{- if $.Page.IsMenuCurrent "main" . }} class="active"
+        {{- else if $.Page.HasMenuCurrent "main" . }} class="ancestor"
+        {{- end }}>{{ .Name }}</a>
+    </li>
+    {{- end }}
+  </ul>
+</nav>
+
 <nav class="path-nav" aria-label="Breadcrumb">
   <ol>
     {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
