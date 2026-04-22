@@ -89,53 +89,68 @@ footer[role="contentinfo"] {
   max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.85em;
-  color: var(--color-text-muted);
 }
 
-.footer-social {
+/* All footer sections share terminal-nav aesthetic */
+.footer-social,
+.footer-webrings,
+.footer-meta,
+.footer-cookiezero {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
+  gap: 0.5em 1em;
+  align-items: center;
+  margin-top: calc(var(--spacing-base, 1rem) * 0.5);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-small, 0.875rem);
 }
 
 .footer-social a,
-.footer-webrings a {
-  text-decoration: none;
+.footer-webrings a,
+.footer-meta a,
+.footer-cookiezero a {
+  color: var(--color-text-muted);
   border-bottom: none;
+  text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-webrings a:hover,
+.footer-meta a:hover {
+  color: var(--color-text-primary);
 }
 
 .footer-webrings {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5em;
-  text-align: center;
+  align-items: flex-start;
+  gap: 0.25em;
 }
 
-.footer-meta {
-  text-align: center;
-}
-
-.footer-cookiezero {
+.footer-webrings span {
   display: flex;
-  align-items: center;
   gap: 0.5em;
+  align-items: center;
 }
 
 .cookiezero-badge {
-  height: 31px;
+  height: 24px;
   width: auto;
   display: block;
 }
 
 .cookiezero-copy {
-  font-size: 0.75rem;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-small, 0.875rem);
   background: none;
   border: 1px solid var(--color-border);
-  padding: 2px 8px;
+  color: var(--color-text-muted);
+  padding: 1px 6px;
   cursor: pointer;
+}
+
+.cookiezero-copy:hover {
+  color: var(--color-text-primary);
 }
 
 /* =============================================
