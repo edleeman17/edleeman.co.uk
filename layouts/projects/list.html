@@ -1,0 +1,51 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+  }
+  @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+  @media (min-width: 900px) { .project-grid { grid-template-columns: repeat(3, 1fr); } }
+  .project-card {
+    border: 1px solid var(--color-bg-secondary);
+    border-radius: 4px;
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-bg-secondary);
+  }
+  .project-card h3 { margin: 0; font-size: var(--text-lg); }
+  .project-card p { margin: 0; font-size: var(--text-sm); color: var(--color-muted); flex: 1; }
+  .project-meta { display: flex; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-muted); align-items: center; }
+</style>
+
+<div class="prose-wrap">
+  <h1>{{ .Title }}</h1>
+  <div class="project-grid">
+    {{- range .Pages -}}
+    <a class="project-card" href="{{ .Permalink }}">
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description }}</p>
+      <div class="project-meta">
+        <span>{{ .Params.language }}</span>
+        {{- if gt (.Params.stars | int) 0 -}}
+        <span><i class="fa-regular fa-star"></i> {{ .Params.stars }}</span>
+        {{- end -}}
+      </div>
+    </a>
+    {{- end -}}
+  </div>
+</div>
+
+{{- partial "footer.html" . -}}

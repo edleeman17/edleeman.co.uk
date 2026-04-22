@@ -10,6 +10,7 @@ All the pages on this site.
 - [/uses](/uses) — hardware and software I use
 - [/blogroll](/blogroll) — blogs and sites I follow
 - [/favourites](/favourites) — things I love
+- [/projects](/projects) — open source things I've built
 - [/reading](/reading) — books I've read and want to read
 - [/photos](/photos) — photography
 - [/links](/links) — bookmarks and interesting links

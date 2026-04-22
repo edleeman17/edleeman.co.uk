@@ -76,6 +76,7 @@
   <nav class="nav-links">
     <a class="menu-item{{ if eq $.Page.RelPermalink "/about/" }} active{{ end }}" href="{{ .Site.BaseURL }}about">about</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/archive/" }} active{{ end }}" href="{{ .Site.BaseURL }}archive">archive</a>
+    <a class="menu-item{{ if hasPrefix $.Page.RelPermalink "/projects" }} active{{ end }}" href="{{ .Site.BaseURL }}projects">projects</a>
     <a class="menu-item{{ if eq $.Page.RelPermalink "/slashpages/" }} active{{ end }}" href="{{ .Site.BaseURL }}slashpages">/slashpages</a>
     <a class="menu-item menu-item--rss{{ if eq $.Page.RelPermalink "/rss/" }} active{{ end }}" href="{{ .Site.BaseURL }}rss"><svg xmlns="http://www.w3.org/2000/svg" width="14"
       height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

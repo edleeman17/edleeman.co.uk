@@ -1,0 +1,25 @@
+{{- partial "header.html" . -}}
+
+<style>
+  .project-byline {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+    margin-top: calc(var(--space-2) * -1);
+    margin-bottom: var(--space-5);
+  }
+  .project-byline a {
+    color: var(--color-accent);
+  }
+</style>
+
+<div class="main prose-wrap">
+  <h1>{{ .Title }}</h1>
+  <p class="project-byline">
+    {{ .Params.language }}
+    {{- if gt (.Params.stars | int) 0 }} · <i class="fa-regular fa-star"></i> {{ .Params.stars }}{{ end }}
+    · <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
+  </p>
+  {{ .Content }}
+</div>
+
+{{- partial "footer.html" . -}}
