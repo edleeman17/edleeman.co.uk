@@ -1,5 +1,11 @@
 /* Override shibui's narrow 64ch column to match original site width */
 /* Aliases for old Color.Bears variable names used in inline styles */
+/* Fix shibui body grid: minmax(auto, width) lets content stretch column.
+   minmax(0, width) enforces hard max and allows overflow-x to clip. */
+body {
+  grid-template-columns: minmax(0, var(--container-width));
+}
+
 :root {
   --container-width: 900px;
 
