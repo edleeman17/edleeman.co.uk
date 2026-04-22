@@ -95,6 +95,28 @@ footer a:hover,
   text-decoration: none;
 }
 
+/* Tags list (shibui terms-list style) */
+.terms-list ul {
+  list-style: none;
+  margin: 0 0 var(--spacing-base, 1rem);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.terms-list a {
+  font-size: var(--font-size-small, 0.875rem);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.terms-list a:hover {
+  color: var(--color-text-primary);
+}
+
 /* Suppress shibui's global heading auto-numbering counters */
 h2, h3, h4, h5 {
   counter-increment: none;
