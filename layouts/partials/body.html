@@ -6,8 +6,7 @@
         <div class="name">
             <h1>Ed Leeman</h1>
             <p>Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life.</p>
-            <p id="now_playing"></p>
-            <p>Generally commandeered by my daughters...</p>
+            <p id="now_playing">Generally commandeered by my daughters...</p>
         </div>
     </section>
     <section id="posts">
@@ -121,7 +120,7 @@
 
                 var currentTrack = track.name + ' by ' + track.artist['#text'];
                 var nowPlayingEl = document.getElementById('now_playing');
-                nowPlayingEl.innerHTML = '<a href="' + track.url + '">' + listeningText + currentTrack + ' <i class="fas fa-compact-disc fa-spin"></i></a>';
+                nowPlayingEl.innerHTML = '<a href="' + track.url + '">' + listeningText + currentTrack + ' <i class="fas fa-compact-disc fa-spin"></i></a> (generally commandeered by my daughters...)';
             })
             .catch(function(err) {
                 console.log('Last.fm error:', err);
