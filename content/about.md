@@ -5,14 +5,7 @@ type: page
 
 # About me
 
-Hi, I’m Ed. I’m a Platform Engineer based in Portsmouth, UK. I currently work for Stepstone Group.
-
-I am a keen writer over at my main blog The Self-Hosting Blog where I write informative tutorials on how to self-host opensource software. I try to keep the blog posts simple, to try and show my readers how easy it is to spin up their own applications, rather than using centralised software.
-
-My current focuses are home-networking and server hosting.
-
-You’ll find that some of the posts that I have written on my other blog have been cross-posted here.
-
+Software Enginerr, Self Hoster, DevOpser, Photographer, Dad
 
 Email: [hello@edleeman.co.uk](mailto:hello@edleeman.co.uk)
 
