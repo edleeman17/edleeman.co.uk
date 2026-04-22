@@ -12,6 +12,23 @@
   }
 </style>
 
+{{- $readmeContent := "" -}}
+{{- $github := .Params.github -}}
+{{- if $github -}}
+  {{- $repo := replaceRE "^https://github.com/" "" $github -}}
+  {{- $rawBase := printf "https://raw.githubusercontent.com/%s/HEAD" $repo -}}
+  {{- $readmeURL := printf "%s/README.md" $rawBase -}}
+  {{- with resources.GetRemote $readmeURL -}}
+    {{- $raw := .Content -}}
+    {{- $mdImgPattern := `!\[([^\]]*)\]\(([^):]+)\)` -}}
+    {{- $mdImgReplace := printf `![${1}](%s/${2})` $rawBase -}}
+    {{- $htmlImgPattern := `src="([^":]+)"` -}}
+    {{- $htmlImgReplace := printf `src="%s/${1}"` $rawBase -}}
+    {{- $step1 := replaceRE $mdImgPattern $mdImgReplace $raw -}}
+    {{- $readmeContent = replaceRE $htmlImgPattern $htmlImgReplace $step1 -}}
+  {{- end -}}
+{{- end -}}
+
 <div class="main prose-wrap">
   <h1>{{ .Title }}</h1>
   <p class="project-byline">
@@ -19,7 +36,11 @@
     {{- if gt (.Params.stars | int) 0 }} · <i class="fa-regular fa-star"></i> {{ .Params.stars }}{{ end }}
     · <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
   </p>
-  {{ .Content }}
+  {{- if $readmeContent -}}
+    {{ $readmeContent | markdownify }}
+  {{- else -}}
+    {{ .Content }}
+  {{- end -}}
 </div>
 
 {{- partial "footer.html" . -}}

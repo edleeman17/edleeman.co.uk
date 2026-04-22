@@ -20,6 +20,9 @@ hasCJKLanguage = true
   lastfmApiKey = "35d69c5ad21f4fc86e2d4269b9c949bd"
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
