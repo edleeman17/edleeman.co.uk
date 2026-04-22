@@ -38,7 +38,22 @@
    Typography overrides
    ============================================= */
 
-/* Strip shibui's a { border-bottom: 1px dotted; margin-left: -0.16666em } from UI elements */
+/* Images: shibui leaves max-width commented out, causing overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix shibui's a { margin-left: -0.16666em; white-space: pre-wrap } globally —
+   only prose links should get dotted border, not UI chrome */
+a {
+  margin-left: 0;
+  white-space: normal;
+  word-wrap: normal;
+  display: inline;
+}
+
+/* Strip border-bottom from UI elements; prose a keeps shibui dotted style */
 .link-title a,
 .project-card,
 .project-card h3,
@@ -50,6 +65,7 @@ footer a,
 .back-link,
 .post-feed a,
 .post-list a,
+.project-item-header a,
 #posts a,
 #notes a {
   border-bottom: none;
