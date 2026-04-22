@@ -3,7 +3,9 @@
 :root {
   --container-width: 900px;
 
-  --color-accent: var(--color-text-primary);
+  --color-link: #2563eb;
+  --color-link-hover: #1d4ed8;
+  --color-accent: #2563eb;
   --color-text: var(--color-text-primary);
   --color-muted: var(--color-text-muted);
   --color-bg: var(--color-bg-primary);
@@ -44,32 +46,47 @@ img {
   height: auto;
 }
 
-/* Fix shibui's a { margin-left: -0.16666em; white-space: pre-wrap } globally —
-   only prose links should get dotted border, not UI chrome */
+/* Reset shibui's aggressive a defaults globally */
 a {
   margin-left: 0;
   white-space: normal;
   word-wrap: normal;
   display: inline;
+  border-bottom: none;
+  color: inherit;
 }
 
-/* Strip border-bottom from UI elements; prose a keeps shibui dotted style */
-.link-title a,
-.project-card,
-.project-card h3,
-header a,
-nav a,
-footer a,
-.site-title,
-.book-cover-wrap,
-.back-link,
-.post-feed a,
-.post-list a,
-.project-item-header a,
-#posts a,
-#notes a {
+/* Prose links: blue + underline on hover */
+.prose-wrap a,
+article a,
+.link-single-description a,
+.reading-personality a {
+  color: var(--color-link);
   border-bottom: none;
-  margin-left: 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s;
+}
+
+.prose-wrap a:hover,
+article a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: currentColor;
+}
+
+/* UI chrome links: inherit colour, no underline, hover darkens */
+header a:hover,
+nav a:hover,
+.top-nav a:hover,
+.terminal-nav a:hover,
+footer a:hover,
+.post-list a:hover,
+.post-feed a:hover,
+.project-item-header a:hover,
+.link-title a:hover {
+  color: var(--color-text-primary);
+  text-decoration: none;
 }
 
 /* Suppress shibui's global heading auto-numbering counters */
