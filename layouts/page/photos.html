@@ -123,21 +123,29 @@
 
       var html = '<div class="photo-grid">';
 
+      function makeCard(imageUrl, link, caption, location, lazy) {
+        var c = '<div class="photo-card">';
+        c += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
+        c += '<img src="' + imageUrl + '" alt="' + caption.replace(/"/g, '&quot;') + '"' + (lazy ? ' loading="lazy"' : '') + '>';
+        c += '</a>';
+        c += '<div class="photo-overlay">';
+        if (caption) c += '<div class="photo-caption">' + caption + '</div>';
+        if (location) c += '<div class="photo-location">' + location + '</div>';
+        c += '</div></div>';
+        return c;
+      }
+
       photos.forEach(function(photo) {
-        var imageUrl = siteUrl + photo.image;
         var link = siteUrl + '/feed/' + photo.slug;
         var caption = photo.caption || '';
         var location = photo.location || '';
-
-        html += '<div class="photo-card">';
-        html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
-        html += '<img src="' + imageUrl + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
-        html += '</a>';
-        html += '<div class="photo-overlay">';
-        if (caption) html += '<div class="photo-caption">' + caption + '</div>';
-        if (location) html += '<div class="photo-location">' + location + '</div>';
-        html += '</div>';
-        html += '</div>';
+        var allImages = [photo.image].concat(
+          (photo.images || []).map(function(i) { return i.image; })
+        );
+        allImages.forEach(function(imgSrc) {
+          var imageUrl = imgSrc.startsWith('http') ? imgSrc : siteUrl + imgSrc;
+          html += makeCard(imageUrl, link, caption, location, true);
+        });
       });
 
       html += '</div>';

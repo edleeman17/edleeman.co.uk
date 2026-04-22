@@ -75,23 +75,31 @@
   fetch('https://charityshot.co.uk/api/photos.json')
     .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function(photos) {
-      var six = photos.slice(0, 6);
       var siteUrl = 'https://charityshot.co.uk';
       var html = '<div class="photo-grid-preview">';
-      six.forEach(function(photo) {
-        var img = siteUrl + photo.image;
+      var count = 0;
+      for (var i = 0; i < photos.length && count < 6; i++) {
+        var photo = photos[i];
         var link = siteUrl + '/feed/' + photo.slug;
         var caption = photo.caption || '';
         var location = photo.location || '';
-        html += '<div class="photo-card">';
-        html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
-        html += '<img src="' + img + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
-        html += '</a>';
-        html += '<div class="photo-overlay">';
-        if (caption) html += '<div class="photo-caption">' + caption + '</div>';
-        if (location) html += '<div class="photo-location">' + location + '</div>';
-        html += '</div></div>';
-      });
+        var allImages = [photo.image].concat(
+          (photo.images || []).map(function(im) { return im.image; })
+        );
+        for (var j = 0; j < allImages.length && count < 6; j++) {
+          var imgSrc = allImages[j];
+          var img = imgSrc.startsWith('http') ? imgSrc : siteUrl + imgSrc;
+          html += '<div class="photo-card">';
+          html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
+          html += '<img src="' + img + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
+          html += '</a>';
+          html += '<div class="photo-overlay">';
+          if (caption) html += '<div class="photo-caption">' + caption + '</div>';
+          if (location) html += '<div class="photo-location">' + location + '</div>';
+          html += '</div></div>';
+          count++;
+        }
+      }
       html += '</div>';
       document.getElementById('photos-preview-container').innerHTML = html;
     })
