@@ -146,6 +146,25 @@ body {
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
+  overflow-x: hidden;
+}
+
+/* Wide README content: scroll rather than overflow */
+.prose-wrap pre,
+.prose-wrap table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.prose-wrap img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose-wrap td,
+.prose-wrap th {
+  display: table-cell;
 }
 
 /* =============================================
