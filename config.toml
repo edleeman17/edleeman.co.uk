@@ -21,39 +21,29 @@ hasCJKLanguage = true
   toc = false
 
 [[menu.main]]
-  name = "posts"
-  url = "/posts/"
+  name = "about"
+  url = "/about/"
   weight = 1
 
 [[menu.main]]
-  name = "notes"
-  url = "/notes/"
+  name = "archive"
+  url = "/archive/"
   weight = 2
-
-[[menu.main]]
-  name = "reading"
-  url = "/reading/"
-  weight = 3
 
 [[menu.main]]
   name = "projects"
   url = "/projects/"
+  weight = 3
+
+[[menu.main]]
+  name = "/slashpages"
+  url = "/slashpages/"
   weight = 4
 
 [[menu.main]]
-  name = "links"
-  url = "/links/"
+  name = "rss"
+  url = "/rss/"
   weight = 5
-
-[[menu.main]]
-  name = "about"
-  url = "/about/"
-  weight = 6
-
-[[menu.main]]
-  name = "search"
-  url = "/search/"
-  weight = 7
 
 [markup]
   [markup.goldmark]
