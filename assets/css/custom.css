@@ -47,7 +47,11 @@ nav a,
 footer a,
 .site-title,
 .book-cover-wrap,
-.back-link {
+.back-link,
+.post-feed a,
+.post-list a,
+#posts a,
+#notes a {
   border-bottom: none;
   margin-left: 0;
 }
@@ -205,6 +209,42 @@ footer[role="contentinfo"] {
 #reading-progress::-webkit-progress-bar { background: transparent; }
 #reading-progress::-webkit-progress-value { background: var(--color-text-primary); }
 #reading-progress::-moz-progress-bar { background: var(--color-text-primary); }
+
+/* =============================================
+   Post / Note feed lists (homepage + list pages)
+   ============================================= */
+
+.post-list {
+  list-style: none;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.post-list li,
+.feed.post,
+.feed.note {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+}
+
+.post-list .post-date,
+.post-feed .post-date {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  font-family: var(--font-family-mono);
+}
+
+.year-group h2 {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: var(--space-5) 0 var(--space-2);
+  font-weight: normal;
+}
 
 /* =============================================
    Post / Note content

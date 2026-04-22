@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="prose-wrap">
+  <h1>Notes</h1>
+  <div class="h-feed">
+    <span class="p-name" style="display:none;">Notes — Ed Leeman</span>
+    {{ $notes := (where site.RegularPages "Type" "note").ByDate.Reverse }}
+    {{ range $notes.GroupByDate "2006" }}
+    <section class="year-group">
+      <h2>{{ .Key }}</h2>
+      <ul class="post-list">
+        {{ range .Pages }}
+        <li class="feed note h-entry">
+          <time class="dt-published post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
+          <a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
