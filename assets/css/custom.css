@@ -92,6 +92,10 @@ footer a,
   border-bottom: none;
 }
 
+.terminal-nav div {
+  text-align: center;
+}
+
 /* Tags list (shibui terms-list style) */
 .terms-list ul {
   list-style: none;
@@ -200,6 +204,7 @@ footer[role="contentinfo"] {
   max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 /* All footer sections share terminal-nav aesthetic */
