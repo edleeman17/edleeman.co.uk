@@ -5,7 +5,7 @@ type: page
 
 # About me
 
-Software Enginerr, Self Hoster, DevOpser, Photographer, Dad
+Software Engineer, Self Hoster, DevOpser, Photographer, Dad
 
 Email: [hello@edleeman.co.uk](mailto:hello@edleeman.co.uk)
 

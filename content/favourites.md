@@ -16,6 +16,8 @@ I am often asked what my favourite 'insert thing here' is. I have terrible recal
 - Human - The Killers
 - The Bucket - Kings of Leon
 
+See more at [last.fm](https://www.last.fm/user/ed1727)
+
 ## Films
 - Minority Report
 - Limitless
@@ -30,3 +32,5 @@ I am often asked what my favourite 'insert thing here' is. I have terrible recal
 - The Butterfly Garden
 - Dark Matter
 - All Quiet on the Western Front
+
+see more at [/reading](/reading)

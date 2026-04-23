@@ -16,3 +16,5 @@ type: page
 - Going hard into the IndieWeb - WebMentions, WebRings, all that Jazz. I'm obsessed. I hate Instagram, but I want people to see my photos (dunno why, people shouldn't NEED to see them for me to feel fulfilment, but we're wired that way and I need to be better at accepting it). Anyway, done a bunch of POSSE stuff for [/notes](/notes) [/posts](/posts) and [/photos](/photos). Even [/reading](/reading) which syncs to Goodreads, Fable and Storygraph.
 
 - [/reading](/reading) - That's another one. I'm back into reading as a result of the offline movement.
+
+Last updated: 22 April 2026
