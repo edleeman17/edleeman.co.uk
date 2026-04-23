@@ -3,6 +3,7 @@ languageCode = "en-gb"
 title = "Ed Leeman"
 theme = "shibui"
 hasCJKLanguage = true
+buildFuture = true
 
 [permalinks]
   posts = "/posts/:title/"
