@@ -5,25 +5,25 @@
     <span class="p-name" style="display:none;">Notes — Ed Leeman</span>
     {{ $notes := (where site.RegularPages "Type" "note").ByDate.Reverse }}
     {{ range $notes }}
+    {{- $replyTo := .Params.in_reply_to | default .Params.reply_to -}}
+    {{- $likeOf  := .Params.like_of -}}
+    {{- $repostOf := .Params.repost_of -}}
+    {{- $bookmarkOf := .Params.bookmark_of -}}
+    {{- $mastodon := "" -}}
+    {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
     <article class="note-entry h-entry">
-      {{- $replyTo := .Params.in_reply_to | default .Params.reply_to -}}
-      {{- $likeOf  := .Params.like_of -}}
-      {{- $repostOf := .Params.repost_of -}}
-      {{- $bookmarkOf := .Params.bookmark_of -}}
-      <p class="note-name" style="display:none;">{{ .Title }}</p>
+      <span class="p-name" style="display:none;">{{ .Title }}</span>
       <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
       {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>{{ end }}
+      <div class="note-entry-header">
+        <a class="note-timestamp u-url dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
+        {{ if $mastodon }}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{ end }}
+      </div>
       {{ with $replyTo }}<p class="response-context">In reply to <a class="u-in-reply-to" href="{{ . }}">{{ . }}</a></p>{{ end }}
       {{ with $likeOf }}<p class="response-context">Liked <a class="u-like-of" href="{{ . }}">{{ . }}</a></p>{{ end }}
       {{ with $repostOf }}<p class="response-context">Reposted <a class="u-repost-of" href="{{ . }}">{{ . }}</a></p>{{ end }}
       {{ with $bookmarkOf }}<p class="response-context">Bookmarked <a class="u-bookmark-of" href="{{ . }}">{{ . }}</a></p>{{ end }}
       <div class="e-content note-body">{{ .Content }}</div>
-      <footer class="note-footer">
-        <a class="note-timestamp u-url dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
-        {{- $mastodon := "" -}}
-        {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
-        {{ if $mastodon }}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{ end }}
-      </footer>
     </article>
     {{ end }}
   </div>

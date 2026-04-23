@@ -33,15 +33,17 @@
       {{ if reflect.IsSlice . }}{{ range . }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}
     </p>
     {{ end }}
+    {{- $mastodon := "" -}}
+    {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
+    <div class="note-entry-header">
+        <a class="note-timestamp dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
+        {{- if $mastodon -}}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{- end -}}
+    </div>
     <div class="e-content note-body">
         {{ .Content }}
     </div>
-    <footer class="note-meta">
-        <a class="note-timestamp dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
-        {{- $mastodon := "" -}}
-        {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
-        {{- if $mastodon -}}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{- end -}}
-        <p class="reply-by-email" style="margin-top:1em">
+    <div class="post-meta">
+        <p class="reply-by-email">
           {{- if $mastodon -}}
           Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject=Note {{ .Date.Format "2006-01-02" }}">email</a>
           {{- else -}}
@@ -49,7 +51,7 @@
           {{- end -}}
         </p>
         <p class="webmention-hint">Or mention <a href="{{ .Permalink }}"><code>{{ .Permalink }}</code></a> on a webmention-enabled platform</p>
-    </footer>
+    </div>
 </article>
 <div class="webmentions" id="webmentions"></div>
 

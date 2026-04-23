@@ -651,29 +651,29 @@ kbd {
 }
 
 .note-entry {
-  padding: 1.25em 0;
-  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
 }
 
-.note-entry:last-child {
-  border-bottom: none;
+.note-entry:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.note-body p:first-child { margin-top: 0; }
-.note-body p:last-child  { margin-bottom: 0; }
-
-.note-footer,
-.note-meta {
+.note-entry-header {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
   gap: 1em;
-  margin-top: 0.75em;
   flex-wrap: wrap;
+  margin-bottom: var(--space-2);
 }
 
 .note-timestamp {
   font-family: var(--font-family-mono);
-  font-size: 0.8em;
+  font-size: var(--font-size-small, 0.875rem);
   color: var(--color-text-muted);
   text-decoration: none;
   flex-shrink: 0;
@@ -684,11 +684,15 @@ kbd {
 }
 
 .note-syndication-link {
-  font-size: 0.8em;
+  font-size: var(--font-size-small, 0.875rem);
   color: var(--color-text-muted);
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .note-syndication-link:hover {
   color: var(--color-text);
 }
+
+.note-body p:first-child { margin-top: 0; }
+.note-body p:last-child  { margin-bottom: 0; }

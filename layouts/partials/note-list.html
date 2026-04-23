@@ -2,17 +2,17 @@
     <span class="p-name" style="display:none;">Notes by Ed Leeman</span>
     {{ $notes := (where .Site.RegularPages "Type" "note").ByDate.Reverse | first 3 }}
     {{ range $notes }}
+    {{- $mastodon := "" -}}
+    {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
     <article class="note-entry h-entry">
         <span class="p-name" style="display:none;">{{ .Title }}</span>
         <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
         {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>{{ end }}
-        <div class="e-content note-body">{{ .Content }}</div>
-        <footer class="note-footer">
+        <div class="note-entry-header">
             <a class="note-timestamp u-url dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
-            {{- $mastodon := "" -}}
-            {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
             {{ if $mastodon }}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{ end }}
-        </footer>
+        </div>
+        <div class="e-content note-body">{{ .Content }}</div>
     </article>
     {{ end }}
 </div>

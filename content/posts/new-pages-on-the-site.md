@@ -2,9 +2,11 @@
 title: "New Pages on the Site"
 date: 2026-04-15T10:59:07Z
 draft: false
-type: "note"
+type: "post"
 syndication:
   - "https://fosstodon.org/@edphones/116408848088483008"
+aliases:
+  - "/notes/new-pages-on-the-site/"
 ---
 
 # New Pages on the Site
