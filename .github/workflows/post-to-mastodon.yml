@@ -14,6 +14,10 @@ on:
         description: 'Backfill link files with this date prefix (YYYY-MM-DD). Leave blank for today.'
         required: false
         default: ''
+      file:
+        description: 'Specific file to syndicate (e.g. content/notes/2026-04-23-195800.md)'
+        required: false
+        default: ''
 
 jobs:
   syndicate:
@@ -30,12 +34,18 @@ jobs:
           MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            DATE="${{ github.event.inputs.date }}"
-            if [ -z "$DATE" ]; then
-              DATE=$(date -u +%Y-%m-%d)
+            SPECIFIC_FILE="${{ github.event.inputs.file }}"
+            if [ -n "$SPECIFIC_FILE" ]; then
+              echo "Single file mode: $SPECIFIC_FILE"
+              FILES="$SPECIFIC_FILE"
+            else
+              DATE="${{ github.event.inputs.date }}"
+              if [ -z "$DATE" ]; then
+                DATE=$(date -u +%Y-%m-%d)
+              fi
+              echo "Backfill mode: content/links/${DATE}-*.md"
+              FILES=$(ls content/links/${DATE}-*.md 2>/dev/null || true)
             fi
-            echo "Backfill mode: content/links/${DATE}-*.md"
-            FILES=$(ls content/links/${DATE}-*.md 2>/dev/null || true)
             READING_FILES=""
           else
             FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
@@ -54,8 +64,8 @@ jobs:
           for FILE in $ALL_FILES; do
             [ -f "$FILE" ] || continue
 
-            # Skip if syndication URLs already present
-            if grep -q '^syndication:' "$FILE"; then
+            # Skip if syndication URLs already present (ignore empty array)
+            if grep -A1 '^syndication:' "$FILE" | grep -q '^\s*-\s*"http'; then
               echo "Skipping $FILE - already syndicated"
               continue
             fi
@@ -63,9 +73,15 @@ jobs:
             # Extract title from frontmatter
             TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$FILE" | head -1)
 
-            # Build URL from file path
-            SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
-            URL="https://edleeman.co.uk/${SLUG}"
+            # Build URL — use slug frontmatter if present, else derive from path
+            SLUG_FM=$(sed -n 's/^slug: *"\(.*\)"/\1/p' "$FILE" | head -1)
+            if [ -n "$SLUG_FM" ]; then
+              SECTION=$(echo "$FILE" | sed 's|^content/\([^/]*\)/.*|\1|')
+              URL="https://edleeman.co.uk/${SECTION}/${SLUG_FM}/"
+            else
+              SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
+              URL="https://edleeman.co.uk/${SLUG}"
+            fi
 
             # Format by content type
             if [[ "$FILE" == content/reading/* ]]; then
