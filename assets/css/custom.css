@@ -639,3 +639,56 @@ kbd {
 .link-title { font-weight: 600; }
 .link-desc { font-size: 0.875em; color: var(--color-text-muted); }
 .link-meta { font-size: 0.8em; color: var(--color-text-muted); }
+
+/* =============================================
+   Notes (microblog / status updates)
+   ============================================= */
+
+.note-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.note-entry {
+  padding: 1.25em 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.note-entry:last-child {
+  border-bottom: none;
+}
+
+.note-body p:first-child { margin-top: 0; }
+.note-body p:last-child  { margin-bottom: 0; }
+
+.note-footer,
+.note-meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 0.75em;
+  flex-wrap: wrap;
+}
+
+.note-timestamp {
+  font-family: var(--font-family-mono);
+  font-size: 0.8em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.note-timestamp:hover {
+  color: var(--color-text);
+}
+
+.note-syndication-link {
+  font-size: 0.8em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.note-syndication-link:hover {
+  color: var(--color-text);
+}

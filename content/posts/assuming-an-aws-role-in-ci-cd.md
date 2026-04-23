@@ -2,9 +2,11 @@
 title: "Assuming an AWS Role in CI/CD"
 date: 2024-02-09T13:30:38Z
 draft: false
-type: "note"
+type: "post"
 tags:
     - knowledge
+aliases:
+  - "/notes/assuming-an-aws-role-in-ci-cd/"
 ---
 # Assuming an AWS Role in CI/CD 
 

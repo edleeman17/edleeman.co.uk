@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name": "Ed Leeman",
+    "url": "https://edleeman.co.uk",
+    "email": "hello@edleeman.co.uk",
+    "photo": "https://edleeman.co.uk/images/ed.png",
+    "location": "UK"
+  },
+  "site": {
+    "title": "Ed Leeman",
+    "url": "https://edleeman.co.uk",
+    "purpose": "Personal blog covering software engineering, self-hosting, and IndieWeb.",
+    "colophon": "Built with Hugo, hosted on a Celeron J4105 in my home lab. No tracking, no ads, no cookies.",
+    "indieweb": {
+      "webmentions": "https://webmention.io/edleeman.co.uk/webmention",
+      "microsub": null
+    }
+  },
+  "social": {
+    "mastodon": "https://fosstodon.org/@edphones",
+    "github": "https://github.com/edleeman17",
+    "linkedin": "https://www.linkedin.com/in/ed-leeman-001/"
+  },
+  "ai": {
+    "declaration": "https://edleeman.co.uk/ai-declaration/",
+    "content_written_by_ai": false,
+    "tooling_assisted_by_ai": true
+  }
+}

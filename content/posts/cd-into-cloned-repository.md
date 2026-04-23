@@ -2,8 +2,10 @@
 title: "CD into a cloned git repository"
 date: 2024-03-11T17:56:22Z
 draft: false
-type: "note"
+type: "post"
 image: images/apple-touch-icon.png
+aliases:
+  - "/notes/cd-into-cloned-repository/"
 ---
 
 # CD into a cloned Git repository

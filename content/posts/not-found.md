@@ -2,7 +2,9 @@
 title: "[[: not found fix"
 date: 2024-02-09T16:12:46Z
 draft: false
-type: "note"
+type: "post"
+aliases:
+  - "/notes/not-found/"
 ---
 # [[: not found fix
 

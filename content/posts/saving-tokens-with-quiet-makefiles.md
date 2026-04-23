@@ -2,10 +2,12 @@
 title: "Saving LLM tokens with quiet Makefiles"
 date: 2026-02-26T12:00:00Z
 draft: false
-type: "note"
+type: "post"
 image: images/apple-touch-icon.png
 syndication:
   - "https://fosstodon.org/@edphones/116138861323928070"
+aliases:
+  - "/notes/saving-tokens-with-quiet-makefiles/"
 ---
 
 # Saving LLM tokens with quiet Makefiles

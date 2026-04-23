@@ -1,8 +1,9 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: ""
 date: {{ .Date }}
-draft: true
+draft: false
 type: "note"
+syndication: []
 # Response context (optional — uncomment one):
 # in_reply_to: "https://example.com/post"
 # like_of: "https://example.com/post"

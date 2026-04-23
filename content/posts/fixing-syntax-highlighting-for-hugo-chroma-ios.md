@@ -2,7 +2,9 @@
 title: "Fixing Syntax Highlighting for Hugo Chroma iOS"
 date: 2024-02-12T23:42:41Z
 draft: false
-type: "note"
+type: "post"
+aliases:
+  - "/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/"
 ---
 
 # Fixing Syntax highlighting for Hugo chroma in iOS

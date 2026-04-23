@@ -2,7 +2,9 @@
 title: "Formatting JSON files in Vim"
 date: 2024-02-09T16:15:14Z
 draft: false
-type: "note"
+type: "post"
+aliases:
+  - "/notes/formatting-json-files-in-vim/"
 ---
 # Formatting JSON files in Vim
 

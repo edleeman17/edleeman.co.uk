@@ -1,0 +1,137 @@
+name: Syndicate to Threads
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/posts/**'
+      - 'content/notes/**'
+      - 'content/links/**'
+
+# Requires:
+#   THREADS_USER_ID   — numeric user ID (from GET /me on Threads API)
+#   THREADS_ACCESS_TOKEN — long-lived access token (60-day, needs periodic refresh)
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Find new content and syndicate to Threads
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+
+          if [ -z "$FILES" ]; then
+            echo "No new files"
+            exit 0
+          fi
+
+          CHANGED=false
+
+          for FILE in $FILES; do
+            [ -f "$FILE" ] || continue
+
+            if grep -q 'threads.net' "$FILE"; then
+              echo "Skipping $FILE - already syndicated to Threads"
+              continue
+            fi
+
+            TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$FILE" | head -1)
+            SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
+            URL="https://edleeman.co.uk/${SLUG}"
+
+            if [[ "$FILE" == content/links/* ]]; then
+              EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              CLEAN_TITLE="${TITLE#→ }"
+              if [ -n "$DESCRIPTION" ]; then
+                TEXT=$(printf "🔖 %s\n\n%s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$DESCRIPTION" "$EXTERNAL_LINK" "$URL")
+              else
+                TEXT=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
+              fi
+            else
+              TEXT=$(printf "%s\n%s" "$TITLE" "$URL")
+            fi
+
+            # Step 1: Create media container
+            CONTAINER=$(curl -s -X POST \
+              "https://graph.threads.net/v1.0/${THREADS_USER_ID}/threads" \
+              -d "media_type=TEXT" \
+              --data-urlencode "text=${TEXT}" \
+              -d "access_token=${THREADS_ACCESS_TOKEN}")
+
+            CONTAINER_ID=$(echo "$CONTAINER" | jq -r '.id // empty')
+
+            if [ -z "$CONTAINER_ID" ]; then
+              echo "Warning: Threads container creation failed"
+              echo "$CONTAINER"
+              continue
+            fi
+
+            # Step 2: Publish container
+            sleep 2
+            PUBLISH=$(curl -s -X POST \
+              "https://graph.threads.net/v1.0/${THREADS_USER_ID}/threads_publish" \
+              -d "creation_id=${CONTAINER_ID}" \
+              -d "access_token=${THREADS_ACCESS_TOKEN}")
+
+            POST_ID=$(echo "$PUBLISH" | jq -r '.id // empty')
+
+            if [ -n "$POST_ID" ]; then
+              # Fetch the permalink
+              PERMALINK_RESP=$(curl -s \
+                "https://graph.threads.net/v1.0/${POST_ID}?fields=permalink&access_token=${THREADS_ACCESS_TOKEN}")
+              THREADS_URL=$(echo "$PERMALINK_RESP" | jq -r '.permalink // empty')
+
+              if [ -n "$THREADS_URL" ]; then
+                echo "Threads URL: $THREADS_URL"
+
+                awk -v url="$THREADS_URL" '
+                  BEGIN { count=0; inserted=0 }
+                  /^syndication:/ {
+                    print
+                    inserted=1
+                    next
+                  }
+                  inserted==1 && /^  - / {
+                    print
+                    next
+                  }
+                  inserted==1 && !/^  - / {
+                    print "  - \"" url "\""
+                    inserted=0
+                    print
+                    next
+                  }
+                  /^---$/ && count++==1 && inserted==0 {
+                    print "syndication:"
+                    print "  - \"" url "\""
+                    print "---"
+                    next
+                  }
+                  { print }
+                ' "$FILE" > "${FILE}.tmp" && mv "${FILE}.tmp" "$FILE"
+
+                CHANGED=true
+              fi
+            else
+              echo "Warning: Threads publish failed"
+              echo "$PUBLISH"
+            fi
+          done
+
+          if [ "$CHANGED" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/
+            git commit -m "Add syndication URLs from Threads"
+            git push
+          fi

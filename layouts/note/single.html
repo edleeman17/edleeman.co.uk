@@ -5,7 +5,7 @@
 {{- $repostOf := .Params.repost_of -}}
 {{- $bookmarkOf := .Params.bookmark_of -}}
 <article class="h-entry{{ with $replyTo }} p-reply{{ end }}{{ with $likeOf }} p-like{{ end }}{{ with $repostOf }} p-repost{{ end }}{{ with $bookmarkOf }} p-bookmark{{ end }}">
-    <h1 class="p-name" style="display:none;">{{ .Title }}</h1>
+    <span class="p-name" style="display:none;">{{ .Title }}</span>
     <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
@@ -33,23 +33,23 @@
       {{ if reflect.IsSlice . }}{{ range . }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-bookmark-of" href="{{ . }}">{{ . }}</a>{{ end }}
     </p>
     {{ end }}
-    <div class="e-content post">
+    <div class="e-content note-body">
         {{ .Content }}
     </div>
-    <div class="post-meta">
-        <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
-        <p class="post-tags">Tags: {{ range .Params.tags }}<a class="p-category" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
+    <footer class="note-meta">
+        <a class="note-timestamp dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
         {{- $mastodon := "" -}}
         {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
-        <p class="reply-by-email">
+        {{- if $mastodon -}}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{- end -}}
+        <p class="reply-by-email" style="margin-top:1em">
           {{- if $mastodon -}}
-          Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+          Reply on <a href="{{ $mastodon }}">Mastodon</a> or <a href="mailto:hello@edleeman.co.uk?subject=Note {{ .Date.Format "2006-01-02" }}">email</a>
           {{- else -}}
-          Reply by <a href="mailto:hello@edleeman.co.uk?subject=RE: {{ .Params.title }}">email</a>
+          Reply by <a href="mailto:hello@edleeman.co.uk?subject=Note {{ .Date.Format "2006-01-02" }}">email</a>
           {{- end -}}
         </p>
         <p class="webmention-hint">Or mention <a href="{{ .Permalink }}"><code>{{ .Permalink }}</code></a> on a webmention-enabled platform</p>
-    </div>
+    </footer>
 </article>
 <div class="webmentions" id="webmentions"></div>
 

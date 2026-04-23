@@ -2,7 +2,9 @@
 title: "Installing Commands Using Existing Docker Images"
 date: 2024-02-09T13:28:26Z
 draft: false
-type: "note"
+type: "post"
+aliases:
+  - "/notes/installing-commands-using-existing-docker-images/"
 ---
 # Installing commands using existing Docker Images
 

@@ -1,0 +1,145 @@
+name: Syndicate to Bluesky
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'content/posts/**'
+      - 'content/notes/**'
+      - 'content/links/**'
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Find new content and syndicate to Bluesky
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: |
+          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+
+          if [ -z "$FILES" ]; then
+            echo "No new files"
+            exit 0
+          fi
+
+          # Authenticate with Bluesky AT Protocol
+          AUTH=$(curl -s -X POST "https://bsky.social/xrpc/com.atproto.server.createSession" \
+            -H "Content-Type: application/json" \
+            -d "{\"identifier\": \"${BLUESKY_HANDLE}\", \"password\": \"${BLUESKY_APP_PASSWORD}\"}")
+
+          ACCESS_JWT=$(echo "$AUTH" | jq -r '.accessJwt // empty')
+          DID=$(echo "$AUTH" | jq -r '.did // empty')
+
+          if [ -z "$ACCESS_JWT" ]; then
+            echo "Bluesky auth failed"
+            echo "$AUTH"
+            exit 1
+          fi
+
+          CHANGED=false
+
+          for FILE in $FILES; do
+            [ -f "$FILE" ] || continue
+
+            # Skip if already has a Bluesky syndication URL
+            if grep -q 'bsky.app' "$FILE"; then
+              echo "Skipping $FILE - already syndicated to Bluesky"
+              continue
+            fi
+
+            TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$FILE" | head -1)
+            SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
+            URL="https://edleeman.co.uk/${SLUG}"
+
+            if [[ "$FILE" == content/links/* ]]; then
+              EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              CLEAN_TITLE="${TITLE#→ }"
+              if [ -n "$DESCRIPTION" ]; then
+                TEXT=$(printf "🔖 %s\n\n%s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$DESCRIPTION" "$EXTERNAL_LINK" "$URL")
+              else
+                TEXT=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
+              fi
+            else
+              TEXT=$(printf "%s\n%s" "$TITLE" "$URL")
+            fi
+
+            # Truncate to 300 chars (Bluesky limit)
+            TEXT=$(echo "$TEXT" | head -c 300)
+
+            NOW=$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
+
+            RESPONSE=$(curl -s -X POST "https://bsky.social/xrpc/com.atproto.repo.createRecord" \
+              -H "Authorization: Bearer ${ACCESS_JWT}" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n \
+                --arg did "$DID" \
+                --arg text "$TEXT" \
+                --arg now "$NOW" \
+                '{
+                  "repo": $did,
+                  "collection": "app.bsky.feed.post",
+                  "record": {
+                    "\$type": "app.bsky.feed.post",
+                    "text": $text,
+                    "createdAt": $now
+                  }
+                }')")
+
+            POST_URI=$(echo "$RESPONSE" | jq -r '.uri // empty')
+            POST_CID=$(echo "$RESPONSE" | jq -r '.cid // empty')
+
+            if [ -n "$POST_URI" ]; then
+              # Convert AT URI to web URL: at://did:plc:xxx/app.bsky.feed.post/rkey → https://bsky.app/profile/handle/post/rkey
+              RKEY=$(echo "$POST_URI" | awk -F'/' '{print $NF}')
+              BSKY_URL="https://bsky.app/profile/${BLUESKY_HANDLE}/post/${RKEY}"
+              echo "Bluesky URL: $BSKY_URL"
+
+              awk -v url="$BSKY_URL" '
+                BEGIN { count=0; inserted=0 }
+                /^syndication:/ {
+                  print
+                  inserted=1
+                  next
+                }
+                inserted==1 && /^  - / {
+                  print
+                  next
+                }
+                inserted==1 && !/^  - / {
+                  print "  - \"" url "\""
+                  inserted=0
+                  print
+                  next
+                }
+                /^---$/ && count++==1 && inserted==0 {
+                  print "syndication:"
+                  print "  - \"" url "\""
+                  print "---"
+                  next
+                }
+                { print }
+              ' "$FILE" > "${FILE}.tmp" && mv "${FILE}.tmp" "$FILE"
+
+              CHANGED=true
+            else
+              echo "Warning: Bluesky post failed"
+              echo "$RESPONSE"
+            fi
+          done
+
+          if [ "$CHANGED" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/
+            git commit -m "Add syndication URLs from Bluesky"
+            git push
+          fi
