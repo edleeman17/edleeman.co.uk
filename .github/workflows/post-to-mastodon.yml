@@ -123,7 +123,13 @@ jobs:
                 STATUS=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
               fi
             else
-              STATUS=$(printf "%s\n%s" "$TITLE" "$URL")
+              # Notes: use body content (after second ---), fall back to title
+              BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE" | sed '/^$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              if [ -n "$BODY" ]; then
+                STATUS=$(printf "%s\n\n%s" "$BODY" "$URL")
+              else
+                STATUS=$(printf "%s\n%s" "$TITLE" "$URL")
+              fi
             fi
 
             echo "Posting to Mastodon: $STATUS"
