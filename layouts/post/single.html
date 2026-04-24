@@ -10,7 +10,7 @@
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
     <div class="e-content post">
-        {{ .Content }}
+        {{ .Content | replaceRE `(?s)<h1[^>]*>.*?</h1>` "" | safeHTML }}
     </div>
     <div class="post-meta">
         <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
