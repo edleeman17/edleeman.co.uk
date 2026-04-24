@@ -73,10 +73,14 @@ jobs:
             # Extract title from frontmatter
             TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$FILE" | head -1)
 
-            # Build URL — use slug frontmatter if present, else derive from path
+            # Build URL — posts use :title permalink (Hugo slugifies title), others use slug frontmatter or path
+            SECTION=$(echo "$FILE" | sed 's|^content/\([^/]*\)/.*|\1|')
             SLUG_FM=$(sed -n 's/^slug: *"\(.*\)"/\1/p' "$FILE" | head -1)
-            if [ -n "$SLUG_FM" ]; then
-              SECTION=$(echo "$FILE" | sed 's|^content/\([^/]*\)/.*|\1|')
+            if [[ "$FILE" == content/posts/* ]] && [ -n "$TITLE" ]; then
+              # Match Hugo's :title permalink — lowercase, non-alphanumeric to hyphens, collapse/trim hyphens
+              TITLE_SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-//;s/-$//')
+              URL="https://edleeman.co.uk/posts/${TITLE_SLUG}/"
+            elif [ -n "$SLUG_FM" ]; then
               URL="https://edleeman.co.uk/${SECTION}/${SLUG_FM}/"
             else
               SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
