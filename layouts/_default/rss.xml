@@ -9,7 +9,7 @@
     {{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
     {{ $pages := .Pages }}
-    {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ if .IsHome }}{{ $pages = where .Site.RegularPages "Section" "in" (slice "posts" "notes" "links" "reading") }}{{ end }}
     {{ $feedPath := .RelPermalink | strings.TrimRight "/" }}
     {{ if eq $feedPath "" }}{{ $feedPath = "global (everything)" }}{{ end }}
     {{ range where $pages ".Date.IsZero" false }}
