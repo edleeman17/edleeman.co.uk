@@ -127,8 +127,16 @@ jobs:
               else
                 STATUS=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
               fi
+            elif [[ "$FILE" == content/posts/* ]]; then
+              # Posts: title + URL (body too long, headings cause noise)
+              MEDIA_IDS="[]"
+              if [ -n "$TITLE" ]; then
+                STATUS=$(printf "%s\n\n%s" "$TITLE" "$URL")
+              else
+                STATUS=$(printf "%s" "$URL")
+              fi
             else
-              # Notes: use body content (after second ---), fall back to title
+              # Notes: use body content (after second ---)
               FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
 
               # Extract image URLs from markdown ![...](url) and upload to Mastodon
@@ -145,8 +153,8 @@ jobs:
                 fi
               done < <(echo "$FULL_BODY" | grep -oP '!\[.*?\]\(\K[^)]+')
 
-              # Strip image markdown from status text
-              BODY=$(echo "$FULL_BODY" | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              # Strip image markdown and headings from status text
+              BODY=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
 
               if [ -n "$BODY" ]; then
                 STATUS=$(printf "%s\n\n%s" "$BODY" "$URL")
