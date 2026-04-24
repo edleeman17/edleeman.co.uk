@@ -133,8 +133,9 @@ jobs:
               FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
               # Join all paragraphs, strip headings and images, keep *emphasis*
               EXCERPT=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^[[:space:]]*$/d' | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
-              # Truncate to 400 chars at word boundary
-              EXCERPT=$(echo "$EXCERPT" | awk '{if(length($0)>400){match($0,/^.{1,400} /);print substr($0,1,RLENGTH-1)"..."}else{print}}')
+              # Mastodon: 500 limit, URLs count as 23. "New Post: "(10) + title + 2x"\n\n"(4) + url(23) = overhead
+              EXCERPT_MAX=$((500 - 10 - ${#TITLE} - 4 - 23))
+              EXCERPT=$(echo "$EXCERPT" | awk -v max="$EXCERPT_MAX" '{if(length($0)>max){match($0,"^.{1,"max"} ");print substr($0,1,RLENGTH-1)"..."}else{print}}')
               if [ -n "$TITLE" ] && [ -n "$EXCERPT" ]; then
                 STATUS=$(printf "New Post: %s\n\n%s\n\n%s" "$TITLE" "$EXCERPT" "$URL")
               elif [ -n "$TITLE" ]; then
