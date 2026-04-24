@@ -1,8 +1,6 @@
 services:
   micropub:
     build: .
-    ports:
-      - "3010:3000"
     environment:
       BEARER_TOKEN: "${BEARER_TOKEN}"
       REPO_PATH: /repo
@@ -11,3 +9,15 @@ services:
       - /home/ed/docker-projects/edleeman.co.uk:/repo
       - /home/ed/.ssh:/root/.ssh:ro
     restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.micropub.rule=Host(`micropub.lan`)"
+      - "traefik.http.routers.micropub.entrypoints=websecure"
+      - "traefik.http.routers.micropub.tls=true"
+      - "traefik.http.services.micropub.loadbalancer.server.port=3000"
+
+networks:
+  traefik:
+    external: true
