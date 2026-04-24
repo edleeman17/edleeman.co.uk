@@ -3,14 +3,14 @@
 <div class="prose-wrap">
 
 <article class="h-entry">
-    <h1 class="p-name">{{ .Title }}</h1>
+    <span class="p-name" style="display:none;">{{ .Title }}</span>
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
     <a class="p-author h-card" href="https://edleeman.co.uk" rel="author" style="display:none;">Ed Leeman</a>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
     <div class="e-content post">
-        {{ .Content | replaceRE `(?s)<h1[^>]*>.*?</h1>` "" | safeHTML }}
+        {{ .Content }}
     </div>
     <div class="post-meta">
         <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
