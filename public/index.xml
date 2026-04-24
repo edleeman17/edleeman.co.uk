@@ -6,12 +6,48 @@
     <description>Recent content on Ed Leeman</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 24 Apr 2026 13:36:13 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 17:31:11 +0100</lastBuildDate>
     <atom:link href="https://edleeman.co.uk/index.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://edleeman.co.uk/images/ed.png</url>
+      <title>Ed Leeman</title>
+      <link>https://edleeman.co.uk</link>
+    </image>
     
     
     
     
+    
+    <item>
+      <title>So today I have learned that I should probably have a test...</title>
+      <link>https://edleeman.co.uk/notes/2026-04-24-173111/</link>
+      <pubDate>Fri, 24 Apr 2026 17:31:11 +0100</pubDate>
+      <guid>https://edleeman.co.uk/notes/2026-04-24-173111/</guid>
+      <description>&lt;p&gt;So today I have learned that I should probably have a test pipeline for my site. It would have saved a lot of noise on Mastodon and RSS. However, #Micropub is cool and now I can justify the 20 quid I spent on iA Writer a few months back&lt;/p&gt;
+&lt;hr&gt;&lt;p&gt;&lt;small&gt;You&#39;re getting this because you follow my &lt;strong&gt;global (everything)&lt;/strong&gt; feed — if you&#39;d like to filter what comes through, you can find all my feeds at &lt;a href=&#34;https://edleeman.co.uk/rss&#34;&gt;edleeman.co.uk/rss&lt;/a&gt;. Regardless, thanks for reading over RSS. You&#39;re awesome and I appreciate you.&lt;/small&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>And now in Technicolor.
+</title>
+      <link>https://edleeman.co.uk/notes/2026-04-24-153524/</link>
+      <pubDate>Fri, 24 Apr 2026 15:35:24 +0000</pubDate>
+      <guid>https://edleeman.co.uk/notes/2026-04-24-153524/</guid>
+      <description>&lt;p&gt;And now in Technicolor.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://edleeman.co.uk/images/2026/04/1777044919581-lonely-life-ring.jpeg&#34; alt=&#34;&#34; &gt;
+&lt;/p&gt;
+&lt;hr&gt;&lt;p&gt;&lt;small&gt;You&#39;re getting this because you follow my &lt;strong&gt;global (everything)&lt;/strong&gt; feed — if you&#39;d like to filter what comes through, you can find all my feeds at &lt;a href=&#34;https://edleeman.co.uk/rss&#34;&gt;edleeman.co.uk/rss&lt;/a&gt;. Regardless, thanks for reading over RSS. You&#39;re awesome and I appreciate you.&lt;/small&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hi mum, I’m micropub’in from iA Writer
+</title>
+      <link>https://edleeman.co.uk/notes/2026-04-24-145640/</link>
+      <pubDate>Fri, 24 Apr 2026 14:56:40 +0000</pubDate>
+      <guid>https://edleeman.co.uk/notes/2026-04-24-145640/</guid>
+      <description>&lt;p&gt;Hi mum, I’m micropub’in from iA Writer&lt;/p&gt;
+&lt;hr&gt;&lt;p&gt;&lt;small&gt;You&#39;re getting this because you follow my &lt;strong&gt;global (everything)&lt;/strong&gt; feed — if you&#39;d like to filter what comes through, you can find all my feeds at &lt;a href=&#34;https://edleeman.co.uk/rss&#34;&gt;edleeman.co.uk/rss&lt;/a&gt;. Regardless, thanks for reading over RSS. You&#39;re awesome and I appreciate you.&lt;/small&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>→ Making a Micropub Server That Works With iA Writer • Sam Warnick</title>
@@ -22,24 +58,11 @@
     </item>
     
     <item>
-      <title></title>
+      <title>Apologies to my RSS readers. I&amp;rsquo;ve been making quite a...</title>
       <link>https://edleeman.co.uk/notes/2026-04-23-195800/</link>
       <pubDate>Thu, 23 Apr 2026 19:58:00 +0000</pubDate>
       <guid>https://edleeman.co.uk/notes/2026-04-23-195800/</guid>
       <description>&lt;p&gt;Apologies to my RSS readers. I&amp;rsquo;ve been making quite a few changes and it seems that they syndicate..&lt;/p&gt;
-&lt;hr&gt;&lt;p&gt;&lt;small&gt;You&#39;re getting this because you follow my &lt;strong&gt;global (everything)&lt;/strong&gt; feed — if you&#39;d like to filter what comes through, you can find all my feeds at &lt;a href=&#34;https://edleeman.co.uk/rss&#34;&gt;edleeman.co.uk/rss&lt;/a&gt;. Regardless, thanks for reading over RSS. You&#39;re awesome and I appreciate you.&lt;/small&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>AI Declaration</title>
-      <link>https://edleeman.co.uk/ai-declaration/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://edleeman.co.uk/ai-declaration/</guid>
-      <description>&lt;p&gt;All content on this site — blog posts, notes, links, and reading entries — is written by me, Ed Leeman.&lt;/p&gt;
-&lt;p&gt;AI tools may assist with site development (code generation, styling, layout decisions), but no post or note is written, ghostwritten, or meaningfully edited by an AI.&lt;/p&gt;
-&lt;p&gt;If I ever change this policy, I&amp;rsquo;ll say so clearly.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;See also: &lt;a href=&#34;https://edleeman.co.uk/human.json&#34;&gt;human.json&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;&lt;p&gt;&lt;small&gt;You&#39;re getting this because you follow my &lt;strong&gt;global (everything)&lt;/strong&gt; feed — if you&#39;d like to filter what comes through, you can find all my feeds at &lt;a href=&#34;https://edleeman.co.uk/rss&#34;&gt;edleeman.co.uk/rss&lt;/a&gt;. Regardless, thanks for reading over RSS. You&#39;re awesome and I appreciate you.&lt;/small&gt;&lt;/p&gt;</description>
     </item>
     

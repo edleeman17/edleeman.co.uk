@@ -8,13 +8,18 @@
     {{ with .Site.LanguageCode }}<language>{{ . }}</language>{{ end }}
     {{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
+    <image>
+      <url>{{ .Site.BaseURL | strings.TrimRight "/" }}/images/ed.png</url>
+      <title>{{ .Site.Title }}</title>
+      <link>{{ .Site.BaseURL }}</link>
+    </image>
     {{ $pages := .Pages }}
     {{ if .IsHome }}{{ $pages = where .Site.RegularPages "Section" "in" (slice "posts" "notes" "links" "reading") }}{{ end }}
     {{ $feedPath := .RelPermalink | strings.TrimRight "/" }}
     {{ if eq $feedPath "" }}{{ $feedPath = "global (everything)" }}{{ end }}
     {{ range where $pages ".Date.IsZero" false }}
     <item>
-      <title>{{ if .Params.link }}→ {{ end }}{{ .Title }}</title>
+      <title>{{ if .Params.link }}→ {{ end }}{{ if .Title }}{{ .Title }}{{ else }}{{ .Content | plainify | truncate 60 "..." }}{{ end }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
