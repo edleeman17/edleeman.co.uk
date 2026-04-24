@@ -114,6 +114,11 @@ jobs:
               fi
 
             elif [[ "$FILE" == content/links/* ]]; then
+              SYNDICATE=$(sed -n 's/^syndicate: *\(true\|false\)/\1/p' "$FILE" | head -1)
+              if [ "$SYNDICATE" != "true" ]; then
+                echo "Skipping $FILE - syndicate not set to true"
+                continue
+              fi
               EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
               DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
               CLEAN_TITLE="${TITLE#→ }"
@@ -146,8 +151,10 @@ jobs:
               echo "Mastodon URL: $MASTODON_URL"
 
               # Insert syndication into frontmatter before closing ---
+              # Skip any bare `syndication: []` line to avoid duplicate keys
               awk -v url="$MASTODON_URL" '
                 BEGIN { count=0 }
+                /^syndication: \[\]$/ { next }
                 /^---$/ {
                   count++
                   if (count == 2) {

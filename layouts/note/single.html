@@ -6,7 +6,7 @@
 {{- $bookmarkOf := .Params.bookmark_of -}}
 <article class="h-entry{{ with $replyTo }} p-reply{{ end }}{{ with $likeOf }} p-like{{ end }}{{ with $repostOf }} p-repost{{ end }}{{ with $bookmarkOf }} p-bookmark{{ end }}">
     <span class="p-name" style="display:none;">{{ .Title }}</span>
-    <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
     {{ with $replyTo }}
