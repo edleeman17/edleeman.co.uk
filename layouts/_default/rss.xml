@@ -10,6 +10,7 @@
     {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
     {{ $pages := .Pages }}
     {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+    {{ $feedName := .Title }}
     {{ range where $pages ".Date.IsZero" false }}
     <item>
       <title>{{ if .Params.link }}→ {{ end }}{{ .Title }}</title>
@@ -22,7 +23,8 @@
       {{ with .Params.link -}}
         {{ $bookmarkLink = printf "<p><a href=\"%s\">%s</a></p>" . . -}}
       {{ end -}}
-      <description>{{ with $bookmarkLink }}{{ . | html }}{{ end }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}</description>
+      {{ $footer := printf `<hr><p><small>You're getting this because you follow my <strong>%s</strong> feed — if you'd like to filter what comes through, you can find all my feeds at <a href="https://edleeman.co.uk/rss">edleeman.co.uk/rss</a>.</small></p>` $feedName -}}
+      <description>{{ with $bookmarkLink }}{{ . | html }}{{ end }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}{{ $footer | html }}</description>
     </item>
     {{ end }}
   </channel>
