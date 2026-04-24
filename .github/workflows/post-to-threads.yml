@@ -49,6 +49,11 @@ jobs:
             URL="https://edleeman.co.uk/${SLUG}"
 
             if [[ "$FILE" == content/links/* ]]; then
+              SYNDICATE=$(sed -n 's/^syndicate: *\(true\|false\)/\1/p' "$FILE" | head -1)
+              if [ "$SYNDICATE" != "true" ]; then
+                echo "Skipping $FILE - syndicate not set to true"
+                continue
+              fi
               EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
               DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
               CLEAN_TITLE="${TITLE#→ }"
