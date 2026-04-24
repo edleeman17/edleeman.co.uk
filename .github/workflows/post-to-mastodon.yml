@@ -129,11 +129,29 @@ jobs:
               fi
             else
               # Notes: use body content (after second ---), fall back to title
-              BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE" | sed '/^$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
+
+              # Extract image URLs from markdown ![...](url) and upload to Mastodon
+              MEDIA_IDS="[]"
+              while IFS= read -r IMG_URL; do
+                [ -z "$IMG_URL" ] && continue
+                MEDIA_RESPONSE=$(curl -s -X POST \
+                  "https://fosstodon.org/api/v1/media" \
+                  -H "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \
+                  -F "url=${IMG_URL}")
+                MEDIA_ID=$(echo "$MEDIA_RESPONSE" | jq -r '.id // empty')
+                if [ -n "$MEDIA_ID" ]; then
+                  MEDIA_IDS=$(echo "$MEDIA_IDS" | jq --arg id "$MEDIA_ID" '. + [$id]')
+                fi
+              done < <(echo "$FULL_BODY" | grep -oP '!\[.*?\]\(\K[^)]+')
+
+              # Strip image markdown from status text
+              BODY=$(echo "$FULL_BODY" | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+
               if [ -n "$BODY" ]; then
                 STATUS=$(printf "%s\n\n%s" "$BODY" "$URL")
               else
-                STATUS=$(printf "%s\n%s" "$TITLE" "$URL")
+                STATUS=$(printf "%s" "$URL")
               fi
             fi
 
@@ -143,7 +161,8 @@ jobs:
               "https://fosstodon.org/api/v1/statuses" \
               -H "Authorization: Bearer ${MASTODON_ACCESS_TOKEN}" \
               -H "Content-Type: application/json" \
-              -d "$(jq -n --arg status "$STATUS" '{"status": $status, "visibility": "public"}')")
+              -d "$(jq -n --arg status "$STATUS" --argjson media_ids "$MEDIA_IDS" \
+                '{"status": $status, "visibility": "public"} + (if ($media_ids | length) > 0 then {"media_ids": $media_ids} else {} end)')")
 
             MASTODON_URL=$(echo "$MASTODON_RESPONSE" | jq -r '.url // empty')
 
