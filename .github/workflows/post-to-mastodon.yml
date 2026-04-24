@@ -128,10 +128,17 @@ jobs:
                 STATUS=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
               fi
             elif [[ "$FILE" == content/posts/* ]]; then
-              # Posts: title + URL (body too long, headings cause noise)
+              # Posts: "New post" intro + title + first paragraph excerpt + URL
               MEDIA_IDS="[]"
-              if [ -n "$TITLE" ]; then
-                STATUS=$(printf "%s\n\n%s" "$TITLE" "$URL")
+              FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
+              # First non-empty paragraph, strip markdown headings and formatting
+              EXCERPT=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed 's/\*\*\([^*]*\)\*\*/\1/g' | sed 's/\*\([^*]*\)\*/\1/g' | awk '/^$/{if(p)exit} /[^ ]/{p=1;print}' | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              # Truncate to 200 chars at word boundary
+              EXCERPT=$(echo "$EXCERPT" | awk '{if(length($0)>200){match($0,/^.{1,200} /);print substr($0,1,RLENGTH-1)"..."}else{print}}')
+              if [ -n "$TITLE" ] && [ -n "$EXCERPT" ]; then
+                STATUS=$(printf "New post: %s\n\n%s\n\n%s" "$TITLE" "$EXCERPT" "$URL")
+              elif [ -n "$TITLE" ]; then
+                STATUS=$(printf "New post: %s\n\n%s" "$TITLE" "$URL")
               else
                 STATUS=$(printf "%s" "$URL")
               fi
