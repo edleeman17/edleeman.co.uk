@@ -6,7 +6,7 @@ on:
     paths:
       - 'content/posts/**'
       - 'content/notes/**'
-      - 'content/links/**'
+      - 'content/reading/**'
 
 jobs:
   syndicate:
@@ -23,9 +23,11 @@ jobs:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: |
-          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/' 'content/links/')
+          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
+          READING_FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/reading/')
+          ALL_FILES="$FILES $READING_FILES"
 
-          if [ -z "$FILES" ]; then
+          if [ -z "$(echo $ALL_FILES | tr -d ' ')" ]; then
             echo "No new files"
             exit 0
           fi
@@ -46,7 +48,7 @@ jobs:
 
           CHANGED=false
 
-          for FILE in $FILES; do
+          for FILE in $ALL_FILES; do
             [ -f "$FILE" ] || continue
 
             # Skip if already has a Bluesky syndication URL
@@ -59,19 +61,26 @@ jobs:
             SLUG=$(echo "$FILE" | sed 's|^content/||;s|\.md$|/|')
             URL="https://edleeman.co.uk/${SLUG}"
 
-            if [[ "$FILE" == content/links/* ]]; then
-              SYNDICATE=$(sed -n 's/^syndicate: *\(true\|false\)/\1/p' "$FILE" | head -1)
-              if [ "$SYNDICATE" != "true" ]; then
-                echo "Skipping $FILE - syndicate not set to true"
+            if [[ "$FILE" == content/reading/* ]]; then
+              SHELF=$(sed -n 's/^shelf: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              if [ "$SHELF" != "read" ]; then
+                echo "Skipping $FILE - shelf is '$SHELF', not 'read'"
                 continue
               fi
-              EXTERNAL_LINK=$(sed -n 's/^link: *"\(.*\)"/\1/p' "$FILE" | head -1)
-              DESCRIPTION=$(sed -n 's/^description: *"\(.*\)"/\1/p' "$FILE" | head -1)
-              CLEAN_TITLE="${TITLE#→ }"
-              if [ -n "$DESCRIPTION" ]; then
-                TEXT=$(printf "🔖 %s\n\n%s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$DESCRIPTION" "$EXTERNAL_LINK" "$URL")
+              AUTHOR=$(sed -n 's/^author: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              RATING=$(sed -n 's/^rating: *\([0-9]*\)/\1/p' "$FILE" | head -1)
+              REVIEW=$(sed -n 's/^review: *"\(.*\)"/\1/p' "$FILE" | head -1)
+              STARS=""
+              if [ -n "$RATING" ] && [ "$RATING" -gt 0 ]; then
+                for i in $(seq 1 "$RATING"); do STARS="${STARS}★"; done
+                for i in $(seq "$RATING" 4); do STARS="${STARS}☆"; done
+              fi
+              HEADER="📚 \"${TITLE}\" by ${AUTHOR}"
+              [ -n "$STARS" ] && HEADER="${HEADER} — ${STARS}"
+              if [ -n "$REVIEW" ]; then
+                TEXT=$(printf "%s\n\n%s\n\n%s" "$HEADER" "$REVIEW" "$URL")
               else
-                TEXT=$(printf "🔖 %s\n\n%s\n\nvia %s" "$CLEAN_TITLE" "$EXTERNAL_LINK" "$URL")
+                TEXT=$(printf "%s\n\n%s" "$HEADER" "$URL")
               fi
             else
               TEXT=$(printf "%s\n%s" "$TITLE" "$URL")
