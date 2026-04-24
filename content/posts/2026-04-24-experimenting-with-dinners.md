@@ -7,8 +7,6 @@ syndication:
   - "https://fosstodon.org/@edphones/116461179415870650"
 ---
 
-# Experimenting with dinners
-
 I have a problem with food. I think I always have since a child, but now the metabolism has slowed down and the weight has caught up.
 
 I’ve done everything. Intermittent Fasting, OMAD, MyFitnessPal etc etc. 
