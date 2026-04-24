@@ -19,7 +19,7 @@
     {{ if eq $feedPath "" }}{{ $feedPath = "global (everything)" }}{{ end }}
     {{ range where $pages ".Date.IsZero" false }}
     <item>
-      <title>{{ if .Params.link }}→ {{ end }}{{ if .Title }}{{ .Title }}{{ else }}{{ .Content | plainify | truncate 60 "..." }}{{ end }}</title>
+      <title>{{ if .Params.link }}→ {{ end }}{{ if .Title }}{{ .Title }}{{ else }}{{ .Content | plainify | chomp | replaceRE `\s+` " " | truncate 60 "..." }}{{ end }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
