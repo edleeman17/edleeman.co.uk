@@ -5,6 +5,7 @@ services:
       BEARER_TOKEN: "${BEARER_TOKEN}"
       REPO_PATH: /repo
       SITE_URL: https://edleeman.co.uk
+      TZ: Europe/London
     volumes:
       - /home/ed/docker-projects/edleeman.co.uk:/repo
       - /home/ed/.ssh:/root/.ssh:ro

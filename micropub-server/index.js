@@ -89,7 +89,7 @@ app.post('/micropub', auth, (req, res) => {
   try {
     const props = parseProps(req.body);
     const now = new Date();
-    const iso = now.toISOString();
+    const iso = localISO(now);
     const datePart = iso.slice(0, 10);
     const timePart = now.toTimeString().slice(0, 8).replace(/:/g, '');
 
@@ -167,6 +167,15 @@ function slugify(str) {
 
 function esc(str) {
   return String(str).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+function localISO(date) {
+  const off = -date.getTimezoneOffset();
+  const sign = off >= 0 ? '+' : '-';
+  const pad = n => String(Math.floor(Math.abs(n))).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T` +
+    `${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}` +
+    `${sign}${pad(off/60)}:${pad(off%60)}`;
 }
 
 app.listen(3000, () => console.log('micropub :3000'));
