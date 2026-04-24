@@ -3,7 +3,8 @@ title: "Experimenting with dinners"
 date: 2026-04-24T19:49:18+01:00
 draft: false
 type: "post"
-syndication: []
+syndication:
+  - "https://fosstodon.org/@edphones/116461179415870650"
 ---
 
 # Experimenting with dinners
