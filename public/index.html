@@ -47,11 +47,16 @@
 
 <link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
 <link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+<link rel="authorization_endpoint" href="https://indielogin.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 
 
-    <link rel="stylesheet" href="/css/shibui.min.2dde33969d4d5e378a33b00cb356d9d5b3b4ec0c6e8614348db13632ec0c1df4.css" integrity="sha256-Ld4zlp1NXjeKM7AMs1bZ1bO07AxuhhQ0jbE2MuwMHfQ=" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/custom.min.757071093e278b5a7a32f9cb07034808c653d26a758be4753624c365dd8615ce.css" integrity="sha256-dXBxCT4ni1p6MvnLBwNICMZT0mp1i&#43;R1NiTDZd2GFc4=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1776865507">
+<link rel="human" type="application/json" href="/human.json">
+
+
+    <link rel="stylesheet" href="/css/shibui.min.c029598b90f0c1fae84f56c631d317350448a45053cc5a4bf5076d54571349b6.css" integrity="sha256-wClZi5DwwfroT1bGMdMXNQRIpFBTzFpL9QdtVFcTSbY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.min.c6a60525f62660a686ba630868b05b79466d1fea855eb0f97ef2aca5221a93c4.css" integrity="sha256-xqYFJfYmYKaGumMIaLBbeUZtH&#43;qFXrD5fvKspSIak8Q=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1777035520">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
@@ -66,9 +71,11 @@
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header role="banner"><a href="https://edleeman.co.uk" class="site-title">Ed Leeman</a>
-<nav aria-label="Main navigation">
+    <header role="banner"><nav class="top-nav" aria-label="Main navigation">
   <ul>
+    <li>
+      <a href="/about/">about</a>
+    </li>
     <li>
       <a href="/posts/">posts</a>
     </li>
@@ -76,22 +83,31 @@
       <a href="/notes/">notes</a>
     </li>
     <li>
-      <a href="/reading/">reading</a>
-    </li>
-    <li>
       <a href="/projects/">projects</a>
     </li>
     <li>
-      <a href="/links/">links</a>
+      <a href="/slashpages/">/slashpages</a>
     </li>
     <li>
-      <a href="/about/">about</a>
-    </li>
-    <li>
-      <a href="/search/">search</a>
+      <a href="/rss/">rss</a>
     </li>
   </ul>
 </nav>
+
+<nav class="path-nav" aria-label="Breadcrumb">
+  <ol>
+    
+  
+  <li class="current">
+    /
+    <a href="/">Ed Leeman</a>
+    
+  </li>
+
+  </ol>
+</nav>
+
+
 </header>
     <main id="main-content" role="main">
 <div id="main" class="prose-wrap">
@@ -101,14 +117,9 @@
         </div>
         <div class="name">
             <h1>Ed Leeman</h1>
-            <p>Platform Engineer</p>
-            <p id="now_playing"></p>
+            <p>Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life.</p>
+            <p id="now_playing" style="display:none"></p>
         </div>
-    </section>
-    <section id="about">
-        <span class="green">➜</span>
-        <span class="cyan">~</span>
-        <span>Platform Engineer based in Portsmouth, UK. Keen dumper of notes, privacy advocate and solver of problems that I make for myself. Currently exploring AI and automating my life.</span>
     </section>
     <section id="posts">
         <h2>Posts</h2>
@@ -118,8 +129,18 @@
     
     
     <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-04-15T10:59:07Z">2026-04-15</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/new-pages-on-the-site/">New Pages on the Site</a></span>
+    </article>
+    
+    <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2026-03-04T00:00:00Z">2026-03-04</time></span>
         <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/teaching-claude-code-to-work-with-my-adhd-brain/">Teaching Claude Code to Work With My ADHD Brain</a></span>
+    </article>
+    
+    <article class="feed post h-entry">
+        <span class="post-date"><time class="dt-published" datetime="2026-02-26T12:00:00Z">2026-02-26</time></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/saving-llm-tokens-with-quiet-makefiles/">Saving LLM tokens with quiet Makefiles</a></span>
     </article>
     
     <article class="feed post h-entry">
@@ -133,96 +154,53 @@
     </article>
     
     <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2024-02-08T18:23:55Z">2024-02-08</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/confessions-of-a-failed-multitasker/">Confessions of a Failed Multitasker</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2024-01-16T12:28:12Z">2024-01-16</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/my-app-defaults-of-2024/">My App Defaults of 2024</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2022-11-09T12:29:19Z">2022-11-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/creating-really-simple-api-authentication-in-.net/">Creating really simple API Authentication in .NET</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2021-08-03T14:46:16Z">2021-08-03</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/preventing-email-floods/">Preventing Email Floods</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2021-07-02T19:39:30Z">2021-07-02</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/self-hosting-your-own-matrix-server-on-a-raspberry-pi/">Self Hosting Your Own Matrix Server on a Raspberry Pi</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2021-03-29T15:58:50Z">2021-03-29</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/disable-javascript-to-view-this-site/">Disable JavaScript to view this site?</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2021-03-26T21:49:09Z">2021-03-26</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/deleted-docker-compose/">Deleted docker-compose</a></span>
-    </article>
-    
-</div><p><a href="/archive">View all my posts in the archive</a></p>
-    </section>
-    <section id="notes">
-        <h2>Quick Notes</h2>
-        <p>Quick notes and thoughts that I've been jotting down. Mostly for my own reference, but you might find them interesting.</p>
-        <div class="post-feed h-feed">
-    <span class="p-name" style="display:none;">Notes by Ed Leeman</span>
-    
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2026-04-15T10:59:07Z">2026-04-15</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/new-pages-on-the-site/">New Pages on the Site</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2026-02-26T12:00:00Z">2026-02-26</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/saving-tokens-with-quiet-makefiles/">Saving LLM tokens with quiet Makefiles</a></span>
-    </article>
-    
-    <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2024-03-11T17:56:22Z">2024-03-11</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/cd-into-cloned-repository/">CD into a cloned git repository</a></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/cd-into-a-cloned-git-repository/">CD into a cloned git repository</a></span>
     </article>
     
     <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2024-02-12T23:42:41Z">2024-02-12</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/">Fixing Syntax Highlighting for Hugo Chroma iOS</a></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/fixing-syntax-highlighting-for-hugo-chroma-ios/">Fixing Syntax Highlighting for Hugo Chroma iOS</a></span>
     </article>
     
     <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2024-02-09T16:15:14Z">2024-02-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/formatting-json-files-in-vim/">Formatting JSON files in Vim</a></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/formatting-json-files-in-vim/">Formatting JSON files in Vim</a></span>
     </article>
     
     <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2024-02-09T16:12:46Z">2024-02-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/not-found/">[[: not found fix</a></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/not-found-fix/">[[: not found fix</a></span>
     </article>
     
     <article class="feed post h-entry">
         <span class="post-date"><time class="dt-published" datetime="2024-02-09T13:30:38Z">2024-02-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/assuming-an-aws-role-in-ci-cd/">Assuming an AWS Role in CI/CD</a></span>
+        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/posts/assuming-an-aws-role-in-ci/cd/">Assuming an AWS Role in CI/CD</a></span>
     </article>
     
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2024-02-09T13:28:26Z">2024-02-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/installing-commands-using-existing-docker-images/">Installing Commands Using Existing Docker Images</a></span>
-    </article>
+</div><p><a href="/posts/">View all posts</a></p>
+    </section>
+    <section id="notes">
+        <h2>Notes</h2>
+        <p>Short updates, thoughts, and things I'm noticing.</p>
+        <div class="note-feed h-feed">
+    <span class="p-name" style="display:none;">Notes by Ed Leeman</span>
     
-    <article class="feed post h-entry">
-        <span class="post-date"><time class="dt-published" datetime="2024-02-09T11:08:23Z">2024-02-09</time></span>
-        <span class="link"><a class="u-url p-name" href="https://edleeman.co.uk/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/">Devcontainers will override entrypoints defined in Dockerfiles</a></span>
+    <article class="note-entry h-entry">
+        <span class="p-name" style="display:none;"></span>
+        <a class="u-url" href="https://edleeman.co.uk/notes/2026-04-23-195800/" style="display:none;"></a>
+        <a class="u-syndication" href="https://fosstodon.org/@edphones/116455749208525372" rel="syndication" style="display:none;"></a>
+        <div class="note-entry-header">
+            <a class="note-timestamp u-url dt-published" href="https://edleeman.co.uk/notes/2026-04-23-195800/" datetime="2026-04-23T19:58:00Z">[2026-04-23 19:58]</a>
+            <a class="note-syndication-link" href="https://fosstodon.org/@edphones/116455749208525372" rel="syndication">↩ Mastodon</a>
+        </div>
+        <div class="e-content note-body"><p>Apologies to my RSS readers. I&rsquo;ve been making quite a few changes and it seems that they syndicate..</p>
+</div>
     </article>
     
 </div>
 
+        <p><a href="/notes/">View all notes</a></p>
     </section>
     <section id="photos">
         <h2>Photos</h2>
@@ -278,23 +256,31 @@
   fetch('https://charityshot.co.uk/api/photos.json')
     .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function(photos) {
-      var six = photos.slice(0, 6);
       var siteUrl = 'https://charityshot.co.uk';
       var html = '<div class="photo-grid-preview">';
-      six.forEach(function(photo) {
-        var img = siteUrl + photo.image;
+      var count = 0;
+      for (var i = 0; i < photos.length && count < 6; i++) {
+        var photo = photos[i];
         var link = siteUrl + '/feed/' + photo.slug;
         var caption = photo.caption || '';
         var location = photo.location || '';
-        html += '<div class="photo-card">';
-        html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
-        html += '<img src="' + img + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
-        html += '</a>';
-        html += '<div class="photo-overlay">';
-        if (caption) html += '<div class="photo-caption">' + caption + '</div>';
-        if (location) html += '<div class="photo-location">' + location + '</div>';
-        html += '</div></div>';
-      });
+        var allImages = [photo.image].concat(
+          (photo.images || []).map(function(im) { return im.image; })
+        );
+        for (var j = 0; j < allImages.length && count < 6; j++) {
+          var imgSrc = allImages[j];
+          var img = imgSrc.startsWith('http') ? imgSrc : siteUrl + imgSrc;
+          html += '<div class="photo-card">';
+          html += '<a href="' + link + '" target="_blank" rel="noopener noreferrer">';
+          html += '<img src="' + img + '" alt="' + caption.replace(/"/g, '&quot;') + '" loading="lazy">';
+          html += '</a>';
+          html += '<div class="photo-overlay">';
+          if (caption) html += '<div class="photo-caption">' + caption + '</div>';
+          if (location) html += '<div class="photo-location">' + location + '</div>';
+          html += '</div></div>';
+          count++;
+        }
+      }
       html += '</div>';
       document.getElementById('photos-preview-container').innerHTML = html;
     })
@@ -324,7 +310,8 @@
 
                 var currentTrack = track.name + ' by ' + track.artist['#text'];
                 var nowPlayingEl = document.getElementById('now_playing');
-                nowPlayingEl.innerHTML = '<a href="' + track.url + '">' + listeningText + currentTrack + ' <i class="fas fa-compact-disc fa-spin"></i></a>';
+                nowPlayingEl.innerHTML = '<a href="' + track.url + '">' + listeningText + currentTrack + ' <i class="fas fa-compact-disc fa-spin"></i></a> (generally commandeered by my daughters...)';
+                nowPlayingEl.style.display = '';
             })
             .catch(function(err) {
                 console.log('Last.fm error:', err);
@@ -333,33 +320,37 @@
 </script>
 
 </main>
-    <footer role="contentinfo"><div class="h-card" style="display:none;">
-    <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
-    <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
-    <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
-</div>
-
-<div class="footer-social">
+    <footer role="contentinfo"><div class="terminal-nav">
+  <div class="footer-social">
     <a rel="me" href="https://github.com/edleeman17">Github</a>
     <a rel="me" href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
     <a rel="me" href="https://open.spotify.com/user/edleeman17">Spotify</a>
     <a rel="me" href="https://www.last.fm/user/ed1727">Last.fm</a>
     <a rel="me" href="https://matrix.to/#/@ed:selfhostingblog.com">Matrix</a>
     <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
-</div>
+  </div>
 
-<div class="footer-webrings">
+  <div class="footer-webrings">
     <span><a href="https://xn--sr8hvo.ws/previous">←</a> <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next">→</a></span>
     <span><a href="https://fediring.net/previous?host=edleeman.co.uk">←</a> <a href="https://fediring.net/">Fediring</a> <a href="https://fediring.net/next?host=edleeman.co.uk">→</a></span>
-</div>
+  </div>
 
-<div class="footer-meta">
+  <div class="footer-meta">
     <span>Running on a <a href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.</span>
-</div>
+  </div>
 
-<div class="footer-cookiezero">
+  <div class="footer-cookiezero">
     <a href="/cookie-zero"><img src="/images/cookiezero.webp" alt="Cookie Zero" class="cookiezero-badge"></a>
     <button class="cookiezero-copy" onclick="navigator.clipboard.writeText('&lt;a href=&quot;https://edleeman.co.uk/cookie-zero&quot;&gt;\n    &lt;img src=&quot;https://edleeman.co.uk/images/cookiezero.webp&quot; alt=&quot;Cookie Zero&quot;&gt;\n&lt;/a&gt;').then(function(){ var b=document.querySelector('.cookiezero-copy'); b.textContent='copied!'; setTimeout(function(){ b.textContent='copy embed'; },2000); })">copy embed</button>
+  </div>
+
+  <p role="contentinfo">&copy; 2026 Ed Leeman &middot; <a href="/ai-declaration/">AI declaration</a> &middot; <a href="/human.json">human.json</a></p>
+</div>
+
+<div class="h-card" style="display:none;">
+  <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
+  <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
+  <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
 </div>
 
 <script>

@@ -57,11 +57,16 @@
 
 <link rel="webmention" href="https://webmention.io/edleeman.co.uk/webmention">
 <link rel="pingback" href="https://webmention.io/edleeman.co.uk/xmlrpc">
+<link rel="authorization_endpoint" href="https://indielogin.com/auth">
+<link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 
 
-    <link rel="stylesheet" href="/css/shibui.min.2dde33969d4d5e378a33b00cb356d9d5b3b4ec0c6e8614348db13632ec0c1df4.css" integrity="sha256-Ld4zlp1NXjeKM7AMs1bZ1bO07AxuhhQ0jbE2MuwMHfQ=" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/custom.min.757071093e278b5a7a32f9cb07034808c653d26a758be4753624c365dd8615ce.css" integrity="sha256-dXBxCT4ni1p6MvnLBwNICMZT0mp1i&#43;R1NiTDZd2GFc4=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1776865506">
+<link rel="human" type="application/json" href="/human.json">
+
+
+    <link rel="stylesheet" href="/css/shibui.min.c029598b90f0c1fae84f56c631d317350448a45053cc5a4bf5076d54571349b6.css" integrity="sha256-wClZi5DwwfroT1bGMdMXNQRIpFBTzFpL9QdtVFcTSbY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.min.c6a60525f62660a686ba630868b05b79466d1fea855eb0f97ef2aca5221a93c4.css" integrity="sha256-xqYFJfYmYKaGumMIaLBbeUZtH&#43;qFXrD5fvKspSIak8Q=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1777035519">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
@@ -76,9 +81,11 @@
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <header role="banner"><a href="https://edleeman.co.uk" class="site-title">Ed Leeman</a>
-<nav aria-label="Main navigation">
+    <header role="banner"><nav class="top-nav" aria-label="Main navigation">
   <ul>
+    <li>
+      <a href="/about/">about</a>
+    </li>
     <li>
       <a href="/posts/">posts</a>
     </li>
@@ -86,22 +93,40 @@
       <a href="/notes/">notes</a>
     </li>
     <li>
-      <a href="/reading/">reading</a>
-    </li>
-    <li>
       <a href="/projects/">projects</a>
     </li>
     <li>
-      <a href="/links/">links</a>
+      <a href="/slashpages/">/slashpages</a>
     </li>
     <li>
-      <a href="/about/">about</a>
-    </li>
-    <li>
-      <a href="/search/">search</a>
+      <a href="/rss/">rss</a>
     </li>
   </ul>
 </nav>
+
+<nav class="path-nav" aria-label="Breadcrumb">
+  <ol>
+    
+  
+    
+  
+  <li>
+    /
+    <a href="/">Ed Leeman</a>
+    /
+  </li>
+
+  
+  <li class="current">
+    
+    <a href="/cookie-zero/">Cookie Zero</a>
+    
+  </li>
+
+  </ol>
+</nav>
+
+
 </header>
     <main id="main-content" role="main">
 <div class="main prose-wrap">
@@ -128,34 +153,46 @@
 </ul>
 
 </div>
-</main>
-    <footer role="contentinfo"><div class="h-card" style="display:none;">
-    <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
-    <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
-    <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
+<div class="terminal-nav">
+  <div class="back-nav">
+    
+      <a href="/" class="back-link">../</a>
+    
+  </div>
 </div>
 
-<div class="footer-social">
+</main>
+    <footer role="contentinfo"><div class="terminal-nav">
+  <div class="footer-social">
     <a rel="me" href="https://github.com/edleeman17">Github</a>
     <a rel="me" href="https://www.linkedin.com/in/ed-leeman-001/">LinkedIn</a>
     <a rel="me" href="https://open.spotify.com/user/edleeman17">Spotify</a>
     <a rel="me" href="https://www.last.fm/user/ed1727">Last.fm</a>
     <a rel="me" href="https://matrix.to/#/@ed:selfhostingblog.com">Matrix</a>
     <a rel="me" href="https://fosstodon.org/@edphones">Mastodon</a>
-</div>
+  </div>
 
-<div class="footer-webrings">
+  <div class="footer-webrings">
     <span><a href="https://xn--sr8hvo.ws/previous">←</a> <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> <a href="https://xn--sr8hvo.ws/next">→</a></span>
     <span><a href="https://fediring.net/previous?host=edleeman.co.uk">←</a> <a href="https://fediring.net/">Fediring</a> <a href="https://fediring.net/next?host=edleeman.co.uk">→</a></span>
-</div>
+  </div>
 
-<div class="footer-meta">
+  <div class="footer-meta">
     <span>Running on a <a href="https://amzn.to/3kBHi2H">Raspberry Pi 4</a> in my loft.</span>
-</div>
+  </div>
 
-<div class="footer-cookiezero">
+  <div class="footer-cookiezero">
     <a href="/cookie-zero"><img src="/images/cookiezero.webp" alt="Cookie Zero" class="cookiezero-badge"></a>
     <button class="cookiezero-copy" onclick="navigator.clipboard.writeText('&lt;a href=&quot;https://edleeman.co.uk/cookie-zero&quot;&gt;\n    &lt;img src=&quot;https://edleeman.co.uk/images/cookiezero.webp&quot; alt=&quot;Cookie Zero&quot;&gt;\n&lt;/a&gt;').then(function(){ var b=document.querySelector('.cookiezero-copy'); b.textContent='copied!'; setTimeout(function(){ b.textContent='copy embed'; },2000); })">copy embed</button>
+  </div>
+
+  <p role="contentinfo">&copy; 2026 Ed Leeman &middot; <a href="/ai-declaration/">AI declaration</a> &middot; <a href="/human.json">human.json</a></p>
+</div>
+
+<div class="h-card" style="display:none;">
+  <a class="p-name u-url" rel="me" href="https://edleeman.co.uk">Ed Leeman</a>
+  <img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman">
+  <a class="u-email" href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a>
 </div>
 
 <script>

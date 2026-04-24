@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://edleeman.co.uk/</loc>
-    <lastmod>2026-04-19T02:01:15+01:00</lastmod>
-  </url><url>
-    <loc>https://edleeman.co.uk/links/2026-04-19-1776560475324-gotosocial-fast-fun-activitypub-server-powered-by-go/</loc>
-    <lastmod>2026-04-19T02:01:15+01:00</lastmod>
+    <lastmod>2026-04-24T13:36:13+01:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/links/</loc>
+    <lastmod>2026-04-24T13:36:13+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/links/2026-04-24-1777034173032-making-a-micropub-server-that-works-with-ia-writer-sam-warni/</loc>
+    <lastmod>2026-04-24T13:36:13+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/notes/2026-04-23-195800/</loc>
+    <lastmod>2026-04-23T19:58:00+00:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/notes/</loc>
+    <lastmod>2026-04-23T19:58:00+00:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/ai-declaration/</loc>
+    <lastmod>2026-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/links/2026-04-19-1776560475324-gotosocial-fast-fun-activitypub-server-powered-by-go/</loc>
     <lastmod>2026-04-19T02:01:15+01:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/reading/</loc>
@@ -38,10 +50,10 @@
     <loc>https://edleeman.co.uk/links/2026-04-15-1776261857346-xteink-x4/</loc>
     <lastmod>2026-04-15T15:04:17+01:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/new-pages-on-the-site/</loc>
+    <loc>https://edleeman.co.uk/posts/new-pages-on-the-site/</loc>
     <lastmod>2026-04-15T10:59:07+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/</loc>
+    <loc>https://edleeman.co.uk/posts/</loc>
     <lastmod>2026-04-15T10:59:07+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/reading/strange-houses/</loc>
@@ -128,13 +140,10 @@
     <loc>https://edleeman.co.uk/reading/stoner/</loc>
     <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/posts/</loc>
-    <lastmod>2026-03-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://edleeman.co.uk/posts/teaching-claude-code-to-work-with-my-adhd-brain/</loc>
     <lastmod>2026-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/saving-tokens-with-quiet-makefiles/</loc>
+    <loc>https://edleeman.co.uk/posts/saving-llm-tokens-with-quiet-makefiles/</loc>
     <lastmod>2026-02-26T12:00:00+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/posts/sift-the-dumbphone-companion/</loc>
@@ -272,22 +281,22 @@
     <loc>https://edleeman.co.uk/reading/the-lost-art-of-running-a-journey-to-rediscover-the-forgotten-essence-of-human-movement/</loc>
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/cd-into-cloned-repository/</loc>
+    <loc>https://edleeman.co.uk/posts/cd-into-a-cloned-git-repository/</loc>
     <lastmod>2024-03-11T17:56:22+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/reading/1984/</loc>
     <lastmod>2024-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/fixing-syntax-highlighting-for-hugo-chroma-ios/</loc>
+    <loc>https://edleeman.co.uk/posts/fixing-syntax-highlighting-for-hugo-chroma-ios/</loc>
     <lastmod>2024-02-12T23:42:41+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/formatting-json-files-in-vim/</loc>
+    <loc>https://edleeman.co.uk/posts/formatting-json-files-in-vim/</loc>
     <lastmod>2024-02-09T16:15:14+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/not-found/</loc>
+    <loc>https://edleeman.co.uk/posts/not-found-fix/</loc>
     <lastmod>2024-02-09T16:12:46+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/assuming-an-aws-role-in-ci-cd/</loc>
+    <loc>https://edleeman.co.uk/posts/assuming-an-aws-role-in-ci/cd/</loc>
     <lastmod>2024-02-09T13:30:38+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/tags/knowledge/</loc>
@@ -296,10 +305,10 @@
     <loc>https://edleeman.co.uk/tags/</loc>
     <lastmod>2024-02-09T13:30:38+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/installing-commands-using-existing-docker-images/</loc>
+    <loc>https://edleeman.co.uk/posts/installing-commands-using-existing-docker-images/</loc>
     <lastmod>2024-02-09T13:28:26+00:00</lastmod>
   </url><url>
-    <loc>https://edleeman.co.uk/notes/dev-containers-will-override-entrypoints-defined-in-dockerfiles/</loc>
+    <loc>https://edleeman.co.uk/posts/devcontainers-will-override-entrypoints-defined-in-dockerfiles/</loc>
     <lastmod>2024-02-09T11:08:23+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/posts/confessions-of-a-failed-multitasker/</loc>
@@ -747,8 +756,6 @@
     <lastmod>2019-12-15T11:29:00+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/about/</loc>
-  </url><url>
-    <loc>https://edleeman.co.uk/archive/</loc>
   </url><url>
     <loc>https://edleeman.co.uk/blogroll/</loc>
   </url><url>
