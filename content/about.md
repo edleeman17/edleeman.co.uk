@@ -3,9 +3,9 @@ title: "About me"
 type: page
 ---
 
-# About me
+<h1>About me <span id="live-age" data-pagefind-ignore></span></h1>
 
-Software Engineer, Self Hoster, DevOpser, Photographer, Dad — <span id="live-age"></span>
+Software Engineer, Self Hoster, DevOpser, Photographer, Dad
 
 <script>
 (function() {
