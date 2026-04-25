@@ -16,6 +16,10 @@ jobs:
   syndicate:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for deploy
+        if: ${{ github.event_name == 'push' }}
+        run: sleep 300
+
       - name: Checkout
         uses: actions/checkout@v4
         with:

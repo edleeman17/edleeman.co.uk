@@ -7,11 +7,21 @@ on:
       - 'content/posts/**'
       - 'content/notes/**'
       - 'content/reading/**'
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Specific file to syndicate (e.g. content/notes/2026-04-23-195800.md)'
+        required: false
+        default: ''
 
 jobs:
   syndicate:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for deploy
+        if: ${{ github.event_name == 'push' }}
+        run: sleep 300
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -23,9 +33,20 @@ jobs:
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: |
-          FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
-          READING_FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/reading/')
-          ALL_FILES="$FILES $READING_FILES"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SPECIFIC_FILE="${{ github.event.inputs.file }}"
+            if [ -n "$SPECIFIC_FILE" ]; then
+              echo "Single file mode: $SPECIFIC_FILE"
+              ALL_FILES="$SPECIFIC_FILE"
+            else
+              echo "No file specified"
+              exit 0
+            fi
+          else
+            FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
+            READING_FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/reading/')
+            ALL_FILES="$FILES $READING_FILES"
+          fi
 
           if [ -z "$(echo $ALL_FILES | tr -d ' ')" ]; then
             echo "No new files"
@@ -102,7 +123,7 @@ jobs:
                   "repo": $did,
                   "collection": "app.bsky.feed.post",
                   "record": {
-                    "\$type": "app.bsky.feed.post",
+                    ("$" + "type"): "app.bsky.feed.post",
                     "text": $text,
                     "createdAt": $now
                   }

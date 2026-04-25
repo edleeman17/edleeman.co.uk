@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://edleeman.co.uk/notes/2026-04-24-173111/</loc>
-    <lastmod>2026-04-24T17:31:11+01:00</lastmod>
-  </url><url>
     <loc>https://edleeman.co.uk/</loc>
+    <lastmod>2026-04-25T17:08:01+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/links/</loc>
+    <lastmod>2026-04-25T17:08:01+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/links/2026-04-25-1777133281950-liquid-apollo-app-app-store/</loc>
+    <lastmod>2026-04-25T17:08:01+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/posts/experimenting-with-dinners/</loc>
+    <lastmod>2026-04-24T19:49:18+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/posts/</loc>
+    <lastmod>2026-04-24T19:49:18+01:00</lastmod>
+  </url><url>
+    <loc>https://edleeman.co.uk/notes/2026-04-24-173111/</loc>
     <lastmod>2026-04-24T17:31:11+01:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/notes/</loc>
@@ -16,9 +28,6 @@
   </url><url>
     <loc>https://edleeman.co.uk/notes/2026-04-24-145640/</loc>
     <lastmod>2026-04-24T14:56:40+00:00</lastmod>
-  </url><url>
-    <loc>https://edleeman.co.uk/links/</loc>
-    <lastmod>2026-04-24T13:36:13+01:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/links/2026-04-24-1777034173032-making-a-micropub-server-that-works-with-ia-writer-sam-warni/</loc>
     <lastmod>2026-04-24T13:36:13+01:00</lastmod>
@@ -60,9 +69,6 @@
     <lastmod>2026-04-15T15:04:17+01:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/posts/new-pages-on-the-site/</loc>
-    <lastmod>2026-04-15T10:59:07+00:00</lastmod>
-  </url><url>
-    <loc>https://edleeman.co.uk/posts/</loc>
     <lastmod>2026-04-15T10:59:07+00:00</lastmod>
   </url><url>
     <loc>https://edleeman.co.uk/reading/strange-houses/</loc>
