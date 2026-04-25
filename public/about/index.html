@@ -67,7 +67,7 @@
 
     <link rel="stylesheet" href="/css/shibui.min.c029598b90f0c1fae84f56c631d317350448a45053cc5a4bf5076d54571349b6.css" integrity="sha256-wClZi5DwwfroT1bGMdMXNQRIpFBTzFpL9QdtVFcTSbY=" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/custom.min.c6a60525f62660a686ba630868b05b79466d1fea855eb0f97ef2aca5221a93c4.css" integrity="sha256-xqYFJfYmYKaGumMIaLBbeUZtH&#43;qFXrD5fvKspSIak8Q=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1777055640">
+<link rel="stylesheet" href="https://edleeman.co.ukcss/syntax.css?v=1777132538">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
@@ -132,7 +132,20 @@
     <main id="main-content" role="main">
 <div class="main prose-wrap">
     <h1 id="about-me">About me</h1>
-<p>Software Engineer, Self Hoster, DevOpser, Photographer, Dad</p>
+<p>Software Engineer, Self Hoster, DevOpser, Photographer, Dad — <span id="live-age"></span></p>
+<script>
+(function() {
+  var birth = new Date('1998-01-01T00:00:00');
+  var el = document.getElementById('live-age');
+  function update() {
+    var ms = Date.now() - birth.getTime();
+    var years = ms / (365.25 * 24 * 60 * 60 * 1000);
+    el.textContent = years.toFixed(9);
+  }
+  update();
+  setInterval(update, 100);
+})();
+</script>
 <p>Email: <a href="mailto:hello@edleeman.co.uk">hello@edleeman.co.uk</a></p>
 <p>To send me an encrypted email, my OpenPGP public key is available on public keyservers. Modern email clients should pick it up automatically. If not, you can find my public key <a href="https://edleeman.co.uk/.well-known/publickey.txt">here</a></p>
 <p>Key ID: 0x5C8C3EF2838E6186</p>

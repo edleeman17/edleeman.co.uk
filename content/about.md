@@ -5,7 +5,21 @@ type: page
 
 # About me
 
-Software Engineer, Self Hoster, DevOpser, Photographer, Dad
+Software Engineer, Self Hoster, DevOpser, Photographer, Dad — <span id="live-age"></span>
+
+<script>
+(function() {
+  var birth = new Date('1998-01-01T00:00:00');
+  var el = document.getElementById('live-age');
+  function update() {
+    var ms = Date.now() - birth.getTime();
+    var years = ms / (365.25 * 24 * 60 * 60 * 1000);
+    el.textContent = years.toFixed(9);
+  }
+  update();
+  setInterval(update, 100);
+})();
+</script>
 
 Email: [hello@edleeman.co.uk](mailto:hello@edleeman.co.uk)
 
