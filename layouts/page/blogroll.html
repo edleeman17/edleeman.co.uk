@@ -1,0 +1,87 @@
+{{ define "main" }}
+<div class="main prose-wrap">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <style>
+    .blogroll-section-title {
+      font-size: var(--text-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin: var(--space-6) 0 var(--space-3);
+    }
+
+    .blogroll-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6);
+    }
+
+    .blogroll-item {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .blogroll-item:last-child {
+      border-bottom: none;
+    }
+
+    .blogroll-title {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .blogroll-feed-link {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .blogroll-feed-link:hover {
+      color: var(--color-accent);
+    }
+  </style>
+
+  {{ $feeds := $.Site.Data.blogroll.feeds }}
+  {{ $favourites := where $feeds "favourite" true }}
+  {{ $rest := where $feeds "favourite" false }}
+
+  {{ if $favourites }}
+  <p class="blogroll-section-title">Favourites</p>
+  <ul class="blogroll-list">
+    {{ range $favourites }}
+    <li class="blogroll-item">
+      <span class="blogroll-title">
+        {{ if .site_url }}<a href="{{ .site_url }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+      </span>
+      {{ if .feed_url }}
+      <a class="blogroll-feed-link" href="{{ .feed_url }}" title="RSS feed">RSS</a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  {{ if $rest }}
+  <p class="blogroll-section-title">All feeds</p>
+  <ul class="blogroll-list">
+    {{ range $rest }}
+    <li class="blogroll-item">
+      <span class="blogroll-title">
+        {{ if .site_url }}<a href="{{ .site_url }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+      </span>
+      {{ if .feed_url }}
+      <a class="blogroll-feed-link" href="{{ .feed_url }}" title="RSS feed">RSS</a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>
+{{ partial "back-nav.html" . }}
+{{ end }}

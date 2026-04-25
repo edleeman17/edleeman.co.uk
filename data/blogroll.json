@@ -1,0 +1,697 @@
+{
+  "feeds": [
+    {
+      "title": "Blog - MattBits",
+      "site_url": "https://blog.mattsbit.co.uk/",
+      "feed_url": "https://blog.mattsbit.co.uk/index.xml",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "Cavelab blog",
+      "site_url": "https://blog.cavelab.dev/",
+      "feed_url": "https://blog.cavelab.dev/index.xml",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "florian.photo",
+      "site_url": "https://florian.photo/",
+      "feed_url": "https://florian.photo/feed",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "jasper.tandy.is blog posts",
+      "site_url": "https://jasper.tandy.is/",
+      "feed_url": "https://jasper.tandy.is/syndicated",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "Lazybear",
+      "site_url": "http://lazybear.io/",
+      "feed_url": "https://lazybear.io/index.xml",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "samwho.dev",
+      "site_url": "https://samwho.dev/",
+      "feed_url": "https://samwho.dev/rss.xml",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "STFN",
+      "site_url": "https://stfn.pl/",
+      "feed_url": "https://stfn.pl/rss.xml",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "Takuya Matsuyama",
+      "site_url": "https://www.devas.life/",
+      "feed_url": "https://www.devas.life/rss/",
+      "category": "",
+      "favourite": true
+    },
+    {
+      "title": "1440",
+      "site_url": "https://kill-the-newsletter.com/feeds/oqnznm488w1v06wg93f3.xml",
+      "feed_url": "https://kill-the-newsletter.com/feeds/oqnznm488w1v06wg93f3.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "A Very Good Blog by Keenan",
+      "site_url": "https://gkeenan.co/avgb",
+      "feed_url": "https://gkeenan.co/avgb/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Akash Rajpurohit",
+      "site_url": "https://akashrajpurohit.com/",
+      "feed_url": "https://akashrajpurohit.com/rss.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Alex Ellis' Blog",
+      "site_url": "http://blog.alexellis.io/",
+      "feed_url": "https://blog.alexellis.io/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Andre Franca",
+      "site_url": "https://abf.li/posts/default-apps-at-the-beginning-of-2024/",
+      "feed_url": "https://abf.li/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "App Defaults",
+      "site_url": "https://defaults.rknight.me/",
+      "feed_url": "https://defaults.rknight.me/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Becoming Minimalist",
+      "site_url": "https://www.becomingminimalist.com/",
+      "feed_url": "https://feeds.feedburner.com/becomingminimalistcom",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "benjojo blog",
+      "site_url": "https://blog.benjojo.co.uk/",
+      "feed_url": "https://blog.benjojo.co.uk/rss.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "binary.phile",
+      "site_url": "https://binaryphile.github.io/",
+      "feed_url": "https://www.binaryphile.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Blog - Taeha Types",
+      "site_url": "https://www.taehatypes.com/blog/",
+      "feed_url": "https://www.taehatypes.com/blog?format=rss",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Blog on hjr265.me",
+      "site_url": "https://hjr265.me/blog/",
+      "feed_url": "https://hjr265.me/blog/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Bryan Maniotakis",
+      "site_url": "https://bryanmanio.com/",
+      "feed_url": "https://bryanmanio.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Charles in Cloud's Space",
+      "site_url": "https://inclouds.space/",
+      "feed_url": "https://inclouds.space/feed.rss",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Chris Coyier",
+      "site_url": "https://chriscoyier.net/",
+      "feed_url": "https://chriscoyier.net/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Chris McLeod's blog",
+      "site_url": "https://chrismcleod.dev/blog/default-apps-for-2023/",
+      "feed_url": "https://chrismcleod.dev/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Console by CodeSee.io",
+      "site_url": "https://console.substack.com/",
+      "feed_url": "https://console.substack.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Cory Dransfeldt",
+      "site_url": "https://coryd.dev/webrings",
+      "feed_url": "https://feedpress.me/coryd",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Danb Blog",
+      "site_url": "https://danb.me/blog/",
+      "feed_url": "https://danb.me/blog/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "David Walsh Blog",
+      "site_url": "https://davidwalsh.name/",
+      "feed_url": "https://davidwalsh.name/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Digital Minimalist",
+      "site_url": "https://www.digitalminimalist.com/blog",
+      "feed_url": "https://politepol.com/fd/2yemyroAUPsS.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Drawings by Shiro",
+      "site_url": "https://shiro.ws/",
+      "feed_url": "https://shiro.ws/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Dropbox Tech Blog",
+      "site_url": "https://dropbox.tech/feed",
+      "feed_url": "https://dropbox.tech/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Ed Leeman",
+      "site_url": "https://edleeman.co.uk/",
+      "feed_url": "https://edleeman.co.uk/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Everyday Carry",
+      "site_url": "https://everydaycarry.com/feed/",
+      "feed_url": "https://everydaycarry.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Flamed Fury",
+      "site_url": "https://flamedfury.com/",
+      "feed_url": "https://flamedfury.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "florianziegler.com",
+      "site_url": "https://florianziegler.com/",
+      "feed_url": "https://florianziegler.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "flurries of latent creativity",
+      "site_url": "https://blog.singleton.io/",
+      "feed_url": "https://blog.singleton.io/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "garrit.xyz",
+      "site_url": "https://garrit.xyz/",
+      "feed_url": "https://garrit.xyz/rss.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Ghost",
+      "site_url": "https://ghost.org/changelog/",
+      "feed_url": "https://ghost.org/changelog/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Ham Vocke",
+      "site_url": "https://www.hamvocke.com/",
+      "feed_url": "https://hamvocke.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "~hedy",
+      "site_url": "https://home.hedy.dev/posts/",
+      "feed_url": "https://home.hedy.dev/posts/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Herbert Lui \u2013 Blog on creativity, marketing, and the human condition.",
+      "site_url": "https://herbertlui.net/",
+      "feed_url": "https://herbertlui.net/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "HeydonWorks",
+      "site_url": "https://heydonworks.com/",
+      "feed_url": "https://heydonworks.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "HPFM's Blog",
+      "site_url": "https://blog.hpfm.dev/",
+      "feed_url": "https://blog.hpfm.dev/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Hugo Barrera's site",
+      "site_url": "https://whynothugo.nl/",
+      "feed_url": "https://whynothugo.nl/posts.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "HybridLogic",
+      "site_url": "https://www.hybridlogic.co.uk/",
+      "feed_url": "https://www.hybridlogic.co.uk/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Ikarus.sg",
+      "site_url": "https://ikarus.sg/",
+      "feed_url": "https://ikarus.sg/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Jeff Geerling's Blog",
+      "site_url": "https://www.jeffgeerling.com/blog",
+      "feed_url": "https://www.jeffgeerling.com/blog.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "JeremiahLee.com",
+      "site_url": "https://www.jeremiahlee.com/",
+      "feed_url": "https://www.jeremiahlee.com/feeds/atom.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "JJTech",
+      "site_url": "http://jjtech.dev/",
+      "feed_url": "https://jjtech.dev/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Jorijn Schrijvershof",
+      "site_url": "https://jorijn.com/",
+      "feed_url": "https://jorijn.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Kev Quirk",
+      "site_url": "https://kevquirk.com/",
+      "feed_url": "https://kevquirk.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Lance Wicks",
+      "site_url": "https://world.hey.com/lancew",
+      "feed_url": "https://world.hey.com/lancew/feed.atom",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Life Analog",
+      "site_url": "https://www.lifeanalog.com/",
+      "feed_url": "https://www.lifeanalog.com/feeds/posts/default?alt=rss",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Linux Impact",
+      "site_url": "https://linuximpact.com/",
+      "feed_url": "https://linuximpact.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Mahmud Ridwan (hjr265) on hjr265.me",
+      "site_url": "https://hjr265.me/",
+      "feed_url": "https://hjr265.me/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Martin Fowler",
+      "site_url": "http://martinfowler.com/",
+      "feed_url": "https://martinfowler.com/feed.atom",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Matt Stein",
+      "site_url": "https://mattstein.com/thoughts/default-apps-2023/",
+      "feed_url": "https://mattstein.com/rss.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Mattthias Klein | homelab, self hosting, open source software",
+      "site_url": "https://blog.klein.ruhr/list-of-my-default-apps-in-2025/",
+      "feed_url": "https://blog.klein.ruhr/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Mehret Biruk",
+      "site_url": "https://mehretbiruk.com/",
+      "feed_url": "https://mehretbiruk.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Mike Street's Blog \uff06 Notes",
+      "site_url": "https://www.mikestreety.co.uk/rss-all.xml",
+      "feed_url": "https://www.mikestreety.co.uk/rss-all.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Minutes to Midnight",
+      "site_url": "https://minutestomidnight.co.uk/",
+      "feed_url": "https://minutestomidnight.co.uk/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Moving Offline",
+      "site_url": "https://josebriones.substack.com/",
+      "feed_url": "https://josebriones.substack.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "ndanes.com\uff0fatom.xml",
+      "site_url": "https://ndanes.com/",
+      "feed_url": "https://ndanes.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Netflix TechBlog - Medium",
+      "site_url": "https://netflixtechblog.com/?source=rss----2615bd06b42e---4",
+      "feed_url": "https://netflixtechblog.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Never Too Small",
+      "site_url": "https://www.nevertoosmall.com/",
+      "feed_url": "https://www.nevertoosmall.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "News and communications",
+      "site_url": "https://www.gov.uk/",
+      "feed_url": "https://www.gov.uk/search/news-and-communications.atom",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Nifty Little Me Blog",
+      "site_url": "https://www.niftylittleme.com/",
+      "feed_url": "https://www.niftylittleme.com/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "no dogma blog",
+      "site_url": "https://nodogmablog.bryanhogan.net/",
+      "feed_url": "https://nodogmablog.bryanhogan.net/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Notebook From Jason",
+      "site_url": "https://fromjason.xyz/p/notebook/",
+      "feed_url": "https://www.fromjason.xyz/p/notebook/feed/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Oh Hello Ana",
+      "site_url": "https://ohhelloana.blog/",
+      "feed_url": "https://ohhelloana.blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "overreacted \u2014 A blog by Dan Abramov",
+      "site_url": "https://overreacted.io/",
+      "feed_url": "https://overreacted.io/rss.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Own Your Web",
+      "site_url": "https://buttondown.email/ownyourweb",
+      "feed_url": "https://buttondown.email/ownyourweb/rss",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Pick The Scab",
+      "site_url": "https://alicelevine.substack.com/",
+      "feed_url": "https://alicelevine.substack.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Plausible Analytics",
+      "site_url": "https://plausible.io/blog/",
+      "feed_url": "https://plausible.io/blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Posts on jacksonchen666.com",
+      "site_url": "https://jacksonchen666.com/posts/",
+      "feed_url": "https://jacksonchen666.com/posts/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "rational human",
+      "site_url": "https://www.pietersartain.com/",
+      "feed_url": "https://www.pietersartain.com/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Robb Knight \u2022 Posts \u2022 Atom Feed",
+      "site_url": "https://rknight.me/",
+      "feed_url": "https://rknight.me/subscribe/posts/atom.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "rotational",
+      "site_url": "https://www.rotational.co.uk/",
+      "feed_url": "https://www.rotational.co.uk/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Sam Newman",
+      "site_url": "http://samnewman.io/blog",
+      "feed_url": "https://samnewman.io/blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "selfh.st",
+      "site_url": "https://selfh.st/",
+      "feed_url": "https://selfh.st/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "shawnhoover.dev - Dev Notes",
+      "site_url": "https://shawnhoover.dev/notes",
+      "feed_url": "https://www.shawnhoover.dev/notes/index.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "SmartHomeScene",
+      "site_url": "https://smarthomescene.com/",
+      "feed_url": "https://smarthomescene.com/feed/?_gl=1%2Ab2m2pf%2A_ga%2ANTE3MDI2MzE2LjE3MDQ1ODIxNjg.%2A_ga_SWZCECTHWT%2AMTcwNDU4MjE2Ny4xLjEuMTcwNDU4MjMzNC4xLjAuMA..",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Spotify Engineering",
+      "site_url": "https://engineering.atspotify.com/",
+      "feed_url": "https://engineering.atspotify.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Stories by James oneill on Medium",
+      "site_url": "https://medium.com/@gingeoneill?source=rss-331a036ac1ec------2",
+      "feed_url": "https://medium.com/feed/@gingeoneill",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Tech Interrupt",
+      "site_url": "https://www.techinterrupt.com/",
+      "feed_url": "https://www.techinterrupt.com/feed",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "TechCraft | All about iPad, MacOS, Linux and more",
+      "site_url": "https://techcraft.co/",
+      "feed_url": "https://techcraft.co/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Tedium",
+      "site_url": "http://tedium.co/",
+      "feed_url": "https://tedium.co/rss",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "The Deep Life by Cal Newport",
+      "site_url": "https://www.thedeeplife.com/",
+      "feed_url": "https://www.thedeeplife.com/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "The Fly Blog",
+      "site_url": "https://fly.io/",
+      "feed_url": "https://fly.io/blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "The GitHub Blog",
+      "site_url": "https://github.blog/",
+      "feed_url": "https://github.blog/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "The Morning Brew",
+      "site_url": "http://blog.cwa.me.uk/",
+      "feed_url": "https://blog.cwa.me.uk/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "The Self-Hosting Blog",
+      "site_url": "https://theselfhostingblog.com/",
+      "feed_url": "https://theselfhostingblog.com/rss/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "the singularity is nearer",
+      "site_url": "https://geohot.github.io//blog/",
+      "feed_url": "https://geohot.github.io/blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "theunderground.blog",
+      "site_url": "https://theunderground.blog/",
+      "feed_url": "https://theunderground.blog/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Thinking Allowed",
+      "site_url": "https://blog.macalba.net/",
+      "feed_url": "https://blog.macalba.net/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Tiny Projects",
+      "site_url": "https://tinyprojects.dev/",
+      "feed_url": "https://tinyprojects.dev/feed.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "TLDR RSS Feed",
+      "site_url": "https://tldr.tech/",
+      "feed_url": "https://tldr.tech/api/rss/tech",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "Wise Geek",
+      "site_url": "https://ejectdisc.org/",
+      "feed_url": "https://ejectdisc.org/feed/",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "You\u2019ve Been Haacked",
+      "site_url": "https://haacked.com/",
+      "feed_url": "https://haacked.com/atom.xml",
+      "category": "",
+      "favourite": false
+    },
+    {
+      "title": "\u1555( \u141b )\u1557 Herman's blog",
+      "site_url": "http://herman.bearblog.dev/",
+      "feed_url": "https://herman.bearblog.dev/feed/",
+      "category": "",
+      "favourite": false
+    }
+  ]
+}
