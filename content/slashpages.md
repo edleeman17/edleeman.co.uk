@@ -12,6 +12,7 @@ All the pages on this site.
 - [/favourites](/favourites) — things I love
 - [/links](/links) — bookmarks and interesting links
 - [/mentions](/mentions) — interactions and mentions across the web
+- [/notes](/notes) — short-form posts and thoughts
 - [/now](/now) — what I'm doing right now
 - [/photos](/photos) — photography
 - [/projects](/projects) — open source things I've built
