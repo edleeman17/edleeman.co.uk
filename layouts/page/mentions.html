@@ -1,0 +1,158 @@
+{{ define "main" }}
+<div class="main prose-wrap">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <style>
+    .mentions-loading { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .mentions-filters { display: flex; gap: var(--space-2); margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .mentions-filter-btn {
+      font-size: var(--text-xs);
+      padding: 0.25em 0.75em;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: none;
+      cursor: pointer;
+      color: var(--color-text-muted);
+    }
+    .mentions-filter-btn.active {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .mentions-list { display: flex; flex-direction: column; gap: var(--space-4); }
+    .mention-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mention-item:last-child { border-bottom: none; }
+    .mention-meta { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+    .mention-type {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      min-width: 4em;
+    }
+    .mention-author { font-size: var(--text-sm); font-weight: 600; }
+    .mention-date { font-size: var(--text-xs); color: var(--color-text-muted); margin-left: auto; }
+    .mention-target { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .mention-target a { color: var(--color-text-muted); }
+    .mention-text { font-size: var(--text-sm); margin: 0; }
+    .mentions-empty { color: var(--color-text-muted); font-size: var(--text-sm); }
+  </style>
+
+  <div id="mentions-app">
+    <p class="mentions-loading">Loading mentions…</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  var app = document.getElementById('mentions-app');
+  var allMentions = [];
+  var activeFilter = 'all';
+
+  function typeLabel(prop) {
+    switch(prop) {
+      case 'like-of':     return 'like';
+      case 'repost-of':   return 'repost';
+      case 'in-reply-to': return 'reply';
+      case 'mention-of':  return 'mention';
+      default:            return prop || 'mention';
+    }
+  }
+
+  function renderMentions(mentions) {
+    if (!mentions.length) {
+      app.innerHTML = '<p class="mentions-empty">No mentions yet.</p>';
+      return;
+    }
+
+    var filterCounts = { all: mentions.length };
+    mentions.forEach(function(m) {
+      var t = typeLabel(m['wm-property']);
+      filterCounts[t] = (filterCounts[t] || 0) + 1;
+    });
+
+    var filters = ['all', 'mention', 'reply', 'like', 'repost'];
+    var filterHTML = '<div class="mentions-filters">';
+    filters.forEach(function(f) {
+      if (!filterCounts[f]) return;
+      var active = f === activeFilter ? ' active' : '';
+      filterHTML += '<button class="mentions-filter-btn' + active + '" data-filter="' + f + '">' + f + ' (' + filterCounts[f] + ')</button>';
+    });
+    filterHTML += '</div>';
+
+    var visible = activeFilter === 'all' ? mentions : mentions.filter(function(m) {
+      return typeLabel(m['wm-property']) === activeFilter;
+    });
+
+    var listHTML = '<div class="mentions-list">';
+    visible.forEach(function(m) {
+      var author  = m.author || {};
+      var name    = author.name || 'Anonymous';
+      var photo   = author.photo || '';
+      var authorUrl = author.url || m.url || '#';
+      var source  = m.url || m['wm-source'] || '#';
+      var target  = m['wm-target'] || '';
+      var type    = typeLabel(m['wm-property']);
+      var text    = m.content && m.content.text ? m.content.text : '';
+      var date    = m.published ? new Date(m.published).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+
+      // shorten target for display
+      var targetDisplay = target.replace('https://edleeman.co.uk', '') || '/';
+
+      listHTML += '<div class="mention-item">';
+      listHTML += '<div class="mention-meta">';
+      if (photo) listHTML += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
+      listHTML += '<a href="' + authorUrl + '" class="mention-author" target="_blank" rel="noopener">' + name + '</a>';
+      listHTML += '<span class="mention-type">' + type + '</span>';
+      if (date) listHTML += '<span class="mention-date">' + date + '</span>';
+      listHTML += '</div>';
+      if (text) listHTML += '<p class="mention-text">' + text + '</p>';
+      listHTML += '<p class="mention-target">on <a href="' + target + '">' + targetDisplay + '</a> &middot; <a href="' + source + '" target="_blank" rel="noopener">source</a></p>';
+      listHTML += '</div>';
+    });
+    listHTML += '</div>';
+
+    app.innerHTML = filterHTML + listHTML;
+
+    app.querySelectorAll('.mentions-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        activeFilter = btn.getAttribute('data-filter');
+        renderMentions(allMentions);
+      });
+    });
+  }
+
+  function fetchPage(url, accumulated) {
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var children = (data && data.children) || [];
+        accumulated = accumulated.concat(children);
+        if (data && data.links && data.links.next) {
+          fetchPage(data.links.next, accumulated);
+        } else {
+          accumulated.sort(function(a, b) {
+            return new Date(b.published || 0) - new Date(a.published || 0);
+          });
+          allMentions = accumulated;
+          renderMentions(allMentions);
+        }
+      })
+      .catch(function() {
+        app.innerHTML = '<p class="mentions-empty">Could not load mentions.</p>';
+      });
+  }
+
+  fetchPage('https://webmention.io/api/mentions.jf2?domain=edleeman.co.uk&per-page=100', []);
+})();
+</script>
+
+{{ partial "back-nav.html" . }}
+{{ end }}
