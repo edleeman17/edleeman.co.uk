@@ -1,0 +1,22 @@
+{{- $feeds := $.Site.Data.blogroll.feeds -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>{{ .Site.Title }} — Blogroll</title>
+    <dateModified>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</dateModified>
+    <ownerName>{{ .Site.Author.name }}</ownerName>
+    <ownerEmail>{{ .Site.Author.email }}</ownerEmail>
+  </head>
+  <body>
+    <outline text="Favourites">
+      {{- range where $feeds "favourite" true }}
+      <outline type="rss" text="{{ .title }}" title="{{ .title }}" xmlUrl="{{ .feed_url }}" htmlUrl="{{ .site_url }}"/>
+      {{- end }}
+    </outline>
+    <outline text="All">
+      {{- range where $feeds "favourite" false }}
+      <outline type="rss" text="{{ .title }}" title="{{ .title }}" xmlUrl="{{ .feed_url }}" htmlUrl="{{ .site_url }}"/>
+      {{- end }}
+    </outline>
+  </body>
+</opml>

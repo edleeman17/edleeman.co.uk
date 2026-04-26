@@ -51,6 +51,20 @@ buildFuture = true
   url = "/rss/"
   weight = 6
 
+[mediaTypes]
+  [mediaTypes."text/x-opml"]
+    suffixes = ["opml"]
+
+[outputFormats]
+  [outputFormats.OPML]
+    mediaType = "text/x-opml"
+    baseName = "blogroll"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "OPML"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
