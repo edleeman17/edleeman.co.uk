@@ -1,4 +1,4 @@
-HUGO_IMG := klakegg/hugo:ext-alpine
+HUGO_IMG := hugomods/hugo:exts-0.154.5
 
 .PHONY: build serve
 

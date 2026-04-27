@@ -4,8 +4,8 @@
   <head>
     <title>{{ .Site.Title }} — Blogroll</title>
     <dateModified>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</dateModified>
-    <ownerName>{{ .Site.Author.name }}</ownerName>
-    <ownerEmail>{{ .Site.Author.email }}</ownerEmail>
+    <ownerName>{{ .Site.Params.author }}</ownerName>
+    <ownerEmail>{{ .Site.Params.authorEmail }}</ownerEmail>
   </head>
   <body>
     <outline text="Favourites">
