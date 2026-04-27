@@ -119,11 +119,29 @@ jobs:
                 TEXT=$(printf "%s\n\n%s" "$HEADER" "$URL")
               fi
             else
-              TEXT=$(printf "%s\n%s" "$TITLE" "$URL")
+              # Notes: use body content (strip images/headings, first 5 lines)
+              FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
+              BODY=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^[[:space:]]*$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              if [ -n "$BODY" ]; then
+                TEXT=$(printf "%s\n\n%s" "$BODY" "$URL")
+              else
+                TEXT=$(printf "%s" "$URL")
+              fi
             fi
 
-            # Truncate to 300 chars (Bluesky limit)
-            TEXT=$(echo "$TEXT" | head -c 300)
+            # Bluesky 300-byte limit — truncate prefix, keep URL intact at end
+            URL_BYTES=$(printf '%s' "$URL" | wc -c)
+            TEXT_BYTES=$(printf '%s' "$TEXT" | wc -c)
+            if [ "$TEXT_BYTES" -gt 300 ]; then
+              PREFIX_MAX=$((300 - URL_BYTES))
+              TEXT_PREFIX=$(printf '%s' "$TEXT" | head -c "$PREFIX_MAX")
+              TEXT="${TEXT_PREFIX}${URL}"
+            fi
+
+            # Byte offsets for clickable link facet (URL is always at end)
+            TEXT_BYTES=$(printf '%s' "$TEXT" | wc -c)
+            URL_BYTE_START=$((TEXT_BYTES - URL_BYTES))
+            URL_BYTE_END=$TEXT_BYTES
 
             NOW=$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
 
@@ -134,13 +152,22 @@ jobs:
                 --arg did "$DID" \
                 --arg text "$TEXT" \
                 --arg now "$NOW" \
+                --argjson url_start "$URL_BYTE_START" \
+                --argjson url_end "$URL_BYTE_END" \
+                --arg url "$URL" \
                 '{
                   "repo": $did,
                   "collection": "app.bsky.feed.post",
                   "record": {
                     ("$" + "type"): "app.bsky.feed.post",
                     "text": $text,
-                    "createdAt": $now
+                    "createdAt": $now,
+                    "facets": [
+                      {
+                        "index": {"byteStart": $url_start, "byteEnd": $url_end},
+                        "features": [{"$type": "app.bsky.richtext.facet#link", "uri": $url}]
+                      }
+                    ]
                   }
                 }')")
 
