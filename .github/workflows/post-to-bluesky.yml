@@ -121,7 +121,7 @@ jobs:
             else
               # Notes: use body content (strip images/headings, first 5 lines)
               FULL_BODY=$(awk '/^---$/{c++;next} c>=2{print}' "$FILE")
-              BODY=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed '/^[[:space:]]*$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
+              BODY=$(echo "$FULL_BODY" | sed 's/^#\+\s*//' | sed 's/!\[[^]]*\]([^)]*)//g' | sed 's/<https\?:[^>]*>//g' | sed '/^[[:space:]]*$/d' | head -5 | tr '\n' ' ' | sed 's/  */ /g;s/^ *//;s/ *$//')
               if [ -n "$BODY" ]; then
                 TEXT=$(printf "%s\n\n%s" "$BODY" "$URL")
               else
