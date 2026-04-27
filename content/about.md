@@ -3,7 +3,8 @@ title: "About me"
 type: page
 ---
 
-<h1>About me — age: <span id="live-age" data-pagefind-ignore style="color: var(--color-text-muted)"></span></h1>
+<h1>About me</h1>
+years since init: <span id="live-age" data-pagefind-ignore style="color: var(--color-text-muted)"></span>
 
 - Software Engineer
 - Self Hoster
