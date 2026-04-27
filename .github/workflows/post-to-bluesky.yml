@@ -1,12 +1,10 @@
 name: Syndicate to Bluesky
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
     branches: [master]
-    paths:
-      - 'content/posts/**'
-      - 'content/notes/**'
-      - 'content/reading/**'
   workflow_dispatch:
     inputs:
       file:
@@ -15,17 +13,34 @@ on:
         default: ''
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_commit.author.name != 'github-actions[bot]')
+    outputs:
+      has_content: ${{ steps.diff.outputs.has_content }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - id: diff
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD -- content/posts/ content/notes/ content/reading/)
+          echo "has_content=$([ -n "$FILES" ] && echo true || echo false)" >> $GITHUB_OUTPUT
+
   syndicate:
     runs-on: ubuntu-latest
+    needs: check
+    if: needs.check.outputs.has_content == 'true' || github.event_name == 'workflow_dispatch'
     steps:
-      - name: Wait for deploy
-        if: ${{ github.event_name == 'push' }}
-        run: sleep 300
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find new content and syndicate to Bluesky
