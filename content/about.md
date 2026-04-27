@@ -3,7 +3,8 @@ title: "About me"
 type: page
 ---
 
-<h1>About me</h1>
+# About me
+
 years since init: <span id="live-age" data-pagefind-ignore style="color: var(--color-text-muted)"></span>
 
 - Software Engineer
@@ -12,7 +13,8 @@ years since init: <span id="live-age" data-pagefind-ignore style="color: var(--c
 - Photographer
 - Dad
 
-<h2>Contact</h2>
+## Contact
+
 Email: [hello@edleeman.co.uk](mailto:hello@edleeman.co.uk)
 Mastodon: [https://fosstodon.org/@edphones](https://fosstodon.org/@edphones)
 
