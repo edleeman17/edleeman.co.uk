@@ -165,5 +165,5 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add content/
             git commit -m "Add syndication URLs from Threads"
-            git push
+            git push origin HEAD:master
           fi
