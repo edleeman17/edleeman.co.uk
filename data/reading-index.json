@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-19T00:03:14Z",
+  "last_updated": "2026-04-27T20:53:17Z",
   "books": [
     {
       "slug": "strange-houses",
@@ -315,11 +315,11 @@
       "pages": "",
       "goodreads_url": "https://www.goodreads.com/review/show/7040703334?utm_medium=api&utm_source=rss",
       "goodreads_id": "15839976",
-      "shelf": "tbr",
+      "shelf": "currently-reading",
       "rating": 0,
       "favourite": false,
       "date_read": "",
-      "date_started": "",
+      "date_started": "2026-04-27T20:53:16Z",
       "date_added": "2024-11-28T18:53:25Z",
       "review": "",
       "syndication": []
