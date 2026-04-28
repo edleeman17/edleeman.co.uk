@@ -2,7 +2,7 @@ name: Syndicate to Bluesky
 
 on:
   workflow_run:
-    workflows: ["Deploy to GitHub Pages"]
+    workflows: ["Syndicate to Mastodon"]
     types: [completed]
     branches: [master]
   workflow_dispatch:
@@ -24,11 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+          ref: master
       - id: diff
         run: |
-          FILES=$(git diff --name-only HEAD~1 HEAD -- content/posts/ content/notes/ content/reading/)
+          ORIG="${{ github.event.workflow_run.head_sha || github.sha }}"
+          FILES=$(git diff --name-only ${ORIG}~1 ${ORIG} -- content/posts/ content/notes/ content/reading/)
           echo "has_content=$([ -n "$FILES" ] && echo true || echo false)" >> $GITHUB_OUTPUT
 
   syndicate:
@@ -39,8 +40,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+          ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Find new content and syndicate to Bluesky
@@ -58,8 +59,9 @@ jobs:
               exit 0
             fi
           else
-            FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/' 'content/notes/')
-            READING_FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'content/reading/')
+            ORIG="${{ github.event.workflow_run.head_sha || github.sha }}"
+            FILES=$(git diff --name-only --diff-filter=A ${ORIG}~1 ${ORIG} -- 'content/posts/' 'content/notes/')
+            READING_FILES=$(git diff --name-only --diff-filter=AM ${ORIG}~1 ${ORIG} -- 'content/reading/')
             ALL_FILES="$FILES $READING_FILES"
           fi
 
