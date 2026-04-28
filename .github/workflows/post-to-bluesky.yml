@@ -185,7 +185,7 @@ jobs:
               awk -v url="$BSKY_URL" '
                 BEGIN { count=0; inserted=0 }
                 /^syndication:/ {
-                  print
+                  print "syndication:"
                   inserted=1
                   next
                 }

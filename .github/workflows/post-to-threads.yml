@@ -131,7 +131,7 @@ jobs:
                 awk -v url="$THREADS_URL" '
                   BEGIN { count=0; inserted=0 }
                   /^syndication:/ {
-                    print
+                    print "syndication:"
                     inserted=1
                     next
                   }
