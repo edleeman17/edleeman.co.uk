@@ -127,6 +127,40 @@ h2::before, h3::before, h4::before, h5::before {
   content: none;
 }
 
+/* Label style for all section headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-lg); }
+h3 { font-size: var(--text-base); }
+h4 { font-size: var(--text-sm); }
+h5 { font-size: var(--text-xs); }
+h6 { font-size: var(--text-xs); }
+
+/* Restore prose content headings inside .e-content */
+.e-content h1,
+.e-content h2,
+.e-content h3,
+.e-content h4,
+.e-content h5,
+.e-content h6 {
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+
+.e-content h1 { font-size: var(--text-3xl); color: var(--color-text-primary); }
+.e-content h2 { font-size: var(--text-2xl); color: var(--color-text-primary); }
+.e-content h3 { font-size: var(--text-xl);  color: var(--color-text-primary); }
+.e-content h4 { font-size: var(--text-lg);  color: var(--color-text-primary); }
+.e-content h5 { font-size: var(--text-base); color: var(--color-text-primary); }
+.e-content h6 { font-size: var(--text-sm);  color: var(--color-text-primary); }
+
 body {
   /* font-family: 'IBM Plex Sans', system-ui, sans-serif; */
 }
@@ -373,11 +407,6 @@ footer[role="contentinfo"] {
 }
 
 .year-group h2 {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
   margin: var(--space-5) 0 var(--space-2);
 }
 
