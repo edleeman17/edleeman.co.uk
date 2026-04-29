@@ -96,23 +96,40 @@
       }
 
       if (replies.length) {
-        html += '<div class="wm-replies">';
+        var byUrl = {};
+        replies.forEach(function(m) { byUrl[m.url] = m; m._children = []; });
+        var roots = [];
         replies.forEach(function(m) {
+          var rt = m['in-reply-to'];
+          var parentUrl = Array.isArray(rt) ? rt[0] : rt;
+          if (parentUrl && typeof parentUrl === 'object') parentUrl = parentUrl.url;
+          if (parentUrl && byUrl[parentUrl]) {
+            byUrl[parentUrl]._children.push(m);
+          } else {
+            roots.push(m);
+          }
+        });
+        function renderReply(m, depth) {
           var author = m.author || {};
           var photo  = author.photo || '';
           var name   = author.name  || 'Anonymous';
           var url    = m.url || m['wm-source'] || '#';
           var text   = m.content && m.content.text ? m.content.text : '';
           var date   = m.published ? new Date(m.published).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
-          html += '<div class="wm-reply">';
-          html += '<div class="wm-reply-meta">';
-          if (photo) html += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
-          html += '<a href="' + url + '" target="_blank" rel="noopener" class="wm-reply-author">' + name + '</a>';
-          if (date) html += '<span class="wm-reply-date">' + date + '</span>';
-          html += '</div>';
-          if (text) html += '<p class="wm-reply-text">' + text + '</p>';
-          html += '</div>';
-        });
+          var indent = depth > 0 ? ' style="margin-left:' + (depth * 1.5) + 'rem;border-left:2px solid var(--color-border);padding-left:1rem;"' : '';
+          var out = '<div class="wm-reply"' + indent + '>';
+          out += '<div class="wm-reply-meta">';
+          if (photo) out += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
+          out += '<a href="' + url + '" target="_blank" rel="noopener" class="wm-reply-author">' + name + '</a>';
+          if (date) out += '<span class="wm-reply-date">' + date + '</span>';
+          out += '</div>';
+          if (text) out += '<p class="wm-reply-text">' + text + '</p>';
+          m._children.forEach(function(child) { out += renderReply(child, depth + 1); });
+          out += '</div>';
+          return out;
+        }
+        html += '<div class="wm-replies">';
+        roots.forEach(function(m) { html += renderReply(m, 0); });
         html += '</div>';
       }
 
