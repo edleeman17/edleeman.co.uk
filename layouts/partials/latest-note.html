@@ -1,0 +1,43 @@
+{{- $note := (where .Site.RegularPages "Type" "note").ByDate.Reverse | first 1 -}}
+{{- with $note -}}
+<section class="latest-note-section">
+    <h2 class="latest-note-label">Latest update</h2>
+    <div class="note-feed h-feed">
+        <span class="p-name" style="display:none;">Notes by Ed Leeman</span>
+        {{- range . -}}
+        {{- $mastodon := "" -}}
+        {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
+        <article class="note-entry h-entry">
+            <span class="p-name" style="display:none;">{{ .Title }}</span>
+            <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+            {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>{{ end }}
+            <div class="note-entry-header">
+                <a class="note-timestamp u-url dt-published" href="{{ .Permalink }}" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">[{{ .Date.Format "2006-01-02 15:04" }}]</a>
+                {{ if $mastodon }}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{ end }}
+            </div>
+            <div class="e-content note-body">{{ .Content }}</div>
+        </article>
+        {{- end -}}
+    </div>
+    <p class="latest-note-all"><a href="/notes/">All notes →</a></p>
+</section>
+<style>
+  .latest-note-section {
+    border-top: 1px solid var(--color-border-light);
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+  }
+  .latest-note-label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+  .latest-note-all {
+    font-size: var(--text-sm);
+    margin-top: var(--space-3);
+  }
+</style>
+{{- end -}}

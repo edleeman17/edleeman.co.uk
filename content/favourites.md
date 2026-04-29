@@ -8,7 +8,7 @@ type: page
 I am often asked what my favourite 'insert thing here' is. I have terrible recall, so I'm commitng it to the internet.
 
 ## Songs
-- America - Razorlight
+- America - Razorlight (Trying to learn this on Guitar... I can't play the guitar yet)
 - Starlight - The Supermen Lovers
 - The kid's don't stand a chance - Vampire Weekend
 - Please forgive me - David Gray
