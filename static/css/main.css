@@ -375,46 +375,39 @@ p.webmention-hint a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
   margin-top: var(--space-6);
   margin-bottom: var(--space-3);
 }
 
-h1 {
-  font-size: var(--text-3xl);
+h1 { font-size: var(--text-xl); }
+h2 { font-size: var(--text-sm); }
+h3 { font-size: var(--text-xs); }
+h4 { font-size: var(--text-xs); }
+h5 { font-size: var(--text-xs); }
+h6 { font-size: var(--text-xs); }
+
+.e-content h1,
+.e-content h2,
+.e-content h3,
+.e-content h4,
+.e-content h5,
+.e-content h6 {
   font-weight: 700;
-  color: var(--color-accent);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
 }
 
-h2 {
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  color: var(--color-h2);
-}
-
-h3 {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--color-h3);
-}
-
-h4 {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--color-h4);
-}
-
-h5 {
-  font-size: var(--text-base);
-  font-weight: 600;
-  color: var(--color-h5);
-}
-
-h6 {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-h6);
-}
+.e-content h1 { font-size: var(--text-3xl); color: var(--color-accent); }
+.e-content h2 { font-size: var(--text-2xl); color: var(--color-h2); }
+.e-content h3 { font-size: var(--text-xl);  font-weight: 600; color: var(--color-h3); }
+.e-content h4 { font-size: var(--text-lg);  font-weight: 600; color: var(--color-h4); }
+.e-content h5 { font-size: var(--text-base); font-weight: 600; color: var(--color-h5); }
+.e-content h6 { font-size: var(--text-sm);  font-weight: 600; color: var(--color-h6); }
 
 /* Markdown-style hashtags - only in post content, slide in on hover */
 .post h1 .heading-anchor,

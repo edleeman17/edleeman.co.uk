@@ -373,10 +373,12 @@ footer[role="contentinfo"] {
 }
 
 .year-group h2 {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-text-muted);
   margin: var(--space-5) 0 var(--space-2);
-  font-weight: normal;
 }
 
 /* =============================================
