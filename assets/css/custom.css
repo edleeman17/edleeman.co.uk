@@ -130,8 +130,6 @@ h2::before, h3::before, h4::before, h5::before {
 /* Label style for all section headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   line-height: 1.2;
   color: var(--color-text-muted);
   margin-top: var(--spacing-lg);
