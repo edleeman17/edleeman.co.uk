@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  workflow_run:
+    workflows: ["Syndicate to Mastodon", "Syndicate to Bluesky", "Syndicate to Threads"]
+    types: [completed]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
