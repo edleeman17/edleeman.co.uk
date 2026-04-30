@@ -20,7 +20,7 @@
     {{ range where $pages ".Date.IsZero" false }}
     <item>
       <title>{{ if .Params.link }}→ {{ end }}{{ if .Title }}{{ .Title }}{{ else }}{{ .Content | plainify | chomp | replaceRE `&rsquo;` "'" | replaceRE `&lsquo;` "'" | replaceRE `&ldquo;` `"` | replaceRE `&rdquo;` `"` | replaceRE `&amp;` "&" | replaceRE `&hellip;` "…" | replaceRE `\s+` " " | truncate 60 "..." }}{{ end }}</title>
-      <link>{{ .Permalink }}</link>
+      <link>{{ .Permalink }}?utm_source=rss</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       <guid>{{ .Permalink }}</guid>
       {{ $permalink := .Permalink -}}
