@@ -40,6 +40,9 @@ jobs:
     needs: check
     if: needs.check.outputs.has_content == 'true' || github.event_name == 'workflow_dispatch'
     steps:
+      - name: Wait for CDN propagation
+        if: github.event_name != 'workflow_dispatch'
+        run: sleep 30
       - name: Send webmentions
         env:
           URL: ${{ github.event.inputs.url || 'https://edleeman.co.uk/index.xml' }}
@@ -50,6 +53,5 @@ jobs:
             "https://webmention.app/check?token=${{ secrets.WEBMENTION_APP_TOKEN }}&url=${URL}&limit=${LIMIT}")
           echo "Response: ${RESPONSE}"
           if echo "${RESPONSE}" | grep -q '"error":true'; then
-            echo "::error::webmention.app returned an error"
-            exit 1
+            echo "::warning::webmention.app returned an error: ${RESPONSE}"
           fi
