@@ -30,7 +30,8 @@
         {{ $bookmarkLink = printf "<p><a href=\"%s\">%s</a></p>" . . -}}
       {{ end -}}
       {{ $footer := printf `<hr><p><small>You're getting this because you follow my <strong>%s</strong> feed — if you'd like to filter what comes through, you can find all my feeds at <a href="https://edleeman.co.uk/rss">edleeman.co.uk/rss</a>. Regardless, thanks for reading over RSS. You're awesome and I appreciate you.</small></p>` $feedPath -}}
-      <description>{{ with $bookmarkLink }}{{ . | html }}{{ end }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}{{ $footer | html }}</description>
+      {{ $pixel := printf `<img src="https://api.edleeman.co.uk/rss-open.gif?url=%s" width="1" height="1" alt="" style="display:none" />` (.Permalink | urlquery) -}}
+      <description>{{ with $bookmarkLink }}{{ . | html }}{{ end }}{{ with .Params.description }}{{ . | html }}{{ else }}{{ with .Description }}{{ . | html }}{{ else }}{{ if .IsPage }}{{ $desc | html }}{{ end }}{{ end }}{{ end }}{{ $footer | html }}{{ $pixel | html }}</description>
     </item>
     {{ end }}
   </channel>
