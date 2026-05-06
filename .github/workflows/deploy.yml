@@ -3,10 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
-  workflow_run:
-    workflows: ["Syndicate to Mastodon", "Syndicate to Bluesky", "Syndicate to Threads"]
-    types: [completed]
-    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -62,3 +58,16 @@ jobs:
           curl -s -o /dev/null -w "%{http_code}" -X POST https://pubsubhubbub.appspot.com/ \
             --data-urlencode "hub.mode=publish" \
             --data-urlencode "hub.url=https://edleeman.co.uk/index.xml"
+
+      - name: Trigger syndication
+        if: github.event_name == 'push' && github.event.head_commit.author.name != 'github-actions[bot]'
+        env:
+          WEBHOOK_SECRET: ${{ secrets.SYNDICATION_WEBHOOK_SECRET }}
+        run: |
+          TIMESTAMP=$(date +%s)
+          PAYLOAD="{\"timestamp\":${TIMESTAMP},\"repo\":\"edleeman\"}"
+          SIG=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $2}')
+          curl -s -f -X POST "https://api.edleeman.co.uk/hooks/syndicate-edleeman" \
+            -H "Content-Type: application/json" \
+            -H "X-Hub-Signature-256: sha256=${SIG}" \
+            -d "$PAYLOAD"
