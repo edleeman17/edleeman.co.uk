@@ -131,7 +131,8 @@
 
 <div class="main book-single">
   <article class="h-entry">
-    <a class="u-url" href="{{ .Permalink }}" style="display:none;"></a>
+    <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
+    <span class="p-author h-card" style="display:none;"><a class="p-name u-url" href="https://edleeman.co.uk">Ed Leeman</a><img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman"></span>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
 
@@ -147,7 +148,7 @@
 
         {{ with .Params.author }}
         <div class="book-single-author">
-          by <a class="p-author" {{ with $.Params.goodreads_url }}href="{{ . }}" target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
+          by <a {{ with $.Params.goodreads_url }}href="{{ . }}" target="_blank" rel="noopener noreferrer"{{ end }}>{{ . }}</a>
         </div>
         {{ end }}
 

@@ -29,17 +29,24 @@
 {{- end -}}
 
 <div class="main prose-wrap">
-  <h1>{{ .Title }}</h1>
-  <p class="project-byline">
-    {{ .Params.language }}
-    {{- if gt (.Params.stars | int) 0 }} · <i class="fa-regular fa-star"></i> {{ .Params.stars }}{{ end }}
-    · <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
-  </p>
-  {{- if $readmeContent -}}
-    {{ $readmeContent | markdownify }}
-  {{- else -}}
-    {{ .Content }}
-  {{- end -}}
+  <article class="h-entry">
+    <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
+    <span class="p-author h-card" style="display:none;"><a class="p-name u-url" href="https://edleeman.co.uk">Ed Leeman</a><img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman"></span>
+    <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" style="display:none;"></time>
+    <h1 class="p-name">{{ .Title }}</h1>
+    <p class="project-byline">
+      {{ .Params.language }}
+      {{- if gt (.Params.stars | int) 0 }} · <i class="fa-regular fa-star"></i> {{ .Params.stars }}{{ end }}
+      · <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
+    </p>
+    <div class="e-content">
+    {{- if $readmeContent -}}
+      {{ $readmeContent | markdownify }}
+    {{- else -}}
+      {{ .Content }}
+    {{- end -}}
+    </div>
+  </article>
 </div>
 {{ partial "latest-note.html" . }}
 {{ partial "back-nav.html" . }}

@@ -6,7 +6,7 @@
     <span class="p-name" style="display:none;">{{ .Title }}</span>
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
-    <a class="p-author h-card" href="https://edleeman.co.uk" rel="author" style="display:none;">Ed Leeman</a>
+    <span class="p-author h-card" style="display:none;"><a class="p-name u-url" href="https://edleeman.co.uk">Ed Leeman</a><img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman"></span>
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
     {{ end }}
     <div class="e-content post">
