@@ -31,7 +31,7 @@
 <div class="main prose-wrap">
   <article class="h-entry">
     <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
-    <span class="p-author h-card" style="display:none;"><a class="p-name u-url" href="https://edleeman.co.uk">Ed Leeman</a><img class="u-photo" src="https://edleeman.co.uk/images/ed.png" alt="Ed Leeman"></span>
+    {{ partial "author-hcard.html" . }}
     <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" style="display:none;"></time>
     <h1 class="p-name">{{ .Title }}</h1>
     <p class="project-byline">
