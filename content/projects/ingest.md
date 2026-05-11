@@ -1,16 +1,16 @@
 ---
 title: "Ingest"
-description: "Capture actionable messages from anywhere — Discord, iOS share sheet, screenshots — into a LAN-hosted, AI-summarised todo list. No cloud. No API key."
+description: "Capture actionable messages from anywhere — Discord, iOS share sheet, any HTTP client — into a self-hosted todo list. Ollama summarisation and Tesseract OCR optional."
 github: "https://github.com/edleeman17/ingest"
 language: "Python"
 stars: 0
 status: "active"
 ---
 
-Messages worth acting on arrive from everywhere — Discord DMs, Signal, iMessage, screenshots of things on screen. Ingest is a self-hosted capture layer that turns them into a searchable, groupable todo list.
+Messages worth acting on arrive from everywhere — Discord DMs, Signal, iMessage, screenshots of things on screen — and most of them vanish before you act on them. Ingest is a self-hosted capture layer that funnels all of it into one place.
 
-Drop anything in via the iOS share sheet, forward a Discord message to a watched channel, or POST from any LAN service. Tesseract OCRs screenshots locally. A local Ollama model summarises the content into a one-line action and adds tags — no API key, no external calls.
+Send text or images via the iOS share sheet, forward a Discord message to a watched channel, POST from any script or LAN service, or type directly into the PWA. Everything lands in SQLite and surfaces in a mobile-first todo list: filter by source or status, drag items into named groups, reorder within groups, check things off.
 
-Everything lands in SQLite and surfaces in a mobile-first PWA: filter by source or status, drag items into groups, reorder within groups, check things off. Installable on iPhone as a home screen app over WireGuard.
+Ollama summarisation and Tesseract OCR are both optional — configure them if you have them, skip them if you don't. Without Ollama, raw text is stored as-is. The only hard requirement is Docker.
 
-**Tech:** Python, FastAPI, SQLite, Tesseract OCR, Ollama, discord.py, Vanilla JS PWA, Docker
+**Tech:** Python, FastAPI, SQLite, Vanilla JS PWA, Docker — Tesseract OCR + Ollama + discord.py optional
