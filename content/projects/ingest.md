@@ -6,6 +6,8 @@ language: "Python"
 stars: 0
 status: "active"
 ---
+![Ingest PWA screenshot](https://raw.githubusercontent.com/edleeman17/ingest/main/docs/screenshot.jpg)
+
 
 Messages worth acting on arrive from everywhere — Discord DMs, Signal, iMessage, screenshots of things on screen — and most of them vanish before you act on them. Ingest is a self-hosted capture layer that funnels all of it into one place.
 
