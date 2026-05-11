@@ -3,7 +3,8 @@ title: "Ingest - Capture anything from anywhere"
 date: 2026-05-11T20:07:09+01:00
 draft: false
 type: "post"
-syndication: []
+syndication:
+  - "https://bsky.app/profile/edleeman.co.uk/post/3mllxwgmh4a2q"
 ---
 
 # Ingest - Capture anything from anywhere
