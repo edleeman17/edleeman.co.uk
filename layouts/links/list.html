@@ -3,14 +3,13 @@
   .links-intro {
     color: var(--color-text-muted);
     font-size: var(--font-size-small);
-    margin-bottom: var(--spacing-md);
   }
 
   .sparkline-header {
     display: flex;
     align-items: center;
     gap: 0.5em;
-    margin-bottom: var(--spacing-xs);
+    margin: var(--spacing-xs) 0 var(--spacing-xs);
   }
 
   .sparkline-svg {
@@ -23,36 +22,31 @@
     color: var(--color-text-muted);
   }
 
-  /* Day groups */
   .day-group {
     margin-bottom: var(--spacing-lg);
   }
 
+  /* Use p not h2 to avoid theme's h2::before counter */
   .day-header {
     font-size: var(--font-size-small);
-    font-weight: 600;
+    font-weight: bold;
     color: var(--color-text-muted);
     margin: 0 0 var(--spacing-sm) 0;
     padding-bottom: var(--spacing-xs);
     border-bottom: 1px solid var(--color-border);
-    display: flex;
-    align-items: baseline;
-    gap: 0.4em;
   }
 
   .day-count {
-    font-weight: 400;
+    font-weight: normal;
     opacity: 0.7;
   }
 
-  /* Link items */
   .links-list {
+    list-style: none;
+    margin-left: 0;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
 
   .link-item {
@@ -62,19 +56,7 @@
   }
 
   .link-title {
-    font-weight: 600;
-    font-size: var(--font-size-base);
-  }
-
-  .link-title a {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    background: none;
-  }
-
-  .link-title a:hover {
-    text-decoration: underline;
-    background: none;
+    font-weight: bold;
   }
 
   .link-desc {
@@ -90,7 +72,7 @@
   }
 </style>
 
-<div class="main prose-wrap">
+<div class="prose-wrap">
   {{ $allGroups := .Pages.GroupByDate "2006-01-02" "asc" }}
   {{ $n := len $allGroups }}
 
@@ -98,6 +80,8 @@
   {{ range $allGroups }}
     {{ if gt (len .Pages) $maxCount }}{{ $maxCount = len .Pages }}{{ end }}
   {{ end }}
+
+  <h1>Bookmarks</h1>
 
   {{ if gt $n 0 }}
   {{ $points := slice }}
@@ -110,12 +94,11 @@
     {{ $points = $points | append $pt }}
   {{ end }}
 
-  {{ $lastGroup := index $allGroups (sub $n 1) }}
   {{ $lastX := 2 }}{{ if gt $n 1 }}{{ $lastX = 148 }}{{ end }}
+  {{ $lastGroup := index $allGroups (sub $n 1) }}
   {{ $lastCount := len $lastGroup.Pages }}
   {{ $lastY := sub 22 (div (mul $lastCount 20) $maxCount) }}
 
-  <h1 style="margin-bottom: var(--spacing-xs)">Bookmarks</h1>
   <div class="sparkline-header">
     <svg class="sparkline-svg" width="150" height="24" viewBox="0 0 150 24" role="img" aria-label="Activity sparkline">
       <polyline fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -132,10 +115,10 @@
     {{ range .Pages.GroupByDate "2006-01-02" }}
     {{ $count := len .Pages }}
     <div class="day-group">
-      <h2 class="day-header">
+      <p class="day-header">
         {{ dateFormat "Monday, January 2, 2006" (.Key | time) }}
         <span class="day-count">({{ $count }} {{ if eq $count 1 }}bookmark{{ else }}bookmarks{{ end }})</span>
-      </h2>
+      </p>
       <ul class="links-list">
         {{ range .Pages }}
         <li class="link-item h-entry">
@@ -143,8 +126,8 @@
             <a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a>
             {{ with .Params.link }}<a class="u-bookmark-of" href="{{ . }}" style="display:none;"></a>{{ end }}
           </div>
-          {{ with .Params.description }}<div class="link-desc p-summary">{{ . }}</div>{{ end }}
-          {{ with .Params.category }}<div class="link-category">{{ . }}</div>{{ end }}
+          {{ with .Params.description }}<p class="link-desc p-summary">{{ . }}</p>{{ end }}
+          {{ with .Params.category }}<span class="link-category">{{ . }}</span>{{ end }}
         </li>
         {{ end }}
       </ul>
@@ -152,7 +135,6 @@
     {{ end }}
   </div>
   {{ else }}
-  <h1>Bookmarks</h1>
   <p style="color:var(--color-text-muted)">No bookmarks yet.</p>
   {{ end }}
 </div>
