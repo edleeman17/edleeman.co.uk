@@ -2,14 +2,54 @@
 <style>
   .links-intro {
     color: var(--color-text-muted);
-    font-size: var(--text-sm);
-    margin-bottom: var(--space-6);
+    font-size: var(--font-size-small);
+    margin-bottom: var(--spacing-md);
   }
 
+  .sparkline-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sparkline-svg {
+    display: block;
+    color: var(--color-text-primary);
+  }
+
+  .sparkline-total {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+  }
+
+  /* Day groups */
+  .day-group {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .day-header {
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--spacing-sm) 0;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: baseline;
+    gap: 0.4em;
+  }
+
+  .day-count {
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  /* Link items */
   .links-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--spacing-md);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -23,55 +63,97 @@
 
   .link-title {
     font-weight: 600;
-    font-size: var(--text-base);
+    font-size: var(--font-size-base);
   }
 
   .link-title a {
-    color: var(--color-text);
+    color: var(--color-text-primary);
     text-decoration: none;
     background: none;
   }
 
   .link-title a:hover {
-    color: var(--color-accent);
+    text-decoration: underline;
     background: none;
   }
 
-
   .link-desc {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-small);
     color: var(--color-text-muted);
     line-height: 1.5;
   }
 
-  .link-meta {
-    font-size: var(--text-xs);
+  .link-category {
+    font-size: var(--font-size-small);
     color: var(--color-text-muted);
+    opacity: 0.7;
   }
 </style>
 
 <div class="main prose-wrap">
-  <h1>Links</h1>
-  <p class="links-intro">Things I've found interesting, useful, or worth remembering.</p>
+  {{ $allGroups := .Pages.GroupByDate "2006-01-02" "asc" }}
+  {{ $n := len $allGroups }}
+
+  {{ $maxCount := 1 }}
+  {{ range $allGroups }}
+    {{ if gt (len .Pages) $maxCount }}{{ $maxCount = len .Pages }}{{ end }}
+  {{ end }}
+
+  {{ if gt $n 0 }}
+  {{ $points := slice }}
+  {{ range $i, $g := $allGroups }}
+    {{ $x := 2 }}
+    {{ if gt $n 1 }}{{ $x = add 2 (div (mul $i 146) (sub $n 1)) }}{{ end }}
+    {{ $count := len $g.Pages }}
+    {{ $y := sub 22 (div (mul $count 20) $maxCount) }}
+    {{ $pt := printf "%d,%d" $x $y }}
+    {{ $points = $points | append $pt }}
+  {{ end }}
+
+  {{ $lastGroup := index $allGroups (sub $n 1) }}
+  {{ $lastX := 2 }}{{ if gt $n 1 }}{{ $lastX = 148 }}{{ end }}
+  {{ $lastCount := len $lastGroup.Pages }}
+  {{ $lastY := sub 22 (div (mul $lastCount 20) $maxCount) }}
+
+  <h1 style="margin-bottom: var(--spacing-xs)">Bookmarks</h1>
+  <div class="sparkline-header">
+    <svg class="sparkline-svg" width="150" height="24" viewBox="0 0 150 24" role="img" aria-label="Activity sparkline">
+      <polyline fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+        points="{{ delimit $points " " }}" />
+      <circle cx="{{ $lastX }}" cy="{{ $lastY }}" r="1.5" fill="currentColor" />
+    </svg>
+    <span class="sparkline-total">{{ len .Pages }} bookmarks</span>
+  </div>
+  <p class="links-intro">A collection of links I find interesting. Curated in Linkding and displayed here. <a href="/links/index.xml">Subscribe to the bookmarks feed</a> for updates.</p>
 
   <div class="h-feed">
-    <span class="p-name" style="display:none;">Links — Ed Leeman</span>
-    <ul class="links-list">
-      {{ range .Pages.ByDate.Reverse }}
-      <li class="link-item h-entry">
-        <div class="link-title">
-          <a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a>
-          {{ with .Params.link }}<a class="u-bookmark-of" href="{{ . }}" style="display:none;"></a>{{ end }}
-        </div>
-        {{ if .Params.description }}<div class="link-desc p-summary">{{ .Params.description }}</div>{{ end }}
-        <div class="link-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2 Jan 2006" }}</time></div>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
+    <span class="p-name" style="display:none;">Bookmarks — Ed Leeman</span>
 
-  {{ if not .Pages }}
-  <p style="color: var(--color-text-muted)">No links yet.</p>
+    {{ range .Pages.GroupByDate "2006-01-02" }}
+    {{ $count := len .Pages }}
+    <div class="day-group">
+      <h2 class="day-header">
+        {{ dateFormat "Monday, January 2, 2006" (.Key | time) }}
+        <span class="day-count">({{ $count }} {{ if eq $count 1 }}bookmark{{ else }}bookmarks{{ end }})</span>
+      </h2>
+      <ul class="links-list">
+        {{ range .Pages }}
+        <li class="link-item h-entry">
+          <div class="link-title">
+            <a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ with .Params.link }}<a class="u-bookmark-of" href="{{ . }}" style="display:none;"></a>{{ end }}
+          </div>
+          {{ with .Params.description }}<div class="link-desc p-summary">{{ . }}</div>{{ end }}
+          {{ with .Params.category }}<div class="link-category">{{ . }}</div>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+  {{ else }}
+  <h1>Bookmarks</h1>
+  <p style="color:var(--color-text-muted)">No bookmarks yet.</p>
   {{ end }}
 </div>
 
