@@ -65,11 +65,6 @@
     line-height: 1.5;
   }
 
-  .link-category {
-    font-size: var(--font-size-small);
-    color: var(--color-text-muted);
-    opacity: 0.7;
-  }
 </style>
 
 <div class="prose-wrap">
@@ -127,7 +122,6 @@
             {{ with .Params.link }}<a class="u-bookmark-of" href="{{ . }}" style="display:none;"></a>{{ end }}
           </div>
           {{ with .Params.description }}<p class="link-desc p-summary">{{ . }}</p>{{ end }}
-          {{ with .Params.category }}<span class="link-category">{{ . }}</span>{{ end }}
         </li>
         {{ end }}
       </ul>
