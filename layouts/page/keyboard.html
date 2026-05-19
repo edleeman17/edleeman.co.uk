@@ -9,17 +9,20 @@
       <button class="kb-tab" data-layer="1" role="tab" aria-selected="false">Nav &amp; Media</button>
       <button class="kb-tab" data-layer="2" role="tab" aria-selected="false">Symbols &amp; F-keys</button>
     </div>
-    <a href="/ferris-sweep.vil" download class="kb-dl">&darr; Download .vil</a>
+    <div class="kb-controls-right">
+      <button class="kb-shift-btn" id="kb-shift-btn" aria-pressed="false">&#x21E7; Shift</button>
+      <a href="/ferris-sweep.vil" download class="kb-dl">&darr; Download .vil</a>
+    </div>
   </div>
 
   <div class="kb-legend">
-    <span class="kb-legend-item"><span class="kb-legend-key">Key</span> tap</span>
+    <span><span class="kb-legend-key">Key</span> tap</span>
     <span class="kb-legend-sep">&middot;</span>
-    <span class="kb-legend-item"><span class="kb-legend-hold">hold</span> hold modifier</span>
+    <span><span class="kb-legend-hold">hold</span> hold modifier</span>
     <span class="kb-legend-sep">&middot;</span>
-    <span class="kb-legend-item kb-trns-eg">&#9661;</span><span class="kb-legend-item"> transparent</span>
+    <span style="opacity:.4">&#9661;</span> transparent
     <span class="kb-legend-sep">&middot;</span>
-    <span class="kb-legend-item">click <span class="kb-legend-hold">⇧ shift</span> key to toggle shifted labels</span>
+    <span>click layer-tap keys or <span class="kb-legend-hold">layer N</span> badge to switch layer</span>
   </div>
 
   <div class="kb-board-wrap">
@@ -60,6 +63,28 @@
 }
 .kb-tab:hover { background: var(--bg3); color: var(--text); }
 .kb-tab.is-active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  border-bottom-color: hsl(0 0% 20%);
+}
+
+.kb-controls-right { display: flex; gap: 0.5rem; align-items: center; }
+
+.kb-shift-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-bottom: 3px solid hsl(0 0% 75%);
+  border-radius: 4px;
+  padding: 0.375rem 0.875rem;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 150ms, color 150ms;
+}
+.kb-shift-btn:hover { background: var(--bg3); color: var(--text); }
+.kb-shift-btn.is-active {
   background: var(--text);
   color: var(--bg);
   border-color: var(--text);
@@ -111,26 +136,26 @@
   color: var(--muted);
 }
 .kb-legend-sep { color: var(--border); }
-.kb-trns-eg { opacity: 0.4; }
 
-.kb-board-wrap { overflow-x: auto; padding-bottom: 2rem; overflow-y: visible; }
+.kb-board-wrap { overflow-x: auto; padding-bottom: 2rem; }
 
 .kb-board {
   display: flex;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 5rem;
   width: max-content;
-  /* bottom padding to accommodate the stagger offset */
-  padding-bottom: 8px;
 }
 
+/* Each half: dark PCB-style background */
 .kb-half {
+  background: hsl(0 0% 13%);
+  border-radius: 14px;
+  padding: 16px 16px 28px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* column-based layout — stagger via padding-top per column */
 .kb-cols {
   display: flex;
   flex-direction: row;
@@ -144,19 +169,21 @@
   gap: 4px;
 }
 
-.kb-row {
+.kb-thumb-row {
   display: flex;
   gap: 4px;
-  align-items: flex-start;
+  padding-top: 4px;
+  overflow: visible;
 }
 
+/* Keys on dark background */
 .kb-key {
   width: 52px;
   height: 52px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-bottom: 3px solid hsl(0 0% 75%);
-  border-radius: 4px;
+  background: hsl(0 0% 24%);
+  border: 1px solid hsl(0 0% 18%);
+  border-bottom: 3px solid hsl(0 0% 10%);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -167,40 +194,43 @@
   cursor: default;
   flex-shrink: 0;
   overflow: hidden;
-  position: relative;
+  color: hsl(0 0% 90%);
 }
 .kb-key:hover {
-  background: var(--bg3);
+  background: hsl(0 0% 30%);
   border-bottom-width: 1px;
   transform: translateY(2px);
 }
-.kb-key.is-trns { opacity: 0.35; }
+.kb-key.is-trns { opacity: 0.3; }
 .kb-key.is-empty { visibility: hidden; }
 .kb-key.has-hold { justify-content: space-between; padding: 6px 4px 5px; }
+.kb-key.is-layer-key { cursor: pointer; }
+.kb-key.is-layer-key:hover { background: hsl(220 40% 30%); border-color: hsl(220 40% 22%); }
 
-/* Shift key active state */
+/* Shift key states */
 .kb-key.is-shift-key { cursor: pointer; }
 .kb-key.is-shift-active {
-  background: var(--text);
-  border-color: var(--text);
-  border-bottom-color: hsl(0 0% 20%);
+  background: hsl(0 0% 85%);
+  border-color: hsl(0 0% 70%);
+  border-bottom-color: hsl(0 0% 50%);
 }
-.kb-key.is-shift-active .kb-tap { color: var(--bg); }
-.kb-key.is-shift-active .kb-hold { color: hsl(0 0% 70%); border-color: hsl(0 0% 35%); }
+.kb-key.is-shift-active .kb-tap { color: hsl(0 0% 12%); }
+.kb-key.is-shift-active .kb-hold { color: hsl(0 0% 35%); border-color: hsl(0 0% 55%); }
 
 .kb-tap {
   font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1;
   text-align: center;
+  color: hsl(0 0% 90%);
 }
 .kb-key.is-trns .kb-tap { font-weight: 400; }
 
 .kb-hold {
   font-size: 0.6rem;
-  color: var(--muted);
+  color: hsl(0 0% 55%);
   line-height: 1;
-  border: 1px solid var(--border);
+  border: 1px solid hsl(0 0% 35%);
   border-radius: 2px;
   padding: 1px 3px;
   text-align: center;
@@ -210,17 +240,10 @@
   white-space: nowrap;
 }
 
-.kb-thumb-row {
-  /* extra vertical space for rotated keys */
-  padding-top: 6px;
-  padding-bottom: 10px;
-  overflow: visible;
-}
-
 .kb-thumb-spacer {
   flex-shrink: 0;
-  /* 3 keys (52px) + 2 gaps (4px) = 164px → thumbs sit under cols 3–4 */
-  width: 164px;
+  /* 4 keys (52px) + 3 gaps (4px) = 220px → thumbs under col 4 (B/N) */
+  width: 220px;
 }
 </style>
 
@@ -283,21 +306,18 @@ const MOD_LABELS = {
   'LALT_T': '⌥ opt',
 };
 
-// Ferris Sweep column stagger — pinky lowest, middle highest (col 0–4)
 const LEFT_STAGGER  = [52, 26, 0, 16, 36];
 const RIGHT_STAGGER = [36, 16, 0, 26, 52];
 
-// Thumb key transforms: [rotationDeg, translateYpx]
+// [rotationDeg, translateYpx] — outer thumb slight outward lean, inner fans toward centre
 const LEFT_THUMB_TRANSFORMS  = [[-5, 0], [12, -10]];
 const RIGHT_THUMB_TRANSFORMS = [[-12, -10], [5, 0]];
 
-// Shift label map — what each tap label becomes when Shift is held
 const SHIFT_MAP = {
   '1':'!','2':'@','3':'#','4':'$','5':'%',
   '6':'^','7':'&','8':'*','9':'(','0':')',
   ';':':',',':'<','.':'>','/':'?','\\':'|',
   "'":'"','-':'_','=':'+','[':'{',']':'}','`':'~',
-  'Space':'Space',
 };
 
 let shiftActive = false;
@@ -322,7 +342,7 @@ function parseKey(code) {
   const lt = code.match(/^LT(\d+)\((.+)\)$/);
   if (lt) {
     const inner = parseKey(lt[2]);
-    return { tap: inner.tap, hold: 'layer ' + lt[1] };
+    return { tap: inner.tap, hold: 'layer ' + lt[1], isLayerTap: true, layerNum: parseInt(lt[1], 10) };
   }
 
   if (KC_MAP[code]) return { tap: KC_MAP[code] };
@@ -336,13 +356,21 @@ function parseKey(code) {
 }
 
 function applyShift(tap) {
-  if (tap.startsWith('⇧')) return tap; // already shifted
-  if (SHIFT_MAP[tap] !== undefined) return SHIFT_MAP[tap];
-  // single letter → stays same (already uppercase display)
-  return tap;
+  if (tap.startsWith('⇧')) return tap;
+  return SHIFT_MAP[tap] !== undefined ? SHIFT_MAP[tap] : tap;
 }
 
-function makeKey(code, _unused, thumbTransform) {
+function switchLayer(idx) {
+  currentLayer = idx;
+  document.querySelectorAll('.kb-tab').forEach(b => {
+    const active = parseInt(b.dataset.layer, 10) === idx;
+    b.classList.toggle('is-active', active);
+    b.setAttribute('aria-selected', String(active));
+  });
+  renderLayer(idx);
+}
+
+function makeKey(code, thumbTransform) {
   const k = parseKey(String(code));
   const el = document.createElement('div');
   el.className = 'kb-key';
@@ -362,10 +390,18 @@ function makeKey(code, _unused, thumbTransform) {
   if (k.isShift) {
     el.classList.add('is-shift-key');
     if (shiftActive) el.classList.add('is-shift-active');
+    el.style.cursor = 'pointer';
     el.addEventListener('click', () => {
       shiftActive = !shiftActive;
+      document.getElementById('kb-shift-btn').classList.toggle('is-active', shiftActive);
+      document.getElementById('kb-shift-btn').setAttribute('aria-pressed', String(shiftActive));
       renderLayer(currentLayer);
     });
+  }
+
+  if (k.isLayerTap) {
+    el.classList.add('is-layer-key');
+    el.addEventListener('click', () => switchLayer(k.layerNum));
   }
 
   const tap = document.createElement('span');
@@ -377,6 +413,10 @@ function makeKey(code, _unused, thumbTransform) {
     const hold = document.createElement('span');
     hold.className = 'kb-hold';
     hold.textContent = k.hold;
+    // clicking the hold badge also switches layer for layer-tap keys
+    if (k.isLayerTap) {
+      hold.style.cursor = 'pointer';
+    }
     el.appendChild(hold);
   }
 
@@ -384,8 +424,6 @@ function makeKey(code, _unused, thumbTransform) {
 }
 
 function makeHalf(rows, stagger) {
-  // rows = array of 3 row-arrays, each with 5 keys
-  // Build column-first so stagger is padding-top per column
   const cols = document.createElement('div');
   cols.className = 'kb-cols';
   for (let c = 0; c < 5; c++) {
@@ -412,19 +450,14 @@ function renderLayer(idx) {
   left.appendChild(makeHalf([data[0], data[1], data[2]], LEFT_STAGGER));
 
   const leftThumb = document.createElement('div');
-  leftThumb.className = 'kb-row kb-thumb-row';
+  leftThumb.className = 'kb-thumb-row';
   const lSpacer = document.createElement('div');
   lSpacer.className = 'kb-thumb-spacer';
   leftThumb.appendChild(lSpacer);
-  leftThumb.appendChild(makeKey(data[3][0], 0, LEFT_THUMB_TRANSFORMS[0]));
-  leftThumb.appendChild(makeKey(data[3][1], 0, LEFT_THUMB_TRANSFORMS[1]));
+  leftThumb.appendChild(makeKey(data[3][0], LEFT_THUMB_TRANSFORMS[0]));
+  leftThumb.appendChild(makeKey(data[3][1], LEFT_THUMB_TRANSFORMS[1]));
   left.appendChild(leftThumb);
   board.appendChild(left);
-
-  // Gap
-  const gap = document.createElement('div');
-  gap.style.cssText = 'width:2rem;flex-shrink:0';
-  board.appendChild(gap);
 
   // Right half
   const right = document.createElement('div');
@@ -432,9 +465,9 @@ function renderLayer(idx) {
   right.appendChild(makeHalf([data[4], data[5], data[6]], RIGHT_STAGGER));
 
   const rightThumb = document.createElement('div');
-  rightThumb.className = 'kb-row kb-thumb-row';
-  rightThumb.appendChild(makeKey(data[7][0], 0, RIGHT_THUMB_TRANSFORMS[0]));
-  rightThumb.appendChild(makeKey(data[7][1], 0, RIGHT_THUMB_TRANSFORMS[1]));
+  rightThumb.className = 'kb-thumb-row';
+  rightThumb.appendChild(makeKey(data[7][0], RIGHT_THUMB_TRANSFORMS[0]));
+  rightThumb.appendChild(makeKey(data[7][1], RIGHT_THUMB_TRANSFORMS[1]));
   const rSpacer = document.createElement('div');
   rSpacer.className = 'kb-thumb-spacer';
   rightThumb.appendChild(rSpacer);
@@ -442,16 +475,17 @@ function renderLayer(idx) {
   board.appendChild(right);
 }
 
+// Layer tabs
 document.querySelectorAll('.kb-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.kb-tab').forEach(b => {
-      b.classList.remove('is-active');
-      b.setAttribute('aria-selected', 'false');
-    });
-    btn.classList.add('is-active');
-    btn.setAttribute('aria-selected', 'true');
-    renderLayer(parseInt(btn.dataset.layer, 10));
-  });
+  btn.addEventListener('click', () => switchLayer(parseInt(btn.dataset.layer, 10)));
+});
+
+// Shift button
+document.getElementById('kb-shift-btn').addEventListener('click', () => {
+  shiftActive = !shiftActive;
+  document.getElementById('kb-shift-btn').classList.toggle('is-active', shiftActive);
+  document.getElementById('kb-shift-btn').setAttribute('aria-pressed', String(shiftActive));
+  renderLayer(currentLayer);
 });
 
 renderLayer(0);
