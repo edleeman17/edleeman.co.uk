@@ -17,7 +17,9 @@
     <span class="kb-legend-sep">&middot;</span>
     <span class="kb-legend-item"><span class="kb-legend-hold">hold</span> hold modifier</span>
     <span class="kb-legend-sep">&middot;</span>
-    <span class="kb-legend-item kb-trns-eg">&#9661;</span><span class="kb-legend-item"> transparent (inherits layer below)</span>
+    <span class="kb-legend-item kb-trns-eg">&#9661;</span><span class="kb-legend-item"> transparent</span>
+    <span class="kb-legend-sep">&middot;</span>
+    <span class="kb-legend-item">click <span class="kb-legend-hold">⇧ shift</span> key to toggle shifted labels</span>
   </div>
 
   <div class="kb-board-wrap">
@@ -47,24 +49,27 @@
 .kb-tab {
   background: var(--bg2);
   border: 1px solid var(--border);
+  border-bottom: 3px solid hsl(0 0% 75%);
   border-radius: 4px;
   padding: 0.375rem 0.875rem;
   font: inherit;
   font-size: var(--text-sm);
   color: var(--muted);
   cursor: pointer;
-  transition: all 150ms;
+  transition: background 150ms, color 150ms;
 }
 .kb-tab:hover { background: var(--bg3); color: var(--text); }
 .kb-tab.is-active {
   background: var(--text);
   color: var(--bg);
   border-color: var(--text);
+  border-bottom-color: hsl(0 0% 20%);
 }
 
 .kb-dl {
   background: var(--bg2);
   border: 1px solid var(--border);
+  border-bottom: 3px solid hsl(0 0% 75%);
   border-radius: 4px;
   padding: 0.375rem 0.875rem;
   font: inherit;
@@ -89,6 +94,7 @@
   display: inline-block;
   background: var(--bg2);
   border: 1px solid var(--border);
+  border-bottom: 2px solid hsl(0 0% 75%);
   border-radius: 3px;
   padding: 1px 5px;
   font-size: var(--text-xs);
@@ -107,13 +113,15 @@
 .kb-legend-sep { color: var(--border); }
 .kb-trns-eg { opacity: 0.4; }
 
-.kb-board-wrap { overflow-x: auto; padding-bottom: 0.5rem; }
+.kb-board-wrap { overflow-x: auto; padding-bottom: 1rem; }
 
 .kb-board {
   display: flex;
   align-items: flex-end;
   gap: 2rem;
   width: max-content;
+  /* bottom padding to accommodate the stagger offset */
+  padding-bottom: 8px;
 }
 
 .kb-half {
@@ -125,6 +133,7 @@
 .kb-row {
   display: flex;
   gap: 4px;
+  align-items: flex-start;
 }
 
 .kb-key {
@@ -132,6 +141,7 @@
   height: 52px;
   background: var(--bg2);
   border: 1px solid var(--border);
+  border-bottom: 3px solid hsl(0 0% 75%);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -139,15 +149,30 @@
   justify-content: center;
   padding: 4px;
   box-sizing: border-box;
-  transition: background 150ms;
+  transition: background 150ms, border-bottom-width 80ms, transform 80ms;
   cursor: default;
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
 }
-.kb-key:hover { background: var(--bg3); }
+.kb-key:hover {
+  background: var(--bg3);
+  border-bottom-width: 1px;
+  transform: translateY(2px);
+}
 .kb-key.is-trns { opacity: 0.35; }
 .kb-key.is-empty { visibility: hidden; }
 .kb-key.has-hold { justify-content: space-between; padding: 6px 4px 5px; }
+
+/* Shift key active state */
+.kb-key.is-shift-key { cursor: pointer; }
+.kb-key.is-shift-active {
+  background: var(--text);
+  border-color: var(--text);
+  border-bottom-color: hsl(0 0% 20%);
+}
+.kb-key.is-shift-active .kb-tap { color: var(--bg); }
+.kb-key.is-shift-active .kb-hold { color: hsl(0 0% 70%); border-color: hsl(0 0% 35%); }
 
 .kb-tap {
   font-size: var(--text-sm);
@@ -237,6 +262,22 @@ const MOD_LABELS = {
   'LALT_T': '⌥ opt',
 };
 
+// Ferris Sweep column stagger (pixels down from top of row, col 0–4)
+const LEFT_STAGGER  = [8, 2, 0, 4, 6];
+const RIGHT_STAGGER = [6, 4, 0, 2, 8];
+
+// Shift label map — what each tap label becomes when Shift is held
+const SHIFT_MAP = {
+  '1':'!','2':'@','3':'#','4':'$','5':'%',
+  '6':'^','7':'&','8':'*','9':'(','0':')',
+  ';':':',',':'<','.':'>','/':'?','\\':'|',
+  "'":'"','-':'_','=':'+','[':'{',']':'}','`':'~',
+  'Space':'Space',
+};
+
+let shiftActive = false;
+let currentLayer = 0;
+
 function parseKey(code) {
   if (code === -1 || code === 'KC_NO') return { tap: '', empty: true };
   if (code === 'KC_TRNS') return { tap: '▽', trns: true };
@@ -250,7 +291,7 @@ function parseKey(code) {
   const modtap = code.match(/^(LSFT_T|LCTL_T|RALT_T|MEH_T|LGUI_T|LALT_T)\((.+)\)$/);
   if (modtap) {
     const inner = parseKey(modtap[2]);
-    return { tap: inner.tap, hold: MOD_LABELS[modtap[1]] || modtap[1] };
+    return { tap: inner.tap, hold: MOD_LABELS[modtap[1]] || modtap[1], isShift: modtap[1] === 'LSFT_T' };
   }
 
   const lt = code.match(/^LT(\d+)\((.+)\)$/);
@@ -269,19 +310,37 @@ function parseKey(code) {
   return { tap: code };
 }
 
-function makeKey(code) {
+function applyShift(tap) {
+  if (tap.startsWith('⇧')) return tap; // already shifted
+  if (SHIFT_MAP[tap] !== undefined) return SHIFT_MAP[tap];
+  // single letter → stays same (already uppercase display)
+  return tap;
+}
+
+function makeKey(code, colStagger) {
   const k = parseKey(String(code));
   const el = document.createElement('div');
   el.className = 'kb-key';
   el.title = String(code);
 
+  if (colStagger) el.style.marginTop = colStagger + 'px';
+
   if (k.empty) { el.classList.add('is-empty'); return el; }
   if (k.trns)  { el.classList.add('is-trns'); }
   if (k.hold)  { el.classList.add('has-hold'); }
 
+  if (k.isShift) {
+    el.classList.add('is-shift-key');
+    if (shiftActive) el.classList.add('is-shift-active');
+    el.addEventListener('click', () => {
+      shiftActive = !shiftActive;
+      renderLayer(currentLayer);
+    });
+  }
+
   const tap = document.createElement('span');
   tap.className = 'kb-tap';
-  tap.textContent = k.tap;
+  tap.textContent = (shiftActive && !k.trns && !k.isShift) ? applyShift(k.tap) : k.tap;
   el.appendChild(tap);
 
   if (k.hold) {
@@ -294,49 +353,50 @@ function makeKey(code) {
   return el;
 }
 
-function makeRow(keys) {
+function makeRow(keys, stagger) {
   const row = document.createElement('div');
   row.className = 'kb-row';
-  keys.forEach(k => row.appendChild(makeKey(k)));
+  keys.forEach((k, c) => row.appendChild(makeKey(k, stagger ? stagger[c] : 0)));
   return row;
 }
 
 function renderLayer(idx) {
+  currentLayer = idx;
   const data = LAYERS[idx];
   const board = document.getElementById('kb-board');
   board.innerHTML = '';
 
-  // Left half: rows 0-2 + thumb row (index 3)
+  // Left half
   const left = document.createElement('div');
   left.className = 'kb-half kb-left';
-  for (let r = 0; r < 3; r++) left.appendChild(makeRow(data[r]));
+  for (let r = 0; r < 3; r++) left.appendChild(makeRow(data[r], LEFT_STAGGER));
 
-  // Left thumb row: spacer (3 key widths) + 2 thumb keys
+  // Left thumb row: spacer + 2 thumb keys (no column stagger on thumbs)
   const leftThumb = document.createElement('div');
   leftThumb.className = 'kb-row';
   const lSpacer = document.createElement('div');
   lSpacer.className = 'kb-thumb-spacer';
   leftThumb.appendChild(lSpacer);
-  leftThumb.appendChild(makeKey(data[3][0]));
-  leftThumb.appendChild(makeKey(data[3][1]));
+  leftThumb.appendChild(makeKey(data[3][0], 0));
+  leftThumb.appendChild(makeKey(data[3][1], 0));
   left.appendChild(leftThumb);
   board.appendChild(left);
 
-  // Gap between halves
+  // Gap
   const gap = document.createElement('div');
   gap.style.cssText = 'width:2rem;flex-shrink:0';
   board.appendChild(gap);
 
-  // Right half: rows 4-6 + thumb row (index 7)
+  // Right half
   const right = document.createElement('div');
   right.className = 'kb-half kb-right';
-  for (let r = 4; r < 7; r++) right.appendChild(makeRow(data[r]));
+  for (let r = 4; r < 7; r++) right.appendChild(makeRow(data[r], RIGHT_STAGGER));
 
   // Right thumb row: 2 thumb keys + spacer
   const rightThumb = document.createElement('div');
   rightThumb.className = 'kb-row';
-  rightThumb.appendChild(makeKey(data[7][0]));
-  rightThumb.appendChild(makeKey(data[7][1]));
+  rightThumb.appendChild(makeKey(data[7][0], 0));
+  rightThumb.appendChild(makeKey(data[7][1], 0));
   const rSpacer = document.createElement('div');
   rSpacer.className = 'kb-thumb-spacer';
   rightThumb.appendChild(rSpacer);
