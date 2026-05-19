@@ -184,7 +184,7 @@
 
       if (d < sinceMidnight) {
         cell.classList.add('empty');
-      } else if (d.getTime() === todayMidnight.getTime()) {
+      } else if (d.getTime() === todayMidnight.getTime() || d.getTime() === sinceMidnight.getTime()) {
         cell.classList.add('today');
       } else if (d <= todayMidnight) {
         cell.classList.add('filled');
@@ -201,7 +201,7 @@
     scroller.scrollLeft = scroller.scrollWidth;
   }
 
-  buildGrid('v-grid', 'v-scroll', 'v-count', '2026-05-15T13:00:00Z', null);
+  buildGrid('v-grid', 'v-scroll', 'v-count', '2026-05-15T12:00:00Z', null);
 
   fetch('https://charityshot.co.uk/api/photos.json')
     .then(function(r) { return r.json(); })
