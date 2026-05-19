@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="main prose-wrap">
   <h1 class="p-name">Keyboard</h1>
-  <p class="kb-desc">Ferris Sweep &middot; RP2040 Pro Micro &middot; Vial firmware &middot; 3 layers</p>
+  <p class="kb-desc">Ferris Sweep &middot; 34 keys &middot; 3 layers</p>
 
   <div class="kb-controls">
     <div class="kb-tabs" role="tablist" aria-label="Keyboard layers">
@@ -148,47 +148,13 @@
 }
 .kb-bg-svg { position: absolute; top: 0; left: 0; overflow: visible; pointer-events: none; z-index: -1; }
 
-/* Component bar at top of each PCB */
-.kb-component-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 2px 6px;
-  gap: 8px;
-}
-.kb-chip {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.kb-chip-label {
-  font-size: 0.6rem;
-  color: hsl(200 60% 60%);
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  font-family: ui-monospace, monospace;
-}
-.kb-port {
-  font-size: 0.55rem;
-  color: hsl(0 0% 45%);
-  border: 1px solid hsl(0 0% 30%);
-  border-radius: 3px;
-  padding: 1px 4px;
-  letter-spacing: 0.04em;
-  font-family: ui-monospace, monospace;
-}
-.kb-port.usb { color: hsl(200 60% 55%); border-color: hsl(200 40% 35%); }
-.kb-port.trrs { color: hsl(0 70% 55%); border-color: hsl(0 50% 35%); }
-
-/* TRRS cable in gap */
+/* Gap between halves */
 .kb-cable-gap {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
+  width: 2rem;
   flex-shrink: 0;
-  align-self: center;
-  margin-bottom: 80px; /* align with middle of key area */
 }
 
 .kb-cols {
@@ -441,146 +407,6 @@ function makeHalf(rows, stagger) {
   return cols;
 }
 
-// RP2040 chip SVG
-function makeChipSvg() {
-  const ns = 'http://www.w3.org/2000/svg';
-  const svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('width', '34'); svg.setAttribute('height', '22');
-  svg.setAttribute('viewBox', '0 0 34 22');
-
-  const body = document.createElementNS(ns, 'rect');
-  body.setAttribute('x', '5'); body.setAttribute('y', '1');
-  body.setAttribute('width', '24'); body.setAttribute('height', '20');
-  body.setAttribute('rx', '2'); body.setAttribute('fill', '#1a1f3a');
-  body.setAttribute('stroke', '#2a3060'); body.setAttribute('stroke-width', '1');
-  svg.appendChild(body);
-
-  // dot marker top-left
-  const dot = document.createElementNS(ns, 'circle');
-  dot.setAttribute('cx', '8'); dot.setAttribute('cy', '4');
-  dot.setAttribute('r', '1.2'); dot.setAttribute('fill', '#3a4080');
-  svg.appendChild(dot);
-
-  // pins — left and right sides, 4 each
-  [[0, 4], [0, 8], [0, 13], [0, 17]].forEach(([x, y]) => {
-    const pin = document.createElementNS(ns, 'rect');
-    pin.setAttribute('x', x); pin.setAttribute('y', y);
-    pin.setAttribute('width', '5'); pin.setAttribute('height', '2');
-    pin.setAttribute('fill', '#7a8090'); pin.setAttribute('rx', '0.5');
-    svg.appendChild(pin);
-  });
-  [[29, 4], [29, 8], [29, 13], [29, 17]].forEach(([x, y]) => {
-    const pin = document.createElementNS(ns, 'rect');
-    pin.setAttribute('x', x); pin.setAttribute('y', y);
-    pin.setAttribute('width', '5'); pin.setAttribute('height', '2');
-    pin.setAttribute('fill', '#7a8090'); pin.setAttribute('rx', '0.5');
-    svg.appendChild(pin);
-  });
-
-  return svg;
-}
-
-// TRRS cable SVG in gap — red coiled cable with plug ends
-function makeCableSvg() {
-  const ns = 'http://www.w3.org/2000/svg';
-  const W = 80, H = 56;
-  const svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('width', String(W)); svg.setAttribute('height', String(H));
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.style.cssText = 'display:block;overflow:visible';
-
-  // Cable path — drooping arc in red
-  const cable = document.createElementNS(ns, 'path');
-  cable.setAttribute('d', `M 10,14 C 10,38 70,38 70,14`);
-  cable.setAttribute('stroke', '#cc2020');
-  cable.setAttribute('stroke-width', '5');
-  cable.setAttribute('fill', 'none');
-  cable.setAttribute('stroke-linecap', 'round');
-  svg.appendChild(cable);
-
-  // Cable highlight
-  const highlight = document.createElementNS(ns, 'path');
-  highlight.setAttribute('d', `M 10,14 C 10,38 70,38 70,14`);
-  highlight.setAttribute('stroke', '#ff4040');
-  highlight.setAttribute('stroke-width', '2');
-  highlight.setAttribute('fill', 'none');
-  highlight.setAttribute('stroke-linecap', 'round');
-  highlight.setAttribute('opacity', '0.4');
-  svg.appendChild(highlight);
-
-  // TRRS plugs (left and right)
-  [[0, 8], [62, 8]].forEach(([x, y]) => {
-    // Barrel
-    const barrel = document.createElementNS(ns, 'rect');
-    barrel.setAttribute('x', x); barrel.setAttribute('y', y);
-    barrel.setAttribute('width', '18'); barrel.setAttribute('height', '12');
-    barrel.setAttribute('rx', '3'); barrel.setAttribute('fill', '#555');
-    svg.appendChild(barrel);
-
-    // TRRS rings (3 gold bands)
-    [3, 7, 11].forEach(rx => {
-      const ring = document.createElementNS(ns, 'rect');
-      ring.setAttribute('x', x + rx); ring.setAttribute('y', y + 1);
-      ring.setAttribute('width', '2'); ring.setAttribute('height', '10');
-      ring.setAttribute('fill', '#c8a000'); ring.setAttribute('rx', '0.5');
-      svg.appendChild(ring);
-    });
-
-    // Tip
-    const tip = document.createElementNS(ns, 'rect');
-    tip.setAttribute('x', x === 0 ? x - 3 : x + 18);
-    tip.setAttribute('y', y + 3);
-    tip.setAttribute('width', '3'); tip.setAttribute('height', '6');
-    tip.setAttribute('rx', '1.5'); tip.setAttribute('fill', '#888');
-    svg.appendChild(tip);
-  });
-
-  // Label
-  const label = document.createElementNS(ns, 'text');
-  label.setAttribute('x', '40'); label.setAttribute('y', '52');
-  label.setAttribute('text-anchor', 'middle');
-  label.setAttribute('font-size', '8');
-  label.setAttribute('fill', 'hsl(0 0% 40%)');
-  label.setAttribute('font-family', 'ui-monospace, monospace');
-  label.textContent = 'TRRS';
-  svg.appendChild(label);
-
-  return svg;
-}
-
-function makeComponentBar(isLeft) {
-  const bar = document.createElement('div');
-  bar.className = 'kb-component-bar';
-
-  // Left side: RP2040 chip
-  const chip = document.createElement('div');
-  chip.className = 'kb-chip';
-  chip.appendChild(makeChipSvg());
-  const label = document.createElement('span');
-  label.className = 'kb-chip-label';
-  label.textContent = 'RP2040';
-  chip.appendChild(label);
-  bar.appendChild(chip);
-
-  // Right side: port indicators
-  const ports = document.createElement('div');
-  ports.style.cssText = 'display:flex;gap:4px;align-items:center';
-
-  if (isLeft) {
-    const usb = document.createElement('span');
-    usb.className = 'kb-port usb';
-    usb.textContent = 'USB-C';
-    ports.appendChild(usb);
-  }
-
-  const trrs = document.createElement('span');
-  trrs.className = 'kb-port trrs';
-  trrs.textContent = 'TRRS';
-  ports.appendChild(trrs);
-
-  bar.appendChild(ports);
-  return bar;
-}
 
 function drawHalfBackground(halfEl) {
   const old = halfEl.querySelector('.kb-bg-svg');
@@ -612,12 +438,8 @@ function drawHalfBackground(halfEl) {
   svg.setAttribute('overflow', 'visible');
   svg.classList.add('kb-bg-svg');
 
-  // Component bar — full width rect at top
-  const cb = rel(halfEl.querySelector('.kb-component-bar').getBoundingClientRect());
-  svg.appendChild(mkRect(-PAD, -PAD, hr.width + PAD * 2, cb.y + cb.h + PAD, R));
-
-  // Column rects — from comp bar bottom down to last key bottom
-  const colBot0 = cb.y + cb.h;
+  // Column rects — from top down to last key bottom
+  const colBot0 = -PAD;
   Array.from(halfEl.querySelectorAll('.kb-col')).forEach(col => {
     const cr = rel(col.getBoundingClientRect());
     const keys = Array.from(col.querySelectorAll('.kb-key'));
@@ -656,7 +478,6 @@ function renderLayer(idx) {
   // Left half
   const left = document.createElement('div');
   left.className = 'kb-half kb-left';
-  left.appendChild(makeComponentBar(true));
   left.appendChild(makeHalf([data[0], data[1], data[2]], LEFT_STAGGER));
   const leftThumb = document.createElement('div');
   leftThumb.className = 'kb-thumb-row';
@@ -671,13 +492,11 @@ function renderLayer(idx) {
   // Cable gap
   const gap = document.createElement('div');
   gap.className = 'kb-cable-gap';
-  gap.appendChild(makeCableSvg());
   board.appendChild(gap);
 
   // Right half
   const right = document.createElement('div');
   right.className = 'kb-half kb-right';
-  right.appendChild(makeComponentBar(false));
   right.appendChild(makeHalf([data[4], data[5], data[6]], RIGHT_STAGGER));
   const rightThumb = document.createElement('div');
   rightThumb.className = 'kb-thumb-row';
