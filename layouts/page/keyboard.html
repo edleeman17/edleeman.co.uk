@@ -127,6 +127,20 @@
 .kb-half {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+/* column-based layout — stagger via padding-top per column */
+.kb-cols {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.kb-col {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 }
 
@@ -328,13 +342,12 @@ function applyShift(tap) {
   return tap;
 }
 
-function makeKey(code, colStagger, thumbTransform) {
+function makeKey(code, _unused, thumbTransform) {
   const k = parseKey(String(code));
   const el = document.createElement('div');
   el.className = 'kb-key';
   el.title = String(code);
 
-  if (colStagger) el.style.marginTop = colStagger + 'px';
   if (thumbTransform) {
     const [rot, ty] = thumbTransform;
     el.style.transform = `rotate(${rot}deg) translateY(${ty}px)`;
@@ -370,11 +383,21 @@ function makeKey(code, colStagger, thumbTransform) {
   return el;
 }
 
-function makeRow(keys, stagger) {
-  const row = document.createElement('div');
-  row.className = 'kb-row';
-  keys.forEach((k, c) => row.appendChild(makeKey(k, stagger ? stagger[c] : 0)));
-  return row;
+function makeHalf(rows, stagger) {
+  // rows = array of 3 row-arrays, each with 5 keys
+  // Build column-first so stagger is padding-top per column
+  const cols = document.createElement('div');
+  cols.className = 'kb-cols';
+  for (let c = 0; c < 5; c++) {
+    const col = document.createElement('div');
+    col.className = 'kb-col';
+    col.style.paddingTop = stagger[c] + 'px';
+    for (let r = 0; r < 3; r++) {
+      col.appendChild(makeKey(rows[r][c]));
+    }
+    cols.appendChild(col);
+  }
+  return cols;
 }
 
 function renderLayer(idx) {
@@ -386,9 +409,8 @@ function renderLayer(idx) {
   // Left half
   const left = document.createElement('div');
   left.className = 'kb-half kb-left';
-  for (let r = 0; r < 3; r++) left.appendChild(makeRow(data[r], LEFT_STAGGER));
+  left.appendChild(makeHalf([data[0], data[1], data[2]], LEFT_STAGGER));
 
-  // Left thumb row: spacer + 2 angled thumb keys
   const leftThumb = document.createElement('div');
   leftThumb.className = 'kb-row kb-thumb-row';
   const lSpacer = document.createElement('div');
@@ -407,9 +429,8 @@ function renderLayer(idx) {
   // Right half
   const right = document.createElement('div');
   right.className = 'kb-half kb-right';
-  for (let r = 4; r < 7; r++) right.appendChild(makeRow(data[r], RIGHT_STAGGER));
+  right.appendChild(makeHalf([data[4], data[5], data[6]], RIGHT_STAGGER));
 
-  // Right thumb row: 2 angled thumb keys + spacer
   const rightThumb = document.createElement('div');
   rightThumb.className = 'kb-row kb-thumb-row';
   rightThumb.appendChild(makeKey(data[7][0], 0, RIGHT_THUMB_TRANSFORMS[0]));
