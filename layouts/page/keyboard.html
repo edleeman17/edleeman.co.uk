@@ -113,7 +113,7 @@
 .kb-legend-sep { color: var(--border); }
 .kb-trns-eg { opacity: 0.4; }
 
-.kb-board-wrap { overflow-x: auto; padding-bottom: 1rem; }
+.kb-board-wrap { overflow-x: auto; padding-bottom: 2rem; overflow-y: visible; }
 
 .kb-board {
   display: flex;
@@ -196,10 +196,17 @@
   white-space: nowrap;
 }
 
+.kb-thumb-row {
+  /* extra vertical space for rotated keys */
+  padding-top: 6px;
+  padding-bottom: 10px;
+  overflow: visible;
+}
+
 .kb-thumb-spacer {
   flex-shrink: 0;
-  /* 3 keys (52px each) + 2 gaps (4px each) = 164px */
-  width: 164px;
+  /* 2 keys (52px) + 1 gap (4px) = 108px → thumbs sit under cols 2–4 */
+  width: 108px;
 }
 </style>
 
@@ -262,9 +269,13 @@ const MOD_LABELS = {
   'LALT_T': '⌥ opt',
 };
 
-// Ferris Sweep column stagger (pixels down from top of row, col 0–4)
-const LEFT_STAGGER  = [8, 2, 0, 4, 6];
-const RIGHT_STAGGER = [6, 4, 0, 2, 8];
+// Ferris Sweep column stagger — pinky lowest, middle highest (col 0–4)
+const LEFT_STAGGER  = [52, 26, 0, 16, 36];
+const RIGHT_STAGGER = [36, 16, 0, 26, 52];
+
+// Thumb key transforms: [rotationDeg, translateYpx]
+const LEFT_THUMB_TRANSFORMS  = [[-5, 0], [12, -10]];
+const RIGHT_THUMB_TRANSFORMS = [[-12, -10], [5, 0]];
 
 // Shift label map — what each tap label becomes when Shift is held
 const SHIFT_MAP = {
@@ -317,13 +328,19 @@ function applyShift(tap) {
   return tap;
 }
 
-function makeKey(code, colStagger) {
+function makeKey(code, colStagger, thumbTransform) {
   const k = parseKey(String(code));
   const el = document.createElement('div');
   el.className = 'kb-key';
   el.title = String(code);
 
   if (colStagger) el.style.marginTop = colStagger + 'px';
+  if (thumbTransform) {
+    const [rot, ty] = thumbTransform;
+    el.style.transform = `rotate(${rot}deg) translateY(${ty}px)`;
+    el.style.transformOrigin = 'center bottom';
+    el.style.flexShrink = '0';
+  }
 
   if (k.empty) { el.classList.add('is-empty'); return el; }
   if (k.trns)  { el.classList.add('is-trns'); }
@@ -371,14 +388,14 @@ function renderLayer(idx) {
   left.className = 'kb-half kb-left';
   for (let r = 0; r < 3; r++) left.appendChild(makeRow(data[r], LEFT_STAGGER));
 
-  // Left thumb row: spacer + 2 thumb keys (no column stagger on thumbs)
+  // Left thumb row: spacer + 2 angled thumb keys
   const leftThumb = document.createElement('div');
-  leftThumb.className = 'kb-row';
+  leftThumb.className = 'kb-row kb-thumb-row';
   const lSpacer = document.createElement('div');
   lSpacer.className = 'kb-thumb-spacer';
   leftThumb.appendChild(lSpacer);
-  leftThumb.appendChild(makeKey(data[3][0], 0));
-  leftThumb.appendChild(makeKey(data[3][1], 0));
+  leftThumb.appendChild(makeKey(data[3][0], 0, LEFT_THUMB_TRANSFORMS[0]));
+  leftThumb.appendChild(makeKey(data[3][1], 0, LEFT_THUMB_TRANSFORMS[1]));
   left.appendChild(leftThumb);
   board.appendChild(left);
 
@@ -392,11 +409,11 @@ function renderLayer(idx) {
   right.className = 'kb-half kb-right';
   for (let r = 4; r < 7; r++) right.appendChild(makeRow(data[r], RIGHT_STAGGER));
 
-  // Right thumb row: 2 thumb keys + spacer
+  // Right thumb row: 2 angled thumb keys + spacer
   const rightThumb = document.createElement('div');
-  rightThumb.className = 'kb-row';
-  rightThumb.appendChild(makeKey(data[7][0], 0));
-  rightThumb.appendChild(makeKey(data[7][1], 0));
+  rightThumb.className = 'kb-row kb-thumb-row';
+  rightThumb.appendChild(makeKey(data[7][0], 0, RIGHT_THUMB_TRANSFORMS[0]));
+  rightThumb.appendChild(makeKey(data[7][1], 0, RIGHT_THUMB_TRANSFORMS[1]));
   const rSpacer = document.createElement('div');
   rSpacer.className = 'kb-thumb-spacer';
   rightThumb.appendChild(rSpacer);
