@@ -138,16 +138,15 @@
   width: max-content;
 }
 
-/* PCB halves */
+/* PCB halves — background drawn by JS SVG to match key silhouette */
 .kb-half {
-  background: hsl(220 15% 12%);
-  border-radius: 14px;
   padding: 12px 16px 28px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   position: relative;
 }
+.kb-bg-svg { position: absolute; top: 0; left: 0; overflow: visible; pointer-events: none; z-index: -1; }
 
 /* Component bar at top of each PCB */
 .kb-component-bar {
@@ -583,6 +582,71 @@ function makeComponentBar(isLeft) {
   return bar;
 }
 
+function drawHalfBackground(halfEl) {
+  const old = halfEl.querySelector('.kb-bg-svg');
+  if (old) old.remove();
+
+  const ns = 'http://www.w3.org/2000/svg';
+  const PCB = 'hsl(220 15% 12%)';
+  const R = 8;
+  const PAD = 6;
+
+  const hr = halfEl.getBoundingClientRect();
+  const ox = hr.left, oy = hr.top;
+
+  function rel(r) { return { x: r.left - ox, y: r.top - oy, w: r.width, h: r.height }; }
+
+  function mkRect(x, y, w, h, rx) {
+    const el = document.createElementNS(ns, 'rect');
+    el.setAttribute('x', x); el.setAttribute('y', y);
+    el.setAttribute('width', Math.max(0, w)); el.setAttribute('height', Math.max(0, h));
+    if (rx) el.setAttribute('rx', rx);
+    el.setAttribute('fill', PCB);
+    return el;
+  }
+
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('width', hr.width);
+  svg.setAttribute('height', hr.height);
+  svg.setAttribute('viewBox', `0 0 ${hr.width} ${hr.height}`);
+  svg.setAttribute('overflow', 'visible');
+  svg.classList.add('kb-bg-svg');
+
+  // Component bar — full width rect at top
+  const cb = rel(halfEl.querySelector('.kb-component-bar').getBoundingClientRect());
+  svg.appendChild(mkRect(-PAD, -PAD, hr.width + PAD * 2, cb.y + cb.h + PAD, R));
+
+  // Column rects — from comp bar bottom down to last key bottom
+  const colBot0 = cb.y + cb.h;
+  Array.from(halfEl.querySelectorAll('.kb-col')).forEach(col => {
+    const cr = rel(col.getBoundingClientRect());
+    const keys = Array.from(col.querySelectorAll('.kb-key'));
+    const last = keys[keys.length - 1];
+    const lr = rel(last.getBoundingClientRect());
+    svg.appendChild(mkRect(cr.x - PAD / 2, colBot0, cr.w + PAD, (lr.y + lr.h + PAD) - colBot0, 0));
+  });
+
+  // Thumb keys — rotated rects matching key transform
+  Array.from(halfEl.querySelectorAll('.kb-thumb-row .kb-key:not(.is-empty)')).forEach(key => {
+    const kr = rel(key.getBoundingClientRect());
+    const cx = kr.x + kr.w / 2;
+    const cy = kr.y + kr.h / 2;
+    const m = (key.style.transform || '').match(/rotate\(([-\d.]+)deg\)/);
+    const angle = m ? parseFloat(m[1]) : 0;
+    const sz = 52 + PAD * 2;
+    const g = document.createElementNS(ns, 'g');
+    g.setAttribute('transform', `rotate(${angle},${cx},${cy})`);
+    const r = document.createElementNS(ns, 'rect');
+    r.setAttribute('x', cx - sz / 2); r.setAttribute('y', cy - sz / 2);
+    r.setAttribute('width', sz); r.setAttribute('height', sz);
+    r.setAttribute('rx', R); r.setAttribute('fill', PCB);
+    g.appendChild(r);
+    svg.appendChild(g);
+  });
+
+  halfEl.insertBefore(svg, halfEl.firstChild);
+}
+
 function renderLayer(idx) {
   currentLayer = idx;
   const data = LAYERS[idx];
@@ -624,6 +688,10 @@ function renderLayer(idx) {
   rightThumb.appendChild(rSpacer);
   right.appendChild(rightThumb);
   board.appendChild(right);
+
+  requestAnimationFrame(() => {
+    board.querySelectorAll('.kb-half').forEach(drawHalfBackground);
+  });
 }
 
 document.querySelectorAll('.kb-tab').forEach(btn => {
