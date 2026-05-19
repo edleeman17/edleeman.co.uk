@@ -89,6 +89,7 @@
   height: 11px;
   border-radius: 2px;
   background: var(--bg3, #ededed);
+  position: relative;
 }
 .day-cell.filled {
   background: var(--text, #141414);
@@ -98,6 +99,22 @@
 }
 .day-cell.empty {
   background: transparent;
+}
+.day-cell.has-photo {
+  text-decoration: none;
+  display: block;
+}
+.day-cell.has-photo::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 .milestone-meta {
   font-size: var(--text-xs, 0.75rem);
@@ -109,21 +126,25 @@
 (function() {
   var DAY = 86400000;
 
-  function buildGrid(containerId, countId, sinceISO) {
+  function toDateKey(d) {
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  }
+
+  function buildGrid(containerId, countId, sinceISO, photoMap) {
     var since = new Date(sinceISO);
     var now = new Date();
     var daysSince = Math.floor((now - since) / DAY);
 
     document.getElementById(countId).textContent = daysSince + ' day' + (daysSince === 1 ? '' : 's');
 
-    // Start grid from the Monday of the week containing `since`
     var startDay = new Date(since);
-    var dow = startDay.getDay(); // 0=Sun
+    var dow = startDay.getDay();
     var offsetToMon = (dow === 0) ? -6 : 1 - dow;
     startDay.setDate(startDay.getDate() + offsetToMon);
     startDay.setHours(0, 0, 0, 0);
 
-    // End: last day of the week containing today, min 8 weeks total
     var endDay = new Date(now);
     var endDow = endDay.getDay();
     var offsetToSun = (endDow === 0) ? 0 : 7 - endDow;
@@ -140,30 +161,63 @@
     var grid = document.getElementById(containerId);
     var todayMidnight = new Date(now);
     todayMidnight.setHours(0, 0, 0, 0);
-    var sincesMidnight = new Date(since);
-    sincesMidnight.setHours(0, 0, 0, 0);
+    var sinceMidnight = new Date(since);
+    sinceMidnight.setHours(0, 0, 0, 0);
 
     for (var i = 0; i < totalDays; i++) {
       var d = new Date(startDay.getTime() + i * DAY);
-      var cell = document.createElement('div');
+      var key = toDateKey(d);
+      var photoSlug = photoMap ? photoMap[key] : null;
+
+      var cell;
+      if (photoSlug) {
+        cell = document.createElement('a');
+        cell.href = 'https://charityshot.co.uk/feed/' + photoSlug;
+        cell.target = '_blank';
+        cell.rel = 'noopener noreferrer';
+        cell.title = key;
+      } else {
+        cell = document.createElement('div');
+      }
+
       cell.className = 'day-cell';
 
-      if (d < sincesMidnight) {
+      if (d < sinceMidnight) {
         cell.classList.add('empty');
       } else if (d.getTime() === todayMidnight.getTime()) {
         cell.classList.add('today');
-        cell.title = 'today';
       } else if (d <= todayMidnight) {
         cell.classList.add('filled');
       }
-      // future days stay default (--bg3)
+
+      if (photoSlug) {
+        cell.classList.add('has-photo');
+      }
 
       grid.appendChild(cell);
     }
   }
 
-  buildGrid('v-grid', 'v-count', '2026-05-15T13:00:00Z');
-  buildGrid('p-grid', 'p-count', '2025-02-27T10:06:00Z');
+  // Build vaping grid immediately (no photo overlay needed)
+  buildGrid('v-grid', 'v-count', '2026-05-15T13:00:00Z', null);
+
+  // Photography grid: fetch photos first, then build
+  fetch('https://charityshot.co.uk/api/photos.json')
+    .then(function(r) { return r.json(); })
+    .then(function(photos) {
+      var map = {};
+      photos.forEach(function(photo) {
+        if (!photo.date) return;
+        var key = toDateKey(new Date(photo.date));
+        // keep earliest photo per day (array is newest-first, so last wins)
+        map[key] = photo.slug;
+      });
+      buildGrid('p-grid', 'p-count', '2025-02-27T10:06:00Z', map);
+    })
+    .catch(function() {
+      // render grid without photo dots on API failure
+      buildGrid('p-grid', 'p-count', '2025-02-27T10:06:00Z', null);
+    });
 })();
 </script>
 
