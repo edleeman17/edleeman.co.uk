@@ -19,4 +19,5 @@ All the pages on this site.
 - [/reading](/reading) — books I've read and want to read
 - [/rss](/rss) — subscribe via RSS
 - [/search](/search) — search the site
+- [/since](/since) — milestones tracked with day grids
 - [/uses](/uses) — hardware and software I use
