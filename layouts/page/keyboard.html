@@ -210,13 +210,13 @@
   overflow: visible;
 }
 
-/* Keys */
+/* Keys — white keycaps */
 .kb-key {
   width: 52px;
   height: 52px;
-  background: hsl(220 10% 22%);
-  border: 1px solid hsl(220 10% 16%);
-  border-bottom: 3px solid hsl(220 10% 8%);
+  background: hsl(0 0% 94%);
+  border: 1px solid hsl(0 0% 76%);
+  border-bottom: 3px solid hsl(0 0% 60%);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -228,10 +228,10 @@
   cursor: default;
   flex-shrink: 0;
   overflow: hidden;
-  color: hsl(0 0% 90%);
+  color: hsl(0 0% 12%);
 }
 .kb-key:hover {
-  background: hsl(220 10% 28%);
+  background: hsl(0 0% 86%);
   border-bottom-width: 1px;
   transform: translateY(2px);
 }
@@ -239,29 +239,29 @@
 .kb-key.is-empty { visibility: hidden; }
 .kb-key.has-hold { justify-content: space-between; padding: 6px 4px 5px; }
 .kb-key.is-layer-key { cursor: pointer; }
-.kb-key.is-layer-key:hover { background: hsl(220 35% 28%); border-color: hsl(220 35% 18%); }
+.kb-key.is-layer-key:hover { background: hsl(220 60% 88%); border-color: hsl(220 40% 70%); }
 .kb-key.is-shift-key { cursor: pointer; }
 .kb-key.is-shift-active {
-  background: hsl(0 0% 82%);
-  border-color: hsl(0 0% 65%);
-  border-bottom-color: hsl(0 0% 45%);
+  background: hsl(45 90% 80%);
+  border-color: hsl(45 70% 62%);
+  border-bottom-color: hsl(45 70% 46%);
 }
 .kb-key.is-shift-active .kb-tap { color: hsl(0 0% 10%); }
-.kb-key.is-shift-active .kb-hold { color: hsl(0 0% 35%); border-color: hsl(0 0% 50%); }
+.kb-key.is-shift-active .kb-hold { color: hsl(0 0% 35%); border-color: hsl(0 0% 55%); }
 
 .kb-tap {
   font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1;
   text-align: center;
-  color: hsl(0 0% 90%);
+  color: hsl(0 0% 12%);
 }
 .kb-key.is-trns .kb-tap { font-weight: 400; }
 .kb-hold {
   font-size: 0.6rem;
-  color: hsl(0 0% 50%);
+  color: hsl(0 0% 42%);
   line-height: 1;
-  border: 1px solid hsl(0 0% 32%);
+  border: 1px solid hsl(0 0% 72%);
   border-radius: 2px;
   padding: 1px 3px;
   text-align: center;
@@ -270,6 +270,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Right half: keys flush right within PCB */
+.kb-half.kb-right { align-items: flex-end; }
+.kb-half.kb-right .kb-component-bar { width: 100%; }
 
 .kb-thumb-spacer {
   flex-shrink: 0;
