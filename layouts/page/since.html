@@ -10,7 +10,7 @@
         <span class="milestone-label">no vaping</span>
         <span class="milestone-count" id="v-count"></span>
       </div>
-      <div class="grid-scroll">
+      <div class="grid-scroll" id="v-scroll">
         <div class="day-grid" id="v-grid"></div>
       </div>
       <div class="milestone-meta">since 15 May 2026, 1:00 pm</div>
@@ -21,7 +21,7 @@
         <span class="milestone-label">photography</span>
         <span class="milestone-count" id="p-count"></span>
       </div>
-      <div class="grid-scroll">
+      <div class="grid-scroll" id="p-scroll">
         <div class="day-grid" id="p-grid"></div>
       </div>
       <div class="milestone-meta">since 27 Feb 2025, 10:06 am</div>
@@ -132,7 +132,7 @@
       String(d.getDate()).padStart(2, '0');
   }
 
-  function buildGrid(containerId, countId, sinceISO, photoMap) {
+  function buildGrid(gridId, scrollId, countId, sinceISO, photoMap) {
     var since = new Date(sinceISO);
     var now = new Date();
     var daysSince = Math.floor((now - since) / DAY);
@@ -158,7 +158,7 @@
       totalDays = minDays;
     }
 
-    var grid = document.getElementById(containerId);
+    var grid = document.getElementById(gridId);
     var todayMidnight = new Date(now);
     todayMidnight.setHours(0, 0, 0, 0);
     var sinceMidnight = new Date(since);
@@ -196,12 +196,13 @@
 
       grid.appendChild(cell);
     }
+
+    var scroller = document.getElementById(scrollId);
+    scroller.scrollLeft = scroller.scrollWidth;
   }
 
-  // Build vaping grid immediately (no photo overlay needed)
-  buildGrid('v-grid', 'v-count', '2026-05-15T13:00:00Z', null);
+  buildGrid('v-grid', 'v-scroll', 'v-count', '2026-05-15T13:00:00Z', null);
 
-  // Photography grid: fetch photos first, then build
   fetch('https://charityshot.co.uk/api/photos.json')
     .then(function(r) { return r.json(); })
     .then(function(photos) {
@@ -209,14 +210,12 @@
       photos.forEach(function(photo) {
         if (!photo.date) return;
         var key = toDateKey(new Date(photo.date));
-        // keep earliest photo per day (array is newest-first, so last wins)
         map[key] = photo.slug;
       });
-      buildGrid('p-grid', 'p-count', '2025-02-27T10:06:00Z', map);
+      buildGrid('p-grid', 'p-scroll', 'p-count', '2025-02-27T10:06:00Z', map);
     })
     .catch(function() {
-      // render grid without photo dots on API failure
-      buildGrid('p-grid', 'p-count', '2025-02-27T10:06:00Z', null);
+      buildGrid('p-grid', 'p-scroll', 'p-count', '2025-02-27T10:06:00Z', null);
     });
 })();
 </script>
