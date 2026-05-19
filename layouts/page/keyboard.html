@@ -1,0 +1,361 @@
+{{ define "main" }}
+<div class="main prose-wrap">
+  <h1 class="p-name">Keyboard</h1>
+  <p class="kb-desc">Ferris Sweep &middot; 34 key split &middot; Vial firmware &middot; 3 layers</p>
+
+  <div class="kb-controls">
+    <div class="kb-tabs" role="tablist" aria-label="Keyboard layers">
+      <button class="kb-tab is-active" data-layer="0" role="tab" aria-selected="true">Base</button>
+      <button class="kb-tab" data-layer="1" role="tab" aria-selected="false">Nav &amp; Media</button>
+      <button class="kb-tab" data-layer="2" role="tab" aria-selected="false">Symbols &amp; F-keys</button>
+    </div>
+    <a href="/ferris-sweep.vil" download class="kb-dl">&darr; Download .vil</a>
+  </div>
+
+  <div class="kb-legend">
+    <span class="kb-legend-item"><span class="kb-legend-key">Key</span> tap</span>
+    <span class="kb-legend-sep">&middot;</span>
+    <span class="kb-legend-item"><span class="kb-legend-hold">hold</span> hold modifier</span>
+    <span class="kb-legend-sep">&middot;</span>
+    <span class="kb-legend-item kb-trns-eg">&#9661;</span><span class="kb-legend-item"> transparent (inherits layer below)</span>
+  </div>
+
+  <div class="kb-board-wrap">
+    <div class="kb-board" id="kb-board" role="img" aria-label="Keyboard layout"></div>
+  </div>
+</div>
+
+<style>
+.kb-desc {
+  color: var(--muted);
+  font-size: var(--text-sm);
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.kb-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.kb-tabs { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+
+.kb-tab {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.375rem 0.875rem;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 150ms;
+}
+.kb-tab:hover { background: var(--bg3); color: var(--text); }
+.kb-tab.is-active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.kb-dl {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.375rem 0.875rem;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--text);
+  text-decoration: none;
+  transition: background 150ms;
+  white-space: nowrap;
+}
+.kb-dl:hover { background: var(--bg3); }
+
+.kb-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.kb-legend-key {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text);
+}
+.kb-legend-hold {
+  display: inline-block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1px 4px;
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+.kb-legend-sep { color: var(--border); }
+.kb-trns-eg { opacity: 0.4; }
+
+.kb-board-wrap { overflow-x: auto; padding-bottom: 0.5rem; }
+
+.kb-board {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  width: max-content;
+}
+
+.kb-half {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kb-row {
+  display: flex;
+  gap: 4px;
+}
+
+.kb-key {
+  width: 52px;
+  height: 52px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
+  transition: background 150ms;
+  cursor: default;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.kb-key:hover { background: var(--bg3); }
+.kb-key.is-trns { opacity: 0.35; }
+.kb-key.is-empty { visibility: hidden; }
+.kb-key.has-hold { justify-content: space-between; padding: 6px 4px 5px; }
+
+.kb-tap {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+.kb-key.is-trns .kb-tap { font-weight: 400; }
+
+.kb-hold {
+  font-size: 0.6rem;
+  color: var(--muted);
+  line-height: 1;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1px 3px;
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kb-thumb-spacer {
+  flex-shrink: 0;
+  /* 3 keys (52px each) + 2 gaps (4px each) = 164px */
+  width: 164px;
+}
+</style>
+
+<script>
+const LAYERS = [
+  [
+    ["RALT_T(KC_Q)","KC_W","KC_E","KC_R","KC_T"],
+    ["MEH_T(KC_A)","KC_S","KC_D","KC_F","KC_G"],
+    ["LCTL_T(KC_Z)","KC_X","KC_C","KC_V","KC_B"],
+    ["LSFT_T(KC_SPACE)","LT1(KC_GRAVE)",-1,-1,-1],
+    ["KC_Y","KC_U","KC_I","KC_O","KC_P"],
+    ["KC_H","KC_J","KC_K","KC_L","KC_SCOLON"],
+    ["KC_N","KC_M","KC_COMMA","KC_DOT","KC_SLASH"],
+    ["LT2(KC_BSPACE)","LGUI_T(KC_TAB)",-1,-1,-1]
+  ],
+  [
+    ["KC_1","KC_2","KC_3","KC_4","KC_5"],
+    ["KC_GESC","KC_MPRV","KC_MPLY","KC_MNXT","KC_HOME"],
+    ["KC_TRNS","KC_TRNS","KC_TRNS","KC_TRNS","KC_END"],
+    ["KC_TRNS","KC_TRNS",-1,-1,-1],
+    ["KC_6","KC_7","KC_8","KC_9","KC_0"],
+    ["KC_LEFT","KC_DOWN","KC_UP","KC_RIGHT","KC_QUOTE"],
+    ["KC_TRNS","KC_TRNS","KC_TRNS","KC_TRNS","KC_ENTER"],
+    ["KC_TRNS","KC_TRNS",-1,-1,-1]
+  ],
+  [
+    ["KC_F1","KC_F2","KC_F3","KC_F4","KC_F5"],
+    ["KC_TAB","KC_TRNS","KC_TRNS","KC_TRNS","KC_TRNS"],
+    ["KC_TRNS","KC_TRNS","KC_TRNS","KC_TRNS","KC_TRNS"],
+    ["KC_TRNS","KC_TRNS",-1,-1,-1],
+    ["KC_F6","KC_F7","KC_F8","KC_F9","KC_F10"],
+    ["KC_MINUS","KC_EQUAL","KC_LBRACKET","KC_RBRACKET","LSFT(KC_BSLASH)"],
+    ["LSFT(KC_MINUS)","LSFT(KC_EQUAL)","KC_TRNS","KC_TRNS","KC_BSLASH"],
+    ["KC_TRNS","KC_TRNS",-1,-1,-1]
+  ]
+];
+
+const KC_MAP = {
+  'KC_SPACE': 'Space', 'KC_BSPACE': '⌫', 'KC_ENTER': '↵',
+  'KC_TAB': 'Tab', 'KC_ESC': 'Esc', 'KC_GESC': 'Esc/`',
+  'KC_GRAVE': '`', 'KC_SCOLON': ';', 'KC_COMMA': ',',
+  'KC_DOT': '.', 'KC_SLASH': '/', 'KC_BSLASH': '\\',
+  'KC_QUOTE': "'", 'KC_MINUS': '-', 'KC_EQUAL': '=',
+  'KC_LBRACKET': '[', 'KC_RBRACKET': ']',
+  'KC_LEFT': '←', 'KC_RIGHT': '→', 'KC_UP': '↑', 'KC_DOWN': '↓',
+  'KC_HOME': 'Home', 'KC_END': 'End', 'KC_PGUP': 'PgUp', 'KC_PGDN': 'PgDn',
+  'KC_MPRV': '⏮', 'KC_MPLY': '⏯', 'KC_MNXT': '⏭',
+  'KC_MUTE': '🔇', 'KC_VOLU': '🔊', 'KC_VOLD': '🔉',
+  'KC_DEL': 'Del', 'KC_INS': 'Ins', 'KC_CAPS': 'Caps',
+  'KC_LSFT': '⇧', 'KC_RSFT': '⇧', 'KC_LCTL': 'Ctrl', 'KC_RCTL': 'Ctrl',
+  'KC_LALT': '⌥', 'KC_RALT': 'RAlt', 'KC_LGUI': '⌘', 'KC_RGUI': '⌘',
+};
+
+const MOD_LABELS = {
+  'LSFT_T': '⇧ shift',
+  'LCTL_T': 'ctrl',
+  'RALT_T': 'ralt',
+  'MEH_T': 'meh',
+  'LGUI_T': '⌘ cmd',
+  'LALT_T': '⌥ opt',
+};
+
+function parseKey(code) {
+  if (code === -1 || code === 'KC_NO') return { tap: '', empty: true };
+  if (code === 'KC_TRNS') return { tap: '▽', trns: true };
+
+  const shifted = code.match(/^LSFT\((.+)\)$/);
+  if (shifted) {
+    const inner = parseKey(shifted[1]);
+    return { tap: '⇧' + inner.tap };
+  }
+
+  const modtap = code.match(/^(LSFT_T|LCTL_T|RALT_T|MEH_T|LGUI_T|LALT_T)\((.+)\)$/);
+  if (modtap) {
+    const inner = parseKey(modtap[2]);
+    return { tap: inner.tap, hold: MOD_LABELS[modtap[1]] || modtap[1] };
+  }
+
+  const lt = code.match(/^LT(\d+)\((.+)\)$/);
+  if (lt) {
+    const inner = parseKey(lt[2]);
+    return { tap: inner.tap, hold: 'layer ' + lt[1] };
+  }
+
+  if (KC_MAP[code]) return { tap: KC_MAP[code] };
+
+  if (code.startsWith('KC_')) {
+    const k = code.slice(3);
+    return { tap: k };
+  }
+
+  return { tap: code };
+}
+
+function makeKey(code) {
+  const k = parseKey(String(code));
+  const el = document.createElement('div');
+  el.className = 'kb-key';
+  el.title = String(code);
+
+  if (k.empty) { el.classList.add('is-empty'); return el; }
+  if (k.trns)  { el.classList.add('is-trns'); }
+  if (k.hold)  { el.classList.add('has-hold'); }
+
+  const tap = document.createElement('span');
+  tap.className = 'kb-tap';
+  tap.textContent = k.tap;
+  el.appendChild(tap);
+
+  if (k.hold) {
+    const hold = document.createElement('span');
+    hold.className = 'kb-hold';
+    hold.textContent = k.hold;
+    el.appendChild(hold);
+  }
+
+  return el;
+}
+
+function makeRow(keys) {
+  const row = document.createElement('div');
+  row.className = 'kb-row';
+  keys.forEach(k => row.appendChild(makeKey(k)));
+  return row;
+}
+
+function renderLayer(idx) {
+  const data = LAYERS[idx];
+  const board = document.getElementById('kb-board');
+  board.innerHTML = '';
+
+  // Left half: rows 0-2 + thumb row (index 3)
+  const left = document.createElement('div');
+  left.className = 'kb-half kb-left';
+  for (let r = 0; r < 3; r++) left.appendChild(makeRow(data[r]));
+
+  // Left thumb row: spacer (3 key widths) + 2 thumb keys
+  const leftThumb = document.createElement('div');
+  leftThumb.className = 'kb-row';
+  const lSpacer = document.createElement('div');
+  lSpacer.className = 'kb-thumb-spacer';
+  leftThumb.appendChild(lSpacer);
+  leftThumb.appendChild(makeKey(data[3][0]));
+  leftThumb.appendChild(makeKey(data[3][1]));
+  left.appendChild(leftThumb);
+  board.appendChild(left);
+
+  // Gap between halves
+  const gap = document.createElement('div');
+  gap.style.cssText = 'width:2rem;flex-shrink:0';
+  board.appendChild(gap);
+
+  // Right half: rows 4-6 + thumb row (index 7)
+  const right = document.createElement('div');
+  right.className = 'kb-half kb-right';
+  for (let r = 4; r < 7; r++) right.appendChild(makeRow(data[r]));
+
+  // Right thumb row: 2 thumb keys + spacer
+  const rightThumb = document.createElement('div');
+  rightThumb.className = 'kb-row';
+  rightThumb.appendChild(makeKey(data[7][0]));
+  rightThumb.appendChild(makeKey(data[7][1]));
+  const rSpacer = document.createElement('div');
+  rSpacer.className = 'kb-thumb-spacer';
+  rightThumb.appendChild(rSpacer);
+  right.appendChild(rightThumb);
+  board.appendChild(right);
+}
+
+document.querySelectorAll('.kb-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.kb-tab').forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-selected', 'true');
+    renderLayer(parseInt(btn.dataset.layer, 10));
+  });
+});
+
+renderLayer(0);
+</script>
+{{ end }}
