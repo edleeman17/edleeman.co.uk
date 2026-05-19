@@ -10,6 +10,7 @@ All the pages on this site.
 - [/blogroll](/blogroll) — blogs and sites I follow
 - [/cookie-zero](/cookie-zero) — no cookies policy
 - [/favourites](/favourites) — things I love
+- [/keyboard](/keyboard) — my Ferris Sweep keyboard layout
 - [/links](/links) — bookmarks and interesting links
 - [/mentions](/mentions) — interactions and mentions across the web
 - [/notes](/notes) — short-form posts and thoughts
