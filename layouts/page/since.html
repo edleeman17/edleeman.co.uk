@@ -1,0 +1,182 @@
+{{ define "main" }}
+<div class="since-page">
+  <h1 class="since-title">{{ .Title }}</h1>
+  {{ with .Description }}<p class="since-desc">{{ . }}</p>{{ end }}
+
+  <div class="milestones">
+
+    <div class="milestone" id="m-vaping">
+      <div class="milestone-label">no vaping</div>
+      <div class="milestone-since" data-since="2026-05-15T13:00:00+00:00">
+        <div class="counter-grid">
+          <div class="counter-unit"><span class="counter-val" id="v-d">--</span><span class="counter-key">days</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="v-h">--</span><span class="counter-key">hrs</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="v-m">--</span><span class="counter-key">min</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="v-s">--</span><span class="counter-key">sec</span></div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill" id="v-bar"></div></div>
+        <div class="milestone-meta">since 15 May 2026, 1:00 pm</div>
+      </div>
+    </div>
+
+    <div class="milestone" id="m-photo">
+      <div class="milestone-label">photography</div>
+      <div class="milestone-since" data-since="2025-02-27T10:06:00+00:00">
+        <div class="counter-grid">
+          <div class="counter-unit"><span class="counter-val" id="p-d">--</span><span class="counter-key">days</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="p-h">--</span><span class="counter-key">hrs</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="p-m">--</span><span class="counter-key">min</span></div>
+          <div class="counter-sep">:</div>
+          <div class="counter-unit"><span class="counter-val" id="p-s">--</span><span class="counter-key">sec</span></div>
+        </div>
+        <div class="bar-wrap"><div class="bar-fill" id="p-bar"></div></div>
+        <div class="milestone-meta">since 27 Feb 2025, 10:06 am</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.since-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--spacing-lg, 3em) var(--spacing-md, 1.5em);
+}
+.since-title {
+  font-size: var(--text-2xl, 1.5rem);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-sm, 0.75em);
+}
+.since-desc {
+  color: var(--muted, #6b6b6b);
+  font-size: var(--text-sm, 0.875rem);
+  margin: 0 0 var(--spacing-lg, 3em);
+}
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 3em);
+}
+.milestone {
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 4px;
+  padding: var(--spacing-md, 1.5em);
+  background: var(--bg2, #f7f7f7);
+}
+.milestone-label {
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--muted, #6b6b6b);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-md, 1.5em);
+}
+.counter-grid {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25em;
+  margin-bottom: var(--spacing-sm, 0.75em);
+}
+.counter-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.counter-val {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text, #141414);
+  min-width: 2ch;
+  text-align: center;
+}
+.counter-key {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--muted, #6b6b6b);
+  margin-top: 0.25em;
+}
+.counter-sep {
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-weight: 300;
+  color: var(--border, #e0e0e0);
+  padding-bottom: 0.35em;
+  user-select: none;
+}
+.bar-wrap {
+  height: 2px;
+  background: var(--border, #e0e0e0);
+  border-radius: 1px;
+  margin: var(--spacing-md, 1.5em) 0 var(--spacing-sm, 0.75em);
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: var(--text, #141414);
+  border-radius: 1px;
+  width: 0%;
+  transition: width 1s linear;
+}
+.milestone-meta {
+  font-size: var(--text-xs, 0.75rem);
+  color: var(--muted, #6b6b6b);
+}
+</style>
+
+<script>
+(function() {
+  var milestones = [
+    {
+      since: new Date('2026-05-15T13:00:00Z'),
+      // bar: fraction of 1 year
+      barDenominator: 365 * 24 * 3600 * 1000,
+      d: document.getElementById('v-d'),
+      h: document.getElementById('v-h'),
+      m: document.getElementById('v-m'),
+      s: document.getElementById('v-s'),
+      bar: document.getElementById('v-bar'),
+    },
+    {
+      since: new Date('2025-02-27T10:06:00Z'),
+      barDenominator: 2 * 365 * 24 * 3600 * 1000,
+      d: document.getElementById('p-d'),
+      h: document.getElementById('p-h'),
+      m: document.getElementById('p-m'),
+      s: document.getElementById('p-s'),
+      bar: document.getElementById('p-bar'),
+    }
+  ];
+
+  function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
+
+  function tick() {
+    var now = Date.now();
+    milestones.forEach(function(ms) {
+      var diff = now - ms.since.getTime();
+      if (diff < 0) diff = 0;
+      var totalSec = Math.floor(diff / 1000);
+      var days = Math.floor(totalSec / 86400);
+      var hrs  = Math.floor((totalSec % 86400) / 3600);
+      var mins = Math.floor((totalSec % 3600) / 60);
+      var secs = totalSec % 60;
+      ms.d.textContent = days;
+      ms.h.textContent = pad(hrs);
+      ms.m.textContent = pad(mins);
+      ms.s.textContent = pad(secs);
+      var pct = Math.min(100, (diff / ms.barDenominator) * 100);
+      ms.bar.style.width = pct.toFixed(2) + '%';
+    });
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+{{ partial "back-nav.html" . }}
+{{ end }}
