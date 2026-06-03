@@ -27,6 +27,17 @@
       <div class="milestone-meta">since 27 Feb 2025, 10:06 am</div>
     </div>
 
+    <div class="milestone">
+      <div class="milestone-header">
+        <span class="milestone-label">duolingo streak</span>
+        <span class="milestone-count" id="d-count"></span>
+      </div>
+      <div class="grid-scroll" id="d-scroll">
+        <div class="day-grid" id="d-grid"></div>
+      </div>
+      <div class="milestone-meta">since 9 Mar 2024</div>
+    </div>
+
   </div>
 </div>
 
@@ -212,6 +223,8 @@
   }
 
   buildGrid('v-grid', 'v-scroll', 'v-count', '2026-05-15T12:00:00Z', null, { '2026-06-03': true });
+
+  buildGrid('d-grid', 'd-scroll', 'd-count', '2024-03-09T00:00:00Z', null);
 
   fetch('https://charityshot.co.uk/api/photos.json')
     .then(function(r) { return r.json(); })
