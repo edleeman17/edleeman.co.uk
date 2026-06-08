@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-18T23:32:23Z",
+  "last_updated": "2026-06-08T18:41:01Z",
   "favourites": [
     {
       "title": "Strange Pictures",
@@ -1889,6 +1889,17 @@
       "pages": "",
       "review": null,
       "date_added": "2020-06-16T15:45:53Z"
+    },
+    {
+      "title": "The Memory Police",
+      "author": "Yoko Ogawa",
+      "link": "",
+      "cover": "https://covers.openlibrary.org/b/id/15223719-L.jpg",
+      "rating": null,
+      "pages": "274",
+      "review": null,
+      "date_read": null,
+      "date_added": "2026-06-08T18:41:01Z"
     }
   ],
   "currently-reading": []
