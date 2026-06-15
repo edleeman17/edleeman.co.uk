@@ -9,7 +9,6 @@ repost_of: "https://lazybea.rs/ovr-070/"
 tags:
   - indieweb
 syndication:
-syndication:
   - "https://fosstodon.org/@edphones/116754687992509441"
   - "https://bsky.app/profile/edleeman.co.uk/post/3modjy5yozy2k"
 ---
