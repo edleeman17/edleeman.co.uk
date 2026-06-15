@@ -1,13 +1,20 @@
 {{ define "main" }}
+{{- $repostOf := .Params.repost_of -}}
 <progress id="reading-progress" max="100" value="0"></progress>
 <div class="prose-wrap">
 
-<article class="h-entry">
+<article class="h-entry{{ with $repostOf }} p-repost{{ end }}">
     <span class="p-name" style="display:none;">{{ .Title }}</span>
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     <a class="u-url u-uid" href="{{ .Permalink }}" style="display:none;"></a>
     {{ partial "author-hcard.html" . }}
     {{ range .Params.syndication }}<a class="u-syndication" href="{{ . }}" rel="syndication" style="display:none;"></a>
+    {{ end }}
+    {{ with $repostOf }}
+    <p class="response-context">
+      Reposted
+      {{ if reflect.IsSlice . }}{{ range . }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}
+    </p>
     {{ end }}
     <div class="e-content post">
         {{ .Content }}
