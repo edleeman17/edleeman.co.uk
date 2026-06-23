@@ -2,7 +2,8 @@
 title: "Is My Passport Valid?"
 description: "Instant YES or NO on whether a UK passport meets the destination country's entry rules. Curated gov.uk rules plus a live gov.uk proxy for the long tail."
 website: "https://ismypassportvalid.co.uk"
-language: "JavaScript"
+github: "https://github.com/edleeman17/ismypassportvalid"
+language: "TypeScript"
 stars: 0
 status: "active"
 ---
