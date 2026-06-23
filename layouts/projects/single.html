@@ -37,7 +37,8 @@
     <p class="project-byline">
       {{ .Params.language }}
       {{- if gt (.Params.stars | int) 0 }} · <i class="fa-regular fa-star"></i> {{ .Params.stars }}{{ end }}
-      · <a href="{{ .Params.github }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
+      {{- with .Params.github }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>{{ end }}
+      {{- with .Params.website }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a>{{ end }}
     </p>
     <div class="e-content">
     {{- if $readmeContent -}}
