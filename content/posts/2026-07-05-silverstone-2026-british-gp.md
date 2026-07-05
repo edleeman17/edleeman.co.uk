@@ -3,7 +3,9 @@ title: "Silverstone 2026 British GP"
 date: 2026-07-05T23:44:54+01:00
 draft: false
 type: "post"
-syndication: []
+syndication:
+  - "https://fosstodon.org/@edphones/116869793979962925"
+  - "https://bsky.app/profile/edleeman.co.uk/post/3mpwnqbuv6z27"
 ---
 
 # Silverstone 2026 British GP
