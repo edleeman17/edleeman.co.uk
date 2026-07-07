@@ -8,11 +8,11 @@ cover: ""
 pages: 100
 goodreads_url: ""
 goodreads_id: ""
-shelf: "reading"
-rating: 3
+shelf: "read"
+rating: 5
 favourite: false
-date_read: ""
+date_read: "2026-07-07T00:00:00Z"
 date_started: ""
 date_added: 2026-07-07T16:03:03+01:00
-review: "v1"
+review: "v2 finished it"
 ---
