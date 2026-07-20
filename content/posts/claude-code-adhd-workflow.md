@@ -5,6 +5,9 @@ type: "post"
 draft: false
 ---
 
+> Some of this information might now be out of date. I still use it but I'm aware there are other tools available now. I still hope you'll find it useful.
+> https://github.com/ayghri/i-have-adhd/tree/main
+
 ## The Problem
 
 I have ADHD and I'm a software engineer. This is a famously difficult combination.
