@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-07-07T15:03:38Z",
+  "last_updated": "2026-08-11T20:16:50Z",
   "books": [
+    {
+      "slug": "poster-boy",
+      "title": "Poster Boy",
+      "author": "N. J. Crosskey",
+      "cover": "",
+      "pages": "328",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-08-11T20:16:49Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "strange-houses",
       "title": "Strange Houses",
