@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-08-21T09:52:09Z",
+  "last_updated": "2026-08-24T16:38:20Z",
   "books": [
+    {
+      "slug": "verity",
+      "title": "Verity",
+      "author": "Colleen Hoover",
+      "cover": "https://covers.openlibrary.org/b/id/8747160-L.jpg",
+      "pages": "343",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "read",
+      "rating": 5,
+      "favourite": false,
+      "date_read": "2026-08-24T00:00:00Z",
+      "date_started": "",
+      "date_added": "2026-08-24T16:38:19Z",
+      "review": "This was awesome! Bit raunchy but very twisted",
+      "syndication": []
+    },
     {
       "slug": "golden-son",
       "title": "Golden Son",
