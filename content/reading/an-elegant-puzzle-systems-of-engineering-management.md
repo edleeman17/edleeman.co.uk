@@ -1,0 +1,18 @@
+---
+title: "An Elegant Puzzle: Systems of Engineering Management"
+date: 2026-08-21T08:55:49Z
+type: "reading"
+draft: false
+author: "Will Larson"
+cover: "https://covers.openlibrary.org/b/isbn/9781953953339-L.jpg"
+pages: 0
+goodreads_url: ""
+goodreads_id: ""
+shelf: "tbr"
+rating: 0
+favourite: false
+date_read: ""
+date_started: ""
+date_added: "2026-08-21T08:55:49Z"
+review: ""
+---
