@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Alan Watts"
 cover: "https://covers.openlibrary.org/b/isbn/9780307741202-L.jpg"
-pages: 0
+pages: 152
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

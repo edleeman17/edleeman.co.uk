@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Matt Haig"
 cover: "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg"
-pages: 0
+pages: 288
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

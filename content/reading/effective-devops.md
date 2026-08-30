@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Jennifer Davis, Ryn Daniels"
 cover: "https://covers.openlibrary.org/b/isbn/9781491926307-L.jpg"
-pages: 0
+pages: 410
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

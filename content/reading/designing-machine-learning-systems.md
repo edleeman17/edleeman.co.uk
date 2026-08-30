@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Chip Huyen"
 cover: "https://covers.openlibrary.org/b/isbn/9781098107963-L.jpg"
-pages: 0
+pages: 386
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

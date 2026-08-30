@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Drew Neil"
 cover: "https://covers.openlibrary.org/b/isbn/9781680502213-L.jpg"
-pages: 0
+pages: 104
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

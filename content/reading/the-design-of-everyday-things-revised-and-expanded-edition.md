@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Norman, Don"
 cover: "https://covers.openlibrary.org/b/isbn/9780465072996-L.jpg"
-pages: 0
+pages: 370
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

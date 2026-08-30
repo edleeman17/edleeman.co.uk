@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Kerim Satirli, Taylor Dolezal"
 cover: "https://covers.openlibrary.org/b/isbn/9781098108465-L.jpg"
-pages: 0
+pages: 240
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

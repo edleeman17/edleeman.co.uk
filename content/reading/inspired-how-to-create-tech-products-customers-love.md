@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Marty Cagan"
 cover: "https://covers.openlibrary.org/b/isbn/9781119387565-L.jpg"
-pages: 0
+pages: 368
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

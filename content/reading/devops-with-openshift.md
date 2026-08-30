@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Stefano Picozzi, Mike Hepburn, Noel O’Connor"
 cover: "https://covers.openlibrary.org/b/isbn/9781491975961-L.jpg"
-pages: 0
+pages: 152
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

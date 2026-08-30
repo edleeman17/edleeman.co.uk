@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Patrick M. Lencioni"
 cover: "https://covers.openlibrary.org/b/isbn/9780787960759-L.jpg"
-pages: 0
+pages: 240
 goodreads_url: ""
 goodreads_id: ""
 shelf: "read"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Bodhi"
 cover: "https://covers.openlibrary.org/b/isbn/9780861714919-L.jpg"
-pages: 0
+pages: 485
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

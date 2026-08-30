@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Joseph Grenny"
 cover: "https://covers.openlibrary.org/b/isbn/9780071771320-L.jpg"
-pages: 0
+pages: 272
 goodreads_url: ""
 goodreads_id: ""
 shelf: "read"

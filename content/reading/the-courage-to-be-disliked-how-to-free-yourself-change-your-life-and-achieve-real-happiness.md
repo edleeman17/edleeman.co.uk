@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Ichiro Kishimi"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545421684l/43306206._SY475_.jpg"
-pages: 280
+pages: 272
 goodreads_url: "https://www.goodreads.com/review/show/7167472681?utm_medium=api&utm_source=rss"
 goodreads_id: "43306206"
 shelf: "read"

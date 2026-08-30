@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Dot Hutchison"
 cover: "https://covers.openlibrary.org/b/isbn/9781503934719-L.jpg"
-pages: 0
+pages: 276
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

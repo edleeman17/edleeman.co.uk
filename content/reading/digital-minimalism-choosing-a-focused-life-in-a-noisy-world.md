@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Cal Newport"
 cover: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549433350l/40672036._SY475_.jpg"
-pages: 295
+pages: 304
 goodreads_url: "https://www.goodreads.com/review/show/7042859499?utm_medium=api&utm_source=rss"
 goodreads_id: "40672036"
 shelf: "read"

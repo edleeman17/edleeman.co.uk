@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Stephen Chin, Melissa McKay, Ixchel Ruiz, Baruch Sadogursky"
 cover: "https://covers.openlibrary.org/b/isbn/9781492084020-L.jpg"
-pages: 0
+pages: 400
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

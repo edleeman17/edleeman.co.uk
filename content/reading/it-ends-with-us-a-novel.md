@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Colleen Hoover"
 cover: "https://covers.openlibrary.org/b/isbn/9781501110375-L.jpg"
-pages: 0
+pages: 287
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

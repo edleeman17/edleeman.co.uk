@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Noah Gift, Kennedy Behrman, Alfredo Deza, Grig Gheorghiu"
 cover: "https://covers.openlibrary.org/b/isbn/9781492057697-L.jpg"
-pages: 0
+pages: 506
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"

@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Kief Morris"
 cover: "https://covers.openlibrary.org/b/isbn/9781098150358-L.jpg"
-pages: 0
+pages: 435
 goodreads_url: ""
 goodreads_id: ""
 shelf: "tbr"
