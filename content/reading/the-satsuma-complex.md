@@ -5,7 +5,7 @@ type: "reading"
 draft: false
 author: "Bob Mortimer"
 cover: "https://covers.openlibrary.org/b/isbn/9781398521209-L.jpg"
-pages: 0
+pages: 304
 goodreads_url: ""
 goodreads_id: ""
 shelf: "read"
