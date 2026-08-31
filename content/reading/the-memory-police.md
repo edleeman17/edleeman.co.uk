@@ -1,6 +1,6 @@
 ---
 title: "The Memory Police"
-date: 2026-08-30T18:34:23Z
+date: 2026-08-31T06:29:24Z
 type: "reading"
 draft: false
 author: "Yoko Ogawa"
@@ -8,11 +8,11 @@ cover: "https://covers.openlibrary.org/b/isbn/9781101870617-L.jpg"
 pages: 0
 goodreads_url: ""
 goodreads_id: ""
-shelf: "tbr"
+shelf: "currently-reading"
 rating: 0
 favourite: false
 date_read: ""
-date_started: ""
+date_started: "2026-08-31T06:29:24Z"
 date_added: "2026-08-30T18:34:23Z"
 review: ""
 ---
