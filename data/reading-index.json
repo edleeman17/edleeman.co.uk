@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-31T06:28:48Z",
+  "last_updated": "2026-08-31T06:28:55Z",
   "books": [
     {
       "slug": "verity",
@@ -3619,23 +3619,6 @@
       "date_read": "",
       "date_started": "",
       "date_added": "2026-08-21T08:55:53Z",
-      "review": "",
-      "syndication": []
-    },
-    {
-      "slug": "red-rising-3-book-bundle",
-      "title": "Red Rising 3-Book Bundle",
-      "author": "Pierce Brown",
-      "cover": "https://covers.openlibrary.org/b/isbn/9780593725320-L.jpg",
-      "pages": "",
-      "goodreads_url": "",
-      "goodreads_id": "",
-      "shelf": "currently-reading",
-      "rating": 0,
-      "favourite": false,
-      "date_read": "",
-      "date_started": "2026-08-20T00:00:00Z",
-      "date_added": "2026-08-20T21:15:03Z",
       "review": "",
       "syndication": []
     },
