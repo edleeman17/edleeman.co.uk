@@ -12,7 +12,9 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 {{- $ogImage := "" -}}
-{{- if and (eq .Type "reading") .Params.cover -}}
+{{- if .Params.image -}}
+  {{- $ogImage = .Params.image -}}
+{{- else if and (eq .Type "reading") .Params.cover -}}
   {{- $ogImage = .Params.cover -}}
 {{- else -}}
   {{- $ogImage = printf "%s%s" .Site.BaseURL "images/ed.png" -}}
