@@ -6,7 +6,7 @@ hasCJKLanguage = true
 buildFuture = true
 
 [permalinks]
-  posts = "/posts/:title/"
+  posts = "/posts/:slug/"
 
 [params]
   description = "My corner of the internet where I try my best to write something that might be somewhat useful for someone else"
