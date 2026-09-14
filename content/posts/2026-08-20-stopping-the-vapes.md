@@ -3,7 +3,8 @@ title: "Stopping the vapes"
 date: 2026-08-20T20:22:58+01:00
 draft: false
 type: "post"
-syndication: []
+syndication:
+  - "https://fosstodon.org/@edphones/117269963539749471"
 ---
 
 # Stopping the vapes 

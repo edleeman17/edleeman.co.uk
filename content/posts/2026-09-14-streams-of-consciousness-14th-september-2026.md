@@ -8,7 +8,8 @@ description: "I need to spend some more time in my head and figured I would pick
 image: "https://cdn.charityshot.co.uk/web/b6d07d93-ebc1-4343-8b57-092b33d16149.jpg"
 aliases:
   - "/posts/streams-of-consciousness-~-14th-september-2026/"
-syndication: []
+syndication:
+  - "https://fosstodon.org/@edphones/117269963568106330"
 ---
 
 # Streams of consciousness ~ 14th September 2026
