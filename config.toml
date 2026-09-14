@@ -67,7 +67,6 @@ buildFuture = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-      hardWraps = true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
