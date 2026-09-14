@@ -3,6 +3,8 @@ title: "Streams of consciousness ~ 14th September 2026"
 date: 2026-09-14T15:27:34+01:00
 draft: false
 type: "post"
+description: "I need to spend some more time in my head and figured I would pick up journaling again. But I also thought, it would be good to put all of conscious onto..."
+image: "https://cdn.charityshot.co.uk/web/b6d07d93-ebc1-4343-8b57-092b33d16149.jpg"
 syndication: []
 ---
 
