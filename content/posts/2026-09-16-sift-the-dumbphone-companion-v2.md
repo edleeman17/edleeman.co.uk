@@ -5,7 +5,9 @@ draft: false
 type: "post"
 slug: "sift-the-dumbphone-companion-v2"
 description: "## The Problem I recently installed Ubuntu on the Mac Mini due to the terrible performance of Docker Desktop. But because of this, I lost the main reason..."
-syndication: []
+syndication:
+  - "https://fosstodon.org/@edphones/117281823566255882"
+  - "https://bsky.app/profile/edleeman.co.uk/post/3mvnmzm3opy2y"
 ---
 
 # Sift: The Dumbphone Companion v2
