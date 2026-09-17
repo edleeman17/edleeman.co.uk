@@ -39,19 +39,47 @@ body {
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
 
-  /* Status accents, ported from the sift.lan design-spec. Used only for
-     genuine "you are here" / "this links off-site" signals below -
-     never decoratively. */
+  /* Status accents, ported from the sift.lan design-spec. Each one
+     carries a specific real-data meaning where it's used below - never
+     decoratively. */
   --accent-cool: #6cd5ff;
+  --accent-live: #9fffb0;
+  --accent-warn: #ffb86c;
+  --accent-success: #4ade80;
+  --accent-steel: #7aa9c4;
+  --accent-signoff: #c4a1ff;
+  --danger: #ff8a7a;
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
     --accent-cool: #0b6fb0;
+    --accent-live: #0f9d58;
+    --accent-warn: #b26a00;
+    --accent-success: #157f3b;
+    --accent-steel: #3d6a86;
+    --accent-signoff: #6b3fb0;
+    --danger: #cf3b2e;
   }
 }
-:root[data-theme="dark"] { --accent-cool: #6cd5ff; }
-:root[data-theme="light"] { --accent-cool: #0b6fb0; }
+:root[data-theme="dark"] {
+  --accent-cool: #6cd5ff;
+  --accent-live: #9fffb0;
+  --accent-warn: #ffb86c;
+  --accent-success: #4ade80;
+  --accent-steel: #7aa9c4;
+  --accent-signoff: #c4a1ff;
+  --danger: #ff8a7a;
+}
+:root[data-theme="light"] {
+  --accent-cool: #0b6fb0;
+  --accent-live: #0f9d58;
+  --accent-warn: #b26a00;
+  --accent-success: #157f3b;
+  --accent-steel: #3d6a86;
+  --accent-signoff: #6b3fb0;
+  --danger: #cf3b2e;
+}
 
 /* =============================================
    Typography overrides
@@ -911,4 +939,269 @@ body {
 
 .latest-note-all {
   margin-bottom: 0;
+}
+
+/* =============================================
+   Full status palette + pixel-square indicators
+   (sift.lan design-spec) - color and small square
+   markers where real per-item data actually
+   varies: reading shelf/rating/favourite/TBR fit,
+   note type, and the two "this is live right now"
+   values on the site (now-playing, years-since-init).
+   ============================================= */
+
+/* General highlight accent (was aliased to plain text-primary, so all
+   of reading.html's stats/stars/tags/chart rendered with no color at
+   all) - amber reads as "highlight", not a verdict, so it is the
+   correct default for the many non-status decorative-but-real-data
+   uses on that page. Specific overrides below recolor the ones that
+   ARE a real verdict (books read, chart, TBR fit, favourites). */
+:root {
+  --color-accent: var(--accent-warn);
+}
+
+/* Reading stats: three of the four numbers are genuine verdicts. */
+.stat-item--success .stat-value { color: var(--accent-success); }
+.stat-item--warn .stat-value { color: var(--accent-warn); }
+.stat-item--muted .stat-value { color: var(--color-text-muted); }
+
+/* Books-per-year chart: a completed-count bar, same fill Sift gives a
+   coverage segment that is --present. */
+.year-bar-inner {
+  background: var(--accent-success) !important;
+}
+
+/* Currently reading: an ongoing/live state, not a completed verdict -
+   accent-live, plus a small pulsing square "pixel" exactly like
+   Sift's connection-dot.connected. */
+.currently-reading-grid .book-title {
+  position: relative;
+  padding-left: 14px;
+}
+
+.currently-reading-grid .book-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-live);
+  animation: reading-live-pulse 2s var(--transition-base, ease) infinite;
+}
+
+@keyframes reading-live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .currently-reading-grid .book-title::before {
+    animation: none;
+  }
+}
+
+/* Favourites: the one deliberately human-authored verdict on the page
+   (Ed's own pick, not a computed stat) - violet, reserved for exactly
+   this, same rule the sift.lan spec uses for a human sign-off. */
+.favourites-grid .book-cover-wrap {
+  border: 2px solid var(--accent-signoff);
+}
+
+/* TBR fit categorisation - a real three-state enum (aligned / risky /
+   not aligned), one color each, same pattern as a queue tile's
+   category color. Small square "pixel" before each section label,
+   like Sift's health-item-dot. */
+.tbr-section-title,
+.tbr-category-title {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tbr-section-title::before,
+.tbr-category-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+}
+
+.tbr-section-aligned .tbr-section-title,
+.tbr-section-aligned .tbr-category-title {
+  color: var(--accent-success);
+}
+.tbr-section-aligned .tbr-section-title::before,
+.tbr-section-aligned .tbr-category-title::before {
+  background: var(--accent-success);
+}
+
+.tbr-section-risky .tbr-section-title {
+  color: var(--accent-warn);
+}
+.tbr-section-risky .tbr-section-title::before {
+  background: var(--accent-warn);
+}
+
+.tbr-section-misaligned .tbr-section-title {
+  color: var(--color-text-muted);
+}
+.tbr-section-misaligned .tbr-section-title::before,
+.tbr-section-misaligned .tbr-category-title::before {
+  background: var(--color-text-muted);
+}
+
+.tbr-info a:hover {
+  color: var(--accent-cool) !important;
+}
+
+/* Reading tags: attributes, not verdicts - the quieter steel accent,
+   like Sift's llm/secondary-signal color, not the general highlight. */
+.reading-tag {
+  color: var(--accent-steel) !important;
+  border-color: var(--accent-steel) !important;
+}
+
+.reading-personality {
+  border-left-color: var(--accent-steel) !important;
+}
+
+/* Note type (reply/like/repost/bookmark) - already-present microformat
+   markup (u-in-reply-to/u-like-of/u-repost-of/u-bookmark-of) means
+   :has() can pick the type up with no template change at all, on
+   every template (single note and both list views) since they all
+   render this same .response-context element. Recolors the box's
+   existing left border instead of adding a new element. */
+.response-context:has(.u-in-reply-to) { border-left-color: var(--accent-cool); }
+.response-context:has(.u-like-of) { border-left-color: var(--accent-success); }
+.response-context:has(.u-repost-of) { border-left-color: var(--accent-steel); }
+.response-context:has(.u-bookmark-of) { border-left-color: var(--accent-warn); }
+
+/* The two literally-live values on the site: a small pulsing square,
+   same meaning as Sift's connected/active indicator. */
+#now_playing,
+#live-age {
+  position: relative;
+  padding-left: 14px;
+}
+
+#now_playing::before,
+#live-age::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-live);
+  animation: reading-live-pulse 2s var(--transition-base, ease) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #now_playing::before,
+  #live-age::before {
+    animation: none;
+  }
+}
+
+/* =============================================
+   Coverage fixes - --color-accent is shared by
+   reading.html's real data AND plain link/hover/
+   active-state uses elsewhere. Those are
+   interactive, not verdicts, so they get the
+   sitewide cyan-for-links convention instead of
+   the amber "highlight" default.
+   ============================================= */
+
+.photos-intro a,
+.link-title a:hover,
+.blogroll-feed-link:hover,
+.project-byline a,
+.link-single-url,
+.tbr-info a:hover,
+.finds-card h3 {
+  color: var(--accent-cool) !important;
+}
+
+.book-rating,
+.book-rating .fa-star {
+  color: var(--accent-warn) !important;
+}
+
+/* Mentions page - same reply/like/repost/mention enum as notes, same
+   four colors, small script-side class addition (no markup existed to
+   hook otherwise, unlike notes' already-present microformat classes). */
+.mention-type--reply { color: var(--accent-cool); }
+.mention-type--like { color: var(--accent-success); }
+.mention-type--repost { color: var(--accent-steel); }
+.mention-type--mention { color: var(--accent-warn); }
+
+.mentions-filter-btn.active {
+  color: #fff;
+}
+.mentions-filter-btn--all.active { background: var(--color-text-muted); border-color: var(--color-text-muted); }
+.mentions-filter-btn--reply.active { background: var(--accent-cool); border-color: var(--accent-cool); }
+.mentions-filter-btn--like.active { background: var(--accent-success); border-color: var(--accent-success); }
+.mentions-filter-btn--repost.active { background: var(--accent-steel); border-color: var(--accent-steel); }
+.mentions-filter-btn--mention.active { background: var(--accent-warn); border-color: var(--accent-warn); }
+
+/* Individual book review page - same conventions as the reading list:
+   stars amber, links cyan, review blockquote gets the quieter steel
+   accent (not violet - that stays exclusive to the favourite flag). */
+.book-single-author a:hover,
+.book-links a {
+  color: var(--accent-cool) !important;
+}
+
+.book-single-rating {
+  color: var(--accent-warn) !important;
+}
+
+.book-single-review {
+  border-left-color: var(--accent-steel) !important;
+}
+
+/* Project status - collected in frontmatter but never actually
+   rendered before. A real (if currently single-valued) enum, same
+   badge-with-square treatment as a Sift service-status chip. */
+.project-status {
+  position: relative;
+  padding-left: 12px;
+  text-transform: uppercase;
+  font-size: var(--text-xs, 0.75rem);
+  letter-spacing: 0.05em;
+}
+
+.project-status::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+}
+
+.project-status--active {
+  color: var(--accent-live);
+}
+.project-status--active::before {
+  background: var(--accent-live);
+}
+
+.project-status--archived {
+  color: var(--color-text-muted);
+}
+.project-status--archived::before {
+  background: var(--color-text-muted);
+}
+
+.project-status--paused {
+  color: var(--accent-warn);
+}
+.project-status--paused::before {
+  background: var(--accent-warn);
 }

@@ -83,7 +83,7 @@
     filters.forEach(function(f) {
       if (!filterCounts[f]) return;
       var active = f === activeFilter ? ' active' : '';
-      filterHTML += '<button class="mentions-filter-btn' + active + '" data-filter="' + f + '">' + f + ' (' + filterCounts[f] + ')</button>';
+      filterHTML += '<button class="mentions-filter-btn mentions-filter-btn--' + f + active + '" data-filter="' + f + '">' + f + ' (' + filterCounts[f] + ')</button>';
     });
     filterHTML += '</div>';
 
@@ -110,7 +110,7 @@
       listHTML += '<div class="mention-meta">';
       if (photo) listHTML += '<img src="' + photo + '" alt="' + name + '" class="wm-avatar" loading="lazy">';
       listHTML += '<a href="' + authorUrl + '" class="mention-author" target="_blank" rel="noopener">' + name + '</a>';
-      listHTML += '<span class="mention-type">' + type + '</span>';
+      listHTML += '<span class="mention-type mention-type--' + type + '">' + type + '</span>';
       if (date) listHTML += '<span class="mention-date">' + date + '</span>';
       listHTML += '</div>';
       if (text) listHTML += '<p class="mention-text">' + text + '</p>';

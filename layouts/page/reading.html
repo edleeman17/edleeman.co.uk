@@ -528,7 +528,7 @@
   {{- end -}}
 
   <div class="reading-stats">
-    <div class="stat-item">
+    <div class="stat-item stat-item--success">
       <span class="stat-value">{{ $totalBooks }}</span>
       <span class="stat-label">books read</span>
     </div>
@@ -539,12 +539,12 @@
     </div>
     {{ end }}
     {{ if gt $ratedCount 0 }}
-    <div class="stat-item">
+    <div class="stat-item stat-item--warn">
       <span class="stat-value">{{ printf "%.1f" $avgRating }}★</span>
       <span class="stat-label">avg rating</span>
     </div>
     {{ end }}
-    <div class="stat-item">
+    <div class="stat-item stat-item--muted">
       <span class="stat-value">{{ len $tbr }}</span>
       <span class="stat-label">on TBR</span>
     </div>
@@ -702,7 +702,7 @@
     {{ if $curated }}
     <div class="tbr-categorised">
 
-      <div class="tbr-section">
+      <div class="tbr-section tbr-section-aligned">
         <h3 class="tbr-section-title">Aligned</h3>
         {{ range $tag := $curated.tags }}
           {{ $items := index $curated.aligned $tag }}
@@ -733,7 +733,7 @@
       </div>
 
       {{ if $curated.risky }}
-      <div class="tbr-section">
+      <div class="tbr-section tbr-section-risky">
         <h3 class="tbr-section-title">Could go either way</h3>
         <div class="tbr-list">
           {{ range $curated.risky }}

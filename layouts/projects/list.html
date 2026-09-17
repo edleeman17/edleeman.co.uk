@@ -7,6 +7,7 @@
       <div class="project-item-header">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
         <span class="project-meta">
+          {{- with .Params.status -}}<span class="project-status project-status--{{ . }}">{{ . }}</span>{{- end -}}
           {{- if .Params.language -}}<span>{{ .Params.language }}</span>{{- end -}}
           {{- if gt (.Params.stars | int) 0 -}}<span>★ {{ .Params.stars }}</span>{{- end -}}
         </span>
