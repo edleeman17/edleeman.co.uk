@@ -26,12 +26,12 @@ See more at [last.fm](https://www.last.fm/user/ed1727)
 - Source Code
 
 ## Books
-- The Silent Patient
-- Project Hail Mary
-- Midnight Library
-- Bird Box
-- The Butterfly Garden
-- Dark Matter
-- All Quiet on the Western Front
+- [The Silent Patient](https://www.amazon.co.uk/s?k=The+Silent+Patient+Alex+Michaelides&tag=ismypassportv-21)
+- [Project Hail Mary](https://www.amazon.co.uk/s?k=Project+Hail+Mary+Andy+Weir&tag=ismypassportv-21)
+- [Midnight Library](https://www.amazon.co.uk/s?k=Midnight+Library+Matt+Haig&tag=ismypassportv-21)
+- [Bird Box](https://www.amazon.co.uk/s?k=Bird+Box+Josh+Malerman&tag=ismypassportv-21)
+- [The Butterfly Garden](https://www.amazon.co.uk/s?k=The+Butterfly+Garden+Dot+Hutchison&tag=ismypassportv-21)
+- [Dark Matter](https://www.amazon.co.uk/s?k=Dark+Matter+Blake+Crouch&tag=ismypassportv-21)
+- [All Quiet on the Western Front](https://www.amazon.co.uk/s?k=All+Quiet+on+the+Western+Front+Remarque&tag=ismypassportv-21)
 
 see more at [/reading](/reading)

@@ -1,0 +1,11 @@
+{{- /* Shown automatically when a page contains affiliate links. Pass the page, or a dict with "page" and "force". */ -}}
+{{- $page := . -}}{{- $force := false -}}
+{{- if reflect.IsMap . }}{{ $page = .page }}{{ $force = .force | default false }}{{ end -}}
+{{- $content := string $page.RawContent -}}
+{{- $amazon := or $force (strings.Contains $content "tag=ismypassportv-21") -}}
+{{- $other := strings.Contains $content "m.do.co/c/" -}}
+{{- if or $amazon $other }}
+<p class="affiliate-disclosure" style="font-size: var(--text-sm); color: var(--color-text-muted); border-left: 3px solid var(--color-border-light); padding-left: var(--space-4);">
+  This page contains affiliate links. If you buy something through them I may earn a small commission, at no extra cost to you.{{ if $amazon }} As an Amazon Associate I earn from qualifying purchases.{{ end }}
+</p>
+{{- end }}

@@ -176,7 +176,7 @@ Syncthing has apps in the [Play Store](https://play.google.com/store/apps/detail
 Let me know if this has helped in the comments below.
 
 Also, feel free to check out my other blog posts [here](https://theselfhostingblog.com/)
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
+
 
 We hate Ads! They don't respect your privacy. 
 

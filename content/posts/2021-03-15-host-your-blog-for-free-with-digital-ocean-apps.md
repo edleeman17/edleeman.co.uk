@@ -193,7 +193,7 @@ You'll see that the custom domain name is now pending. Now, DNS is a magical thi
 Wait for your DNS to propagate, after that, there's not much more to it. Simply use the Hugo tool to write your posts. Commit to GitHub. Enjoy your site.
 
 Thanks for reading along, hopefully, it helped you out. Feel free to add any comments down below!
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
+
 
 We hate Ads! They don't respect your privacy. 
 

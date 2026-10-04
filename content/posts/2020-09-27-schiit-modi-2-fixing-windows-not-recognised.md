@@ -9,7 +9,7 @@ type: "post"
 
 ## Sorry for the off-topic post, but this has been bugging me for months
 
-Having recently purchased a Schiit Modi 2 from eBay, just to try out before commiting to something a little more expensive (and reliable).
+Having recently purchased a [Schiit Modi 2](https://www.amazon.co.uk/s?k=Schiit+Modi+DAC&tag=ismypassportv-21) from eBay, just to try out before commiting to something a little more expensive (and reliable).
 
 The Modi 2 has some real issues with Windows 10, I belive the Modi 3 solves all of these issues.
 

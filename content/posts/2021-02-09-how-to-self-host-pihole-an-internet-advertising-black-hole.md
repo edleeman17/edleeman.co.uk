@@ -44,12 +44,10 @@ PiHole finally sends all the requests that have not been blocked, upstream to a 
 ## How do I set up PiHole?
 
 
-PiHole, hence the name, was originally intended to be served from a [Raspberry Pi](https://www.amazon.co.uk/gp/search?ie=UTF8&amp;tag=bowlerdesign-21&amp;linkCode=ur2&amp;linkId=f0502cacce9b5a8a52f19aadca703b8f&amp;camp=1634&amp;creative=6738&amp;index=computers&amp;keywords=Raspberry Pi) but can now be set up on any kind of Linux enabled device.
-![](https://ir-uk.amazon-adsystem.com/e/ir?t=bowlerdesign-21&amp;l=ur2&amp;o=2)
+PiHole, hence the name, was originally intended to be served from a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) but can now be set up on any kind of Linux enabled device.
 ### Step 1: Set up the server you want to run PiHole on
 
-You'll need to either purchase a [Raspberry Pi](https://www.amazon.co.uk/gp/search?ie=UTF8&amp;tag=bowlerdesign-21&amp;linkCode=ur2&amp;linkId=838d86d54be7e521a789421988ebe7d1&amp;camp=1634&amp;creative=6738&amp;index=computers&amp;keywords=Raspberry Pi) or use an existing server at your disposal. I use a Proxmox instance running on a server in my loft. You could also use something like [Digital Ocean](https://www.digitalocean.com/) to run PiHole, meaning that you can install [something like WireGuard to block ads on the go!](https://theselfhostingblog.com/posts/self-hosting-a-wireguard-vpn-the-easy-way/) Using the following link will give you $100 worth of credits for 60 days to play around with, just sign up using [this link](https://m.do.co/c/d2a3afe52625).
-![](https://ir-uk.amazon-adsystem.com/e/ir?t=bowlerdesign-21&amp;l=ur2&amp;o=2)
+You'll need to either purchase a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) or use an existing server at your disposal. I use a Proxmox instance running on a server in my loft. You could also use something like [Digital Ocean](https://www.digitalocean.com/) to run PiHole, meaning that you can install [something like WireGuard to block ads on the go!](https://theselfhostingblog.com/posts/self-hosting-a-wireguard-vpn-the-easy-way/) Using the following link will give you $100 worth of credits for 60 days to play around with, just sign up using [this link](https://m.do.co/c/d2a3afe52625).
 Anyway, after you have accessed your machine, we need to run the following install script provided by PiHole
 
 ### Step 2: Installing PiHole
@@ -96,7 +94,7 @@ You can now access the web interface at the URLs shown in the output.
 
 You have two options here. You can either manually configure your machine, phones, laptops etc. To connect to the PiHole by changing your DNS server on your device to the PiHole IP address. This is good if you want to easily control the devices that use the PiHole.
 
-Or you could use the DHCP method in which the PiHole acts as your DHCP server in place of your router. All that needs to be done is to disable DHCP on your router (if you can, I own the [Netgear Nighthawk](https://amzn.to/3cRFb73) which allows me to do this).
+Or you could use the DHCP method in which the PiHole acts as your DHCP server in place of your router. All that needs to be done is to disable DHCP on your router (if you can, I own the [Netgear Nighthawk](https://www.amazon.co.uk/s?k=Netgear+Nighthawk+router&tag=ismypassportv-21) which allows me to do this).
 
 Then you just need to enable DHCP on your PiHole via the settings menu.
 
@@ -105,7 +103,7 @@ Then you just need to enable DHCP on your PiHole via the settings menu.
 The guys at PiHole have made it really simple to set up, and it's honestly a pleasure to use. I've had a PiHole running for around 2-3 years now. It receives regular updates, never failed me, and easily reproducible if ever I wanted to move between machines.
 
 Hopefully, everything should be up and running successfully. Let me know if you receive any issues in the comments, I'll be happy to help you out.
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
+
 
 We hate Ads! They don't respect your privacy. 
 

@@ -23,7 +23,7 @@ Portainer, as a whole, is a self-hostable, open-source, container management sys
 
 ### Prerequisites: Provisioning your server
 
-You'll need to either purchase something like a [Raspberry Pi](https://www.amazon.co.uk/gp/search?ie=UTF8&amp;tag=bowlerdesign-21&amp;linkCode=ur2&amp;linkId=838d86d54be7e521a789421988ebe7d1&amp;camp=1634&amp;creative=6738&amp;index=computers&amp;keywords=Raspberry%20Pi) or use an existing server at your disposal. 
+You'll need to either purchase something like a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) or use an existing server at your disposal. 
 
 I use a Proxmox instance running on a server in my loft. 
 
@@ -215,7 +215,7 @@ You can now navigate to your server IP address.
 That's all there is to it. Hopefully, you can see the power of Portainer and how easy it is to configure Docker services on your instance. You now have an easy to use admin control panel for all of your services. Meaning that you can check the logs of your running containers, view the resources being used by each container. You could even set up an external endpoint for your Docker containers. 
 
 Please let us know if you get stuck along the way. We're happy to help you out.
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
+
 
 We hate Ads! They don't respect your privacy. 
 

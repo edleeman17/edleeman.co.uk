@@ -31,7 +31,7 @@ This section of the tutorial is to set up the main Bitwarden 'hub'. This will be
 
 You'll need to either have an existing server instance or create one. I use a Proxmox instance running on a server in my loft. You could also use something like [Digital Ocean](https://www.digitalocean.com/) to host your Bitwarden Server. Using the following link will give you $100 worth of credits for 60 days to play around with, just sign up using [this link](https://m.do.co/c/d2a3afe52625).
 
-You could also use a cheap [Raspberry PI](https://amzn.to/3cWTlno) to set up your own Linux server.
+You could also use a cheap [Raspberry PI](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) to set up your own Linux server.
 
 Once you have the server set up, or have logged in. You'll need to do some updates and run some prerequisite installs.
 
@@ -250,4 +250,4 @@ Like so, then just hit `Save` and log in as normal
 Pretty easy right? 
 
 Please don't hesitate to get in touch in the comments if you get stuck. I'd be more than happy to help out with any issues you may face.
-This post contains affiliate links meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊
+

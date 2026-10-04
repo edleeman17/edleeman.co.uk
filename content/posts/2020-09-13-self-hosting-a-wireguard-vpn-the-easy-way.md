@@ -24,7 +24,7 @@ It's just a bash script which does all of the config for you, but still providin
 
 After ssh'ing to your server, whether it's local, or cloud-hosted. If you're thinking of cloud hosting your Wireguard VPN for some privacy, I'd highly recommend using [Digital Ocean](https://www.digitalocean.com/). Using the following link will give you $100 worth of credits for 60 days to play around with, just sign up using [this link](https://m.do.co/c/d2a3afe52625).
 
-You could also use a cheap [Raspberry PI](https://amzn.to/3cWTlno) to set up your own Linux server.
+You could also use a cheap [Raspberry PI](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) to set up your own Linux server.
 
 Anyway, after you have accessed your machine, we need to pull down the Wireguard installer code from Github. We're just going to `curl` it.
 
@@ -89,4 +89,4 @@ Here's a [handy guide.](https://portforward.com/)
 All that's now left to do is to set up Wireguard on your device. Simply download the required app/program onto your machine and either scan the provided QR code or import that `.conf` file into your client.
 
 Then enable your VPN. Let me know how it goes.
-This post contains affiliate links meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊
+

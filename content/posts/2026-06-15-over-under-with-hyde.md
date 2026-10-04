@@ -61,9 +61,9 @@ Well, Cucumbers are incredibly versatile. Not only are they a staple in my child
 
 **Imagine that ICE officers are at your door to seize all your books. You have the opportunity to save two. Which two would you pick?**
 
-Non-Fiction: Practical Vim - Drew Neil: This book is a goldmine of tips and tricks.
+Non-Fiction: [Practical Vim - Drew Neil](https://www.amazon.co.uk/s?k=Practical+Vim+Drew+Neil&tag=ismypassportv-21): This book is a goldmine of tips and tricks.
 
-Fiction: All Quiet on the Western Front - Erich Maria Remarque: A deeply moving story and a stark reminder of what humans are capable of doing to each other.
+Fiction: [All Quiet on the Western Front - Erich Maria Remarque](https://www.amazon.co.uk/s?k=All+Quiet+on+the+Western+Front+Remarque&tag=ismypassportv-21): A deeply moving story and a stark reminder of what humans are capable of doing to each other.
 
 ## Question from the previous blogger
 

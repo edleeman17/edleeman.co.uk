@@ -41,6 +41,7 @@
         {{- if $mastodon -}}<a class="note-syndication-link" href="{{ $mastodon }}" rel="syndication">↩ Mastodon</a>{{- end -}}
     </div>
     <div class="e-content note-body">
+        {{ partial "affiliate-disclosure.html" . }}
         {{ .Content }}
     </div>
     <div class="post-meta">

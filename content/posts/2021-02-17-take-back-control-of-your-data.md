@@ -61,7 +61,7 @@ Why don't you add up how much you're spending in a year on premium subscriptions
 
 > Self-hosting doesn't need to be expensive. 
 
-Consider a cheap [Raspberry P](https://amzn.to/3cWTlno)i, or a small cloud instance from [Digital Ocean](https://m.do.co/c/d2a3afe52625). You can also run a server on old hardware. Maybe pick up some retired servers from a marketplace. Or if you have an old slow computer kicking around that'll run more efficiently using Linux. Nothing is stopping you.
+Consider a cheap [Raspberry P](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21)i, or a small cloud instance from [Digital Ocean](https://m.do.co/c/d2a3afe52625). You can also run a server on old hardware. Maybe pick up some retired servers from a marketplace. Or if you have an old slow computer kicking around that'll run more efficiently using Linux. Nothing is stopping you.
 ![This Entrepreneur, Austin Distel, is blogging on his laptop about building a social media marketing strategy to showing bloggers how to make money on Facebook, Pinterest, and Instagram. His business has become a technology company, selling software and day trading cryptocurrency on the blockchain.
 
 Model: @Austindistel

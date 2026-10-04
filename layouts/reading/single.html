@@ -198,11 +198,11 @@
     </div>
     {{ end }}
 
-    {{ with .Params.goodreads_url }}
     <div class="book-links">
-      <a href="{{ . }}" target="_blank" rel="noopener noreferrer">View on Goodreads →</a>
+      {{ with .Params.goodreads_url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">View on Goodreads →</a> · {{ end }}
+      <a href="https://www.amazon.co.uk/s?k={{ printf "%s %s" .Title (.Params.author | default "") | urlquery }}&i=stripbooks&tag=ismypassportv-21" target="_blank" rel="noopener noreferrer sponsored">Buy on Amazon →</a>
     </div>
-    {{ end }}
+    {{ partial "affiliate-disclosure.html" (dict "page" . "force" true) }}
     {{- $mastodon := "" -}}
     {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}
     <p class="reply-by-email">

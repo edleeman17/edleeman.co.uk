@@ -30,7 +30,7 @@ It's relatively simple and gives you peace of mind knowing that only you own you
 
 You'll need to set up a new Linux server. I use a Proxmox instance running on a server in my loft. You could also use something like [Digital Ocean](https://www.digitalocean.com/) to host your Standard Notes Syncing server. Using the following link will give you $100 worth of credits for 60 days to play around with, just sign up using [this link](https://m.do.co/c/d2a3afe52625).
 
-You could also use a cheap [Raspberry PI](https://amzn.to/3cWTlno) to set up your own Standard Notes Syncing server.
+You could also use a cheap [Raspberry PI](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) to set up your own Standard Notes Syncing server.
 
 This new server will need to have Docker and Docker Compose installed.
 
@@ -527,4 +527,4 @@ That's it, providing everything worked, you should now be able to add extensions
 Now, this process is complicated, so please don't hesitate to get in touch in the comments if you get stuck. I'd be more than happy to help out with any issues you may face.
 
 Thanks for reading, please donate to Standard Notes as, without them, none of this would be possible.
-This post contains affiliate links meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊
+

@@ -31,7 +31,7 @@ Plausible is also available for self-hosting! Which is amazing. Which we're goin
 
 ### Prerequisites: Provisioning your server.
 
-Plausible is available to self-host by using Docker and Docker Compose. Plausible will run on any x86_64 architecture. Which unfortunately means we *currently *can't run Plausible on a [Raspberry Pi](https://amzn.to/3qvyjj2).
+Plausible is available to self-host by using Docker and Docker Compose. Plausible will run on any x86_64 architecture. Which unfortunately means we *currently *can't run Plausible on a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21).
 
 We can however run Plausible in [Digital Ocean](https://www.digitalocean.com/). This also happens to be recommended by the Plausible.io guys!
 
@@ -284,7 +284,6 @@ Here's the official note from Plausible
 
 > Self-hosting our analytics product is free as in beer. You only need to pay for your server and whatever cost there is associated with running a server. You never have to pay any fees to us, only to your cloud server provider. If you choose to self-host Plausible you can [become a sponsor](https://github.com/sponsors/plausible) which is a great way to give back to the community and to contribute to the long-term sustainability of the project. Simply put, we treat sponsors like paying customers which means you can receive guaranteed priority support.
 
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
 
 We hate Ads! They don't respect your privacy. 
 

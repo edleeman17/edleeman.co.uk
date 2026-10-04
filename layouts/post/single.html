@@ -16,6 +16,7 @@
       {{ if reflect.IsSlice . }}{{ range . }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}{{ else }}<a class="u-repost-of" href="{{ . }}">{{ . }}</a>{{ end }}
     </p>
     {{ end }}
+    {{ partial "affiliate-disclosure.html" . }}
     <div class="e-content post">
         {{ .Content }}
     </div>

@@ -21,7 +21,7 @@ So what’s changed?
 
 ![4c184658 eb6e 430e 95b6 62aa266444f8](https://cdn.charityshot.co.uk/web/4c184658-eb6e-430e-95b6-62aa266444f8.jpg)
 
-I’ve bought a… hang on, I’ll get the full title. I’ve bought a “Breathing Necklace to Replace Bad Habit with 3pcs Refillable Mint Pods, Habit Support Necklace for Stress Relief Sensory Fidget for Adults” thing. £10 on Amazon. 
+I’ve bought a… hang on, I’ll get the full title. I’ve bought a [“Breathing Necklace to Replace Bad Habit with 3pcs Refillable Mint Pods, Habit Support Necklace for Stress Relief Sensory Fidget for Adults”](https://www.amazon.co.uk/s?k=Breathing+Necklace+Refillable+Mint+Pods+Habit+Support&tag=ismypassportv-21) thing. £10 on Amazon. 
 
 It’s a little tube which you just suck on, it has the restrictive airflow which you would get from a vape, but it also has the ability to insert these filter-like things which give off a slight flavour.
 

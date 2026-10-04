@@ -5,7 +5,7 @@ type: page
 
 # What am I doing now.
 
-- [Photography](https://charityshot.co.uk) - My latest fixation is Photography but I'm loving every minute of it. I picked up a Fujifilm XT-2 and chucked on some vintage lenses which I had laying around from my Olympus OM-10. Bought some lens adapters and the rest is history. Feel free to check out [/photos](/photos) or if you fancy supporting me, I do offer some prints via Gelato on my [website](https://charityshot.co.uk)
+- [Photography](https://charityshot.co.uk) - My latest fixation is Photography but I'm loving every minute of it. I picked up a [Fujifilm XT-2](https://www.amazon.co.uk/s?k=Fujifilm+X-T2&tag=ismypassportv-21) and chucked on some vintage lenses which I had laying around from my [Olympus OM-10](https://www.amazon.co.uk/s?k=Olympus+OM-10&tag=ismypassportv-21). Bought some [lens adapters](https://www.amazon.co.uk/s?k=K%26F+Concept+OM+to+Fuji+X+adapter&tag=ismypassportv-21) and the rest is history. Feel free to check out [/photos](/photos) or if you fancy supporting me, I do offer some prints via Gelato on my [website](https://charityshot.co.uk)
 
 - Transitioning to DevOps from a Developer background. This is great fun. I felt unsatisfied with the lack of problems to solve in software engineering. Whereas DevOps has given me a path straight into the deep-end. I'm comfortable with self-hosting and know my way around a terminal. But it's great to learn from an enterprise perspective, problems which don't generally crop up in the homelab.
 

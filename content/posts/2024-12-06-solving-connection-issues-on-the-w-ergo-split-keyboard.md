@@ -28,7 +28,7 @@ Now for the part you’re probably here for. I use an M2 Mac for work with a Thu
 - External Keyboard
 - Elgato 4k Webcam
 
-Before having the W-Ergo, I was using a Durgod mechanical keyboard wired into the dock without any issues.
+Before having the W-Ergo, I was using a [Durgod mechanical keyboard](https://www.amazon.co.uk/s?k=Durgod+mechanical+keyboard&tag=ismypassportv-21) wired into the dock without any issues.
 
 The W-Ergo comes with a 2.4ghz receiver which plugs in via USB. So naturally I swapped my keyboards and plugged it into the dock.
 

@@ -15,7 +15,7 @@ type: "post"
 
 There are a few assumptions that need to be made before we can start:
 
-- You own either a [Raspberry Pi](https://amzn.to/3qHO1ZY) or have a server available (maybe [Digital Ocean](https://m.do.co/c/d2a3afe52625)?)
+- You own either a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) or have a server available (maybe [Digital Ocean](https://m.do.co/c/d2a3afe52625)?)
 - A Domain Name
 - Access to your DNS records
 - General knowledge of Portforwarding
@@ -354,7 +354,7 @@ You can also test your Federation, using the following URL [https://federationte
 ## That's it
 
 That should be you set up. There's a lot of moving parts in this tutorial, much of it is from other tutorials on the web, but this is what worked for me on my Raspberry Pi. Let me know if you get stuck and I'll try and help you out. Thanks for reading!
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊
+
 
 We hate Ads! They don't respect your privacy.
 

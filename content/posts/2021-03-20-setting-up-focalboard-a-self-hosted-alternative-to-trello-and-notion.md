@@ -21,7 +21,7 @@ In this tutorial, we're going to be setting up the Focalboard Personal Server, w
 
 ### Prerequisites: Provisioning your server
 
-You'll need to either purchase something like a [Raspberry Pi](https://www.amazon.co.uk/gp/search?ie=UTF8&amp;tag=bowlerdesign-21&amp;linkCode=ur2&amp;linkId=838d86d54be7e521a789421988ebe7d1&amp;camp=1634&amp;creative=6738&amp;index=computers&amp;keywords=Raspberry%20Pi) with Ubuntu Server installed or use an existing server at your disposal.
+You'll need to either purchase something like a [Raspberry Pi](https://www.amazon.co.uk/s?k=Raspberry+Pi+4&tag=ismypassportv-21) with Ubuntu Server installed or use an existing server at your disposal.
 
 I use a [Proxmox](https://www.proxmox.com/en/) instance running on a server in my loft.
 
@@ -313,7 +313,7 @@ To recap, we have...
 That's pretty good going!
 
 Let me know in the comments if you get stuck along the way, I'll do everything I can to help you out. Hope this post helped you!
-This post contains affiliate links, meaning we  may receive a small commission on purchases made through links in this post. At no extra cost to you 😊 
+
 
 We hate Ads! They don't respect your privacy. 
 
