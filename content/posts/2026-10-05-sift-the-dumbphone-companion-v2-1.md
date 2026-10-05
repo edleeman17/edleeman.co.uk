@@ -5,6 +5,9 @@ draft: false
 type: "post"
 slug: "sift-the-dumbphone-companion-v2-1"
 description: "Sift no longer needs a Raspberry Pi. A £5 ESP32 now listens for iPhone notifications - and fixing it taught me why the Pi version never really stayed connected either."
+syndication:
+  - "https://fosstodon.org/@edphones/117387536976719280"
+  - "https://bsky.app/profile/edleeman.co.uk/post/3mx4lcjzbql2w"
 ---
 
 # Sift: The Dumbphone Companion v2.1
