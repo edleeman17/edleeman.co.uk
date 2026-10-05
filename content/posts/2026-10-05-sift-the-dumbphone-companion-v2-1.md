@@ -57,7 +57,9 @@ Once it was paired, it dropped the connection every 10 to 40 seconds. Every time
 
 My first assumption was a cheap board with a weak radio. Then I went back through the Pi's logs and found it had been doing exactly the same thing all along - 220 disconnects in a single afternoon and evening. It just never surfaced, because the Pi quietly reconnected and nobody was watching.
 
-The cause turned out to be one number. iOS gives a Bluetooth connection about 0.7 seconds of silence before it calls it dead. On an ESP32, WiFi and Bluetooth share the same radio, so the odd gap longer than that is inevitable. The fix is to ask the iPhone - politely, within Apple's published limits - for a 5 second timeout instead. iOS accepted it, and the constant dropping stopped.
+~~The cause turned out to be one number.~~ iOS gives a Bluetooth connection about 0.7 seconds of silence before it calls it dead. On an ESP32, WiFi and Bluetooth share the same radio, so the odd gap longer than that is inevitable. The fix is to ask the iPhone - politely, within Apple's published limits - for a 5 second timeout instead. iOS accepted it, ~~and the constant dropping stopped~~.
+
+**Update, later the same day:** it hadn't stopped. The timeout helped, but the link still dropped every few seconds, and after enough failed reconnects iOS gave up trying altogether. I moved the board, gave it its own power, and started eyeing up my AirPods. Then I ran it for ten minutes with WiFi switched off - zero drops, with AirPods streaming the whole time. That shared radio wasn't causing the odd gap, it was the whole problem: WiFi was starving Bluetooth. Putting WiFi into its deepest power-save mode, so it only wakes every 300ms or so, fixed it - zero drops in fifteen minutes with WiFi on. The Pi's chip shares its radio the same way, which is probably where its 220 disconnects came from too. That's [v2.1.1](https://github.com/edleeman17/Sift/releases/tag/v2.1.1).
 
 ## Only The iPhone Can Call
 
@@ -82,11 +84,13 @@ You now get a choice of bridge. Both send the processor exactly the same thing, 
 - A dumbphone (I use a [T185 4G](https://www.amazon.co.uk/dp/B0FG7T2MS3?tag=ismypassportv-21))
 - Somewhere to run the processor - any machine that runs a container
 
-If you go with the ESP32, keep it within a few metres of wherever your phone usually lives. One shared radio doesn't have much range to spare.
+If you go with the ESP32, keep it within a few metres of wherever your phone usually lives. ~~One shared radio doesn't have much range to spare.~~ Range turned out not to be the problem (see the update above), but closer doesn't hurt.
 
 ## Try It
 
-Tagged as v2.1.0, with the firmware in `esp32-bridge/`: [github.com/edleeman17/Sift/releases/tag/v2.1.0](https://github.com/edleeman17/Sift/releases/tag/v2.1.0)
+~~Tagged as v2.1.0, with the firmware in `esp32-bridge/`: [github.com/edleeman17/Sift/releases/tag/v2.1.0](https://github.com/edleeman17/Sift/releases/tag/v2.1.0)~~
+
+**Update:** grab [v2.1.1](https://github.com/edleeman17/Sift/releases/tag/v2.1.1) instead - same firmware plus the WiFi fix.
 
 If you're already running the Pi version, there's no rush to switch. If you do, the ESP32 starts with forwarding off, so you can run both side by side and check it's catching everything before you turn the Pi off.
 
