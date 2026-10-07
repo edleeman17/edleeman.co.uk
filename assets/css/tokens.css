@@ -1,0 +1,146 @@
+/* Kanagawa Hanko tokens, copied from dotfiles-new design/kanagawa-hanko/tokens.css (generated from tokens.json; re-copy, don't edit). Font URLs point at /fonts/. */
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-400-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-400-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-700-Regular.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-700-Italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root, [data-theme="light"] {
+  --paper: #fbfaf6;
+  --paper-bar: #f4efe3b3;
+  --paper-fold: #e2dac6;
+  --ink: #545464;
+  --ink-strong: #2b2b36;
+  --ink-muted: #8a8980;
+  --hanko: #c84053;
+  --seal: #c84053;
+  --on-hanko: #fbfaf6;
+  --hanko-line: #c8405399;
+  --alert: #cc6d00;
+  --pill: #54546414;
+  --pill-active: #54546426;
+  --pill-edge: #54546466;
+  --selection-bg: #e2dac6;
+  --selection-fg: #545464;
+  --ansi-black: #545464;
+  --ansi-red: #c84053;
+  --ansi-green: #6f894e;
+  --ansi-yellow: #836f4a;
+  --ansi-blue: #4d699b;
+  --ansi-magenta: #b35b79;
+  --ansi-cyan: #597b75;
+  --ansi-white: #e2dac6;
+  --ansi-bright-black: #8a8980;
+  --ansi-bright-red: #d7474b;
+  --ansi-bright-green: #6e915f;
+  --ansi-bright-yellow: #a08a54;
+  --ansi-bright-blue: #6693bf;
+  --ansi-bright-magenta: #624c83;
+  --ansi-bright-cyan: #5e857a;
+  --ansi-bright-white: #c3b9a1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1f1f28;
+    --paper-bar: #1f1f2880;
+    --paper-fold: #2a2a37;
+    --ink: #dcd7ba;
+    --ink-strong: #dcd7ba;
+    --ink-muted: #727169;
+    --hanko: #e46876;
+    --seal: #c34043;
+    --on-hanko: #fbfaf6;
+    --hanko-line: #e4687699;
+    --alert: #ffa066;
+    --pill: #72716933;
+    --pill-active: #72716966;
+    --pill-edge: #dcd7baaa;
+    --selection-bg: #dcd7ba;
+    --selection-fg: #1f1f28;
+    --ansi-black: #090618;
+    --ansi-red: #c34043;
+    --ansi-green: #76946a;
+    --ansi-yellow: #c0a36e;
+    --ansi-blue: #7e9cd8;
+    --ansi-magenta: #957fb8;
+    --ansi-cyan: #6a9589;
+    --ansi-white: #c8c093;
+    --ansi-bright-black: #727169;
+    --ansi-bright-red: #e82424;
+    --ansi-bright-green: #98bb6c;
+    --ansi-bright-yellow: #e6c384;
+    --ansi-bright-blue: #7fb4ca;
+    --ansi-bright-magenta: #938aa9;
+    --ansi-bright-cyan: #7aa89f;
+    --ansi-bright-white: #dcd7ba;
+    color-scheme: dark;
+  }
+}
+
+[data-theme="dark"] {
+  --paper: #1f1f28;
+  --paper-bar: #1f1f2880;
+  --paper-fold: #2a2a37;
+  --ink: #dcd7ba;
+  --ink-strong: #dcd7ba;
+  --ink-muted: #727169;
+  --hanko: #e46876;
+  --seal: #c34043;
+  --on-hanko: #fbfaf6;
+  --hanko-line: #e4687699;
+  --alert: #ffa066;
+  --pill: #72716933;
+  --pill-active: #72716966;
+  --pill-edge: #dcd7baaa;
+  --selection-bg: #dcd7ba;
+  --selection-fg: #1f1f28;
+  --ansi-black: #090618;
+  --ansi-red: #c34043;
+  --ansi-green: #76946a;
+  --ansi-yellow: #c0a36e;
+  --ansi-blue: #7e9cd8;
+  --ansi-magenta: #957fb8;
+  --ansi-cyan: #6a9589;
+  --ansi-white: #c8c093;
+  --ansi-bright-black: #727169;
+  --ansi-bright-red: #e82424;
+  --ansi-bright-green: #98bb6c;
+  --ansi-bright-yellow: #e6c384;
+  --ansi-bright-blue: #7fb4ca;
+  --ansi-bright-magenta: #938aa9;
+  --ansi-bright-cyan: #7aa89f;
+  --ansi-bright-white: #dcd7ba;
+  color-scheme: dark;
+}
+
+:root {
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-5: 5px;
+  --space-6: 6px;
+  --space-10: 10px;
+  --space-20: 20px;
+  --space-40: 40px;
+  --radius-line: 1px;
+  --radius-seal: 3px;
+  --radius-pill: 5px;
+  --radius-bar: 10px;
+  --size-seal: 24px;
+  --size-pill: 25px;
+  --size-bar: 40px;
+  --stroke-line: 2px;
+  --stroke-edge: 2px;
+  --font-mono: CommitMono, "CommitMono Nerd Font", ui-monospace, Menlo, monospace;
+  --font-mincho: "Hiragino Mincho ProN", "Shippori Mincho", "Yu Mincho", serif;
+  --font-gothic: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+}
+.term { font-family: var(--font-mono); font-size: 14px; line-height: 25px; font-weight: 400; }
+.bar-label { font-family: var(--font-mono); font-size: 14px; line-height: 20px; font-weight: 400; }
+.bar-icon { font-family: var(--font-mono); font-size: 16px; line-height: 20px; font-weight: 400; }
+.bar-note { font-family: var(--font-mono); font-size: 13px; line-height: 18px; font-weight: 400; font-style: italic; }
+.seal-glyph { font-family: var(--font-mincho); font-size: 15px; line-height: 24px; font-weight: 600; }
+.kanji { font-family: var(--font-gothic); font-size: 16px; line-height: 25px; font-weight: 800; }
+.web-h1 { font-family: var(--font-mono); font-size: 32px; line-height: 40px; font-weight: 700; letter-spacing: -0.01em; }
+.web-h2 { font-family: var(--font-mono); font-size: 22px; line-height: 30px; font-weight: 700; }
+.web-body { font-family: var(--font-mono); font-size: 16px; line-height: 28px; font-weight: 400; }
+.web-small { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 400; }

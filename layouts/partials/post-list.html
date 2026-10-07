@@ -1,6 +1,6 @@
 <div class="post-feed h-feed">
     <span class="p-name" style="display:none;">Posts by Ed Leeman</span>
-    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+    {{ $dataFormat := .Site.Params.dateFormat | default "Mon 02 Jan 2006" }}
     {{ $mainPosts := (sort ( where site.RegularPages "Type" "post" ) "Date" "desc") }}
     {{ range (.Paginate $mainPosts).Pages }}
     <article class="feed post h-entry">

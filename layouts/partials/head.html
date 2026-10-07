@@ -73,7 +73,12 @@
 <!-- human.json -->
 <link rel="human" type="application/json" href="/human.json">
 
-<!-- CSS: shibui base + site overrides -->
+<!-- CSS: Kanagawa Hanko tokens, shibui base, site overrides, Hanko layer last -->
+{{- with resources.Get "css/tokens.css" }}
+  {{- with . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end }}
+{{- end }}
 {{- with resources.Get "css/shibui.css" }}
   {{- with . | minify | fingerprint }}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
@@ -85,6 +90,14 @@
   {{- end }}
 {{- end }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css?v={{ now.Unix }}">
+{{- with resources.Get "css/hanko.css" }}
+  {{- with . | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- end }}
+{{- end }}
+<link rel="preload" href="/fonts/CommitMono-400-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Seal 家 glyph off Apple devices (Hiragino is used where present) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600&text=%E5%AE%B6&display=swap">
 
 <!-- Icons (used by webmentions display) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">

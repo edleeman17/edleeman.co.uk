@@ -21,7 +21,7 @@
         {{ .Content }}
     </div>
     <div class="post-meta">
-        <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+        <p class="post-date">Published on <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Mon 02 Jan 2006" }}</time></p>
         <p class="post-tags">Tags: {{ range .Params.tags }}<a class="p-category" href="/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</p>
         {{- $mastodon := "" -}}
         {{- range .Params.syndication -}}{{- if strings.Contains . "fosstodon.org" -}}{{- $mastodon = . -}}{{- end -}}{{- end -}}

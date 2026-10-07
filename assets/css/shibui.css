@@ -1,7 +1,7 @@
 :root {
   /* Typography */
-  --spacing-base: 1.5em;
-  --font-family-mono: monospace;
+  --spacing-base: 1.75em; /* 28px: web-body leading */
+  --font-family-mono: var(--font-mono);
   --font-size-base: 1em;
   --font-size-small: 0.9em;
   --font-size-code: 0.95em;
@@ -12,36 +12,17 @@
   --spacing-md: var(--spacing-base);
   --spacing-lg: calc(var(--spacing-base) * 2);
 
-  /* Base theme knobs - dark first, per the sift.lan design-spec's
-     "research-lab brutalism" default; light is the override below,
-     not the base case. */
-  --bg-h: 0;
-  --bg-s: 0%;
-  --bg-l: 8%;
-
-  /* Background colors */
-  --color-bg-primary: hsl(var(--bg-h) var(--bg-s) var(--bg-l));
-  --color-bg-secondary: hsl(var(--bg-h) var(--bg-s) calc(var(--bg-l) - 2%));
-  --color-bg-elevated: hsl(var(--bg-h) var(--bg-s) calc(var(--bg-l) + 4%));
-  --color-bg-inset: hsl(var(--bg-h) var(--bg-s) calc(var(--bg-l) - 4%));
-  --color-border: hsl(var(--bg-h) var(--bg-s) calc(var(--bg-l) - 6%));
-  --color-selection-bg: hsl(var(--bg-h) var(--bg-s) calc(var(--bg-l) - 13%));
-
-  /* Text colors with WCAG-friendly contrast */
-  /* Primary: ensures near-black on light bg and near-white on dark bg */
-  --color-text-primary: hsl(
-    var(--bg-h) var(--bg-s) clamp(8%, calc(100% - var(--bg-l)), 92%)
-  );
-
-  /* Muted: softer but still >4.5:1 contrast */
-  --color-text-muted: hsl(
-    var(--bg-h) var(--bg-s) clamp(30%, calc(85% - var(--bg-l)), 75%)
-  );
-
-  /* Code text: slightly brighter than muted */
-  --color-text-code: hsl(
-    var(--bg-h) var(--bg-s) clamp(20%, calc(90% - var(--bg-l)), 85%)
-  );
+  /* Colours come from the Kanagawa Hanko tokens (tokens.css): Washi
+     (light) or Sumi (dark), following the OS appearance. */
+  --color-bg-primary: var(--paper);
+  --color-bg-secondary: var(--pill);
+  --color-bg-elevated: var(--pill);
+  --color-bg-inset: var(--pill);
+  --color-border: var(--paper-fold);
+  --color-selection-bg: var(--selection-bg);
+  --color-text-primary: var(--ink);
+  --color-text-muted: var(--ink-muted);
+  --color-text-code: var(--ink);
 
   /* Layout */
   --container-width: 64ch;
@@ -52,21 +33,6 @@
 
   /* Breakpoints */
   --breakpoint-mobile: 600px;
-}
-
-/* Dark by default, light on system preference - the data-theme
-   attribute stays wired up as an explicit override either way, for a
-   future manual toggle. */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg-l: 99%;
-  }
-}
-:root[data-theme="dark"] {
-  --bg-l: 8%;
-}
-:root[data-theme="light"] {
-  --bg-l: 99%;
 }
 
 /* Common component styles */
@@ -94,8 +60,8 @@
 }
 
 ::selection {
-  background: var(--color-selection-bg);
-  color: var(--color-text-primary);
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 /* Skip link for accessibility */
@@ -124,7 +90,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--hanko);
   outline-offset: 2px;
 }
 

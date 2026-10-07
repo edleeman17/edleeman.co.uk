@@ -101,7 +101,7 @@
       var target  = m['wm-target'] || '';
       var type    = typeLabel(m['wm-property']);
       var text    = m.content && m.content.text ? m.content.text : '';
-      var date    = m.published ? new Date(m.published).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+      var date    = m.published ? new Date(m.published).toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }).replace(',', '') : '';
 
       // shorten target for display
       var targetDisplay = target.replace('https://edleeman.co.uk', '') || '/';

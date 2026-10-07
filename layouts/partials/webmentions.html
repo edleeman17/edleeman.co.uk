@@ -60,7 +60,7 @@
           var name   = author.name  || 'Anonymous';
           var url    = m.url || m['wm-source'] || '#';
           var text   = m.content && m.content.text ? m.content.text : '';
-          var date   = m.published ? new Date(m.published).toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+          var date   = m.published ? new Date(m.published).toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' }).replace(',', '') : '';
           var indent = depth > 0 ? ' style="margin-left:' + (depth * 1.5) + 'rem;border-left:2px solid var(--color-border);padding-left:1rem;"' : '';
           var out = '<div class="wm-reply"' + indent + '>';
           out += '<div class="wm-reply-meta">';
