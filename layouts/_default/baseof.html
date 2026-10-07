@@ -6,7 +6,7 @@
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
     <header role="banner">{{ partial "header.html" . }}</header>
-    <main id="main-content" role="main">{{ block "main" . }}{{ end }}</main>
+    <main id="main-content" role="main">{{ partial "path-nav.html" . }}{{ block "main" . }}{{ end }}</main>
     <footer role="contentinfo">{{ partial "footer.html" . }}</footer>
   </body>
 </html>

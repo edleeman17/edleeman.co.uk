@@ -111,7 +111,7 @@
     {{ $count := len .Pages }}
     <div class="day-group">
       <p class="day-header">
-        {{ dateFormat "Monday, January 2, 2006" (.Key | time) }}
+        {{ dateFormat "Mon 02 Jan 2006" (.Key | time) }}
         <span class="day-count">({{ $count }} {{ if eq $count 1 }}bookmark{{ else }}bookmarks{{ end }})</span>
       </p>
       <ul class="links-list">

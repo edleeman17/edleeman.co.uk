@@ -601,7 +601,7 @@
         <div class="book-title">{{ .Title }}</div>
         <div class="book-author">{{ .Params.author }}</div>
         {{ with .Params.date_started }}
-        <div class="book-date">Started {{ . | time.Format "2 Jan 2006" }}</div>
+        <div class="book-date">Started {{ . | time.Format "Mon 02 Jan 2006" }}</div>
         {{ end }}
       </div>
     </div>
