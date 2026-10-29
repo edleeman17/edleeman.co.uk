@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-10-29T11:41:16Z",
+  "last_updated": "2026-10-29T11:42:18Z",
   "books": [
+    {
+      "slug": "also-sprach-zarathustra",
+      "title": "Also sprach Zarathustra",
+      "author": "Friedrich Nietzsche",
+      "cover": "https://covers.openlibrary.org/b/id/1017466-L.jpg",
+      "pages": "354",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-10-29T11:42:17Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "metamorphosis",
       "title": "Metamorphosis",
