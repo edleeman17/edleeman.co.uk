@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-09-08T13:07:57Z",
+  "last_updated": "2026-10-29T11:34:45Z",
   "books": [
+    {
+      "slug": "between-two-fires",
+      "title": "Between two fires",
+      "author": "Christopher Buehlman",
+      "cover": "https://covers.openlibrary.org/b/id/8044643-L.jpg",
+      "pages": "456",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-10-29T11:34:44Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "widow-s-point",
       "title": "Widow's Point",
