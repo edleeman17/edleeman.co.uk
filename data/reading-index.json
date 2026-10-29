@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-10-29T11:42:18Z",
+  "last_updated": "2026-10-29T11:42:46Z",
   "books": [
+    {
+      "slug": "thus-spoke-zarathustra",
+      "title": "Thus Spoke Zarathustra",
+      "author": "Friedrich Nietzsche",
+      "cover": "",
+      "pages": "",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-10-29T11:42:44Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "also-sprach-zarathustra",
       "title": "Also sprach Zarathustra",
