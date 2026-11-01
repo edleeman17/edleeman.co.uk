@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-10-29T11:42:46Z",
+  "last_updated": "2026-11-01T21:12:24Z",
   "books": [
+    {
+      "slug": "beasts-of-england",
+      "title": "Beasts of England: An Anthology of Monster Stories",
+      "author": "Nathan Connolly (ed.)",
+      "cover": "",
+      "pages": "",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "read",
+      "rating": 5,
+      "favourite": false,
+      "date_read": "2026-11-01T00:00:00Z",
+      "date_started": "",
+      "date_added": "2026-11-01T21:12:24Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "thus-spoke-zarathustra",
       "title": "Thus Spoke Zarathustra",
