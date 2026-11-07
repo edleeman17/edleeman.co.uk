@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-11-07T10:53:57Z",
+  "last_updated": "2026-11-07T10:55:36Z",
   "books": [
+    {
+      "slug": "running-the-light",
+      "title": "Running the Light",
+      "author": "Sam Tallent",
+      "cover": "",
+      "pages": "344",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-11-07T10:55:34Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "annihilation",
       "title": "Annihilation",
