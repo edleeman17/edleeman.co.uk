@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-11-07T10:55:36Z",
+  "last_updated": "2026-11-07T10:56:56Z",
   "books": [
+    {
+      "slug": "north-woods",
+      "title": "North Woods",
+      "author": "Daniel Mason",
+      "cover": "https://covers.openlibrary.org/b/id/14421778-L.jpg",
+      "pages": "384",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-11-07T10:56:55Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "running-the-light",
       "title": "Running the Light",
