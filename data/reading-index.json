@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-11-01T21:12:24Z",
+  "last_updated": "2026-11-07T10:53:57Z",
   "books": [
+    {
+      "slug": "annihilation",
+      "title": "Annihilation",
+      "author": "Jeff VanderMeer",
+      "cover": "https://covers.openlibrary.org/b/id/8408974-L.jpg",
+      "pages": "208",
+      "goodreads_url": "",
+      "goodreads_id": "",
+      "shelf": "tbr",
+      "rating": 0,
+      "favourite": false,
+      "date_read": "",
+      "date_started": "",
+      "date_added": "2026-11-07T10:53:56Z",
+      "review": "",
+      "syndication": []
+    },
     {
       "slug": "beasts-of-england",
       "title": "Beasts of England: An Anthology of Monster Stories",
