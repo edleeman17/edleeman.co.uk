@@ -102,6 +102,8 @@ footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
 .backup { display: flex; gap: 8px; flex-wrap: wrap; }
 .backup button { width: auto; padding: 8px 12px; font-size: 14px; }
 .reflink { display: inline-block; margin-top: 8px; width: auto; padding: 6px 10px; font-size: 14px; }
+.btn { display: inline-block; padding: 10px 14px; border-radius: 5px; background: var(--bg); border: 2px solid var(--pill-edge); color: var(--ink-strong); font-weight: 700; text-decoration: none; }
+.btn:hover { border-color: var(--hanko); color: var(--ink-strong); }
 .sheetref { margin-top: 8px; font-size: 14px; color: var(--muted); }
 </style>
 </head>
@@ -258,8 +260,10 @@ document.addEventListener("keydown", e => {
 // ---- EX307 reference sheet ----
 // The 4-page booklet you're allowed in the exam is the RSGB's, so it isn't
 // bundled here. Questions it answers say which page and row to look at.
-const EX307_URL = "https://rsgb.org/mock-exams";
-const refLink = it => it.ref ? `<div class="sheetref">📄 On the EX307 sheet: page ${it.ref.p} · ${esc(it.ref.label)}</div>` : "";
+// Direct PDF changes with each RSGB revision; the mock exams page always lists the current one.
+const EX307_URL = "https://rsgb.services/public/exams/exam-forms/260122_EX307_Foundation_v1.pdf";
+const RSGB_MOCKS_URL = "https://rsgb.org/mock-exams";
+const refLink = it => it.ref ? `<div class="sheetref">📄 On the <a href="${EX307_URL}" target="_blank" rel="noopener">EX307 sheet</a>: page ${it.ref.p} · ${esc(it.ref.label)}</div>` : "";
 const CIRCUIT_RE = /circuit|current|volt|potential|resist|Ω|ohm|series|parallel|watt|power does it use|draw/i;
 const learnLink = it => it.t === "tech" && CIRCUIT_RE.test(it.q + it.opts[0]) ? ` <button class="reflink" data-learn>📘 Circuits explained</button>` : "";
 const wireLearn = () => document.querySelectorAll("[data-learn]").forEach(b => b.onclick = () => learn(true));
@@ -273,7 +277,7 @@ function wireHint(it) {
     if (!$("#hint")) return;
     if (step++ === 0) {
       $("#hint").innerHTML = it.ref
-        ? `<p class="muted">💡 It's on the sheet: <b>page ${it.ref.p}</b> · ${esc(it.ref.label)}.</p>`
+        ? `<p class="muted">💡 It's on the <a href="${EX307_URL}" target="_blank" rel="noopener">EX307 sheet</a>: <b>page ${it.ref.p}</b> · ${esc(it.ref.label)}.</p>`
         : `<p class="muted">💡 Not on the sheet. Answer from memory.</p>`;
     }
   };
@@ -312,7 +316,13 @@ function home() {
       <button class="wide" data-go="every">📚 Everything: all ${BANK.length} questions, then rework the misses${P.every ? ` <span class="muted">· ${P.every.i}/${P.every.order.length} done · ${P.every.missed.length} to rework</span>` : ""}</button>
       <button class="wide" data-go="learn">📘 Circuits explained: voltage, current, series &amp; parallel</button>
     </div>
-    <p class="muted">Practise with the <a href="${EX307_URL}">RSGB's official mock papers and EX307 reference sheet</a> too. You get the sheet in the exam, so learn your way round it.</p>
+    <div class="card">
+      <p style="margin-top:0"><b>Get the reference sheet.</b> In the exam you're given EX307, a 4-page booklet of band plans, frequencies and charts.
+        Questions here tell you which page has the answer, so keep it open (or printed) while you revise.</p>
+      <a class="btn" href="${EX307_URL}" target="_blank" rel="noopener">📄 Download EX307 (PDF, from the RSGB)</a>
+      <p class="muted" style="margin-bottom:0">Link not working? It's always listed on the <a href="${RSGB_MOCKS_URL}" target="_blank" rel="noopener">RSGB mock exams page</a>,
+        along with their three official mock papers. Do those too.</p>
+    </div>
     <h2>Weak areas <span class="muted" style="text-transform:none;letter-spacing:0">(last 30 answers per topic · line = 73% pass)</span></h2>
     ${sorted.map(t => `<div class="topic" data-topic="${t.k}">
       <span class="name">${t.name}${t.weak ? '<span class="tag">WEAK</span>' : ""}
