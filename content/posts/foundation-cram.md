@@ -4,6 +4,9 @@ date: 2026-11-19T14:02:06Z
 type: "post"
 draft: false
 slug: "foundation-cram"
+syndication:
+  - "https://fosstodon.org/@edphones/117643474552968103"
+  - "https://bsky.app/profile/edleeman.co.uk/post/3n2oafiqvsj2q"
 ---
 
 I passed my amateur radio Foundation exam yesterday. 22 out of 26, with 19 needed to pass. My callsign is in the post - the paper kind - so for now I still just listen.
