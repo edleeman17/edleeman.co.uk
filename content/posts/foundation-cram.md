@@ -6,7 +6,7 @@ draft: true
 slug: "foundation-cram"
 ---
 
-I passed my amateur radio Foundation exam yesterday. TODO: score / callsign line.
+I passed my amateur radio Foundation exam yesterday. 22 out of 26, with 19 needed to pass. My callsign is in the post - the paper kind - so for now I still just listen.
 
 I've had a Quansheng UV-K5 sat on my desk since October, receive only. I'd been listening to the Thursday night net from the loft for weeks, unable to say anything back. That got old fast.
 
