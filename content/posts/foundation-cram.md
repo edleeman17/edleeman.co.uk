@@ -4,6 +4,8 @@ date: 2026-11-19T14:02:06Z
 type: "post"
 draft: false
 slug: "foundation-cram"
+aliases:
+  - "/posts/i-passed-my-foundation-and-the-app-i-built-to-get-there/"
 syndication:
   - "https://fosstodon.org/@edphones/117643474552968103"
   - "https://bsky.app/profile/edleeman.co.uk/post/3n2oafiqvsj2q"
