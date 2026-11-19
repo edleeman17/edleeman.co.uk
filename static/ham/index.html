@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Foundation Cram</title>
+<meta name="description" content="Free revision app for the UK amateur radio Foundation exam. Runs in your browser, no sign-up.">
+<style>
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-400-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "CommitMono"; src: url("/fonts/CommitMono-700-Regular.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+/* Kanagawa Hanko, same tokens as edleeman.co.uk: washi light, sumi dark, hanko red as the only accent. */
+:root, [data-theme="light"] {
+  --bg: #fbfaf6; --bar: #f4efe3b3; --panel: #54546410; --line: #e2dac6; --ink: #545464; --ink-strong: #2b2b36;
+  --muted: #8a8980; --seal: #c84053; --on-seal: #fbfaf6; --hanko: #c84053; --hanko-line: #c8405399;
+  --ok: #6f894e; --bad: #c84053; --warn: #cc6d00; --accent: #c84053; --pill-edge: #54546466;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1f1f28; --bar: #1f1f2880; --panel: #72716926; --line: #363646; --ink: #dcd7ba; --ink-strong: #dcd7ba;
+    --muted: #727169; --seal: #c34043; --on-seal: #fbfaf6; --hanko: #e46876; --hanko-line: #e4687699;
+    --ok: #98bb6c; --bad: #e46876; --warn: #ffa066; --accent: #e46876; --pill-edge: #dcd7baaa; color-scheme: dark;
+  }
+}
+[data-theme="dark"] {
+  --bg: #1f1f28; --bar: #1f1f2880; --panel: #72716926; --line: #363646; --ink: #dcd7ba; --ink-strong: #dcd7ba;
+  --muted: #727169; --seal: #c34043; --on-seal: #fbfaf6; --hanko: #e46876; --hanko-line: #e4687699;
+  --ok: #98bb6c; --bad: #e46876; --warn: #ffa066; --accent: #e46876; --pill-edge: #dcd7baaa; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font: 16px/1.6 CommitMono, ui-monospace, Menlo, monospace; caret-color: var(--hanko); }
+::selection { background: var(--line); color: var(--ink); }
+main { max-width: 720px; margin: 0 auto; padding: 16px 16px 48px; }
+.site-bar { position: sticky; top: 6px; z-index: 6; display: flex; align-items: center; gap: 10px; height: 40px;
+  margin: 6px -10px 20px; padding: 0 8px; border-radius: 10px; background: var(--bar);
+  -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); font-size: 14px; }
+.seal { display: inline-flex; align-items: center; justify-content: center; height: 24px; padding: 0 6px; border-radius: 3px;
+  background: var(--seal); color: var(--on-seal); font: 600 15px/1 "Hiragino Mincho ProN", "Shippori Mincho", "Yu Mincho", serif; text-decoration: none; flex: none; }
+.pill { display: inline-flex; align-items: center; height: 25px; padding: 0 10px; border: 2px solid transparent; border-radius: 5px;
+  color: var(--ink-strong); text-decoration: none; white-space: nowrap; }
+.pill:hover { background: var(--panel); }
+.pill.on { background: #54546426; border-color: var(--pill-edge); }
+header { margin-bottom: 16px; }
+h1 { font-size: 32px; line-height: 40px; letter-spacing: -0.01em; margin: 0; color: var(--ink-strong); }
+h1 small { display: block; color: var(--muted); font-weight: 400; font-size: 14px; line-height: 24px; letter-spacing: 0; margin-top: 4px; }
+h2 { font-size: 16px; color: var(--ink-strong); margin: 32px 0 8px; }
+button { font: inherit; color: var(--ink-strong); background: var(--panel); border: 2px solid transparent; border-radius: 5px;
+  padding: 12px 14px; cursor: pointer; text-align: left; width: 100%; }
+button:hover { border-color: var(--pill-edge); }
+button.primary { background: var(--seal); color: var(--on-seal); border-color: var(--seal); font-weight: 700; }
+button:disabled { opacity: .5; cursor: default; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.grid .wide { grid-column: 1 / -1; }
+.stats { display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+.stats b { color: var(--ink); }
+.topic { display: grid; grid-template-columns: 1fr 64px; gap: 4px 12px; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.topic .name { font-size: 14px; }
+.topic .pct { text-align: right; font-weight: 700; }
+.bar { grid-column: 1 / -1; height: 6px; background: var(--line); position: relative; }
+.bar i { position: absolute; inset: 0 auto 0 0; background: var(--ok); }
+.bar i.weak { background: var(--bad); }
+.bar i.mid { background: var(--warn); }
+.bar::after { content: ""; position: absolute; left: 73%; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: .5; }
+.tag { font-size: 12px; color: var(--bad); margin-left: 6px; }
+.card { background: var(--panel); border-radius: 10px; padding: 16px; margin: 12px 0; }
+.qmeta { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+.qtext { font-size: 18px; margin: 12px 0 16px; }
+.grid.three { grid-template-columns: 1fr 1fr 1fr; }
+.grid.three button { text-align: center; }
+.opts { display: grid; gap: 8px; }
+.opts button { background: var(--bg); border-color: var(--line); }
+.opts button.right { border-color: var(--ok); outline: 2px solid var(--ok); }
+.opts button.wrong { border-color: var(--bad); outline: 2px solid var(--bad); }
+.opts button.picked { border-color: var(--accent); outline: 2px solid var(--accent); }
+.explain { margin-top: 12px; padding: 12px; border-left: 4px solid var(--ok); background: var(--bg); font-size: 15px; }
+.explain.bad { border-color: var(--bad); }
+.row { display: flex; gap: 8px; margin-top: 12px; }
+.row button { text-align: center; }
+.flash { min-height: 180px; display: grid; place-items: center; text-align: center; cursor: pointer; }
+.answer { font-size: 20px; font-weight: 700; color: var(--ok); }
+.timer { font-weight: 700; }
+.timer.low { color: var(--bad); }
+.result { font-size: 32px; font-weight: 700; }
+.result span { font-size: 15px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+.result.mid { color: var(--warn); }
+.odds .bar::after { display: none; }
+.odds .bar { margin: 8px 0; }
+.pass { color: var(--ok); } .fail { color: var(--bad); }
+.learn table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; }
+.learn th, .learn td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+.learn .f { font-weight: 700; white-space: nowrap; }
+.learn li { margin: 6px 0; }
+.review { font-size: 14px; border-bottom: 1px solid var(--line); padding: 8px 0; }
+.review .x { color: var(--bad); } .review .y { color: var(--ok); }
+.muted { color: var(--muted); font-size: 13px; }
+.sync { font-size: 12px; color: var(--muted); text-align: right; margin-top: 24px; }
+a { color: var(--hanko); text-decoration-color: var(--hanko-line); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+a:hover { text-decoration-color: var(--hanko); }
+footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+.backup { display: flex; gap: 8px; flex-wrap: wrap; }
+.backup button { width: auto; padding: 8px 12px; font-size: 14px; }
+.reflink { display: inline-block; margin-top: 8px; width: auto; padding: 6px 10px; font-size: 14px; }
+.sheetref { margin-top: 8px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script src="questions.js"></script>
+<script>
+// ---- state & persistence ----
+// Progress is keyed by a hash of the question text so editing the bank
+// doesn't scramble history. Saved to localStorage; if the page is served
+// with the Docker image, also PUT to /api/ so phone and laptop share one record.
+const PASS = 19, EXAM_Q = 26, EXAM_MIN = 60, LS = "ham-foundation-progress";
+const hash = s => { let h = 5381; for (const c of s) h = ((h << 5) + h + c.charCodeAt(0)) | 0; return (h >>> 0).toString(36); };
+const BANK = QUESTIONS.map(([t, q, opts, e, ref]) => ({ id: hash(q), t, q, opts, e, ref }));
+const LETTERS = "ABCD";
+// 1-4 or a-d picks an option.
+const optKey = k => { const i = "1234".indexOf(k); return i >= 0 ? i : "abcd".indexOf(k.toLowerCase()); };
+
+let P = { updated: 0, q: {}, hist: [], mocks: [] };
+let syncState = "saved on this device";
+
+function loadLocal() { try { return JSON.parse(localStorage.getItem(LS)) || null; } catch { return null; } }
+function saveLocal() { try { localStorage.setItem(LS, JSON.stringify(P)); } catch {} }
+let saveTimer;
+function save() {
+  P.updated = Date.now(); saveLocal();
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(async () => {
+    try {
+      const r = await fetch("api/progress.json", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(P) });
+      // No sync server (e.g. GitHub Pages): progress stays in this browser.
+      syncState = r.ok ? "synced " + new Date().toLocaleTimeString() : r.status === 404 || r.status === 405 ? "saved on this device" : "sync failed (" + r.status + ")";
+    } catch { syncState = "offline, saved on this device"; }
+    const el = document.querySelector(".sync"); if (el) el.textContent = syncState;
+  }, 800);
+}
+async function load() {
+  const local = loadLocal();
+  let remote = null;
+  try { const r = await fetch("api/progress.json", { cache: "no-store" }); if (r.ok) remote = await r.json(); syncState = "synced"; } catch {}
+  P = [local, remote].filter(Boolean).sort((a, b) => (b.updated || 0) - (a.updated || 0))[0] || P;
+  P.q ||= {}; P.hist ||= []; P.mocks ||= [];
+  // Ask the browser not to clear this site's storage when space runs low.
+  try { navigator.storage?.persist?.(); } catch {}
+}
+
+// ---- backup: progress as a file you keep ----
+function exportProgress() {
+  const blob = new Blob([JSON.stringify(P)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `foundation-cram-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  P.backedUp = Date.now(); save();
+}
+function importProgress() {
+  const inp = document.createElement("input");
+  inp.type = "file"; inp.accept = "application/json,.json";
+  inp.onchange = async () => {
+    try {
+      const d = JSON.parse(await inp.files[0].text());
+      if (!d || typeof d.q !== "object") throw 0;
+      if (!confirm("Replace the progress on this device with the backup?")) return;
+      P = d; P.hist ||= []; P.mocks ||= []; save(); home();
+    } catch { alert("That file isn't a Foundation Cram backup."); }
+  };
+  inp.click();
+}
+
+// ---- scoring ----
+// Leitner box 0-5 per question: wrong drops to 0, right climbs one.
+// "Mastered" = box >= 3. Topic accuracy uses the last 30 answers in it.
+function record(item, ok) {
+  const s = P.q[item.id] ||= { box: 0, right: 0, wrong: 0, last: 0 };
+  ok ? (s.right++, s.box = Math.min(5, s.box + 1)) : (s.wrong++, s.box = 0);
+  s.last = Date.now();
+  P.hist.push({ t: item.t, ok: ok ? 1 : 0 });
+  if (P.hist.length > 2000) P.hist = P.hist.slice(-2000);
+  save();
+}
+function topicStats() {
+  return Object.entries(TOPICS).map(([k, name]) => {
+    const h = P.hist.filter(x => x.t === k).slice(-30);
+    const items = BANK.filter(b => b.t === k);
+    const mastered = items.filter(b => (P.q[b.id]?.box || 0) >= 3).length;
+    const pct = h.length ? Math.round(100 * h.reduce((a, x) => a + x.ok, 0) / h.length) : null;
+    return { k, name, pct, n: h.length, total: items.length, mastered, weak: pct !== null && h.length >= 5 && pct < 73 };
+  });
+}
+// Lower = needs more work. Unseen sits just above missed questions.
+function weakness(b) {
+  const s = P.q[b.id];
+  if (!s) return 1.5;
+  return s.box + (s.wrong > s.right ? -0.5 : 0) + Math.random() * 0.3;
+}
+const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+function pickWeak(n) {
+  const ts = topicStats();
+  const weakTopics = new Set(ts.filter(t => t.pct === null || t.pct < 80).map(t => t.k));
+  return [...BANK]
+    .map(b => ({ b, w: weakness(b) - (weakTopics.has(b.t) ? 0.7 : 0) }))
+    .sort((x, y) => x.w - y.w).slice(0, n).map(x => x.b);
+}
+// Questions per topic on the real Foundation paper (syllabus v1.6b, p1.3).
+const PAPER = { lic: 6, tech: 3, txrx: 3, ant: 3, prop: 2, emc: 3, ops: 3, safe: 3 };
+function pickExam() {
+  return shuffle(Object.entries(PAPER).flatMap(([k, n]) => shuffle(BANK.filter(b => b.t === k)).slice(0, n)));
+}
+
+// Pass likelihood: estimate the chance of getting each question right,
+// average it per topic, then work out P(score >= 19) over the paper's
+// topic split. Seen questions use their own right/wrong record (a recent
+// miss counts against it); unseen ones lean on how you do in that topic,
+// starting from a coin flip when there's no data.
+function passEstimate() {
+  const topicAcc = Object.fromEntries(topicStats().map(t => [t.k, t.n >= 5 ? t.pct / 100 : null]));
+  const pTopic = {};
+  for (const k of Object.keys(PAPER)) {
+    const ps = BANK.filter(b => b.t === k).map(b => {
+      const s = P.q[b.id];
+      if (!s) return 0.3 + 0.4 * (topicAcc[k] ?? 0.5);
+      let p = (s.right + 1) / (s.right + s.wrong + 2);
+      if (s.box === 0) p *= 0.7;
+      if (s.box >= 3) p = Math.max(p, 0.9);
+      return p;
+    });
+    pTopic[k] = ps.reduce((a, x) => a + x, 0) / ps.length;
+  }
+  let dist = [1];  // dist[n] = P(exactly n right so far)
+  for (const [k, n] of Object.entries(PAPER))
+    for (let i = 0; i < n; i++) {
+      const p = pTopic[k], next = new Array(dist.length + 1).fill(0);
+      dist.forEach((v, j) => { next[j] += v * (1 - p); next[j + 1] += v * p; });
+      dist = next;
+    }
+  const pass = dist.slice(PASS).reduce((a, x) => a + x, 0);
+  const expected = Object.entries(PAPER).reduce((a, [k, n]) => a + n * pTopic[k], 0);
+  // Where the most marks are being lost on the paper.
+  const gain = Object.entries(PAPER).map(([k, n]) => [k, n * (1 - pTopic[k])]).sort((a, b) => b[1] - a[1])[0][0];
+  return { pass, expected, gain, coverage: Object.keys(P.q).length / BANK.length };
+}
+
+// ---- views ----
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let session = null, timerId = null;
+document.addEventListener("keydown", e => {
+  if ($("#learn")) { if (e.key === "Escape") $("#learn").remove(); return; }
+  session?.key?.(e);
+});
+
+// ---- EX307 reference sheet ----
+// The 4-page booklet you're allowed in the exam is the RSGB's, so it isn't
+// bundled here. Questions it answers say which page and row to look at.
+const EX307_URL = "https://rsgb.org/mock-exams";
+const refLink = it => it.ref ? `<div class="sheetref">📄 On the EX307 sheet: page ${it.ref.p} · ${esc(it.ref.label)}</div>` : "";
+const CIRCUIT_RE = /circuit|current|volt|potential|resist|Ω|ohm|series|parallel|watt|power does it use|draw/i;
+const learnLink = it => it.t === "tech" && CIRCUIT_RE.test(it.q + it.opts[0]) ? ` <button class="reflink" data-learn>📘 Circuits explained</button>` : "";
+const wireLearn = () => document.querySelectorAll("[data-learn]").forEach(b => b.onclick = () => learn(true));
+const wireRefs = () => {};
+// Hint (practice only, never in mocks): hidden until clicked. Says where on
+// EX307 to look, or that it's not there.
+const hintSlot = `<div id="hint"><button class="reflink" data-hint title="Hint (h)">💡 Hint: where on EX307?</button></div>`;
+function wireHint(it) {
+  let step = 0;
+  const go = () => {
+    if (!$("#hint")) return;
+    if (step++ === 0) {
+      $("#hint").innerHTML = it.ref
+        ? `<p class="muted">💡 It's on the sheet: <b>page ${it.ref.p}</b> · ${esc(it.ref.label)}.</p>`
+        : `<p class="muted">💡 Not on the sheet. Answer from memory.</p>`;
+    }
+  };
+  $("[data-hint]").onclick = go;
+  return go;
+}
+
+function home() {
+  clearInterval(timerId); session = null;
+  const ts = topicStats();
+  const seen = Object.keys(P.q).length;
+  const mastered = Object.values(P.q).filter(s => s.box >= 3).length;
+  const lastMock = P.mocks.at(-1);
+  const sorted = [...ts].sort((a, b) => (a.pct ?? -1) - (b.pct ?? -1));
+  const weakest = sorted.filter(t => t.weak).map(t => t.name);
+  $("#app").innerHTML = `
+    <nav class="site-bar"><a class="seal" href="/" aria-label="Ed Leeman: home">家</a><a class="pill" href="/">edleeman.co.uk</a><a class="pill on" href="./">foundation cram</a></nav>
+    <header><h1>Foundation Cram<small>UK amateur radio Foundation exam · 26 Qs · pass ${PASS}/26 · 60 min</small></h1></header>
+    <div class="stats"><span><b>${seen}</b>/${BANK.length} seen</span><span><b>${mastered}</b> mastered</span>
+      <span>last mock: <b>${lastMock ? lastMock.score + "/26" : "none"}</b></span></div>
+    ${!seen ? `<div class="card"><p style="margin-top:0"><b>Revising for the UK Foundation licence?</b> Answer a few questions and this
+      works out your chance of passing and which topics are costing you marks.</p>
+      <p class="muted" style="margin-bottom:0">Start with <b>Cram weak spots</b>. It learns as you go.</p></div>` : (() => {
+      const e = passEstimate(), pct = Math.round(100 * e.pass);
+      return `<div class="card odds"><div class="result ${pct >= 80 ? "pass" : pct >= 50 ? "mid" : "fail"}">${pct}%<span> chance of passing</span></div>
+        <div class="bar"><i class="${pct >= 80 ? "" : pct >= 50 ? "mid" : "weak"}" style="width:${pct}%"></i></div>
+        <p class="muted">Expected score ${e.expected.toFixed(1)}/26 (pass ${PASS}). Most marks to gain: <b>${TOPICS[e.gain]}</b> (${PAPER[e.gain]} Qs on the paper).
+        ${e.coverage < 0.5 ? `<br>Rough guess: you've only seen ${Math.round(100 * e.coverage)}% of the questions.` : ""}</p></div>`;
+    })()}
+    ${weakest.length ? `<p class="muted">Weak right now: ${weakest.join(", ")}</p>` : ""}
+    <h2>Start</h2>
+    <div class="grid">
+      <button class="primary wide" data-go="weak">▶ Cram weak spots (15 Qs)</button>
+      <button data-go="exam">Mock exam</button>
+      <button data-go="flash">Flashcards</button>
+      <button class="wide" data-go="every">📚 Everything: all ${BANK.length} questions, then rework the misses${P.every ? ` <span class="muted">· ${P.every.i}/${P.every.order.length} done · ${P.every.missed.length} to rework</span>` : ""}</button>
+      <button class="wide" data-go="learn">📘 Circuits explained: voltage, current, series &amp; parallel</button>
+    </div>
+    <p class="muted">Practise with the <a href="${EX307_URL}">RSGB's official mock papers and EX307 reference sheet</a> too. You get the sheet in the exam, so learn your way round it.</p>
+    <h2>Weak areas <span class="muted" style="text-transform:none;letter-spacing:0">(last 30 answers per topic · line = 73% pass)</span></h2>
+    ${sorted.map(t => `<div class="topic" data-topic="${t.k}">
+      <span class="name">${t.name}${t.weak ? '<span class="tag">WEAK</span>' : ""}
+        <span class="muted"> · ${t.mastered}/${t.total} mastered · ${PAPER[t.k]} on paper</span></span>
+      <span class="pct">${t.pct === null ? "–" : t.pct + "%"}</span>
+      <div class="bar"><i class="${t.pct === null ? "" : t.pct < 60 ? "weak" : t.pct < 80 ? "mid" : ""}" style="width:${t.pct ?? 0}%"></i></div>
+    </div>`).join("")}
+    <p class="muted">Tap a topic to drill it. Keys: A–D or 1–4 answer · Enter next · Space flip · h hint.</p>
+    ${P.mocks.length ? `<h2>Mock history</h2><p class="muted">${P.mocks.slice(-10).map(m => `<span class="${m.score >= PASS ? "pass" : "fail"}">${m.score}</span>`).join(" · ")}</p>` : ""}
+    <h2>Your progress</h2>
+    <p class="muted">Saved in this browser only. No account, nothing sent anywhere. ${P.backedUp ? `Last backup ${new Date(P.backedUp).toLocaleDateString()}.` : `<b>No backup yet.</b>`}
+      Download a backup now and then, and use it to carry on from another phone or computer.
+      On iPhone, Share → Add to Home Screen so Safari doesn't clear it.</p>
+    <div class="backup"><button data-export>⬇ Download backup</button><button data-import>⬆ Restore from backup</button></div>
+    <footer>Questions written against RSGB syllabus v1.6b. Not affiliated with the RSGB or Ofcom.
+      <a href="https://github.com/edleeman17/foundation-cram">Source and corrections on GitHub</a>.
+      <div class="sync">${syncState}</div></footer>`;
+  $("[data-export]").onclick = exportProgress;
+  $("[data-import]").onclick = importProgress;
+  document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => ({
+    weak: () => quiz(pickWeak(15), "Weak spots"),
+    exam: () => exam(),
+    flash: () => flash(pickWeak(20)),
+    learn: () => learn(),
+    every: () => everything(),
+  })[b.dataset.go]());
+  document.querySelectorAll("[data-topic]").forEach(el => el.onclick = () => {
+    const k = el.dataset.topic;
+    quiz(BANK.filter(b => b.t === k).sort((x, y) => weakness(x) - weakness(y)).slice(0, 15), TOPICS[k]);
+  });
+}
+
+// ---- explainer: circuits (syllabus 2A1, 2A2, 2B1, 2C1) ----
+// Parallel *resistance* maths is Intermediate, so it's deliberately not here.
+const LEARN_HTML = `<div class="card learn">
+  <h2 style="margin-top:0">Three words, one picture: water in a pipe</h2>
+  <ul>
+    <li><b>Voltage = potential difference (PD)</b>, in volts (V). The <b>push</b>, like water pressure. Same thing, two names: "PD" usually means the voltage <i>across</i> one part.</li>
+    <li><b>Current</b>, in amps (A). <b>How much flows</b>, like litres per second.</li>
+    <li><b>Resistance</b>, in ohms (Ω). <b>How narrow the pipe is.</b> It turns electrical energy into heat.</li>
+  </ul>
+  <h2>Series vs parallel</h2>
+  <table><tr><th>Circuit</th><th>Stays the same</th><th>Adds up</th></tr>
+    <tr><td><b>Series</b><br><span class="muted">one loop, one after another</span></td><td><b>Current</b> is the same everywhere</td><td><b>Voltages</b> add up to the supply</td></tr>
+    <tr><td><b>Parallel</b><br><span class="muted">side by side across the supply</span></td><td><b>Voltage</b> is the same across each item</td><td><b>Currents</b> add up to the total</td></tr></table>
+  <p class="muted">Example: 3 lamps in parallel each drawing 0.5 A → 1.5 A from the supply. Working out parallel <i>resistance</i> is Intermediate, not Foundation.</p>
+  <h2>Which formula?</h2>
+  <table><tr><th>You want</th><th>Use</th><th>Example</th></tr>
+    <tr><td>Volts</td><td class="f">V = I × R</td><td>3 A × 4 Ω = 12 V</td></tr>
+    <tr><td>Amps</td><td class="f">I = V ÷ R</td><td>12 V ÷ 6 Ω = 2 A</td></tr>
+    <tr><td>Ohms</td><td class="f">R = V ÷ I</td><td>12 V ÷ 2 A = 6 Ω</td></tr>
+    <tr><td>Watts</td><td class="f">P = V × I</td><td>12 V × 2 A = 24 W</td></tr>
+    <tr><td>Amps from watts</td><td class="f">I = P ÷ V</td><td>25 W ÷ 12.5 V = 2 A</td></tr></table>
+  <h2>Reading the question</h2>
+  <ul>
+    <li>"<b>across</b>" or "<b>potential difference</b>" → it wants a <b>voltage</b>.</li>
+    <li>"<b>through</b>", "<b>flows</b>" or "<b>draws</b>" → it wants a <b>current</b>.</li>
+    <li>"<b>power</b>" or "<b>W</b>" → multiply volts by amps.</li>
+  </ul>
+</div>`;
+function learn(fromQuiz) {
+  if (fromQuiz) {
+    // Over the current question so Next still works after closing.
+    const o = document.createElement("div");
+    o.id = "learn"; o.style.cssText = "position:fixed;inset:0;overflow:auto;background:var(--bg);z-index:10;padding:16px";
+    o.innerHTML = `<div style="max-width:720px;margin:0 auto"><div class="row" style="margin-top:0"><button data-close-learn>× Back to the question</button></div>${LEARN_HTML}</div>`;
+    document.body.append(o);
+    o.querySelector("[data-close-learn]").onclick = () => o.remove();
+    return;
+  }
+  clearInterval(timerId); session = null;
+  $("#app").innerHTML = `<div class="row" style="margin-top:0"><button data-home>← Home</button></div>${LEARN_HTML}
+    <div class="row"><button class="primary" data-drill>▶ Drill Technical (15 Qs)</button></div>`;
+  $("[data-home]").onclick = home;
+  $("[data-drill]").onclick = () => quiz(BANK.filter(b => b.t === "tech").sort((x, y) => weakness(x) - weakness(y)).slice(0, 15), TOPICS.tech);
+  scrollTo(0, 0);
+}
+
+function qCard(item, i, n, extra = "", hint = false) {
+  const opts = item.shown ||= shuffle(item.opts);
+  return `<div class="card"><div class="qmeta"><span>${TOPICS[item.t]}</span><span>${i + 1}/${n} ${extra}</span></div>
+    <div class="qtext">${esc(item.q)}</div>
+    <div class="opts">${opts.map((o, j) => `<button data-j="${j}"><b>${LETTERS[j]}</b>&nbsp; ${esc(o)}</button>`).join("")}</div>
+    ${hint ? hintSlot : ""}<div id="after"></div></div>`;
+}
+
+function quiz(list, label) {
+  list = list.map(b => ({ ...b, shown: null }));
+  let i = 0, right = 0, answered = false, hint = null;
+  const show = () => {
+    answered = false;
+    $("#app").innerHTML = `<div class="row" style="margin-top:0"><button data-home>← Home</button></div>
+      <p class="muted">${label} · ${right} right so far</p>` + qCard(list[i], i, list.length, "", true);
+    $("[data-home]").onclick = home;
+    hint = wireHint(list[i]);
+    document.querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.j));
+  };
+  const answer = j => {
+    if (answered) return; answered = true;
+    const it = list[i], ok = it.shown[j] === it.opts[0];
+    if (ok) right++;
+    $("#hint")?.remove();
+    record(it, ok);
+    document.querySelectorAll(".opts button").forEach((b, k) => {
+      if (it.shown[k] === it.opts[0]) b.classList.add("right"); else if (k === j) b.classList.add("wrong");
+    });
+    $("#after").innerHTML = `<div class="explain ${ok ? "" : "bad"}">${ok ? "✓ Correct." : "✗ Answer: " + esc(it.opts[0]) + "."} ${esc(it.e)}<br>${refLink(it)}${learnLink(it)}</div>
+      <div class="row"><button class="primary" data-next>${i + 1 < list.length ? "Next →" : "Finish"}</button></div>`;
+    $("[data-next]").onclick = next;
+    wireRefs(); wireLearn();
+  };
+  const next = () => { if (++i < list.length) show(); else done(); };
+  const done = () => {
+    session = null;
+    $("#app").innerHTML = `<div class="card"><div class="result">${right}/${list.length}</div><p>${label} done.</p>
+      <div class="row"><button class="primary" data-again>Another round</button><button data-home>Home</button></div></div>`;
+    $("[data-home]").onclick = home;
+    $("[data-again]").onclick = () => quiz(label === "Weak spots" ? pickWeak(15) : shuffle(list), label);
+  };
+  session = { key: e => {
+    if (!answered && optKey(e.key) >= 0) answer(optKey(e.key));
+    else if (!answered && e.key === "h") hint?.();
+    else if (answered && e.key === "Enter") next();
+  } };
+  show();
+}
+
+// ---- everything mode ----
+// Every question once, grouped by topic, resumable (P.every). Misses are kept
+// for a rework loop where a wrong answer goes back on the end of the queue.
+function everything(fresh) {
+  const byId = Object.fromEntries(BANK.map(b => [b.id, b]));
+  if (fresh || !P.every || P.every.order.some(id => !byId[id]))
+    P.every = { order: Object.keys(PAPER).flatMap(k => shuffle(BANK.filter(b => b.t === k)).map(b => b.id)), i: 0, right: 0, missed: [] };
+  const E = P.every;
+  if (E.i >= E.order.length) return everyDone();
+  let it = null, answered = false, hint = null;
+  const show = () => {
+    answered = false;
+    it = { ...byId[E.order[E.i]], shown: null };
+    const left = E.order.slice(E.i).filter(id => byId[id].t === it.t).length;
+    $("#app").innerHTML = `<div class="row" style="margin-top:0"><button data-home>← Home (saves place)</button>${E.missed.length ? `<button data-rework>Rework ${E.missed.length} missed</button>` : ""}</div>
+      <p class="muted">Everything · ${E.right} right · ${E.missed.length} missed · ${left} left in ${TOPICS[it.t]}</p>` + qCard(it, E.i, E.order.length, "", true);
+    $("[data-home]").onclick = home;
+    const rw = $("[data-rework]"); if (rw) rw.onclick = () => rework();
+    hint = wireHint(it);
+    document.querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.j));
+  };
+  const answer = j => {
+    if (answered) return; answered = true;
+    const ok = it.shown[j] === it.opts[0];
+    $("#hint")?.remove();
+    E.i++; ok ? E.right++ : E.missed.push(it.id);
+    record(it, ok);
+    document.querySelectorAll(".opts button").forEach((b, k) => {
+      if (it.shown[k] === it.opts[0]) b.classList.add("right"); else if (k === j) b.classList.add("wrong");
+    });
+    $("#after").innerHTML = `<div class="explain ${ok ? "" : "bad"}">${ok ? "✓ Correct." : "✗ Answer: " + esc(it.opts[0]) + "."} ${esc(it.e)}<br>${refLink(it)}${learnLink(it)}</div>
+      <div class="row"><button class="primary" data-next>${E.i < E.order.length ? "Next →" : "Finish"}</button></div>`;
+    $("[data-next]").onclick = next;
+    wireRefs(); wireLearn();
+  };
+  const next = () => E.i < E.order.length ? show() : everyDone();
+  session = { key: e => {
+    if (!answered && optKey(e.key) >= 0) answer(optKey(e.key));
+    else if (!answered && e.key === "h") hint?.();
+    else if (answered && e.key === "Enter") next();
+  } };
+  show();
+}
+function everyDone() {
+  session = null;
+  const E = P.every;
+  $("#app").innerHTML = `<div class="card"><div class="result">${E.right}/${E.order.length}</div>
+    <p>Everything done. ${E.missed.length ? `${E.missed.length} still to rework.` : "Nothing left to rework. 🎉"}</p>
+    <div class="row">${E.missed.length ? `<button class="primary" data-rework>Rework ${E.missed.length} missed</button>` : ""}<button data-fresh>Start again</button><button data-home>Home</button></div></div>`;
+  $("[data-home]").onclick = home;
+  $("[data-fresh]").onclick = () => confirm("Start a fresh pass through every question?") && everything(true);
+  const rw = $("[data-rework]"); if (rw) rw.onclick = () => rework();
+}
+// Rework: missed ones until each is answered right once; wrong goes to the back.
+function rework() {
+  const E = P.every, byId = Object.fromEntries(BANK.map(b => [b.id, b]));
+  let queue = shuffle(E.missed), it = null, answered = false, hint = null;
+  const show = () => {
+    if (!queue.length) return E.i < E.order.length ? everything() : everyDone();
+    answered = false;
+    it = { ...byId[queue[0]], shown: null };
+    $("#app").innerHTML = `<div class="row" style="margin-top:0"><button data-home>← Home</button>${E.i < E.order.length ? `<button data-back>Back to Everything</button>` : ""}</div>
+      <p class="muted">Rework misses · ${queue.length} to go (wrong ones come back)</p>` + qCard(it, 0, queue.length, "", true);
+    $("[data-home]").onclick = home;
+    const bk = $("[data-back]"); if (bk) bk.onclick = () => everything();
+    hint = wireHint(it);
+    document.querySelectorAll(".opts button").forEach(b => b.onclick = () => answer(+b.dataset.j));
+  };
+  const answer = j => {
+    if (answered) return; answered = true;
+    const ok = it.shown[j] === it.opts[0];
+    $("#hint")?.remove();
+    queue.shift();
+    if (ok) E.missed = E.missed.filter(id => id !== it.id); else queue.push(it.id);
+    record(it, ok);
+    document.querySelectorAll(".opts button").forEach((b, k) => {
+      if (it.shown[k] === it.opts[0]) b.classList.add("right"); else if (k === j) b.classList.add("wrong");
+    });
+    $("#after").innerHTML = `<div class="explain ${ok ? "" : "bad"}">${ok ? "✓ Correct. Off the list." : "✗ Answer: " + esc(it.opts[0]) + ". It'll come back."} ${esc(it.e)}<br>${refLink(it)}${learnLink(it)}</div>
+      <div class="row"><button class="primary" data-next>${queue.length ? "Next →" : "Finish"}</button></div>`;
+    $("[data-next]").onclick = show;
+    wireRefs(); wireLearn();
+  };
+  session = { key: e => {
+    if (!answered && optKey(e.key) >= 0) answer(optKey(e.key));
+    else if (!answered && e.key === "h") hint?.();
+    else if (answered && e.key === "Enter") show();
+  } };
+  show();
+}
+
+function flash(list) {
+  let i = 0, flipped = false, hint = null;
+  const show = () => {
+    flipped = false;
+    const it = list[i];
+    $("#app").innerHTML = `<div class="row" style="margin-top:0"><button data-home>← Home</button></div>
+      <div class="card"><div class="qmeta"><span>${TOPICS[it.t]}</span><span>${i + 1}/${list.length}</span></div>
+      <div class="flash" data-flip><div><div class="qtext">${esc(it.q)}</div><div id="ans" class="muted">tap to reveal</div></div></div>
+      ${hintSlot}
+      <div class="row" id="grade" style="visibility:hidden"><button data-g="0">✗ Missed it</button><button class="primary" data-g="1">✓ Knew it</button></div></div>`;
+    $("[data-home]").onclick = home;
+    $("[data-flip]").onclick = flip;
+    hint = wireHint(it);
+    document.querySelectorAll("[data-g]").forEach(b => b.onclick = () => grade(+b.dataset.g));
+  };
+  const flip = () => {
+    if (flipped) return; flipped = true;
+    const it = list[i];
+    $("#hint")?.remove();
+    $("#ans").outerHTML = `<div class="answer">${esc(it.opts[0])}</div><p class="muted">${esc(it.e)}</p>${refLink(it)}`;
+    wireRefs();
+    $("#grade").style.visibility = "visible";
+  };
+  const grade = ok => { record(list[i], !!ok); if (++i < list.length) show(); else home(); };
+  session = { key: e => {
+    if (e.key === " ") { e.preventDefault(); flip(); }
+    else if (!flipped && e.key === "h") hint?.();
+    else if (flipped && (e.key === "1" || e.key === "ArrowLeft")) grade(0);
+    else if (flipped && (e.key === "2" || e.key === "ArrowRight" || e.key === "Enter")) grade(1);
+  } };
+  show();
+}
+
+function exam() {
+  const list = pickExam().map(b => ({ ...b, shown: null, pick: null }));
+  const title = "Mock exam";
+  const end = Date.now() + EXAM_MIN * 60000;
+  let i = 0;
+  const tick = () => {
+    const left = Math.max(0, end - Date.now()), m = Math.floor(left / 60000), s = Math.floor(left / 1000) % 60;
+    const el = $(".timer"); if (el) { el.textContent = `${m}:${String(s).padStart(2, "0")}`; el.classList.toggle("low", left < 300000); }
+    if (!left) mark();
+  };
+  const show = () => {
+    const it = list[i];
+    const answeredCount = list.filter(x => x.pick !== null).length;
+    $("#app").innerHTML = `<p class="muted">${title} · ${answeredCount}/${EXAM_Q} answered · <span class="timer"></span></p>` +
+      qCard(it, i, list.length) +
+      `<div class="row"><button data-prev ${i ? "" : "disabled"}>← Prev</button><button data-nextq>${i + 1 < list.length ? "Next →" : "Review"}</button></div>
+       <div class="row"><button data-mark class="primary">Hand in (${answeredCount}/${EXAM_Q})</button><button data-quit>Abandon</button></div>`;
+    if (it.pick !== null) document.querySelectorAll(".opts button")[it.pick].classList.add("picked");
+    document.querySelectorAll(".opts button").forEach(b => b.onclick = () => { it.pick = +b.dataset.j; show(); });
+    $("[data-prev]").onclick = () => { i--; show(); };
+    $("[data-nextq]").onclick = () => { i = (i + 1) % list.length; show(); };
+    $("[data-mark]").onclick = () => { if (answeredCount === EXAM_Q || confirm(`${EXAM_Q - answeredCount} unanswered. Hand in anyway?`)) mark(); };
+    $("[data-quit]").onclick = () => { if (confirm("Abandon this mock? Nothing is recorded.")) home(); };
+    tick();
+  };
+  const mark = () => {
+    clearInterval(timerId); session = null;
+    let score = 0;
+    const byTopic = {};
+    list.forEach(it => {
+      const ok = it.pick !== null && it.shown[it.pick] === it.opts[0];
+      if (ok) score++;
+      (byTopic[it.t] ||= [0, 0])[1]++; if (ok) byTopic[it.t][0]++;
+      record(it, ok);
+    });
+    P.mocks.push({ at: Date.now(), score, byTopic }); save();
+    $("#app").innerHTML = `<div class="card"><div class="result ${score >= PASS ? "pass" : "fail"}">${score}/26 · ${score >= PASS ? "PASS" : "FAIL"}</div>
+      <p class="muted">Pass mark ${PASS}. ${Object.entries(byTopic).map(([k, [r, n]]) => `${TOPICS[k]} ${r}/${n}`).join(" · ")}</p>
+      <div class="row"><button class="primary" data-weak>Drill what I missed</button><button data-home>Home</button></div></div>
+      <h2>Review</h2>
+      ${list.map((it, k) => {
+        const ok = it.pick !== null && it.shown[it.pick] === it.opts[0];
+        return `<div class="review"><span class="${ok ? "y" : "x"}">${ok ? "✓" : "✗"}</span> ${k + 1}. ${esc(it.q)}<br>
+          ${ok ? "" : `<span class="muted">You: ${it.pick === null ? "no answer" : esc(it.shown[it.pick])} · </span>`}<b>${esc(it.opts[0])}</b>
+          ${ok ? "" : `<div class="muted">${esc(it.e)}</div>`}${refLink(it)}</div>`;
+      }).join("")}`;
+    $("[data-home]").onclick = home;
+    const missed = list.filter(it => !(it.pick !== null && it.shown[it.pick] === it.opts[0]));
+    wireRefs();
+    $("[data-weak]").onclick = () => missed.length ? quiz(missed, "Missed in mock") : home();
+  };
+  session = { key: e => {
+    if (optKey(e.key) >= 0) { list[i].pick = optKey(e.key); show(); }
+    else if (e.key === "Enter" || e.key === "ArrowRight") { i = (i + 1) % list.length; show(); }
+    else if (e.key === "ArrowLeft" && i) { i--; show(); }
+  } };
+  timerId = setInterval(tick, 1000);
+  show();
+}
+
+load().then(home);
+</script>
+</body>
+</html>
