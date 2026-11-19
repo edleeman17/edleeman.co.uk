@@ -1,8 +1,8 @@
 ---
 title: "I passed my Foundation (and the app I built to get there)"
-date: 2026-11-19T12:00:00Z
+date: 2026-11-19T14:02:06Z
 type: "post"
-draft: true
+draft: false
 slug: "foundation-cram"
 ---
 
